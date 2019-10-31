@@ -41,19 +41,7 @@ namespace DataFetchAPI.Tests.Controllers
             // Assert
             Assert.AreEqual("value", result);
         }
-
-        [TestMethod]
-        public void Post()
-        {
-            // Arrange
-            ValuesController controller = new ValuesController();
-
-            // Act
-            controller.Post("value");
-
-            // Assert
-        }
-
+        
         [TestMethod]
         public void Put()
         {
