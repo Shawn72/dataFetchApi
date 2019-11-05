@@ -231,6 +231,40 @@
           </sequence>
         </complexType>
       </element>
+      <element name="FnInsertBlog">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="blogTitle" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="blogBody" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="dirNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="dirName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnInsertBlog_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnInsertBlogReply">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="blogReply" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="dirNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="dirName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="blogId" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnInsertBlogReply_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
     </schema>
   </types>
   <message name="FnRegisterVendor">
@@ -317,6 +351,18 @@
   <message name="FnApplyforOpenTender_Result">
     <part name="parameters" element="tns:FnApplyforOpenTender_Result" />
   </message>
+  <message name="FnInsertBlog">
+    <part name="parameters" element="tns:FnInsertBlog" />
+  </message>
+  <message name="FnInsertBlog_Result">
+    <part name="parameters" element="tns:FnInsertBlog_Result" />
+  </message>
+  <message name="FnInsertBlogReply">
+    <part name="parameters" element="tns:FnInsertBlogReply" />
+  </message>
+  <message name="FnInsertBlogReply_Result">
+    <part name="parameters" element="tns:FnInsertBlogReply_Result" />
+  </message>
   <portType name="eprocurement_Port">
     <operation name="FnRegisterVendor">
       <input name="FnRegisterVendor" message="tns:FnRegisterVendor" />
@@ -373,6 +419,14 @@
     <operation name="FnApplyforOpenTender">
       <input name="FnApplyforOpenTender" message="tns:FnApplyforOpenTender" />
       <output name="FnApplyforOpenTender_Result" message="tns:FnApplyforOpenTender_Result" />
+    </operation>
+    <operation name="FnInsertBlog">
+      <input name="FnInsertBlog" message="tns:FnInsertBlog" />
+      <output name="FnInsertBlog_Result" message="tns:FnInsertBlog_Result" />
+    </operation>
+    <operation name="FnInsertBlogReply">
+      <input name="FnInsertBlogReply" message="tns:FnInsertBlogReply" />
+      <output name="FnInsertBlogReply_Result" message="tns:FnInsertBlogReply_Result" />
     </operation>
   </portType>
   <binding name="eprocurement_Binding" type="tns:eprocurement_Port">
@@ -500,6 +554,24 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="FnApplyforOpenTender_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnInsertBlog">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertBlog" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnInsertBlog">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnInsertBlog_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnInsertBlogReply">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertBlogReply" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnInsertBlogReply">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnInsertBlogReply_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>

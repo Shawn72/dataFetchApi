@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 31-Oct-19 17:41:15
+// Generation date: 05-Nov-19 15:29:05
 namespace DataFetchAPI.ODataRef
 {
     
@@ -1353,6 +1353,40 @@ namespace DataFetchAPI.ODataRef
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<serviceitems> _serviceitems;
         /// <summary>
+        /// There are no comments for SupplierBlogReplies in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<SupplierBlogReplies> SupplierBlogReplies
+        {
+            get
+            {
+                if ((this._SupplierBlogReplies == null))
+                {
+                    this._SupplierBlogReplies = base.CreateQuery<SupplierBlogReplies>("SupplierBlogReplies");
+                }
+                return this._SupplierBlogReplies;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<SupplierBlogReplies> _SupplierBlogReplies;
+        /// <summary>
+        /// There are no comments for SupplierBlogs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<SupplierBlogs> SupplierBlogs
+        {
+            get
+            {
+                if ((this._SupplierBlogs == null))
+                {
+                    this._SupplierBlogs = base.CreateQuery<SupplierBlogs>("SupplierBlogs");
+                }
+                return this._SupplierBlogs;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<SupplierBlogs> _SupplierBlogs;
+        /// <summary>
         /// There are no comments for SupplierCategories in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -2163,6 +2197,22 @@ namespace DataFetchAPI.ODataRef
         public void AddToserviceitems(serviceitems serviceitems)
         {
             base.AddObject("serviceitems", serviceitems);
+        }
+        /// <summary>
+        /// There are no comments for SupplierBlogReplies in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToSupplierBlogReplies(SupplierBlogReplies supplierBlogReplies)
+        {
+            base.AddObject("SupplierBlogReplies", supplierBlogReplies);
+        }
+        /// <summary>
+        /// There are no comments for SupplierBlogs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToSupplierBlogs(SupplierBlogs supplierBlogs)
+        {
+            base.AddObject("SupplierBlogs", supplierBlogs);
         }
         /// <summary>
         /// There are no comments for SupplierCategories in the schema.
@@ -3567,845 +3617,873 @@ namespace DataFetchAPI.ODataRef
                 "/><Property Name=\"Name_2\" Type=\"Edm.String\" /><Property Name=\"Ship_to_Name_2\" Ty" +
                 "pe=\"Edm.String\" /><Property Name=\"Prepaid_Amount\" Type=\"Edm.Decimal\" /><Property" +
                 " Name=\"Service_Contracts\" Type=\"Edm.Boolean\" /><Property Name=\"Total_Qty_Consume" +
-                "d\" Type=\"Edm.Decimal\" /></EntityType><EntityType Name=\"SupplierCategories\"><Key>" +
-                "<PropertyRef Name=\"Category_Code\" /></Key><Property Name=\"Category_Code\" Type=\"E" +
-                "dm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><" +
-                "/EntityType><EntityType Name=\"SupplyCategoryHeader\"><Key><PropertyRef Name=\"Cate" +
-                "gory\" /><PropertyRef Name=\"Fiscal_Year\" /></Key><Property Name=\"Fiscal_Year\" Typ" +
-                "e=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Category\" Type=\"Edm.String\" Nu" +
-                "llable=\"false\" /><Property Name=\"Category_Name\" Type=\"Edm.String\" /><Property Na" +
-                "me=\"No_of_Prequalified_Suppliers\" Type=\"Edm.Int32\" /></EntityType><EntityType Na" +
-                "me=\"TenderApps\"><Key><PropertyRef Name=\"AuxiliaryIndex1\" /><PropertyRef Name=\"Au" +
-                "xiliaryIndex2\" /><PropertyRef Name=\"E_mail\" /><PropertyRef Name=\"Ref_No\" /></Key" +
-                "><Property Name=\"Ref_No\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Ca" +
-                "tegory\" Type=\"Edm.String\" /><Property Name=\"Fiscal_Year\" Type=\"Edm.String\" /><Pr" +
-                "operty Name=\"Selected\" Type=\"Edm.Boolean\" /><Property Name=\"Pre_Qualified\" Type=" +
-                "\"Edm.Boolean\" /><Property Name=\"Tender_Amount\" Type=\"Edm.Decimal\" /><Property Na" +
-                "me=\"Bid_Security_Amount\" Type=\"Edm.Decimal\" /><Property Name=\"No_of_Copies_Submi" +
-                "tted\" Type=\"Edm.Decimal\" /><Property Name=\"Bid_Expiry_Date\" Type=\"Edm.DateTime\" " +
-                "/><Property Name=\"Proceed_to_Tech_Evaluation\" Type=\"Edm.Boolean\" /><Property Nam" +
-                "e=\"Fixed_Asset_No\" Type=\"Edm.String\" /><Property Name=\"Cheque_No\" Type=\"Edm.Stri" +
-                "ng\" /><Property Name=\"Response\" Type=\"Edm.String\" /><Property Name=\"Technical_Ma" +
-                "rks_Awarded\" Type=\"Edm.Decimal\" /><Property Name=\"Financial_Marks_Awarded\" Type=" +
-                "\"Edm.Decimal\" /><Property Name=\"Successful\" Type=\"Edm.Boolean\" /><Property Name=" +
-                "\"Supplier\" Type=\"Edm.String\" /><Property Name=\"Vendor_No\" Type=\"Edm.String\" /><P" +
-                "roperty Name=\"E_mail\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Conta" +
-                "ct_No\" Type=\"Edm.String\" /><Property Name=\"EntryNo\" Type=\"Edm.Int32\" /><Property" +
-                " Name=\"Title\" Type=\"Edm.String\" /><Property Name=\"Name\" Type=\"Edm.String\" /><Pro" +
-                "perty Name=\"AuxiliaryIndex1\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name" +
-                "=\"AuxiliaryIndex2\" Type=\"Edm.String\" Nullable=\"false\" /></EntityType><EntityType" +
-                " Name=\"Tenders\"><Key><PropertyRef Name=\"No\" /></Key><Proper";
+                "d\" Type=\"Edm.Decimal\" /></EntityType><EntityType Name=\"SupplierBlogReplies\"><Key" +
+                "><PropertyRef Name=\"Entry_Id\" /></Key><Property Name=\"Entry_Id\" Type=\"Edm.Int32\"" +
+                " Nullable=\"false\" /><Property Name=\"BlogIdCode\" Type=\"Edm.Int32\" /><Property Nam" +
+                "e=\"Blog_Reply\" Type=\"Edm.String\" /><Property Name=\"Replier_Name\" Type=\"Edm.Strin" +
+                "g\" /><Property Name=\"Replier_VendorNo\" Type=\"Edm.String\" /><Property Name=\"Date_" +
+                "Replied\" Type=\"Edm.DateTime\" /><Property Name=\"Time_Replied\" Type=\"Edm.String\" /" +
+                "></EntityType><EntityType Name=\"SupplierBlogs\"><Key><PropertyRef Name=\"Blog_Id\" " +
+                "/></Key><Property Name=\"Blog_Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property N" +
+                "ame=\"Blog_Title\" Type=\"Edm.String\" /><Property Name=\"Blog_Body\" Type=\"Edm.String" +
+                "\" /><Property Name=\"Created_ByVendorNo\" Type=\"Edm.String\" /><Property Name=\"Date" +
+                "_Created\" Type=\"Edm.DateTime\" /><Property Name=\"Created_ByVendorName\" Type=\"Edm." +
+                "String\" /><Property Name=\"Time_Created\" Type=\"Edm.String\" /></EntityType><Entity" +
+                "Type Name=\"SupplierCategories\"><Key><PropertyRef Name=\"Category_Code\" /></Key><P" +
+                "roperty Name=\"Category_Code\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name" +
+                "=\"Description\" Type=\"Edm.String\" /></EntityType><EntityType Name=\"SupplyCategory" +
+                "Header\"><Key><PropertyRef Name=\"Category\" /><PropertyRef Name=\"Fiscal_Year\" /></" +
+                "Key><Property Name=\"Fiscal_Year\" Type=\"Edm.String\" Nullable=\"false\" /><Property " +
+                "Name=\"Category\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Category_Na" +
+                "me\" Type=\"Edm.String\" /><Property Name=\"No_of_Prequalified_Suppliers\" Type=\"Edm." +
+                "Int32\" /></EntityType><EntityType Name=\"TenderApps\"><Key><PropertyRef Name=\"Auxi" +
+                "liaryIndex1\" /><PropertyRef Name=\"AuxiliaryIndex2\" /><PropertyRef Name=\"E_mail\" " +
+                "/><PropertyRef Name=\"Ref_No\" /></Key><Property Name=\"Ref_No\" Type=\"Edm.String\" N" +
+                "ullable=\"false\" /><Property Name=\"Category\" Type=\"Edm.String\" /><Property Name=\"" +
+                "Fiscal_Year\" Type=\"Edm.String\" /><Property Name=\"Selected\" Type=\"Edm.Boolean\" />" +
+                "<Property Name=\"Pre_Qualified\" Type=\"Edm.Boolean\" /><Property Name=\"Tender_Amoun" +
+                "t\" Type=\"Edm.Decimal\" /><Property Name=\"Bid_Security_Amount\" Type=\"Edm.Decimal\" " +
+                "/><Property Name=\"No_of_Copies_Submitted\" Type=\"Edm.Decimal\" /><Property Name=\"B" +
+                "id_Expiry_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Proce";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart14 = "ty Name=\"No\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Title\" Type=\"Ed" +
-                "m.String\" /><Property Name=\"Requisition_No\" Type=\"Edm.String\" /><Property Name=\"" +
-                "Procurement_Plan_No\" Type=\"Edm.String\" /><Property Name=\"Creation_Date\" Type=\"Ed" +
-                "m.DateTime\" /><Property Name=\"User_ID\" Type=\"Edm.String\" /><Property Name=\"Procu" +
-                "rement_Method\" Type=\"Edm.String\" /><Property Name=\"No_Series\" Type=\"Edm.String\" " +
-                "/><Property Name=\"Process_Type\" Type=\"Edm.String\" /><Property Name=\"Procurement_" +
-                "Plan_Item\" Type=\"Edm.String\" /><Property Name=\"Global_Dimension_1_Code\" Type=\"Ed" +
-                "m.String\" /><Property Name=\"Global_Dimension_2_Code\" Type=\"Edm.String\" /><Proper" +
-                "ty Name=\"Tender_Opening_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Tender_Statu" +
-                "s\" Type=\"Edm.String\" /><Property Name=\"Tender_Closing_Date\" Type=\"Edm.DateTime\" " +
-                "/><Property Name=\"Addedum\" Type=\"Edm.String\" /><Property Name=\"Status\" Type=\"Edm" +
-                ".String\" /><Property Name=\"Return_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Re" +
-                "turn_Time\" Type=\"Edm.String\" /><Property Name=\"Tender_Type\" Type=\"Edm.String\" />" +
-                "<Property Name=\"Document_No\" Type=\"Edm.String\" /><Property Name=\"Extended_Date\" " +
-                "Type=\"Edm.DateTime\" /><Property Name=\"Tender_Amount\" Type=\"Edm.Decimal\" /><Prope" +
-                "rty Name=\"Validity_Period\" Type=\"Edm.String\" /><Property Name=\"Issued_Date\" Type" +
-                "=\"Edm.DateTime\" /><Property Name=\"Closed\" Type=\"Edm.Boolean\" /><Property Name=\"R" +
-                "FQ_Sent\" Type=\"Edm.Boolean\" /><Property Name=\"Tender_Committee\" Type=\"Edm.String" +
-                "\" /><Property Name=\"Minutes_Path\" Type=\"Edm.String\" /><Property Name=\"Evaluation" +
-                "_Started\" Type=\"Edm.Boolean\" /><Property Name=\"Technical_started\" Type=\"Edm.Bool" +
-                "ean\" /><Property Name=\"Financial_Started\" Type=\"Edm.Boolean\" /><Property Name=\"T" +
-                "echnical_Score\" Type=\"Edm.Int32\" /><Property Name=\"Financial_Score\" Type=\"Edm.In" +
-                "t32\" /><Property Name=\"Award_Started\" Type=\"Edm.Boolean\" /><Property Name=\"minut" +
-                "esbeforeproceedtoaward\" Type=\"Edm.String\" /><Property Name=\"minutesafterproceedt" +
-                "oaward\" Type=\"Edm.String\" /><Property Name=\"Awarded\" Type=\"Edm.Boolean\" /><Prope" +
-                "rty Name=\"Select_Bidder_Vendor_No\" Type=\"Edm.String\" /><Property Name=\"Evaluatio" +
-                "n_Admin\" Type=\"Edm.String\" /><Property Name=\"Mandatory_in_progress\" Type=\"Edm.Bo" +
-                "olean\" /><Property Name=\"Technical_in_Progress\" Type=\"Edm.Boolean\" /><Property N" +
-                "ame=\"Financial_in_Progress\" Type=\"Edm.Boolean\" /><Property Name=\"Awarding_in_Pro" +
-                "gress\" Type=\"Edm.Boolean\" /><Property Name=\"LPO_Generated\" Type=\"Edm.Boolean\" />" +
-                "<Property Name=\"Current_Budget\" Type=\"Edm.String\" /><Property Name=\"TOR_Attached" +
-                "\" Type=\"Edm.Boolean\" /><Property Name=\"TOR_File_Name\" Type=\"Edm.String\" /><Prope" +
-                "rty Name=\"Quotation_Pending_Opening\" Type=\"Edm.Boolean\" /><Property Name=\"Openin" +
-                "g_Person_1\" Type=\"Edm.String\" /><Property Name=\"Opening_Person_2\" Type=\"Edm.Stri" +
-                "ng\" /><Property Name=\"Opening_Person_3\" Type=\"Edm.String\" /><Property Name=\"Asig" +
-                "ned_User\" Type=\"Edm.String\" /><Property Name=\"Quotation_Evaluation\" Type=\"Edm.Bo" +
-                "olean\" /><Property Name=\"In_Financial\" Type=\"Edm.Boolean\" /><Property Name=\"In_T" +
-                "echnical\" Type=\"Edm.Boolean\" /><Property Name=\"In_Award\" Type=\"Edm.Boolean\" /><P" +
-                "roperty Name=\"Pending_LPO\" Type=\"Edm.Boolean\" /><Property Name=\"Minutes_File\" Ty" +
-                "pe=\"Edm.String\" /><Property Name=\"Quotation_Finished\" Type=\"Edm.Boolean\" /><Prop" +
-                "erty Name=\"Technical_Minutes\" Type=\"Edm.String\" /><Property Name=\"Does_Not_Requi" +
-                "re_TOR\" Type=\"Edm.Boolean\" /><Property Name=\"Justification_Memo\" Type=\"Edm.Strin" +
-                "g\" /><Property Name=\"Direct\" Type=\"Edm.Boolean\" /><Property Name=\"No_of_Tender_D" +
-                "ocuments\" Type=\"Edm.Int32\" /><Property Name=\"Procurement_Amount\" Type=\"Edm.Decim" +
-                "al\" /><Property Name=\"Approval_Status\" Type=\"Edm.Int32\" /><Property Name=\"Succes" +
-                "sful_Bidder\" Type=\"Edm.String\" /><Property Name=\"Selected_Bidder_Name\" Type=\"Edm" +
-                ".String\" /><Property Name=\"Approval_Path\" Type=\"Edm.Int32\" /></EntityType><Entit" +
-                "yType Name=\"TopCustomerOverview\"><Key><PropertyRef Name=\"AuxiliaryIndex1\" /><Pro" +
-                "pertyRef Name=\"AuxiliaryIndex2\" /><PropertyRef Name=\"No\" /></Key><Property Name=" +
-                "\"Name\" Type=\"Edm.String\" /><Property Name=\"No\" Type=\"Edm.String\" Nullable=\"false" +
-                "\" /><Property Name=\"Country_Region_Code\" Type=\"Edm.String\" /><Property Name=\"Cit" +
-                "y\" Type=\"Edm.String\" /><Property Name=\"Global_Dimension_1_Code\" Type=\"Edm.String" +
-                "\" /><Property Name=\"Global_Dimension_2_Code\" Type=\"Edm.String\" /><Property Name=" +
-                "\"Salesperson_Code\" Type=\"Edm.String\" /><Property Name=\"Sales_LCY\" Type=\"Edm.Deci" +
-                "mal\" /><Property Name=\"Profit_LCY\" Type=\"Edm.Decimal\" /><Property Name=\"SalesPer" +
-                "sonName\" Type=\"Edm.String\" /><Property Name=\"CountryRegionName\" Type=\"Edm.String" +
-                "\" /><Property Name=\"AuxiliaryIndex1\" Type=\"Edm.String\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"AuxiliaryIndex2\" Type=\"Edm.String\" Nullable=\"false\" /></EntityType><En" +
-                "tityType Name=\"TransportRequisition\"><Key><PropertyRef Name=\"Transport_Requisiti" +
-                "on_No\" /></Key><Property Name=\"Transport_Requisition_No\" Type=\"Edm.String\" Nulla" +
-                "ble=\"false\" /><Property Name=\"Commencement\" Type=\"Edm.String\" /><Property Name=\"" +
-                "Destination\" Type=\"Edm.String\" /><Property Name=\"Vehicle_Allocated\" Type=\"Edm.St" +
-                "ring\" /><Property Name=\"Driver_Allocated\" Type=\"Edm.String\" /><Property Name=\"Re" +
-                "quested_By\" Type=\"Edm.String\" /><Property Name=\"Date_of_Request\" Type=\"Edm.DateT" +
-                "ime\" /><Property Name=\"Vehicle_Allocated_by\" Type=\"Edm.String\" /><Property Name=" +
-                "\"Opening_Odometer_Reading\" Type=\"Edm.Decimal\" /><Property Name=\"Status\" Type=\"Ed" +
-                "m.String\" /><Property Name=\"Date_of_Trip\" Type=\"Edm.DateTime\" /><Property Name=\"" +
-                "Purpose_of_Trip\" Type=\"Edm.String\" /><Property Name=\"No_Series\" Type=\"Edm.String" +
-                "\" /><Property Name=\"Comments\" Type=\"Edm.String\" /><Property Name=\"Department\" Ty" +
-                "pe=\"Edm.String\" /><Property Name=\"Driver_Name\" Type=\"Edm.String\" /><Property Nam" +
-                "e=\"Responsibility_Center\" Type=\"Edm.String\" /><Property Name=\"Loaded_to_WorkTick" +
-                "et\" Type=\"Edm.Boolean\" /><Property Name=\"Time_out\" Type=\"Edm.String\" /><Property" +
-                " Name=\"Time_In\" Type=\"Edm.String\" /><Property Name=\"Journey_Route\" Type=\"Edm.Str" +
-                "ing\" /><Property Name=\"Time_Requested\" Type=\"Edm.String\" /><Property Name=\"Closi" +
-                "ng_Odometer_Reading\" Type=\"Edm.Decimal\" /><Property Name=\"Work_Ticket_No\" Type=\"" +
-                "Edm.String\" /><Property Name=\"No_of_Days_Requested\" Type=\"Edm.Int32\" /><Property" +
-                " Name=\"Authorized_By\" Type=\"Edm.String\" /><Property Name=\"Position\" Type=\"Edm.St" +
-                "ring\" /><Property Name=\"User_Id\" Type=\"Edm.String\" /><Property Name=\"Added_On\" T" +
-                "ype=\"Edm.DateTime\" /><Property Name=\"Employee_No\" Type=\"Edm.String\" /></EntityTy" +
-                "pe><EntityType Name=\"TravelRequisitionStaff\"><Key><PropertyRef Name=\"EntryNo\" />" +
-                "<PropertyRef Name=\"Req_No\" /></Key><Property Name=\"Req_No\" Type=\"Edm.String\" Nul" +
-                "lable=\"false\" /><Property Name=\"Employee_No\" Type=\"Edm.String\" /><Property Name=" +
-                "\"Employee_Name\" Type=\"Edm.String\" /><Property Name=\"Position\" Type=\"Edm.String\" " +
-                "/><Property Name=\"Daily_Work_Ticket\" Type=\"Edm.String\" /><Property Name=\"EntryNo" +
-                "\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"VacantPosit" +
-                "ions\"><Key><PropertyRef Name=\"Job_ID\" /></Key><Property Name=\"Job_ID\" Type=\"Edm." +
-                "String\" Nullable=\"false\" /><Property Name=\"Job_Description\" Type=\"Edm.String\" />" +
-                "<Property Name=\"No_of_Posts\" Type=\"Edm.Int32\" /><Property Name=\"Position_Reporti" +
-                "ng_to\" Type=\"Edm.String\" /><Property Name=\"Vacant_Positions\" Type=\"Edm.Int32\" />" +
-                "<Property Name=\"Score_code\" Type=\"Edm.String\" /><Property Name=\"Dimension_1\" Typ" +
-                "e=\"Edm.String\" /><Property Name=\"Dimension_2\" Type=\"Edm.String\" /><Property Name" +
-                "=\"Dimension_3\" Type=\"Edm.String\" /><Property Name=\"Dimension_4\" Type=\"Edm.String" +
-                "\" /><Property Name=\"Dimension_5\" Type=\"Edm.String\" /><Property Name=\"Dimension_6" +
-                "\" Type=\"Edm.String\" /><Property Name=\"Dimension_7\" Type=\"Ed";
+            private const string ModelPart14 = "ed_to_Tech_Evaluation\" Type=\"Edm.Boolean\" /><Property Name=\"Fixed_Asset_No\" Type=" +
+                "\"Edm.String\" /><Property Name=\"Cheque_No\" Type=\"Edm.String\" /><Property Name=\"Re" +
+                "sponse\" Type=\"Edm.String\" /><Property Name=\"Technical_Marks_Awarded\" Type=\"Edm.D" +
+                "ecimal\" /><Property Name=\"Financial_Marks_Awarded\" Type=\"Edm.Decimal\" /><Propert" +
+                "y Name=\"Successful\" Type=\"Edm.Boolean\" /><Property Name=\"Supplier\" Type=\"Edm.Str" +
+                "ing\" /><Property Name=\"Vendor_No\" Type=\"Edm.String\" /><Property Name=\"E_mail\" Ty" +
+                "pe=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Contact_No\" Type=\"Edm.String\"" +
+                " /><Property Name=\"EntryNo\" Type=\"Edm.Int32\" /><Property Name=\"Title\" Type=\"Edm." +
+                "String\" /><Property Name=\"Name\" Type=\"Edm.String\" /><Property Name=\"AuxiliaryInd" +
+                "ex1\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"AuxiliaryIndex2\" Type=" +
+                "\"Edm.String\" Nullable=\"false\" /></EntityType><EntityType Name=\"Tenders\"><Key><Pr" +
+                "opertyRef Name=\"No\" /></Key><Property Name=\"No\" Type=\"Edm.String\" Nullable=\"fals" +
+                "e\" /><Property Name=\"Title\" Type=\"Edm.String\" /><Property Name=\"Requisition_No\" " +
+                "Type=\"Edm.String\" /><Property Name=\"Procurement_Plan_No\" Type=\"Edm.String\" /><Pr" +
+                "operty Name=\"Creation_Date\" Type=\"Edm.DateTime\" /><Property Name=\"User_ID\" Type=" +
+                "\"Edm.String\" /><Property Name=\"Procurement_Method\" Type=\"Edm.String\" /><Property" +
+                " Name=\"No_Series\" Type=\"Edm.String\" /><Property Name=\"Process_Type\" Type=\"Edm.St" +
+                "ring\" /><Property Name=\"Procurement_Plan_Item\" Type=\"Edm.String\" /><Property Nam" +
+                "e=\"Global_Dimension_1_Code\" Type=\"Edm.String\" /><Property Name=\"Global_Dimension" +
+                "_2_Code\" Type=\"Edm.String\" /><Property Name=\"Tender_Opening_Date\" Type=\"Edm.Date" +
+                "Time\" /><Property Name=\"Tender_Status\" Type=\"Edm.String\" /><Property Name=\"Tende" +
+                "r_Closing_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Addedum\" Type=\"Edm.String\"" +
+                " /><Property Name=\"Status\" Type=\"Edm.String\" /><Property Name=\"Return_Date\" Type" +
+                "=\"Edm.DateTime\" /><Property Name=\"Return_Time\" Type=\"Edm.String\" /><Property Nam" +
+                "e=\"Tender_Type\" Type=\"Edm.String\" /><Property Name=\"Document_No\" Type=\"Edm.Strin" +
+                "g\" /><Property Name=\"Extended_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Tender" +
+                "_Amount\" Type=\"Edm.Decimal\" /><Property Name=\"Validity_Period\" Type=\"Edm.String\"" +
+                " /><Property Name=\"Issued_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Closed\" Ty" +
+                "pe=\"Edm.Boolean\" /><Property Name=\"RFQ_Sent\" Type=\"Edm.Boolean\" /><Property Name" +
+                "=\"Tender_Committee\" Type=\"Edm.String\" /><Property Name=\"Minutes_Path\" Type=\"Edm." +
+                "String\" /><Property Name=\"Evaluation_Started\" Type=\"Edm.Boolean\" /><Property Nam" +
+                "e=\"Technical_started\" Type=\"Edm.Boolean\" /><Property Name=\"Financial_Started\" Ty" +
+                "pe=\"Edm.Boolean\" /><Property Name=\"Technical_Score\" Type=\"Edm.Int32\" /><Property" +
+                " Name=\"Financial_Score\" Type=\"Edm.Int32\" /><Property Name=\"Award_Started\" Type=\"" +
+                "Edm.Boolean\" /><Property Name=\"minutesbeforeproceedtoaward\" Type=\"Edm.String\" />" +
+                "<Property Name=\"minutesafterproceedtoaward\" Type=\"Edm.String\" /><Property Name=\"" +
+                "Awarded\" Type=\"Edm.Boolean\" /><Property Name=\"Select_Bidder_Vendor_No\" Type=\"Edm" +
+                ".String\" /><Property Name=\"Evaluation_Admin\" Type=\"Edm.String\" /><Property Name=" +
+                "\"Mandatory_in_progress\" Type=\"Edm.Boolean\" /><Property Name=\"Technical_in_Progre" +
+                "ss\" Type=\"Edm.Boolean\" /><Property Name=\"Financial_in_Progress\" Type=\"Edm.Boolea" +
+                "n\" /><Property Name=\"Awarding_in_Progress\" Type=\"Edm.Boolean\" /><Property Name=\"" +
+                "LPO_Generated\" Type=\"Edm.Boolean\" /><Property Name=\"Current_Budget\" Type=\"Edm.St" +
+                "ring\" /><Property Name=\"TOR_Attached\" Type=\"Edm.Boolean\" /><Property Name=\"TOR_F" +
+                "ile_Name\" Type=\"Edm.String\" /><Property Name=\"Quotation_Pending_Opening\" Type=\"E" +
+                "dm.Boolean\" /><Property Name=\"Opening_Person_1\" Type=\"Edm.String\" /><Property Na" +
+                "me=\"Opening_Person_2\" Type=\"Edm.String\" /><Property Name=\"Opening_Person_3\" Type" +
+                "=\"Edm.String\" /><Property Name=\"Asigned_User\" Type=\"Edm.String\" /><Property Name" +
+                "=\"Quotation_Evaluation\" Type=\"Edm.Boolean\" /><Property Name=\"In_Financial\" Type=" +
+                "\"Edm.Boolean\" /><Property Name=\"In_Technical\" Type=\"Edm.Boolean\" /><Property Nam" +
+                "e=\"In_Award\" Type=\"Edm.Boolean\" /><Property Name=\"Pending_LPO\" Type=\"Edm.Boolean" +
+                "\" /><Property Name=\"Minutes_File\" Type=\"Edm.String\" /><Property Name=\"Quotation_" +
+                "Finished\" Type=\"Edm.Boolean\" /><Property Name=\"Technical_Minutes\" Type=\"Edm.Stri" +
+                "ng\" /><Property Name=\"Does_Not_Require_TOR\" Type=\"Edm.Boolean\" /><Property Name=" +
+                "\"Justification_Memo\" Type=\"Edm.String\" /><Property Name=\"Direct\" Type=\"Edm.Boole" +
+                "an\" /><Property Name=\"No_of_Tender_Documents\" Type=\"Edm.Int32\" /><Property Name=" +
+                "\"Procurement_Amount\" Type=\"Edm.Decimal\" /><Property Name=\"Approval_Status\" Type=" +
+                "\"Edm.Int32\" /><Property Name=\"Successful_Bidder\" Type=\"Edm.String\" /><Property N" +
+                "ame=\"Selected_Bidder_Name\" Type=\"Edm.String\" /><Property Name=\"Approval_Path\" Ty" +
+                "pe=\"Edm.Int32\" /></EntityType><EntityType Name=\"TopCustomerOverview\"><Key><Prope" +
+                "rtyRef Name=\"AuxiliaryIndex1\" /><PropertyRef Name=\"AuxiliaryIndex2\" /><PropertyR" +
+                "ef Name=\"No\" /></Key><Property Name=\"Name\" Type=\"Edm.String\" /><Property Name=\"N" +
+                "o\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Country_Region_Code\" Typ" +
+                "e=\"Edm.String\" /><Property Name=\"City\" Type=\"Edm.String\" /><Property Name=\"Globa" +
+                "l_Dimension_1_Code\" Type=\"Edm.String\" /><Property Name=\"Global_Dimension_2_Code\"" +
+                " Type=\"Edm.String\" /><Property Name=\"Salesperson_Code\" Type=\"Edm.String\" /><Prop" +
+                "erty Name=\"Sales_LCY\" Type=\"Edm.Decimal\" /><Property Name=\"Profit_LCY\" Type=\"Edm" +
+                ".Decimal\" /><Property Name=\"SalesPersonName\" Type=\"Edm.String\" /><Property Name=" +
+                "\"CountryRegionName\" Type=\"Edm.String\" /><Property Name=\"AuxiliaryIndex1\" Type=\"E" +
+                "dm.String\" Nullable=\"false\" /><Property Name=\"AuxiliaryIndex2\" Type=\"Edm.String\"" +
+                " Nullable=\"false\" /></EntityType><EntityType Name=\"TransportRequisition\"><Key><P" +
+                "ropertyRef Name=\"Transport_Requisition_No\" /></Key><Property Name=\"Transport_Req" +
+                "uisition_No\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Commencement\" " +
+                "Type=\"Edm.String\" /><Property Name=\"Destination\" Type=\"Edm.String\" /><Property N" +
+                "ame=\"Vehicle_Allocated\" Type=\"Edm.String\" /><Property Name=\"Driver_Allocated\" Ty" +
+                "pe=\"Edm.String\" /><Property Name=\"Requested_By\" Type=\"Edm.String\" /><Property Na" +
+                "me=\"Date_of_Request\" Type=\"Edm.DateTime\" /><Property Name=\"Vehicle_Allocated_by\"" +
+                " Type=\"Edm.String\" /><Property Name=\"Opening_Odometer_Reading\" Type=\"Edm.Decimal" +
+                "\" /><Property Name=\"Status\" Type=\"Edm.String\" /><Property Name=\"Date_of_Trip\" Ty" +
+                "pe=\"Edm.DateTime\" /><Property Name=\"Purpose_of_Trip\" Type=\"Edm.String\" /><Proper" +
+                "ty Name=\"No_Series\" Type=\"Edm.String\" /><Property Name=\"Comments\" Type=\"Edm.Stri" +
+                "ng\" /><Property Name=\"Department\" Type=\"Edm.String\" /><Property Name=\"Driver_Nam" +
+                "e\" Type=\"Edm.String\" /><Property Name=\"Responsibility_Center\" Type=\"Edm.String\" " +
+                "/><Property Name=\"Loaded_to_WorkTicket\" Type=\"Edm.Boolean\" /><Property Name=\"Tim" +
+                "e_out\" Type=\"Edm.String\" /><Property Name=\"Time_In\" Type=\"Edm.String\" /><Propert" +
+                "y Name=\"Journey_Route\" Type=\"Edm.String\" /><Property Name=\"Time_Requested\" Type=" +
+                "\"Edm.String\" /><Property Name=\"Closing_Odometer_Reading\" Type=\"Edm.Decimal\" /><P" +
+                "roperty Name=\"Work_Ticket_No\" Type=\"Edm.String\" /><Property Name=\"No_of_Days_Req" +
+                "uested\" Type=\"Edm.Int32\" /><Property Name=\"Authorized_By\" Type=\"Edm.String\" /><P" +
+                "roperty Name=\"Position\" Type=\"Edm.String\" /><Property Name=\"User_Id\" Type=\"Edm.S" +
+                "tring\" /><Property Name=\"Added_On\" Type=\"Edm.DateTime\" /><Property Name=\"Employe" +
+                "e_No\" Type=\"Edm.String\" /></EntityType><EntityType Name=\"TravelRequisitionStaff\"" +
+                "><Key><PropertyRef Name=\"EntryNo\" /><PropertyRef Name=\"Req_No\" /></Key><Property" +
+                " Name=\"Req_No\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Employee_No\"" +
+                " Type=\"Edm.String\" /><Property Name=\"Employee_Name\" Type=\"E";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart15 = "m.String\" /><Property Name=\"Dimension_8\" Type=\"Edm.String\" /><Property Name=\"No_o" +
-                "f_Position\" Type=\"Edm.Int32\" /><Property Name=\"Objective\" Type=\"Edm.String\" /><P" +
-                "roperty Name=\"Key_Position\" Type=\"Edm.Boolean\" /><Property Name=\"Category\" Type=" +
-                "\"Edm.String\" /><Property Name=\"Grade\" Type=\"Edm.String\" /><Property Name=\"Primar" +
-                "y_Skills_Category\" Type=\"Edm.String\" /><Property Name=\"V2nd_Skills_Category\" Typ" +
-                "e=\"Edm.String\" /><Property Name=\"V3nd_Skills_Category\" Type=\"Edm.String\" /><Prop" +
-                "erty Name=\"Management\" Type=\"Edm.Boolean\" /><Property Name=\"UserID\" Type=\"Edm.St" +
-                "ring\" /><Property Name=\"Status\" Type=\"Edm.String\" /><Property Name=\"Responsibili" +
-                "ty_Center\" Type=\"Edm.String\" /><Property Name=\"Date_Created\" Type=\"Edm.DateTime\"" +
-                " /><Property Name=\"Supervisor_Manager\" Type=\"Edm.String\" /><Property Name=\"Super" +
-                "visor_Name\" Type=\"Edm.String\" /><Property Name=\"Is_Supervisor\" Type=\"Edm.Boolean" +
-                "\" /><Property Name=\"G_L_Account\" Type=\"Edm.String\" /><Property Name=\"Branch_Name" +
-                "\" Type=\"Edm.String\" /><Property Name=\"Department\" Type=\"Edm.String\" /><Property " +
-                "Name=\"Dept_Name\" Type=\"Edm.String\" /><Property Name=\"Activity_Code\" Type=\"Edm.St" +
-                "ring\" /><Property Name=\"Occupied_Positions\" Type=\"Edm.Int32\" /><Property Name=\"T" +
-                "otal_Score\" Type=\"Edm.Decimal\" /><Property Name=\"Employee_Requisitions\" Type=\"Ed" +
-                "m.Int32\" /></EntityType><EntityType Name=\"Vendors\"><Key><PropertyRef Name=\"No\" /" +
-                "></Key><Property Name=\"No\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"" +
-                "Name\" Type=\"Edm.String\" /><Property Name=\"Search_Name\" Type=\"Edm.String\" /><Prop" +
-                "erty Name=\"Name_2\" Type=\"Edm.String\" /><Property Name=\"Address\" Type=\"Edm.String" +
-                "\" /><Property Name=\"Address_2\" Type=\"Edm.String\" /><Property Name=\"City\" Type=\"E" +
-                "dm.String\" /><Property Name=\"Contact\" Type=\"Edm.String\" /><Property Name=\"Phone_" +
-                "No\" Type=\"Edm.String\" /><Property Name=\"Telex_No\" Type=\"Edm.String\" /><Property " +
-                "Name=\"Our_Account_No\" Type=\"Edm.String\" /><Property Name=\"Territory_Code\" Type=\"" +
-                "Edm.String\" /><Property Name=\"Country_Region_Code\" Type=\"Edm.String\" /><Property" +
-                " Name=\"Blocked\" Type=\"Edm.String\" /><Property Name=\"Pay_to_Vendor_No\" Type=\"Edm." +
-                "String\" /><Property Name=\"Primary_Contact_No\" Type=\"Edm.String\" /><Property Name" +
-                "=\"E_Mail\" Type=\"Edm.String\" /><Property Name=\"Comment\" Type=\"Edm.Boolean\" /></En" +
-                "tityType><EntityType Name=\"WorkTypes\"><Key><PropertyRef Name=\"Code\" /></Key><Pro" +
-                "perty Name=\"Code\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Descripti" +
-                "on\" Type=\"Edm.String\" /><Property Name=\"Category\" Type=\"Edm.String\" /></EntityTy" +
-                "pe><EntityType Name=\"Pending_Po\"><Key><PropertyRef Name=\"Document_No\" /><Propert" +
-                "yRef Name=\"Document_Type\" /><PropertyRef Name=\"Line_No\" /></Key><Property Name=\"" +
-                "Document_Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Document_No\"" +
-                " Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Line_No\" Type=\"Edm.Int32\" " +
-                "Nullable=\"false\" /><Property Name=\"Type\" Type=\"Edm.String\" /><Property Name=\"No\"" +
-                " Type=\"Edm.String\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property " +
-                "Name=\"Expected_Receipt_Date\" Type=\"Edm.DateTime\" /><Property Name=\"Buy_from_Vend" +
-                "or_No\" Type=\"Edm.String\" /><Property Name=\"Currency_Code\" Type=\"Edm.String\" /><P" +
-                "roperty Name=\"Quantity\" Type=\"Edm.Decimal\" /><Property Name=\"Outstanding_Quantit" +
-                "y\" Type=\"Edm.Decimal\" /><Property Name=\"Unit_of_Measure_Code\" Type=\"Edm.String\" " +
-                "/><Property Name=\"Amount\" Type=\"Edm.Decimal\" /><Property Name=\"Direct_Unit_Cost\"" +
-                " Type=\"Edm.Decimal\" /><Property Name=\"Line_Discount_Percent\" Type=\"Edm.Decimal\" " +
-                "/><Property Name=\"ETag\" Type=\"Edm.String\" ConcurrencyMode=\"Fixed\" /></EntityType" +
-                "><EntityType Name=\"Company\"><Key><PropertyRef Name=\"Name\" /></Key><Property Name" +
-                "=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><NavigationProperty Name=\"ApprovalE" +
-                "ntriesPage\" Relationship=\"NAV.Company_ApprovalEntriesPage\" ToRole=\"ApprovalEntri" +
-                "esPage\" FromRole=\"Company\" /><NavigationProperty Name=\"powerbifinance\" Relations" +
-                "hip=\"NAV.Company_powerbifinance\" ToRole=\"powerbifinance\" FromRole=\"Company\" /><N" +
-                "avigationProperty Name=\"AgendaSurportingDocuments\" Relationship=\"NAV.Company_Age" +
-                "ndaSurportingDocuments\" ToRole=\"AgendaSurportingDocuments\" FromRole=\"Company\" />" +
-                "<NavigationProperty Name=\"AgendaVoteItems\" Relationship=\"NAV.Company_AgendaVoteI" +
-                "tems\" ToRole=\"AgendaVoteItems\" FromRole=\"Company\" /><NavigationProperty Name=\"al" +
-                "lBoards\" Relationship=\"NAV.Company_allBoards\" ToRole=\"allBoards\" FromRole=\"Compa" +
-                "ny\" /><NavigationProperty Name=\"ApprovalEntries\" Relationship=\"NAV.Company_Appro" +
-                "valEntries\" ToRole=\"ApprovalEntries\" FromRole=\"Company\" /><NavigationProperty Na" +
-                "me=\"blogReplies\" Relationship=\"NAV.Company_blogReplies\" ToRole=\"blogReplies\" Fro" +
-                "mRole=\"Company\" /><NavigationProperty Name=\"boardBlog\" Relationship=\"NAV.Company" +
-                "_boardBlog\" ToRole=\"boardBlog\" FromRole=\"Company\" /><NavigationProperty Name=\"Bo" +
-                "ardComments\" Relationship=\"NAV.Company_BoardComments\" ToRole=\"BoardComments\" Fro" +
-                "mRole=\"Company\" /><NavigationProperty Name=\"boardMeetingAttendance\" Relationship" +
-                "=\"NAV.Company_boardMeetingAttendance\" ToRole=\"boardMeetingAttendance\" FromRole=\"" +
-                "Company\" /><NavigationProperty Name=\"boardMeetings\" Relationship=\"NAV.Company_bo" +
-                "ardMeetings\" ToRole=\"boardMeetings\" FromRole=\"Company\" /><NavigationProperty Nam" +
-                "e=\"Casuals\" Relationship=\"NAV.Company_Casuals\" ToRole=\"Casuals\" FromRole=\"Compan" +
-                "y\" /><NavigationProperty Name=\"CommitteeBoardMembers\" Relationship=\"NAV.Company_" +
-                "CommitteeBoardMembers\" ToRole=\"CommitteeBoardMembers\" FromRole=\"Company\" /><Navi" +
-                "gationProperty Name=\"committeeMeetings\" Relationship=\"NAV.Company_committeeMeeti" +
-                "ngs\" ToRole=\"committeeMeetings\" FromRole=\"Company\" /><NavigationProperty Name=\"C" +
-                "ommittees\" Relationship=\"NAV.Company_Committees\" ToRole=\"Committees\" FromRole=\"C" +
-                "ompany\" /><NavigationProperty Name=\"contacts\" Relationship=\"NAV.Company_contacts" +
-                "\" ToRole=\"contacts\" FromRole=\"Company\" /><NavigationProperty Name=\"Copyright_Fil" +
-                "es\" Relationship=\"NAV.Company_Copyright_Files\" ToRole=\"Copyright_Files\" FromRole" +
-                "=\"Company\" /><NavigationProperty Name=\"CopyrightCategories\" Relationship=\"NAV.Co" +
-                "mpany_CopyrightCategories\" ToRole=\"CopyrightCategories\" FromRole=\"Company\" /><Na" +
-                "vigationProperty Name=\"copyrightsetups\" Relationship=\"NAV.Company_copyrightsetup" +
-                "s\" ToRole=\"copyrightsetups\" FromRole=\"Company\" /><NavigationProperty Name=\"copyr" +
-                "ightsubcategories\" Relationship=\"NAV.Company_copyrightsubcategories\" ToRole=\"cop" +
-                "yrightsubcategories\" FromRole=\"Company\" /><NavigationProperty Name=\"CopyrightWor" +
-                "kCategories\" Relationship=\"NAV.Company_CopyrightWorkCategories\" ToRole=\"Copyrigh" +
-                "tWorkCategories\" FromRole=\"Company\" /><NavigationProperty Name=\"CopyrightWorks\" " +
-                "Relationship=\"NAV.Company_CopyrightWorks\" ToRole=\"CopyrightWorks\" FromRole=\"Comp" +
-                "any\" /><NavigationProperty Name=\"Countries\" Relationship=\"NAV.Company_Countries\"" +
-                " ToRole=\"Countries\" FromRole=\"Company\" /><NavigationProperty Name=\"Customers\" Re" +
-                "lationship=\"NAV.Company_Customers\" ToRole=\"Customers\" FromRole=\"Company\" /><Navi" +
-                "gationProperty Name=\"emailvalidations\" Relationship=\"NAV.Company_emailvalidation" +
-                "s\" ToRole=\"emailvalidations\" FromRole=\"Company\" /><NavigationProperty Name=\"Empl" +
-                "oyees\" Relationship=\"NAV.Company_Employees\" ToRole=\"Employees\" FromRole=\"Company" +
-                "\" /><NavigationProperty Name=\"FiscalYears\" Relationship=\"NAV.Company_FiscalYears" +
-                "\" ToRole=\"FiscalYears\" FromRole=\"Company\" /><NavigationProperty Name=\"FundCode\" " +
-                "Relationship=\"NAV.Company_FundCode\" ToRole=\"FundCode\" FromRole=\"Company\" /><Navi" +
-                "gationProperty Name=\"HrJobApplicants\" Relationship=\"NAV.Company_HrJobApplicants\"" +
-                " ToRole=\"HrJobApplicants\" FromRole=\"Company\" /><NavigationProperty Name=\"HRJobAp" +
-                "plicants\" Relationship=\"NAV.Company_HRJobApplicants\" ToRole";
+            private const string ModelPart15 = "dm.String\" /><Property Name=\"Position\" Type=\"Edm.String\" /><Property Name=\"Daily_" +
+                "Work_Ticket\" Type=\"Edm.String\" /><Property Name=\"EntryNo\" Type=\"Edm.Int32\" Nulla" +
+                "ble=\"false\" /></EntityType><EntityType Name=\"VacantPositions\"><Key><PropertyRef " +
+                "Name=\"Job_ID\" /></Key><Property Name=\"Job_ID\" Type=\"Edm.String\" Nullable=\"false\"" +
+                " /><Property Name=\"Job_Description\" Type=\"Edm.String\" /><Property Name=\"No_of_Po" +
+                "sts\" Type=\"Edm.Int32\" /><Property Name=\"Position_Reporting_to\" Type=\"Edm.String\"" +
+                " /><Property Name=\"Vacant_Positions\" Type=\"Edm.Int32\" /><Property Name=\"Score_co" +
+                "de\" Type=\"Edm.String\" /><Property Name=\"Dimension_1\" Type=\"Edm.String\" /><Proper" +
+                "ty Name=\"Dimension_2\" Type=\"Edm.String\" /><Property Name=\"Dimension_3\" Type=\"Edm" +
+                ".String\" /><Property Name=\"Dimension_4\" Type=\"Edm.String\" /><Property Name=\"Dime" +
+                "nsion_5\" Type=\"Edm.String\" /><Property Name=\"Dimension_6\" Type=\"Edm.String\" /><P" +
+                "roperty Name=\"Dimension_7\" Type=\"Edm.String\" /><Property Name=\"Dimension_8\" Type" +
+                "=\"Edm.String\" /><Property Name=\"No_of_Position\" Type=\"Edm.Int32\" /><Property Nam" +
+                "e=\"Objective\" Type=\"Edm.String\" /><Property Name=\"Key_Position\" Type=\"Edm.Boolea" +
+                "n\" /><Property Name=\"Category\" Type=\"Edm.String\" /><Property Name=\"Grade\" Type=\"" +
+                "Edm.String\" /><Property Name=\"Primary_Skills_Category\" Type=\"Edm.String\" /><Prop" +
+                "erty Name=\"V2nd_Skills_Category\" Type=\"Edm.String\" /><Property Name=\"V3nd_Skills" +
+                "_Category\" Type=\"Edm.String\" /><Property Name=\"Management\" Type=\"Edm.Boolean\" />" +
+                "<Property Name=\"UserID\" Type=\"Edm.String\" /><Property Name=\"Status\" Type=\"Edm.St" +
+                "ring\" /><Property Name=\"Responsibility_Center\" Type=\"Edm.String\" /><Property Nam" +
+                "e=\"Date_Created\" Type=\"Edm.DateTime\" /><Property Name=\"Supervisor_Manager\" Type=" +
+                "\"Edm.String\" /><Property Name=\"Supervisor_Name\" Type=\"Edm.String\" /><Property Na" +
+                "me=\"Is_Supervisor\" Type=\"Edm.Boolean\" /><Property Name=\"G_L_Account\" Type=\"Edm.S" +
+                "tring\" /><Property Name=\"Branch_Name\" Type=\"Edm.String\" /><Property Name=\"Depart" +
+                "ment\" Type=\"Edm.String\" /><Property Name=\"Dept_Name\" Type=\"Edm.String\" /><Proper" +
+                "ty Name=\"Activity_Code\" Type=\"Edm.String\" /><Property Name=\"Occupied_Positions\" " +
+                "Type=\"Edm.Int32\" /><Property Name=\"Total_Score\" Type=\"Edm.Decimal\" /><Property N" +
+                "ame=\"Employee_Requisitions\" Type=\"Edm.Int32\" /></EntityType><EntityType Name=\"Ve" +
+                "ndors\"><Key><PropertyRef Name=\"No\" /></Key><Property Name=\"No\" Type=\"Edm.String\"" +
+                " Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" /><Property Name=\"Se" +
+                "arch_Name\" Type=\"Edm.String\" /><Property Name=\"Name_2\" Type=\"Edm.String\" /><Prop" +
+                "erty Name=\"Address\" Type=\"Edm.String\" /><Property Name=\"Address_2\" Type=\"Edm.Str" +
+                "ing\" /><Property Name=\"City\" Type=\"Edm.String\" /><Property Name=\"Contact\" Type=\"" +
+                "Edm.String\" /><Property Name=\"Phone_No\" Type=\"Edm.String\" /><Property Name=\"Tele" +
+                "x_No\" Type=\"Edm.String\" /><Property Name=\"Our_Account_No\" Type=\"Edm.String\" /><P" +
+                "roperty Name=\"Territory_Code\" Type=\"Edm.String\" /><Property Name=\"Country_Region" +
+                "_Code\" Type=\"Edm.String\" /><Property Name=\"Blocked\" Type=\"Edm.String\" /><Propert" +
+                "y Name=\"Pay_to_Vendor_No\" Type=\"Edm.String\" /><Property Name=\"Primary_Contact_No" +
+                "\" Type=\"Edm.String\" /><Property Name=\"E_Mail\" Type=\"Edm.String\" /><Property Name" +
+                "=\"PIN_Number\" Type=\"Edm.String\" /><Property Name=\"Vendor_Type\" Type=\"Edm.String\"" +
+                " /><Property Name=\"Comment\" Type=\"Edm.Boolean\" /></EntityType><EntityType Name=\"" +
+                "WorkTypes\"><Key><PropertyRef Name=\"Code\" /></Key><Property Name=\"Code\" Type=\"Edm" +
+                ".String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Pr" +
+                "operty Name=\"Category\" Type=\"Edm.String\" /></EntityType><EntityType Name=\"Pendin" +
+                "g_Po\"><Key><PropertyRef Name=\"Document_No\" /><PropertyRef Name=\"Document_Type\" /" +
+                "><PropertyRef Name=\"Line_No\" /></Key><Property Name=\"Document_Type\" Type=\"Edm.St" +
+                "ring\" Nullable=\"false\" /><Property Name=\"Document_No\" Type=\"Edm.String\" Nullable" +
+                "=\"false\" /><Property Name=\"Line_No\" Type=\"Edm.Int32\" Nullable=\"false\" /><Propert" +
+                "y Name=\"Type\" Type=\"Edm.String\" /><Property Name=\"No\" Type=\"Edm.String\" /><Prope" +
+                "rty Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Expected_Receipt_Date" +
+                "\" Type=\"Edm.DateTime\" /><Property Name=\"Buy_from_Vendor_No\" Type=\"Edm.String\" />" +
+                "<Property Name=\"Currency_Code\" Type=\"Edm.String\" /><Property Name=\"Quantity\" Typ" +
+                "e=\"Edm.Decimal\" /><Property Name=\"Outstanding_Quantity\" Type=\"Edm.Decimal\" /><Pr" +
+                "operty Name=\"Unit_of_Measure_Code\" Type=\"Edm.String\" /><Property Name=\"Amount\" T" +
+                "ype=\"Edm.Decimal\" /><Property Name=\"Direct_Unit_Cost\" Type=\"Edm.Decimal\" /><Prop" +
+                "erty Name=\"Line_Discount_Percent\" Type=\"Edm.Decimal\" /><Property Name=\"ETag\" Typ" +
+                "e=\"Edm.String\" ConcurrencyMode=\"Fixed\" /></EntityType><EntityType Name=\"Company\"" +
+                "><Key><PropertyRef Name=\"Name\" /></Key><Property Name=\"Name\" Type=\"Edm.String\" N" +
+                "ullable=\"false\" /><NavigationProperty Name=\"ApprovalEntriesPage\" Relationship=\"N" +
+                "AV.Company_ApprovalEntriesPage\" ToRole=\"ApprovalEntriesPage\" FromRole=\"Company\" " +
+                "/><NavigationProperty Name=\"powerbifinance\" Relationship=\"NAV.Company_powerbifin" +
+                "ance\" ToRole=\"powerbifinance\" FromRole=\"Company\" /><NavigationProperty Name=\"Age" +
+                "ndaSurportingDocuments\" Relationship=\"NAV.Company_AgendaSurportingDocuments\" ToR" +
+                "ole=\"AgendaSurportingDocuments\" FromRole=\"Company\" /><NavigationProperty Name=\"A" +
+                "gendaVoteItems\" Relationship=\"NAV.Company_AgendaVoteItems\" ToRole=\"AgendaVoteIte" +
+                "ms\" FromRole=\"Company\" /><NavigationProperty Name=\"allBoards\" Relationship=\"NAV." +
+                "Company_allBoards\" ToRole=\"allBoards\" FromRole=\"Company\" /><NavigationProperty N" +
+                "ame=\"ApprovalEntries\" Relationship=\"NAV.Company_ApprovalEntries\" ToRole=\"Approva" +
+                "lEntries\" FromRole=\"Company\" /><NavigationProperty Name=\"blogReplies\" Relationsh" +
+                "ip=\"NAV.Company_blogReplies\" ToRole=\"blogReplies\" FromRole=\"Company\" /><Navigati" +
+                "onProperty Name=\"boardBlog\" Relationship=\"NAV.Company_boardBlog\" ToRole=\"boardBl" +
+                "og\" FromRole=\"Company\" /><NavigationProperty Name=\"BoardComments\" Relationship=\"" +
+                "NAV.Company_BoardComments\" ToRole=\"BoardComments\" FromRole=\"Company\" /><Navigati" +
+                "onProperty Name=\"boardMeetingAttendance\" Relationship=\"NAV.Company_boardMeetingA" +
+                "ttendance\" ToRole=\"boardMeetingAttendance\" FromRole=\"Company\" /><NavigationPrope" +
+                "rty Name=\"boardMeetings\" Relationship=\"NAV.Company_boardMeetings\" ToRole=\"boardM" +
+                "eetings\" FromRole=\"Company\" /><NavigationProperty Name=\"Casuals\" Relationship=\"N" +
+                "AV.Company_Casuals\" ToRole=\"Casuals\" FromRole=\"Company\" /><NavigationProperty Na" +
+                "me=\"CommitteeBoardMembers\" Relationship=\"NAV.Company_CommitteeBoardMembers\" ToRo" +
+                "le=\"CommitteeBoardMembers\" FromRole=\"Company\" /><NavigationProperty Name=\"commit" +
+                "teeMeetings\" Relationship=\"NAV.Company_committeeMeetings\" ToRole=\"committeeMeeti" +
+                "ngs\" FromRole=\"Company\" /><NavigationProperty Name=\"Committees\" Relationship=\"NA" +
+                "V.Company_Committees\" ToRole=\"Committees\" FromRole=\"Company\" /><NavigationProper" +
+                "ty Name=\"contacts\" Relationship=\"NAV.Company_contacts\" ToRole=\"contacts\" FromRol" +
+                "e=\"Company\" /><NavigationProperty Name=\"Copyright_Files\" Relationship=\"NAV.Compa" +
+                "ny_Copyright_Files\" ToRole=\"Copyright_Files\" FromRole=\"Company\" /><NavigationPro" +
+                "perty Name=\"CopyrightCategories\" Relationship=\"NAV.Company_CopyrightCategories\" " +
+                "ToRole=\"CopyrightCategories\" FromRole=\"Company\" /><NavigationProperty Name=\"copy" +
+                "rightsetups\" Relationship=\"NAV.Company_copyrightsetups\" ToRole=\"copyrightsetups\"" +
+                " FromRole=\"Company\" /><NavigationProperty Name=\"copyrightsubcategories\" Relation" +
+                "ship=\"NAV.Company_copyrightsubcategories\" ToRole=\"copyrightsubcategories\" FromRo" +
+                "le=\"Company\" /><NavigationProperty Name=\"CopyrightWorkCategories\" Relationship=\"" +
+                "NAV.Company_CopyrightWorkCategories\" ToRole=\"CopyrightWorkCategories\" FromRole=\"" +
+                "Company\" /><NavigationProperty Name=\"CopyrightWorks\" Relati";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart16 = "=\"HRJobApplicants\" FromRole=\"Company\" /><NavigationProperty Name=\"HRPortalUsers\" " +
-                "Relationship=\"NAV.Company_HRPortalUsers\" ToRole=\"HRPortalUsers\" FromRole=\"Compan" +
-                "y\" /><NavigationProperty Name=\"ImprestLines\" Relationship=\"NAV.Company_ImprestLi" +
-                "nes\" ToRole=\"ImprestLines\" FromRole=\"Company\" /><NavigationProperty Name=\"Impres" +
-                "tMemo\" Relationship=\"NAV.Company_ImprestMemo\" ToRole=\"ImprestMemo\" FromRole=\"Com" +
-                "pany\" /><NavigationProperty Name=\"inAttendances\" Relationship=\"NAV.Company_inAtt" +
-                "endances\" ToRole=\"inAttendances\" FromRole=\"Company\" /><NavigationProperty Name=\"" +
-                "InventoryPostingGroups\" Relationship=\"NAV.Company_InventoryPostingGroups\" ToRole" +
-                "=\"InventoryPostingGroups\" FromRole=\"Company\" /><NavigationProperty Name=\"ItemCat" +
-                "egories\" Relationship=\"NAV.Company_ItemCategories\" ToRole=\"ItemCategories\" FromR" +
-                "ole=\"Company\" /><NavigationProperty Name=\"Items\" Relationship=\"NAV.Company_Items" +
-                "\" ToRole=\"Items\" FromRole=\"Company\" /><NavigationProperty Name=\"ItemSalesAndProf" +
-                "it\" Relationship=\"NAV.Company_ItemSalesAndProfit\" ToRole=\"ItemSalesAndProfit\" Fr" +
-                "omRole=\"Company\" /><NavigationProperty Name=\"ItemSalesByCustomer\" Relationship=\"" +
-                "NAV.Company_ItemSalesByCustomer\" ToRole=\"ItemSalesByCustomer\" FromRole=\"Company\"" +
-                " /><NavigationProperty Name=\"JobApplicantHobies\" Relationship=\"NAV.Company_JobAp" +
-                "plicantHobies\" ToRole=\"JobApplicantHobies\" FromRole=\"Company\" /><NavigationPrope" +
-                "rty Name=\"JobApplicantQualifications\" Relationship=\"NAV.Company_JobApplicantQual" +
-                "ifications\" ToRole=\"JobApplicantQualifications\" FromRole=\"Company\" /><Navigation" +
-                "Property Name=\"JobApplicantReferees\" Relationship=\"NAV.Company_JobApplicantRefer" +
-                "ees\" ToRole=\"JobApplicantReferees\" FromRole=\"Company\" /><NavigationProperty Name" +
-                "=\"JobRequirements\" Relationship=\"NAV.Company_JobRequirements\" ToRole=\"JobRequire" +
-                "ments\" FromRole=\"Company\" /><NavigationProperty Name=\"JobResponsibilities\" Relat" +
-                "ionship=\"NAV.Company_JobResponsibilities\" ToRole=\"JobResponsibilities\" FromRole=" +
-                "\"Company\" /><NavigationProperty Name=\"jobs\" Relationship=\"NAV.Company_jobs\" ToRo" +
-                "le=\"jobs\" FromRole=\"Company\" /><NavigationProperty Name=\"JobTask\" Relationship=\"" +
-                "NAV.Company_JobTask\" ToRole=\"JobTask\" FromRole=\"Company\" /><NavigationProperty N" +
-                "ame=\"JobWorkingRelationships\" Relationship=\"NAV.Company_JobWorkingRelationships\"" +
-                " ToRole=\"JobWorkingRelationships\" FromRole=\"Company\" /><NavigationProperty Name=" +
-                "\"languages\" Relationship=\"NAV.Company_languages\" ToRole=\"languages\" FromRole=\"Co" +
-                "mpany\" /><NavigationProperty Name=\"LeaveApplications\" Relationship=\"NAV.Company_" +
-                "LeaveApplications\" ToRole=\"LeaveApplications\" FromRole=\"Company\" /><NavigationPr" +
-                "operty Name=\"LeaveTypes\" Relationship=\"NAV.Company_LeaveTypes\" ToRole=\"LeaveType" +
-                "s\" FromRole=\"Company\" /><NavigationProperty Name=\"Locations\" Relationship=\"NAV.C" +
-                "ompany_Locations\" ToRole=\"Locations\" FromRole=\"Company\" /><NavigationProperty Na" +
-                "me=\"MeetingAgenda\" Relationship=\"NAV.Company_MeetingAgenda\" ToRole=\"MeetingAgend" +
-                "a\" FromRole=\"Company\" /><NavigationProperty Name=\"My_Meetings\" Relationship=\"NAV" +
-                ".Company_My_Meetings\" ToRole=\"My_Meetings\" FromRole=\"Company\" /><NavigationPrope" +
-                "rty Name=\"myCommitee\" Relationship=\"NAV.Company_myCommitee\" ToRole=\"myCommitee\" " +
-                "FromRole=\"Company\" /><NavigationProperty Name=\"MyJobApplications\" Relationship=\"" +
-                "NAV.Company_MyJobApplications\" ToRole=\"MyJobApplications\" FromRole=\"Company\" /><" +
-                "NavigationProperty Name=\"OtherCosts\" Relationship=\"NAV.Company_OtherCosts\" ToRol" +
-                "e=\"OtherCosts\" FromRole=\"Company\" /><NavigationProperty Name=\"Payments\" Relation" +
-                "ship=\"NAV.Company_Payments\" ToRole=\"Payments\" FromRole=\"Company\" /><NavigationPr" +
-                "operty Name=\"payperiods\" Relationship=\"NAV.Company_payperiods\" ToRole=\"payperiod" +
-                "s\" FromRole=\"Company\" /><NavigationProperty Name=\"PortalUsers\" Relationship=\"NAV" +
-                ".Company_PortalUsers\" ToRole=\"PortalUsers\" FromRole=\"Company\" /><NavigationPrope" +
-                "rty Name=\"PositionsSupervised\" Relationship=\"NAV.Company_PositionsSupervised\" To" +
-                "Role=\"PositionsSupervised\" FromRole=\"Company\" /><NavigationProperty Name=\"postco" +
-                "des\" Relationship=\"NAV.Company_postcodes\" ToRole=\"postcodes\" FromRole=\"Company\" " +
-                "/><NavigationProperty Name=\"PrequalifiedSuppliers\" Relationship=\"NAV.Company_Pre" +
-                "qualifiedSuppliers\" ToRole=\"PrequalifiedSuppliers\" FromRole=\"Company\" /><Navigat" +
-                "ionProperty Name=\"ProcurementHeader\" Relationship=\"NAV.Company_ProcurementHeader" +
-                "\" ToRole=\"ProcurementHeader\" FromRole=\"Company\" /><NavigationProperty Name=\"Proc" +
-                "urementPlan\" Relationship=\"NAV.Company_ProcurementPlan\" ToRole=\"ProcurementPlan\"" +
-                " FromRole=\"Company\" /><NavigationProperty Name=\"ProcurementRequest\" Relationship" +
-                "=\"NAV.Company_ProcurementRequest\" ToRole=\"ProcurementRequest\" FromRole=\"Company\"" +
-                " /><NavigationProperty Name=\"ProcurementRequestLines\" Relationship=\"NAV.Company_" +
-                "ProcurementRequestLines\" ToRole=\"ProcurementRequestLines\" FromRole=\"Company\" /><" +
-                "NavigationProperty Name=\"ProjectMembers\" Relationship=\"NAV.Company_ProjectMember" +
-                "s\" ToRole=\"ProjectMembers\" FromRole=\"Company\" /><NavigationProperty Name=\"Purcha" +
-                "seHeader\" Relationship=\"NAV.Company_PurchaseHeader\" ToRole=\"PurchaseHeader\" From" +
-                "Role=\"Company\" /><NavigationProperty Name=\"PurchaseLines\" Relationship=\"NAV.Comp" +
-                "any_PurchaseLines\" ToRole=\"PurchaseLines\" FromRole=\"Company\" /><NavigationProper" +
-                "ty Name=\"ReceiptAndPaymentTypes\" Relationship=\"NAV.Company_ReceiptAndPaymentType" +
-                "s\" ToRole=\"ReceiptAndPaymentTypes\" FromRole=\"Company\" /><NavigationProperty Name" +
-                "=\"receipts\" Relationship=\"NAV.Company_receipts\" ToRole=\"receipts\" FromRole=\"Comp" +
-                "any\" /><NavigationProperty Name=\"Resources\" Relationship=\"NAV.Company_Resources\"" +
-                " ToRole=\"Resources\" FromRole=\"Company\" /><NavigationProperty Name=\"SalesDashboar" +
-                "d\" Relationship=\"NAV.Company_SalesDashboard\" ToRole=\"SalesDashboard\" FromRole=\"C" +
-                "ompany\" /><NavigationProperty Name=\"SalesOpportunities\" Relationship=\"NAV.Compan" +
-                "y_SalesOpportunities\" ToRole=\"SalesOpportunities\" FromRole=\"Company\" /><Navigati" +
-                "onProperty Name=\"SalesOrdersBySalesPerson\" Relationship=\"NAV.Company_SalesOrders" +
-                "BySalesPerson\" ToRole=\"SalesOrdersBySalesPerson\" FromRole=\"Company\" /><Navigatio" +
-                "nProperty Name=\"serviceitems\" Relationship=\"NAV.Company_serviceitems\" ToRole=\"se" +
-                "rviceitems\" FromRole=\"Company\" /><NavigationProperty Name=\"SupplierCategories\" R" +
-                "elationship=\"NAV.Company_SupplierCategories\" ToRole=\"SupplierCategories\" FromRol" +
-                "e=\"Company\" /><NavigationProperty Name=\"SupplyCategoryHeader\" Relationship=\"NAV." +
-                "Company_SupplyCategoryHeader\" ToRole=\"SupplyCategoryHeader\" FromRole=\"Company\" /" +
-                "><NavigationProperty Name=\"TenderApps\" Relationship=\"NAV.Company_TenderApps\" ToR" +
-                "ole=\"TenderApps\" FromRole=\"Company\" /><NavigationProperty Name=\"Tenders\" Relatio" +
-                "nship=\"NAV.Company_Tenders\" ToRole=\"Tenders\" FromRole=\"Company\" /><NavigationPro" +
-                "perty Name=\"TopCustomerOverview\" Relationship=\"NAV.Company_TopCustomerOverview\" " +
-                "ToRole=\"TopCustomerOverview\" FromRole=\"Company\" /><NavigationProperty Name=\"Tran" +
-                "sportRequisition\" Relationship=\"NAV.Company_TransportRequisition\" ToRole=\"Transp" +
-                "ortRequisition\" FromRole=\"Company\" /><NavigationProperty Name=\"TravelRequisition" +
-                "Staff\" Relationship=\"NAV.Company_TravelRequisitionStaff\" ToRole=\"TravelRequisiti" +
-                "onStaff\" FromRole=\"Company\" /><NavigationProperty Name=\"VacantPositions\" Relatio" +
-                "nship=\"NAV.Company_VacantPositions\" ToRole=\"VacantPositions\" FromRole=\"Company\" " +
-                "/><NavigationProperty Name=\"Vendors\" Relationship=\"NAV.Company_Vendors\" ToRole=\"" +
-                "Vendors\" FromRole=\"Company\" /><NavigationProperty Name=\"WorkTypes\" Relationship=" +
-                "\"NAV.Company_WorkTypes\" ToRole=\"WorkTypes\" FromRole=\"Company\" /><NavigationPrope" +
-                "rty Name=\"Pending_Po\" Relationship=\"NAV.Company_Pending_Po\" ToRole=\"Pending_Po\" " +
-                "FromRole=\"Company\" /></EntityType><Association Name=\"Compan";
+            private const string ModelPart16 = "onship=\"NAV.Company_CopyrightWorks\" ToRole=\"CopyrightWorks\" FromRole=\"Company\" />" +
+                "<NavigationProperty Name=\"Countries\" Relationship=\"NAV.Company_Countries\" ToRole" +
+                "=\"Countries\" FromRole=\"Company\" /><NavigationProperty Name=\"Customers\" Relations" +
+                "hip=\"NAV.Company_Customers\" ToRole=\"Customers\" FromRole=\"Company\" /><NavigationP" +
+                "roperty Name=\"emailvalidations\" Relationship=\"NAV.Company_emailvalidations\" ToRo" +
+                "le=\"emailvalidations\" FromRole=\"Company\" /><NavigationProperty Name=\"Employees\" " +
+                "Relationship=\"NAV.Company_Employees\" ToRole=\"Employees\" FromRole=\"Company\" /><Na" +
+                "vigationProperty Name=\"FiscalYears\" Relationship=\"NAV.Company_FiscalYears\" ToRol" +
+                "e=\"FiscalYears\" FromRole=\"Company\" /><NavigationProperty Name=\"FundCode\" Relatio" +
+                "nship=\"NAV.Company_FundCode\" ToRole=\"FundCode\" FromRole=\"Company\" /><NavigationP" +
+                "roperty Name=\"HrJobApplicants\" Relationship=\"NAV.Company_HrJobApplicants\" ToRole" +
+                "=\"HrJobApplicants\" FromRole=\"Company\" /><NavigationProperty Name=\"HRJobApplicant" +
+                "s\" Relationship=\"NAV.Company_HRJobApplicants\" ToRole=\"HRJobApplicants\" FromRole=" +
+                "\"Company\" /><NavigationProperty Name=\"HRPortalUsers\" Relationship=\"NAV.Company_H" +
+                "RPortalUsers\" ToRole=\"HRPortalUsers\" FromRole=\"Company\" /><NavigationProperty Na" +
+                "me=\"ImprestLines\" Relationship=\"NAV.Company_ImprestLines\" ToRole=\"ImprestLines\" " +
+                "FromRole=\"Company\" /><NavigationProperty Name=\"ImprestMemo\" Relationship=\"NAV.Co" +
+                "mpany_ImprestMemo\" ToRole=\"ImprestMemo\" FromRole=\"Company\" /><NavigationProperty" +
+                " Name=\"inAttendances\" Relationship=\"NAV.Company_inAttendances\" ToRole=\"inAttenda" +
+                "nces\" FromRole=\"Company\" /><NavigationProperty Name=\"InventoryPostingGroups\" Rel" +
+                "ationship=\"NAV.Company_InventoryPostingGroups\" ToRole=\"InventoryPostingGroups\" F" +
+                "romRole=\"Company\" /><NavigationProperty Name=\"ItemCategories\" Relationship=\"NAV." +
+                "Company_ItemCategories\" ToRole=\"ItemCategories\" FromRole=\"Company\" /><Navigation" +
+                "Property Name=\"Items\" Relationship=\"NAV.Company_Items\" ToRole=\"Items\" FromRole=\"" +
+                "Company\" /><NavigationProperty Name=\"ItemSalesAndProfit\" Relationship=\"NAV.Compa" +
+                "ny_ItemSalesAndProfit\" ToRole=\"ItemSalesAndProfit\" FromRole=\"Company\" /><Navigat" +
+                "ionProperty Name=\"ItemSalesByCustomer\" Relationship=\"NAV.Company_ItemSalesByCust" +
+                "omer\" ToRole=\"ItemSalesByCustomer\" FromRole=\"Company\" /><NavigationProperty Name" +
+                "=\"JobApplicantHobies\" Relationship=\"NAV.Company_JobApplicantHobies\" ToRole=\"JobA" +
+                "pplicantHobies\" FromRole=\"Company\" /><NavigationProperty Name=\"JobApplicantQuali" +
+                "fications\" Relationship=\"NAV.Company_JobApplicantQualifications\" ToRole=\"JobAppl" +
+                "icantQualifications\" FromRole=\"Company\" /><NavigationProperty Name=\"JobApplicant" +
+                "Referees\" Relationship=\"NAV.Company_JobApplicantReferees\" ToRole=\"JobApplicantRe" +
+                "ferees\" FromRole=\"Company\" /><NavigationProperty Name=\"JobRequirements\" Relation" +
+                "ship=\"NAV.Company_JobRequirements\" ToRole=\"JobRequirements\" FromRole=\"Company\" /" +
+                "><NavigationProperty Name=\"JobResponsibilities\" Relationship=\"NAV.Company_JobRes" +
+                "ponsibilities\" ToRole=\"JobResponsibilities\" FromRole=\"Company\" /><NavigationProp" +
+                "erty Name=\"jobs\" Relationship=\"NAV.Company_jobs\" ToRole=\"jobs\" FromRole=\"Company" +
+                "\" /><NavigationProperty Name=\"JobTask\" Relationship=\"NAV.Company_JobTask\" ToRole" +
+                "=\"JobTask\" FromRole=\"Company\" /><NavigationProperty Name=\"JobWorkingRelationship" +
+                "s\" Relationship=\"NAV.Company_JobWorkingRelationships\" ToRole=\"JobWorkingRelation" +
+                "ships\" FromRole=\"Company\" /><NavigationProperty Name=\"languages\" Relationship=\"N" +
+                "AV.Company_languages\" ToRole=\"languages\" FromRole=\"Company\" /><NavigationPropert" +
+                "y Name=\"LeaveApplications\" Relationship=\"NAV.Company_LeaveApplications\" ToRole=\"" +
+                "LeaveApplications\" FromRole=\"Company\" /><NavigationProperty Name=\"LeaveTypes\" Re" +
+                "lationship=\"NAV.Company_LeaveTypes\" ToRole=\"LeaveTypes\" FromRole=\"Company\" /><Na" +
+                "vigationProperty Name=\"Locations\" Relationship=\"NAV.Company_Locations\" ToRole=\"L" +
+                "ocations\" FromRole=\"Company\" /><NavigationProperty Name=\"MeetingAgenda\" Relation" +
+                "ship=\"NAV.Company_MeetingAgenda\" ToRole=\"MeetingAgenda\" FromRole=\"Company\" /><Na" +
+                "vigationProperty Name=\"My_Meetings\" Relationship=\"NAV.Company_My_Meetings\" ToRol" +
+                "e=\"My_Meetings\" FromRole=\"Company\" /><NavigationProperty Name=\"myCommitee\" Relat" +
+                "ionship=\"NAV.Company_myCommitee\" ToRole=\"myCommitee\" FromRole=\"Company\" /><Navig" +
+                "ationProperty Name=\"MyJobApplications\" Relationship=\"NAV.Company_MyJobApplicatio" +
+                "ns\" ToRole=\"MyJobApplications\" FromRole=\"Company\" /><NavigationProperty Name=\"Ot" +
+                "herCosts\" Relationship=\"NAV.Company_OtherCosts\" ToRole=\"OtherCosts\" FromRole=\"Co" +
+                "mpany\" /><NavigationProperty Name=\"Payments\" Relationship=\"NAV.Company_Payments\"" +
+                " ToRole=\"Payments\" FromRole=\"Company\" /><NavigationProperty Name=\"payperiods\" Re" +
+                "lationship=\"NAV.Company_payperiods\" ToRole=\"payperiods\" FromRole=\"Company\" /><Na" +
+                "vigationProperty Name=\"PortalUsers\" Relationship=\"NAV.Company_PortalUsers\" ToRol" +
+                "e=\"PortalUsers\" FromRole=\"Company\" /><NavigationProperty Name=\"PositionsSupervis" +
+                "ed\" Relationship=\"NAV.Company_PositionsSupervised\" ToRole=\"PositionsSupervised\" " +
+                "FromRole=\"Company\" /><NavigationProperty Name=\"postcodes\" Relationship=\"NAV.Comp" +
+                "any_postcodes\" ToRole=\"postcodes\" FromRole=\"Company\" /><NavigationProperty Name=" +
+                "\"PrequalifiedSuppliers\" Relationship=\"NAV.Company_PrequalifiedSuppliers\" ToRole=" +
+                "\"PrequalifiedSuppliers\" FromRole=\"Company\" /><NavigationProperty Name=\"Procureme" +
+                "ntHeader\" Relationship=\"NAV.Company_ProcurementHeader\" ToRole=\"ProcurementHeader" +
+                "\" FromRole=\"Company\" /><NavigationProperty Name=\"ProcurementPlan\" Relationship=\"" +
+                "NAV.Company_ProcurementPlan\" ToRole=\"ProcurementPlan\" FromRole=\"Company\" /><Navi" +
+                "gationProperty Name=\"ProcurementRequest\" Relationship=\"NAV.Company_ProcurementRe" +
+                "quest\" ToRole=\"ProcurementRequest\" FromRole=\"Company\" /><NavigationProperty Name" +
+                "=\"ProcurementRequestLines\" Relationship=\"NAV.Company_ProcurementRequestLines\" To" +
+                "Role=\"ProcurementRequestLines\" FromRole=\"Company\" /><NavigationProperty Name=\"Pr" +
+                "ojectMembers\" Relationship=\"NAV.Company_ProjectMembers\" ToRole=\"ProjectMembers\" " +
+                "FromRole=\"Company\" /><NavigationProperty Name=\"PurchaseHeader\" Relationship=\"NAV" +
+                ".Company_PurchaseHeader\" ToRole=\"PurchaseHeader\" FromRole=\"Company\" /><Navigatio" +
+                "nProperty Name=\"PurchaseLines\" Relationship=\"NAV.Company_PurchaseLines\" ToRole=\"" +
+                "PurchaseLines\" FromRole=\"Company\" /><NavigationProperty Name=\"ReceiptAndPaymentT" +
+                "ypes\" Relationship=\"NAV.Company_ReceiptAndPaymentTypes\" ToRole=\"ReceiptAndPaymen" +
+                "tTypes\" FromRole=\"Company\" /><NavigationProperty Name=\"receipts\" Relationship=\"N" +
+                "AV.Company_receipts\" ToRole=\"receipts\" FromRole=\"Company\" /><NavigationProperty " +
+                "Name=\"Resources\" Relationship=\"NAV.Company_Resources\" ToRole=\"Resources\" FromRol" +
+                "e=\"Company\" /><NavigationProperty Name=\"SalesDashboard\" Relationship=\"NAV.Compan" +
+                "y_SalesDashboard\" ToRole=\"SalesDashboard\" FromRole=\"Company\" /><NavigationProper" +
+                "ty Name=\"SalesOpportunities\" Relationship=\"NAV.Company_SalesOpportunities\" ToRol" +
+                "e=\"SalesOpportunities\" FromRole=\"Company\" /><NavigationProperty Name=\"SalesOrder" +
+                "sBySalesPerson\" Relationship=\"NAV.Company_SalesOrdersBySalesPerson\" ToRole=\"Sale" +
+                "sOrdersBySalesPerson\" FromRole=\"Company\" /><NavigationProperty Name=\"serviceitem" +
+                "s\" Relationship=\"NAV.Company_serviceitems\" ToRole=\"serviceitems\" FromRole=\"Compa" +
+                "ny\" /><NavigationProperty Name=\"SupplierBlogReplies\" Relationship=\"NAV.Company_S" +
+                "upplierBlogReplies\" ToRole=\"SupplierBlogReplies\" FromRole=\"Company\" /><Navigatio" +
+                "nProperty Name=\"SupplierBlogs\" Relationship=\"NAV.Company_SupplierBlogs\" ToRole=\"" +
+                "SupplierBlogs\" FromRole=\"Company\" /><NavigationProperty Name=\"SupplierCategories" +
+                "\" Relationship=\"NAV.Company_SupplierCategories\" ToRole=\"SupplierCategories\" From" +
+                "Role=\"Company\" /><NavigationProperty Name=\"SupplyCategoryHe";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart17 = "y_ApprovalEntriesPage\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" />" +
-                "<End Type=\"NAV.ApprovalEntriesPage\" Role=\"ApprovalEntriesPage\" Multiplicity=\"*\" " +
-                "/></Association><Association Name=\"Company_powerbifinance\"><End Type=\"NAV.powerb" +
-                "ifinance\" Role=\"powerbifinance\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=" +
-                "\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_AgendaSurp" +
-                "ortingDocuments\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><End " +
-                "Type=\"NAV.AgendaSurportingDocuments\" Role=\"AgendaSurportingDocuments\" Multiplici" +
-                "ty=\"*\" /></Association><Association Name=\"Company_AgendaVoteItems\"><End Type=\"NA" +
-                "V.Company\" Role=\"Company\" Multiplicity=\"*\" /><End Type=\"NAV.AgendaVoteItems\" Rol" +
-                "e=\"AgendaVoteItems\" Multiplicity=\"*\" /></Association><Association Name=\"Company_" +
-                "allBoards\"><End Type=\"NAV.allBoards\" Role=\"allBoards\" Multiplicity=\"*\" /><End Ty" +
-                "pe=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Na" +
-                "me=\"Company_ApprovalEntries\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity" +
-                "=\"*\" /><End Type=\"NAV.ApprovalEntries\" Role=\"ApprovalEntries\" Multiplicity=\"*\" /" +
-                "></Association><Association Name=\"Company_blogReplies\"><End Type=\"NAV.blogReplie" +
-                "s\" Role=\"blogReplies\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" " +
-                "Multiplicity=\"*\" /></Association><Association Name=\"Company_boardBlog\"><End Type" +
-                "=\"NAV.boardBlog\" Role=\"boardBlog\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Rol" +
-                "e=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_BoardCom" +
-                "ments\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><End Type=\"NAV." +
-                "BoardComments\" Role=\"BoardComments\" Multiplicity=\"*\" /></Association><Associatio" +
-                "n Name=\"Company_boardMeetingAttendance\"><End Type=\"NAV.boardMeetingAttendance\" R" +
-                "ole=\"boardMeetingAttendance\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Co" +
-                "mpany\" Multiplicity=\"*\" /></Association><Association Name=\"Company_boardMeetings" +
-                "\"><End Type=\"NAV.boardMeetings\" Role=\"boardMeetings\" Multiplicity=\"*\" /><End Typ" +
-                "e=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Nam" +
-                "e=\"Company_Casuals\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><E" +
-                "nd Type=\"NAV.Casuals\" Role=\"Casuals\" Multiplicity=\"*\" /></Association><Associati" +
-                "on Name=\"Company_CommitteeBoardMembers\"><End Type=\"NAV.Company\" Role=\"Company\" M" +
-                "ultiplicity=\"*\" /><End Type=\"NAV.CommitteeBoardMembers\" Role=\"CommitteeBoardMemb" +
-                "ers\" Multiplicity=\"*\" /></Association><Association Name=\"Company_committeeMeetin" +
-                "gs\"><End Type=\"NAV.committeeMeetings\" Role=\"committeeMeetings\" Multiplicity=\"*\" " +
-                "/><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Assoc" +
-                "iation Name=\"Company_Committees\"><End Type=\"NAV.Company\" Role=\"Company\" Multipli" +
-                "city=\"*\" /><End Type=\"NAV.Committees\" Role=\"Committees\" Multiplicity=\"*\" /></Ass" +
-                "ociation><Association Name=\"Company_contacts\"><End Type=\"NAV.contacts\" Role=\"con" +
-                "tacts\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*" +
-                "\" /></Association><Association Name=\"Company_Copyright_Files\"><End Type=\"NAV.Cop" +
-                "yright_Files\" Role=\"Copyright_Files\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" " +
-                "Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Copyr" +
-                "ightCategories\"><End Type=\"NAV.CopyrightCategories\" Role=\"CopyrightCategories\" M" +
-                "ultiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></As" +
-                "sociation><Association Name=\"Company_copyrightsetups\"><End Type=\"NAV.copyrightse" +
-                "tups\" Role=\"copyrightsetups\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Co" +
-                "mpany\" Multiplicity=\"*\" /></Association><Association Name=\"Company_copyrightsubc" +
-                "ategories\"><End Type=\"NAV.copyrightsubcategories\" Role=\"copyrightsubcategories\" " +
-                "Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></A" +
-                "ssociation><Association Name=\"Company_CopyrightWorkCategories\"><End Type=\"NAV.Co" +
-                "pyrightWorkCategories\" Role=\"CopyrightWorkCategories\" Multiplicity=\"*\" /><End Ty" +
-                "pe=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Na" +
-                "me=\"Company_CopyrightWorks\"><End Type=\"NAV.CopyrightWorks\" Role=\"CopyrightWorks\"" +
-                " Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></" +
-                "Association><Association Name=\"Company_Countries\"><End Type=\"NAV.Countries\" Role" +
-                "=\"Countries\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplic" +
-                "ity=\"*\" /></Association><Association Name=\"Company_Customers\"><End Type=\"NAV.Cus" +
-                "tomers\" Role=\"Customers\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compan" +
-                "y\" Multiplicity=\"*\" /></Association><Association Name=\"Company_emailvalidations\"" +
-                "><End Type=\"NAV.emailvalidations\" Role=\"emailvalidations\" Multiplicity=\"*\" /><En" +
-                "d Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associatio" +
-                "n Name=\"Company_Employees\"><End Type=\"NAV.Employees\" Role=\"Employees\" Multiplici" +
-                "ty=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association" +
-                "><Association Name=\"Company_FiscalYears\"><End Type=\"NAV.FiscalYears\" Role=\"Fisca" +
-                "lYears\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"" +
-                "*\" /></Association><Association Name=\"Company_FundCode\"><End Type=\"NAV.FundCode\"" +
-                " Role=\"FundCode\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multi" +
-                "plicity=\"*\" /></Association><Association Name=\"Company_HrJobApplicants\"><End Typ" +
-                "e=\"NAV.HrJobApplicants\" Role=\"HrJobApplicants\" Multiplicity=\"*\" /><End Type=\"NAV" +
-                ".Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Com" +
-                "pany_HRJobApplicants\"><End Type=\"NAV.HRJobApplicants\" Role=\"HRJobApplicants\" Mul" +
-                "tiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Asso" +
-                "ciation><Association Name=\"Company_HRPortalUsers\"><End Type=\"NAV.HRPortalUsers\" " +
-                "Role=\"HRPortalUsers\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" M" +
-                "ultiplicity=\"*\" /></Association><Association Name=\"Company_ImprestLines\"><End Ty" +
-                "pe=\"NAV.ImprestLines\" Role=\"ImprestLines\" Multiplicity=\"*\" /><End Type=\"NAV.Comp" +
-                "any\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_" +
-                "ImprestMemo\"><End Type=\"NAV.ImprestMemo\" Role=\"ImprestMemo\" Multiplicity=\"*\" /><" +
-                "End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associat" +
-                "ion Name=\"Company_inAttendances\"><End Type=\"NAV.inAttendances\" Role=\"inAttendanc" +
-                "es\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /" +
-                "></Association><Association Name=\"Company_InventoryPostingGroups\"><End Type=\"NAV" +
-                ".InventoryPostingGroups\" Role=\"InventoryPostingGroups\" Multiplicity=\"*\" /><End T" +
-                "ype=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association N" +
-                "ame=\"Company_ItemCategories\"><End Type=\"NAV.ItemCategories\" Role=\"ItemCategories" +
-                "\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><" +
-                "/Association><Association Name=\"Company_Items\"><End Type=\"NAV.Items\" Role=\"Items" +
-                "\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><" +
-                "/Association><Association Name=\"Company_ItemSalesAndProfit\"><End Type=\"NAV.ItemS" +
-                "alesAndProfit\" Role=\"ItemSalesAndProfit\" Multiplicity=\"*\" /><End Type=\"NAV.Compa" +
-                "ny\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_I" +
-                "temSalesByCustomer\"><End Type=\"NAV.ItemSalesByCustomer\" Role=\"ItemSalesByCustome" +
-                "r\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" />" +
-                "</Association><Association Name=\"Company_JobApplicantHobies\"><End Type=\"NAV.JobA" +
-                "pplicantHobies\" Role=\"JobApplicantHobies\" Multiplicity=\"*\" /><End Type=\"NAV.Comp" +
-                "any\" Role=\"Company\" Multiplicity=\"*\" /></Association><Assoc";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart18 = "iation Name=\"Company_JobApplicantQualifications\"><End Type=\"NAV.JobApplicantQuali" +
-                "fications\" Role=\"JobApplicantQualifications\" Multiplicity=\"*\" /><End Type=\"NAV.C" +
-                "ompany\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Compa" +
-                "ny_JobApplicantReferees\"><End Type=\"NAV.JobApplicantReferees\" Role=\"JobApplicant" +
-                "Referees\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity" +
-                "=\"*\" /></Association><Association Name=\"Company_JobRequirements\"><End Type=\"NAV." +
-                "JobRequirements\" Role=\"JobRequirements\" Multiplicity=\"*\" /><End Type=\"NAV.Compan" +
-                "y\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Jo" +
-                "bResponsibilities\"><End Type=\"NAV.JobResponsibilities\" Role=\"JobResponsibilities" +
-                "\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><" +
-                "/Association><Association Name=\"Company_jobs\"><End Type=\"NAV.jobs\" Role=\"jobs\" M" +
-                "ultiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></As" +
-                "sociation><Association Name=\"Company_JobTask\"><End Type=\"NAV.JobTask\" Role=\"JobT" +
-                "ask\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" " +
-                "/></Association><Association Name=\"Company_JobWorkingRelationships\"><End Type=\"N" +
-                "AV.JobWorkingRelationships\" Role=\"JobWorkingRelationships\" Multiplicity=\"*\" /><E" +
-                "nd Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associati" +
-                "on Name=\"Company_languages\"><End Type=\"NAV.languages\" Role=\"languages\" Multiplic" +
-                "ity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Associatio" +
-                "n><Association Name=\"Company_LeaveApplications\"><End Type=\"NAV.LeaveApplications" +
-                "\" Role=\"LeaveApplications\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Comp" +
-                "any\" Multiplicity=\"*\" /></Association><Association Name=\"Company_LeaveTypes\"><En" +
-                "d Type=\"NAV.LeaveTypes\" Role=\"LeaveTypes\" Multiplicity=\"*\" /><End Type=\"NAV.Comp" +
-                "any\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_" +
-                "Locations\"><End Type=\"NAV.Locations\" Role=\"Locations\" Multiplicity=\"*\" /><End Ty" +
-                "pe=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Na" +
-                "me=\"Company_MeetingAgenda\"><End Type=\"NAV.MeetingAgenda\" Role=\"MeetingAgenda\" Mu" +
-                "ltiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Ass" +
-                "ociation><Association Name=\"Company_My_Meetings\"><End Type=\"NAV.My_Meetings\" Rol" +
-                "e=\"My_Meetings\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multip" +
-                "licity=\"*\" /></Association><Association Name=\"Company_myCommitee\"><End Type=\"NAV" +
-                ".myCommitee\" Role=\"myCommitee\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"" +
-                "Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_MyJobApplic" +
-                "ations\"><End Type=\"NAV.MyJobApplications\" Role=\"MyJobApplications\" Multiplicity=" +
-                "\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><A" +
-                "ssociation Name=\"Company_OtherCosts\"><End Type=\"NAV.OtherCosts\" Role=\"OtherCosts" +
-                "\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><" +
-                "/Association><Association Name=\"Company_Payments\"><End Type=\"NAV.Payments\" Role=" +
-                "\"Payments\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicit" +
-                "y=\"*\" /></Association><Association Name=\"Company_payperiods\"><End Type=\"NAV.payp" +
-                "eriods\" Role=\"payperiods\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compa" +
-                "ny\" Multiplicity=\"*\" /></Association><Association Name=\"Company_PortalUsers\"><En" +
-                "d Type=\"NAV.PortalUsers\" Role=\"PortalUsers\" Multiplicity=\"*\" /><End Type=\"NAV.Co" +
-                "mpany\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Compan" +
-                "y_PositionsSupervised\"><End Type=\"NAV.PositionsSupervised\" Role=\"PositionsSuperv" +
-                "ised\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\"" +
-                " /></Association><Association Name=\"Company_postcodes\"><End Type=\"NAV.postcodes\"" +
-                " Role=\"postcodes\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Mult" +
-                "iplicity=\"*\" /></Association><Association Name=\"Company_PrequalifiedSuppliers\"><" +
-                "End Type=\"NAV.PrequalifiedSuppliers\" Role=\"PrequalifiedSuppliers\" Multiplicity=\"" +
+            private const string ModelPart17 = "ader\" Relationship=\"NAV.Company_SupplyCategoryHeader\" ToRole=\"SupplyCategoryHeade" +
+                "r\" FromRole=\"Company\" /><NavigationProperty Name=\"TenderApps\" Relationship=\"NAV." +
+                "Company_TenderApps\" ToRole=\"TenderApps\" FromRole=\"Company\" /><NavigationProperty" +
+                " Name=\"Tenders\" Relationship=\"NAV.Company_Tenders\" ToRole=\"Tenders\" FromRole=\"Co" +
+                "mpany\" /><NavigationProperty Name=\"TopCustomerOverview\" Relationship=\"NAV.Compan" +
+                "y_TopCustomerOverview\" ToRole=\"TopCustomerOverview\" FromRole=\"Company\" /><Naviga" +
+                "tionProperty Name=\"TransportRequisition\" Relationship=\"NAV.Company_TransportRequ" +
+                "isition\" ToRole=\"TransportRequisition\" FromRole=\"Company\" /><NavigationProperty " +
+                "Name=\"TravelRequisitionStaff\" Relationship=\"NAV.Company_TravelRequisitionStaff\" " +
+                "ToRole=\"TravelRequisitionStaff\" FromRole=\"Company\" /><NavigationProperty Name=\"V" +
+                "acantPositions\" Relationship=\"NAV.Company_VacantPositions\" ToRole=\"VacantPositio" +
+                "ns\" FromRole=\"Company\" /><NavigationProperty Name=\"Vendors\" Relationship=\"NAV.Co" +
+                "mpany_Vendors\" ToRole=\"Vendors\" FromRole=\"Company\" /><NavigationProperty Name=\"W" +
+                "orkTypes\" Relationship=\"NAV.Company_WorkTypes\" ToRole=\"WorkTypes\" FromRole=\"Comp" +
+                "any\" /><NavigationProperty Name=\"Pending_Po\" Relationship=\"NAV.Company_Pending_P" +
+                "o\" ToRole=\"Pending_Po\" FromRole=\"Company\" /></EntityType><Association Name=\"Comp" +
+                "any_ApprovalEntriesPage\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\"" +
+                " /><End Type=\"NAV.ApprovalEntriesPage\" Role=\"ApprovalEntriesPage\" Multiplicity=\"" +
+                "*\" /></Association><Association Name=\"Company_powerbifinance\"><End Type=\"NAV.pow" +
+                "erbifinance\" Role=\"powerbifinance\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Ro" +
+                "le=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_AgendaS" +
+                "urportingDocuments\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><E" +
+                "nd Type=\"NAV.AgendaSurportingDocuments\" Role=\"AgendaSurportingDocuments\" Multipl" +
+                "icity=\"*\" /></Association><Association Name=\"Company_AgendaVoteItems\"><End Type=" +
+                "\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><End Type=\"NAV.AgendaVoteItems\" " +
+                "Role=\"AgendaVoteItems\" Multiplicity=\"*\" /></Association><Association Name=\"Compa" +
+                "ny_allBoards\"><End Type=\"NAV.allBoards\" Role=\"allBoards\" Multiplicity=\"*\" /><End" +
+                " Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association" +
+                " Name=\"Company_ApprovalEntries\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplic" +
+                "ity=\"*\" /><End Type=\"NAV.ApprovalEntries\" Role=\"ApprovalEntries\" Multiplicity=\"*" +
+                "\" /></Association><Association Name=\"Company_blogReplies\"><End Type=\"NAV.blogRep" +
+                "lies\" Role=\"blogReplies\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compan" +
+                "y\" Multiplicity=\"*\" /></Association><Association Name=\"Company_boardBlog\"><End T" +
+                "ype=\"NAV.boardBlog\" Role=\"boardBlog\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" " +
+                "Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Board" +
+                "Comments\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><End Type=\"N" +
+                "AV.BoardComments\" Role=\"BoardComments\" Multiplicity=\"*\" /></Association><Associa" +
+                "tion Name=\"Company_boardMeetingAttendance\"><End Type=\"NAV.boardMeetingAttendance" +
+                "\" Role=\"boardMeetingAttendance\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=" +
+                "\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_boardMeeti" +
+                "ngs\"><End Type=\"NAV.boardMeetings\" Role=\"boardMeetings\" Multiplicity=\"*\" /><End " +
+                "Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association " +
+                "Name=\"Company_Casuals\"><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /" +
+                "><End Type=\"NAV.Casuals\" Role=\"Casuals\" Multiplicity=\"*\" /></Association><Associ" +
+                "ation Name=\"Company_CommitteeBoardMembers\"><End Type=\"NAV.Company\" Role=\"Company" +
+                "\" Multiplicity=\"*\" /><End Type=\"NAV.CommitteeBoardMembers\" Role=\"CommitteeBoardM" +
+                "embers\" Multiplicity=\"*\" /></Association><Association Name=\"Company_committeeMee" +
+                "tings\"><End Type=\"NAV.committeeMeetings\" Role=\"committeeMeetings\" Multiplicity=\"" +
                 "*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><As" +
-                "sociation Name=\"Company_ProcurementHeader\"><End Type=\"NAV.ProcurementHeader\" Rol" +
-                "e=\"ProcurementHeader\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" " +
-                "Multiplicity=\"*\" /></Association><Association Name=\"Company_ProcurementPlan\"><En" +
-                "d Type=\"NAV.ProcurementPlan\" Role=\"ProcurementPlan\" Multiplicity=\"*\" /><End Type" +
-                "=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name" +
-                "=\"Company_ProcurementRequest\"><End Type=\"NAV.ProcurementRequest\" Role=\"Procureme" +
-                "ntRequest\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicit" +
-                "y=\"*\" /></Association><Association Name=\"Company_ProcurementRequestLines\"><End T" +
-                "ype=\"NAV.ProcurementRequestLines\" Role=\"ProcurementRequestLines\" Multiplicity=\"*" +
-                "\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Ass" +
-                "ociation Name=\"Company_ProjectMembers\"><End Type=\"NAV.ProjectMembers\" Role=\"Proj" +
-                "ectMembers\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplici" +
-                "ty=\"*\" /></Association><Association Name=\"Company_PurchaseHeader\"><End Type=\"NAV" +
-                ".PurchaseHeader\" Role=\"PurchaseHeader\" Multiplicity=\"*\" /><End Type=\"NAV.Company" +
-                "\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Pur" +
-                "chaseLines\"><End Type=\"NAV.PurchaseLines\" Role=\"PurchaseLines\" Multiplicity=\"*\" " +
-                "/><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Assoc" +
-                "iation Name=\"Company_ReceiptAndPaymentTypes\"><End Type=\"NAV.ReceiptAndPaymentTyp" +
-                "es\" Role=\"ReceiptAndPaymentTypes\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Rol" +
-                "e=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_receipts" +
-                "\"><End Type=\"NAV.receipts\" Role=\"receipts\" Multiplicity=\"*\" /><End Type=\"NAV.Com" +
-                "pany\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company" +
-                "_Resources\"><End Type=\"NAV.Resources\" Role=\"Resources\" Multiplicity=\"*\" /><End T" +
-                "ype=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association N" +
-                "ame=\"Company_SalesDashboard\"><End Type=\"NAV.SalesDashboard\" Role=\"SalesDashboard" +
+                "sociation Name=\"Company_Committees\"><End Type=\"NAV.Company\" Role=\"Company\" Multi" +
+                "plicity=\"*\" /><End Type=\"NAV.Committees\" Role=\"Committees\" Multiplicity=\"*\" /></" +
+                "Association><Association Name=\"Company_contacts\"><End Type=\"NAV.contacts\" Role=\"" +
+                "contacts\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity" +
+                "=\"*\" /></Association><Association Name=\"Company_Copyright_Files\"><End Type=\"NAV." +
+                "Copyright_Files\" Role=\"Copyright_Files\" Multiplicity=\"*\" /><End Type=\"NAV.Compan" +
+                "y\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Co" +
+                "pyrightCategories\"><End Type=\"NAV.CopyrightCategories\" Role=\"CopyrightCategories" +
                 "\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><" +
-                "/Association><Association Name=\"Company_SalesOpportunities\"><End Type=\"NAV.Sales" +
-                "Opportunities\" Role=\"SalesOpportunities\" Multiplicity=\"*\" /><End Type=\"NAV.Compa" +
-                "ny\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_S" +
-                "alesOrdersBySalesPerson\"><End Type=\"NAV.SalesOrdersBySalesPerson\" Role=\"SalesOrd" +
-                "ersBySalesPerson\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Mult" +
-                "iplicity=\"*\" /></Association><Association Name=\"Company_serviceitems\"><End Type=" +
-                "\"NAV.serviceitems\" Role=\"serviceitems\" Multiplicity=\"*\" /><End Type=\"NAV.Company" +
-                "\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Sup" +
-                "plierCategories\"><End Type=\"NAV.SupplierCategories\" Role=\"SupplierCategories\" Mu" +
+                "/Association><Association Name=\"Company_copyrightsetups\"><End Type=\"NAV.copyrigh" +
+                "tsetups\" Role=\"copyrightsetups\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=" +
+                "\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_copyrights" +
+                "ubcategories\"><End Type=\"NAV.copyrightsubcategories\" Role=\"copyrightsubcategorie" +
+                "s\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" />" +
+                "</Association><Association Name=\"Company_CopyrightWorkCategories\"><End Type=\"NAV" +
+                ".CopyrightWorkCategories\" Role=\"CopyrightWorkCategories\" Multiplicity=\"*\" /><End" +
+                " Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association" +
+                " Name=\"Company_CopyrightWorks\"><End Type=\"NAV.CopyrightWorks\" Role=\"CopyrightWor" +
+                "ks\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /" +
+                "></Association><Association Name=\"Company_Countries\"><End Type=\"NAV.Countries\" R" +
+                "ole=\"Countries\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multip" +
+                "licity=\"*\" /></Association><Association Name=\"Company_Customers\"><End Type=\"NAV." +
+                "Customers\" Role=\"Customers\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Com" +
+                "pany\" Multiplicity=\"*\" /></Association><Association Name=\"Company_emailvalidatio" +
+                "ns\"><End Type=\"NAV.emailvalidations\" Role=\"emailvalidations\" Multiplicity=\"*\" />" +
+                "<End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associa" +
+                "tion Name=\"Company_Employees\"><End Type=\"NAV.Employees\" Role=\"Employees\" Multipl" +
+                "icity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Associat" +
+                "ion><Association Name=\"Company_FiscalYears\"><End Type=\"NAV.FiscalYears\" Role=\"Fi" +
+                "scalYears\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicit" +
+                "y=\"*\" /></Association><Association Name=\"Company_FundCode\"><End Type=\"NAV.FundCo" +
+                "de\" Role=\"FundCode\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Mu" +
+                "ltiplicity=\"*\" /></Association><Association Name=\"Company_HrJobApplicants\"><End " +
+                "Type=\"NAV.HrJobApplicants\" Role=\"HrJobApplicants\" Multiplicity=\"*\" /><End Type=\"" +
+                "NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"" +
+                "Company_HRJobApplicants\"><End Type=\"NAV.HRJobApplicants\" Role=\"HRJobApplicants\" " +
+                "Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></A" +
+                "ssociation><Association Name=\"Company_HRPortalUsers\"><End Type=\"NAV.HRPortalUser" +
+                "s\" Role=\"HRPortalUsers\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company" +
+                "\" Multiplicity=\"*\" /></Association><Association Name=\"Company_ImprestLines\"><End" +
+                " Type=\"NAV.ImprestLines\" Role=\"ImprestLines\" Multiplicity=\"*\" /><End Type=\"NAV.C" +
+                "ompany\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Compa" +
+                "ny_ImprestMemo\"><End Type=\"NAV.ImprestMemo\" Role=\"ImprestMemo\" Multiplicity=\"*\" " +
+                "/><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Assoc" +
+                "iation Name=\"Company_inAttendances\"><End Type=\"NAV.inAttend";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart18 = "ances\" Role=\"inAttendances\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Comp" +
+                "any\" Multiplicity=\"*\" /></Association><Association Name=\"Company_InventoryPostin" +
+                "gGroups\"><End Type=\"NAV.InventoryPostingGroups\" Role=\"InventoryPostingGroups\" Mu" +
                 "ltiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Ass" +
-                "ociation><Association Name=\"Company_SupplyCategoryHeader\"><End Type=\"NAV.SupplyC" +
-                "ategoryHeader\" Role=\"SupplyCategoryHeader\" Multiplicity=\"*\" /><End Type=\"NAV.Com" +
+                "ociation><Association Name=\"Company_ItemCategories\"><End Type=\"NAV.ItemCategorie" +
+                "s\" Role=\"ItemCategories\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compan" +
+                "y\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Items\"><End Type=" +
+                "\"NAV.Items\" Role=\"Items\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compan" +
+                "y\" Multiplicity=\"*\" /></Association><Association Name=\"Company_ItemSalesAndProfi" +
+                "t\"><End Type=\"NAV.ItemSalesAndProfit\" Role=\"ItemSalesAndProfit\" Multiplicity=\"*\"" +
+                " /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Asso" +
+                "ciation Name=\"Company_ItemSalesByCustomer\"><End Type=\"NAV.ItemSalesByCustomer\" R" +
+                "ole=\"ItemSalesByCustomer\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compa" +
+                "ny\" Multiplicity=\"*\" /></Association><Association Name=\"Company_JobApplicantHobi" +
+                "es\"><End Type=\"NAV.JobApplicantHobies\" Role=\"JobApplicantHobies\" Multiplicity=\"*" +
+                "\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Ass" +
+                "ociation Name=\"Company_JobApplicantQualifications\"><End Type=\"NAV.JobApplicantQu" +
+                "alifications\" Role=\"JobApplicantQualifications\" Multiplicity=\"*\" /><End Type=\"NA" +
+                "V.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Co" +
+                "mpany_JobApplicantReferees\"><End Type=\"NAV.JobApplicantReferees\" Role=\"JobApplic" +
+                "antReferees\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplic" +
+                "ity=\"*\" /></Association><Association Name=\"Company_JobRequirements\"><End Type=\"N" +
+                "AV.JobRequirements\" Role=\"JobRequirements\" Multiplicity=\"*\" /><End Type=\"NAV.Com" +
                 "pany\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company" +
-                "_TenderApps\"><End Type=\"NAV.TenderApps\" Role=\"TenderApps\" Multiplicity=\"*\" /><En" +
-                "d Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associatio" +
-                "n Name=\"Company_Tenders\"><End Type=\"NAV.Tenders\" Role=\"Tenders\" Multiplicity=\"*\"" +
-                " /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" ";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart19 = "/></Association><Association Name=\"Company_TopCustomerOverview\"><End Type=\"NAV.To" +
-                "pCustomerOverview\" Role=\"TopCustomerOverview\" Multiplicity=\"*\" /><End Type=\"NAV." +
-                "Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Comp" +
-                "any_TransportRequisition\"><End Type=\"NAV.TransportRequisition\" Role=\"TransportRe" +
-                "quisition\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicit" +
-                "y=\"*\" /></Association><Association Name=\"Company_TravelRequisitionStaff\"><End Ty" +
-                "pe=\"NAV.TravelRequisitionStaff\" Role=\"TravelRequisitionStaff\" Multiplicity=\"*\" /" +
+                "_JobResponsibilities\"><End Type=\"NAV.JobResponsibilities\" Role=\"JobResponsibilit" +
+                "ies\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" " +
+                "/></Association><Association Name=\"Company_jobs\"><End Type=\"NAV.jobs\" Role=\"jobs" +
+                "\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /><" +
+                "/Association><Association Name=\"Company_JobTask\"><End Type=\"NAV.JobTask\" Role=\"J" +
+                "obTask\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"" +
+                "*\" /></Association><Association Name=\"Company_JobWorkingRelationships\"><End Type" +
+                "=\"NAV.JobWorkingRelationships\" Role=\"JobWorkingRelationships\" Multiplicity=\"*\" /" +
                 "><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associ" +
-                "ation Name=\"Company_VacantPositions\"><End Type=\"NAV.VacantPositions\" Role=\"Vacan" +
-                "tPositions\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplici" +
-                "ty=\"*\" /></Association><Association Name=\"Company_Vendors\"><End Type=\"NAV.Vendor" +
-                "s\" Role=\"Vendors\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Mult" +
-                "iplicity=\"*\" /></Association><Association Name=\"Company_WorkTypes\"><End Type=\"NA" +
-                "V.WorkTypes\" Role=\"WorkTypes\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"C" +
-                "ompany\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Pending_Po\">" +
-                "<End Type=\"NAV.Pending_Po\" Role=\"Pending_Po\" Multiplicity=\"*\" /><End Type=\"NAV.C" +
-                "ompany\" Role=\"Company\" Multiplicity=\"*\" /></Association><EntityContainer Name=\"N" +
-                "AV\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"ApprovalEntriesPage\" Enti" +
-                "tyType=\"NAV.ApprovalEntriesPage\" /><EntitySet Name=\"powerbifinance\" EntityType=\"" +
-                "NAV.powerbifinance\" /><EntitySet Name=\"AgendaSurportingDocuments\" EntityType=\"NA" +
-                "V.AgendaSurportingDocuments\" /><EntitySet Name=\"AgendaVoteItems\" EntityType=\"NAV" +
-                ".AgendaVoteItems\" /><EntitySet Name=\"allBoards\" EntityType=\"NAV.allBoards\" /><En" +
-                "titySet Name=\"ApprovalEntries\" EntityType=\"NAV.ApprovalEntries\" /><EntitySet Nam" +
-                "e=\"blogReplies\" EntityType=\"NAV.blogReplies\" /><EntitySet Name=\"boardBlog\" Entit" +
-                "yType=\"NAV.boardBlog\" /><EntitySet Name=\"BoardComments\" EntityType=\"NAV.BoardCom" +
-                "ments\" /><EntitySet Name=\"boardMeetingAttendance\" EntityType=\"NAV.boardMeetingAt" +
-                "tendance\" /><EntitySet Name=\"boardMeetings\" EntityType=\"NAV.boardMeetings\" /><En" +
-                "titySet Name=\"Casuals\" EntityType=\"NAV.Casuals\" /><EntitySet Name=\"CommitteeBoar" +
-                "dMembers\" EntityType=\"NAV.CommitteeBoardMembers\" /><EntitySet Name=\"committeeMee" +
-                "tings\" EntityType=\"NAV.committeeMeetings\" /><EntitySet Name=\"Committees\" EntityT" +
-                "ype=\"NAV.Committees\" /><EntitySet Name=\"contacts\" EntityType=\"NAV.contacts\" /><E" +
-                "ntitySet Name=\"Copyright_Files\" EntityType=\"NAV.Copyright_Files\" /><EntitySet Na" +
-                "me=\"CopyrightCategories\" EntityType=\"NAV.CopyrightCategories\" /><EntitySet Name=" +
-                "\"copyrightsetups\" EntityType=\"NAV.copyrightsetups\" /><EntitySet Name=\"copyrights" +
-                "ubcategories\" EntityType=\"NAV.copyrightsubcategories\" /><EntitySet Name=\"Copyrig" +
-                "htWorkCategories\" EntityType=\"NAV.CopyrightWorkCategories\" /><EntitySet Name=\"Co" +
-                "pyrightWorks\" EntityType=\"NAV.CopyrightWorks\" /><EntitySet Name=\"Countries\" Enti" +
-                "tyType=\"NAV.Countries\" /><EntitySet Name=\"Customers\" EntityType=\"NAV.Customers\" " +
-                "/><EntitySet Name=\"emailvalidations\" EntityType=\"NAV.emailvalidations\" /><Entity" +
-                "Set Name=\"Employees\" EntityType=\"NAV.Employees\" /><EntitySet Name=\"FiscalYears\" " +
-                "EntityType=\"NAV.FiscalYears\" /><EntitySet Name=\"FundCode\" EntityType=\"NAV.FundCo" +
-                "de\" /><EntitySet Name=\"HrJobApplicants\" EntityType=\"NAV.HrJobApplicants\" /><Enti" +
-                "tySet Name=\"HRJobApplicants\" EntityType=\"NAV.HRJobApplicants\" /><EntitySet Name=" +
-                "\"HRPortalUsers\" EntityType=\"NAV.HRPortalUsers\" /><EntitySet Name=\"ImprestLines\" " +
-                "EntityType=\"NAV.ImprestLines\" /><EntitySet Name=\"ImprestMemo\" EntityType=\"NAV.Im" +
-                "prestMemo\" /><EntitySet Name=\"inAttendances\" EntityType=\"NAV.inAttendances\" /><E" +
-                "ntitySet Name=\"InventoryPostingGroups\" EntityType=\"NAV.InventoryPostingGroups\" /" +
-                "><EntitySet Name=\"ItemCategories\" EntityType=\"NAV.ItemCategories\" /><EntitySet N" +
-                "ame=\"Items\" EntityType=\"NAV.Items\" /><EntitySet Name=\"ItemSalesAndProfit\" Entity" +
-                "Type=\"NAV.ItemSalesAndProfit\" /><EntitySet Name=\"ItemSalesByCustomer\" EntityType" +
-                "=\"NAV.ItemSalesByCustomer\" /><EntitySet Name=\"JobApplicantHobies\" EntityType=\"NA" +
-                "V.JobApplicantHobies\" /><EntitySet Name=\"JobApplicantQualifications\" EntityType=" +
-                "\"NAV.JobApplicantQualifications\" /><EntitySet Name=\"JobApplicantReferees\" Entity" +
-                "Type=\"NAV.JobApplicantReferees\" /><EntitySet Name=\"JobRequirements\" EntityType=\"" +
-                "NAV.JobRequirements\" /><EntitySet Name=\"JobResponsibilities\" EntityType=\"NAV.Job" +
-                "Responsibilities\" /><EntitySet Name=\"jobs\" EntityType=\"NAV.jobs\" /><EntitySet Na" +
-                "me=\"JobTask\" EntityType=\"NAV.JobTask\" /><EntitySet Name=\"JobWorkingRelationships" +
-                "\" EntityType=\"NAV.JobWorkingRelationships\" /><EntitySet Name=\"languages\" EntityT" +
-                "ype=\"NAV.languages\" /><EntitySet Name=\"LeaveApplications\" EntityType=\"NAV.LeaveA" +
-                "pplications\" /><EntitySet Name=\"LeaveTypes\" EntityType=\"NAV.LeaveTypes\" /><Entit" +
-                "ySet Name=\"Locations\" EntityType=\"NAV.Locations\" /><EntitySet Name=\"MeetingAgend" +
-                "a\" EntityType=\"NAV.MeetingAgenda\" /><EntitySet Name=\"My_Meetings\" EntityType=\"NA" +
-                "V.My_Meetings\" /><EntitySet Name=\"myCommitee\" EntityType=\"NAV.myCommitee\" /><Ent" +
-                "itySet Name=\"MyJobApplications\" EntityType=\"NAV.MyJobApplications\" /><EntitySet " +
-                "Name=\"OtherCosts\" EntityType=\"NAV.OtherCosts\" /><EntitySet Name=\"Payments\" Entit" +
-                "yType=\"NAV.Payments\" /><EntitySet Name=\"payperiods\" EntityType=\"NAV.payperiods\" " +
-                "/><EntitySet Name=\"PortalUsers\" EntityType=\"NAV.PortalUsers\" /><EntitySet Name=\"" +
-                "PositionsSupervised\" EntityType=\"NAV.PositionsSupervised\" /><EntitySet Name=\"pos" +
-                "tcodes\" EntityType=\"NAV.postcodes\" /><EntitySet Name=\"PrequalifiedSuppliers\" Ent" +
-                "ityType=\"NAV.PrequalifiedSuppliers\" /><EntitySet Name=\"ProcurementHeader\" Entity" +
-                "Type=\"NAV.ProcurementHeader\" /><EntitySet Name=\"ProcurementPlan\" EntityType=\"NAV" +
-                ".ProcurementPlan\" /><EntitySet Name=\"ProcurementRequest\" EntityType=\"NAV.Procure" +
-                "mentRequest\" /><EntitySet Name=\"ProcurementRequestLines\" EntityType=\"NAV.Procure" +
-                "mentRequestLines\" /><EntitySet Name=\"ProjectMembers\" EntityType=\"NAV.ProjectMemb" +
-                "ers\" /><EntitySet Name=\"PurchaseHeader\" EntityType=\"NAV.PurchaseHeader\" /><Entit" +
-                "ySet Name=\"PurchaseLines\" EntityType=\"NAV.PurchaseLines\" /><EntitySet Name=\"Rece" +
-                "iptAndPaymentTypes\" EntityType=\"NAV.ReceiptAndPaymentTypes\" /><EntitySet Name=\"r" +
-                "eceipts\" EntityType=\"NAV.receipts\" /><EntitySet Name=\"Resources\" EntityType=\"NAV" +
-                ".Resources\" /><EntitySet Name=\"SalesDashboard\" EntityType=\"NAV.SalesDashboard\" /" +
-                "><EntitySet Name=\"SalesOpportunities\" EntityType=\"NAV.SalesOpportunities\" /><Ent" +
-                "itySet Name=\"SalesOrdersBySalesPerson\" EntityType=\"NAV.SalesOrdersBySalesPerson\"" +
-                " /><EntitySet Name=\"serviceitems\" EntityType=\"NAV.serviceitems\" /><EntitySet Nam" +
-                "e=\"SupplierCategories\" EntityType=\"NAV.SupplierCategories\" /><EntitySet Name=\"Su" +
-                "pplyCategoryHeader\" EntityType=\"NAV.SupplyCategoryHeader\" /><EntitySet Name=\"Ten" +
-                "derApps\" EntityType=\"NAV.TenderApps\" /><EntitySet Name=\"Tenders\" EntityType=\"NAV" +
-                ".Tenders\" /><EntitySet Name=\"TopCustomerOverview\" EntityType=\"NAV.TopCustomerOve" +
-                "rview\" /><EntitySet Name=\"TransportRequisition\" EntityType=\"NAV.TransportRequisi" +
-                "tion\" /><EntitySet Name=\"TravelRequisitionStaff\" EntityType=\"NAV.TravelRequisiti" +
-                "onStaff\" /><EntitySet Name=\"VacantPositions\" EntityType=\"NAV.VacantPositions\" />" +
-                "<EntitySet Name=\"Vendors\" EntityType=\"NAV.Vendors\" /><EntitySet Name=\"WorkTypes\"" +
-                " EntityType=\"NAV.WorkTypes\" /><EntitySet Name=\"Pending_Po\" EntityType=\"NAV.Pendi" +
-                "ng_Po\" /><EntitySet Name=\"Company\" EntityType=\"NAV.Company\" /><AssociationSet Na" +
-                "me=\"Company_ApprovalEntriesPage_ApprovalEntriesPage\" Association=\"NAV.Company_Ap" +
-                "provalEntriesPage\"><End Role=\"Company\" EntitySet=\"Company\" ";
+                "ation Name=\"Company_languages\"><End Type=\"NAV.languages\" Role=\"languages\" Multip" +
+                "licity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Associa" +
+                "tion><Association Name=\"Company_LeaveApplications\"><End Type=\"NAV.LeaveApplicati" +
+                "ons\" Role=\"LeaveApplications\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"C" +
+                "ompany\" Multiplicity=\"*\" /></Association><Association Name=\"Company_LeaveTypes\">" +
+                "<End Type=\"NAV.LeaveTypes\" Role=\"LeaveTypes\" Multiplicity=\"*\" /><End Type=\"NAV.C" +
+                "ompany\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Compa" +
+                "ny_Locations\"><End Type=\"NAV.Locations\" Role=\"Locations\" Multiplicity=\"*\" /><End" +
+                " Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association" +
+                " Name=\"Company_MeetingAgenda\"><End Type=\"NAV.MeetingAgenda\" Role=\"MeetingAgenda\"" +
+                " Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></" +
+                "Association><Association Name=\"Company_My_Meetings\"><End Type=\"NAV.My_Meetings\" " +
+                "Role=\"My_Meetings\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Mul" +
+                "tiplicity=\"*\" /></Association><Association Name=\"Company_myCommitee\"><End Type=\"" +
+                "NAV.myCommitee\" Role=\"myCommitee\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Rol" +
+                "e=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_MyJobApp" +
+                "lications\"><End Type=\"NAV.MyJobApplications\" Role=\"MyJobApplications\" Multiplici" +
+                "ty=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association" +
+                "><Association Name=\"Company_OtherCosts\"><End Type=\"NAV.OtherCosts\" Role=\"OtherCo" +
+                "sts\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" " +
+                "/></Association><Association Name=\"Company_Payments\"><End Type=\"NAV.Payments\" Ro" +
+                "le=\"Payments\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multipli" +
+                "city=\"*\" /></Association><Association Name=\"Company_payperiods\"><End Type=\"NAV.p" +
+                "ayperiods\" Role=\"payperiods\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Co" +
+                "mpany\" Multiplicity=\"*\" /></Association><Association Name=\"Company_PortalUsers\">" +
+                "<End Type=\"NAV.PortalUsers\" Role=\"PortalUsers\" Multiplicity=\"*\" /><End Type=\"NAV" +
+                ".Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Com" +
+                "pany_PositionsSupervised\"><End Type=\"NAV.PositionsSupervised\" Role=\"PositionsSup" +
+                "ervised\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=" +
+                "\"*\" /></Association><Association Name=\"Company_postcodes\"><End Type=\"NAV.postcod" +
+                "es\" Role=\"postcodes\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" M" +
+                "ultiplicity=\"*\" /></Association><Association Name=\"Company_PrequalifiedSuppliers" +
+                "\"><End Type=\"NAV.PrequalifiedSuppliers\" Role=\"PrequalifiedSuppliers\" Multiplicit" +
+                "y=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association>" +
+                "<Association Name=\"Company_ProcurementHeader\"><End Type=\"NAV.ProcurementHeader\" " +
+                "Role=\"ProcurementHeader\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Compan" +
+                "y\" Multiplicity=\"*\" /></Association><Association Name=\"Company_ProcurementPlan\">" +
+                "<End Type=\"NAV.ProcurementPlan\" Role=\"ProcurementPlan\" Multiplicity=\"*\" /><End T" +
+                "ype=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association N" +
+                "ame=\"Company_ProcurementRequest\"><End Type=\"NAV.ProcurementRequest\" Role=\"Procur" +
+                "ementRequest\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multipli" +
+                "city=\"*\" /></Association><Association Name=\"Company_ProcurementRequestLines\"><En" +
+                "d Type=\"NAV.ProcurementRequestLines\" Role=\"ProcurementRequestLines\" Multiplicity" +
+                "=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><" +
+                "Association Name=\"Company_ProjectMembers\"><End Type=\"NAV.ProjectMembers\" Role=\"P" +
+                "rojectMembers\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multipl" +
+                "icity=\"*\" /></Association><Association Name=\"Company_PurchaseHeader\"><End Type=\"" +
+                "NAV.PurchaseHeader\" Role=\"PurchaseHeader\" Multiplicity=\"*\" /><End Type=\"NAV.Comp" +
+                "any\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_" +
+                "PurchaseLines\"><End Type=\"NAV.PurchaseLines\" Role=\"PurchaseLines\" Multiplicity=\"" +
+                "*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><As" +
+                "sociation Name=\"Company_ReceiptAndPaymentTypes\"><End Type=\"NAV.ReceiptAndPayment" +
+                "Types\" Role=\"ReceiptAndPaymentTypes\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" " +
+                "Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_recei" +
+                "pts\"><End Type=\"NAV.receipts\" Role=\"receipts\" Multiplicity=\"*\" /><End Type=\"NAV." +
+                "Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Comp" +
+                "any_Resources\"><End Type=\"NAV.Resources\" Role=\"Resources\" Multiplicity=\"*\" /><En" +
+                "d Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associatio" +
+                "n Name=\"Company_SalesDashboard\"><End Type=\"NAV.SalesDashboard\" Role=\"SalesDashbo" +
+                "ard\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" " +
+                "/></Association><Association Name=\"Company_SalesOpportuniti";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart20 = "/><End Role=\"ApprovalEntriesPage\" EntitySet=\"ApprovalEntriesPage\" /></Association" +
-                "Set><AssociationSet Name=\"Company_powerbifinance_powerbifinance\" Association=\"NA" +
-                "V.Company_powerbifinance\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"p" +
-                "owerbifinance\" EntitySet=\"powerbifinance\" /></AssociationSet><AssociationSet Nam" +
-                "e=\"Company_AgendaSurportingDocuments_AgendaSurportingDocuments\" Association=\"NAV" +
-                ".Company_AgendaSurportingDocuments\"><End Role=\"Company\" EntitySet=\"Company\" /><E" +
-                "nd Role=\"AgendaSurportingDocuments\" EntitySet=\"AgendaSurportingDocuments\" /></As" +
-                "sociationSet><AssociationSet Name=\"Company_AgendaVoteItems_AgendaVoteItems\" Asso" +
-                "ciation=\"NAV.Company_AgendaVoteItems\"><End Role=\"Company\" EntitySet=\"Company\" />" +
-                "<End Role=\"AgendaVoteItems\" EntitySet=\"AgendaVoteItems\" /></AssociationSet><Asso" +
-                "ciationSet Name=\"Company_allBoards_allBoards\" Association=\"NAV.Company_allBoards" +
-                "\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"allBoards\" EntitySet=\"all" +
-                "Boards\" /></AssociationSet><AssociationSet Name=\"Company_ApprovalEntries_Approva" +
-                "lEntries\" Association=\"NAV.Company_ApprovalEntries\"><End Role=\"Company\" EntitySe" +
-                "t=\"Company\" /><End Role=\"ApprovalEntries\" EntitySet=\"ApprovalEntries\" /></Associ" +
-                "ationSet><AssociationSet Name=\"Company_blogReplies_blogReplies\" Association=\"NAV" +
-                ".Company_blogReplies\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"blogR" +
-                "eplies\" EntitySet=\"blogReplies\" /></AssociationSet><AssociationSet Name=\"Company" +
-                "_boardBlog_boardBlog\" Association=\"NAV.Company_boardBlog\"><End Role=\"Company\" En" +
-                "titySet=\"Company\" /><End Role=\"boardBlog\" EntitySet=\"boardBlog\" /></AssociationS" +
-                "et><AssociationSet Name=\"Company_BoardComments_BoardComments\" Association=\"NAV.C" +
-                "ompany_BoardComments\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Board" +
-                "Comments\" EntitySet=\"BoardComments\" /></AssociationSet><AssociationSet Name=\"Com" +
-                "pany_boardMeetingAttendance_boardMeetingAttendance\" Association=\"NAV.Company_boa" +
-                "rdMeetingAttendance\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"boardM" +
-                "eetingAttendance\" EntitySet=\"boardMeetingAttendance\" /></AssociationSet><Associa" +
-                "tionSet Name=\"Company_boardMeetings_boardMeetings\" Association=\"NAV.Company_boar" +
-                "dMeetings\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"boardMeetings\" E" +
-                "ntitySet=\"boardMeetings\" /></AssociationSet><AssociationSet Name=\"Company_Casual" +
-                "s_Casuals\" Association=\"NAV.Company_Casuals\"><End Role=\"Company\" EntitySet=\"Comp" +
-                "any\" /><End Role=\"Casuals\" EntitySet=\"Casuals\" /></AssociationSet><AssociationSe" +
-                "t Name=\"Company_CommitteeBoardMembers_CommitteeBoardMembers\" Association=\"NAV.Co" +
-                "mpany_CommitteeBoardMembers\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role" +
-                "=\"CommitteeBoardMembers\" EntitySet=\"CommitteeBoardMembers\" /></AssociationSet><A" +
-                "ssociationSet Name=\"Company_committeeMeetings_committeeMeetings\" Association=\"NA" +
-                "V.Company_committeeMeetings\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role" +
-                "=\"committeeMeetings\" EntitySet=\"committeeMeetings\" /></AssociationSet><Associati" +
-                "onSet Name=\"Company_Committees_Committees\" Association=\"NAV.Company_Committees\">" +
-                "<End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Committees\" EntitySet=\"Comm" +
-                "ittees\" /></AssociationSet><AssociationSet Name=\"Company_contacts_contacts\" Asso" +
-                "ciation=\"NAV.Company_contacts\"><End Role=\"Company\" EntitySet=\"Company\" /><End Ro" +
-                "le=\"contacts\" EntitySet=\"contacts\" /></AssociationSet><AssociationSet Name=\"Comp" +
-                "any_Copyright_Files_Copyright_Files\" Association=\"NAV.Company_Copyright_Files\"><" +
-                "End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Copyright_Files\" EntitySet=\"" +
-                "Copyright_Files\" /></AssociationSet><AssociationSet Name=\"Company_CopyrightCateg" +
-                "ories_CopyrightCategories\" Association=\"NAV.Company_CopyrightCategories\"><End Ro" +
-                "le=\"Company\" EntitySet=\"Company\" /><End Role=\"CopyrightCategories\" EntitySet=\"Co" +
-                "pyrightCategories\" /></AssociationSet><AssociationSet Name=\"Company_copyrightset" +
-                "ups_copyrightsetups\" Association=\"NAV.Company_copyrightsetups\"><End Role=\"Compan" +
-                "y\" EntitySet=\"Company\" /><End Role=\"copyrightsetups\" EntitySet=\"copyrightsetups\"" +
-                " /></AssociationSet><AssociationSet Name=\"Company_copyrightsubcategories_copyrig" +
-                "htsubcategories\" Association=\"NAV.Company_copyrightsubcategories\"><End Role=\"Com" +
-                "pany\" EntitySet=\"Company\" /><End Role=\"copyrightsubcategories\" EntitySet=\"copyri" +
-                "ghtsubcategories\" /></AssociationSet><AssociationSet Name=\"Company_CopyrightWork" +
-                "Categories_CopyrightWorkCategories\" Association=\"NAV.Company_CopyrightWorkCatego" +
-                "ries\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"CopyrightWorkCategori" +
-                "es\" EntitySet=\"CopyrightWorkCategories\" /></AssociationSet><AssociationSet Name=" +
-                "\"Company_CopyrightWorks_CopyrightWorks\" Association=\"NAV.Company_CopyrightWorks\"" +
-                "><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"CopyrightWorks\" EntitySet=" +
-                "\"CopyrightWorks\" /></AssociationSet><AssociationSet Name=\"Company_Countries_Coun" +
-                "tries\" Association=\"NAV.Company_Countries\"><End Role=\"Company\" EntitySet=\"Compan" +
-                "y\" /><End Role=\"Countries\" EntitySet=\"Countries\" /></AssociationSet><Association" +
-                "Set Name=\"Company_Customers_Customers\" Association=\"NAV.Company_Customers\"><End " +
-                "Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Customers\" EntitySet=\"Customers\"" +
-                " /></AssociationSet><AssociationSet Name=\"Company_emailvalidations_emailvalidati" +
-                "ons\" Association=\"NAV.Company_emailvalidations\"><End Role=\"Company\" EntitySet=\"C" +
-                "ompany\" /><End Role=\"emailvalidations\" EntitySet=\"emailvalidations\" /></Associat" +
-                "ionSet><AssociationSet Name=\"Company_Employees_Employees\" Association=\"NAV.Compa" +
-                "ny_Employees\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Employees\" En" +
-                "titySet=\"Employees\" /></AssociationSet><AssociationSet Name=\"Company_FiscalYears" +
-                "_FiscalYears\" Association=\"NAV.Company_FiscalYears\"><End Role=\"Company\" EntitySe" +
-                "t=\"Company\" /><End Role=\"FiscalYears\" EntitySet=\"FiscalYears\" /></AssociationSet" +
-                "><AssociationSet Name=\"Company_FundCode_FundCode\" Association=\"NAV.Company_FundC" +
-                "ode\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"FundCode\" EntitySet=\"F" +
-                "undCode\" /></AssociationSet><AssociationSet Name=\"Company_HrJobApplicants_HrJobA" +
-                "pplicants\" Association=\"NAV.Company_HrJobApplicants\"><End Role=\"Company\" EntityS" +
-                "et=\"Company\" /><End Role=\"HrJobApplicants\" EntitySet=\"HrJobApplicants\" /></Assoc" +
-                "iationSet><AssociationSet Name=\"Company_HRJobApplicants_HRJobApplicants\" Associa" +
-                "tion=\"NAV.Company_HRJobApplicants\"><End Role=\"Company\" EntitySet=\"Company\" /><En" +
-                "d Role=\"HRJobApplicants\" EntitySet=\"HRJobApplicants\" /></AssociationSet><Associa" +
-                "tionSet Name=\"Company_HRPortalUsers_HRPortalUsers\" Association=\"NAV.Company_HRPo" +
-                "rtalUsers\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"HRPortalUsers\" E" +
-                "ntitySet=\"HRPortalUsers\" /></AssociationSet><AssociationSet Name=\"Company_Impres" +
-                "tLines_ImprestLines\" Association=\"NAV.Company_ImprestLines\"><End Role=\"Company\" " +
-                "EntitySet=\"Company\" /><End Role=\"ImprestLines\" EntitySet=\"ImprestLines\" /></Asso" +
-                "ciationSet><AssociationSet Name=\"Company_ImprestMemo_ImprestMemo\" Association=\"N" +
-                "AV.Company_ImprestMemo\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Imp" +
-                "restMemo\" EntitySet=\"ImprestMemo\" /></AssociationSet><AssociationSet Name=\"Compa" +
-                "ny_inAttendances_inAttendances\" Association=\"NAV.Company_inAttendances\"><End Rol" +
-                "e=\"Company\" EntitySet=\"Company\" /><End Role=\"inAttendances\" EntitySet=\"inAttenda" +
-                "nces\" /></AssociationSet><AssociationSet Name=\"Company_InventoryPostingGroups_In" +
-                "ventoryPostingGroups\" Association=\"NAV.Company_InventoryPostingGroups\"><End Role" +
-                "=\"Company\" EntitySet=\"Company\" /><End Role=\"InventoryPostingGroups\" EntitySet=\"I" +
-                "nventoryPostingGroups\" /></AssociationSet><AssociationSet N";
+            private const string ModelPart19 = "es\"><End Type=\"NAV.SalesOpportunities\" Role=\"SalesOpportunities\" Multiplicity=\"*\"" +
+                " /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Asso" +
+                "ciation Name=\"Company_SalesOrdersBySalesPerson\"><End Type=\"NAV.SalesOrdersBySale" +
+                "sPerson\" Role=\"SalesOrdersBySalesPerson\" Multiplicity=\"*\" /><End Type=\"NAV.Compa" +
+                "ny\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_s" +
+                "erviceitems\"><End Type=\"NAV.serviceitems\" Role=\"serviceitems\" Multiplicity=\"*\" /" +
+                "><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Associ" +
+                "ation Name=\"Company_SupplierBlogReplies\"><End Type=\"NAV.SupplierBlogReplies\" Rol" +
+                "e=\"SupplierBlogReplies\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company" +
+                "\" Multiplicity=\"*\" /></Association><Association Name=\"Company_SupplierBlogs\"><En" +
+                "d Type=\"NAV.SupplierBlogs\" Role=\"SupplierBlogs\" Multiplicity=\"*\" /><End Type=\"NA" +
+                "V.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Co" +
+                "mpany_SupplierCategories\"><End Type=\"NAV.SupplierCategories\" Role=\"SupplierCateg" +
+                "ories\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*" +
+                "\" /></Association><Association Name=\"Company_SupplyCategoryHeader\"><End Type=\"NA" +
+                "V.SupplyCategoryHeader\" Role=\"SupplyCategoryHeader\" Multiplicity=\"*\" /><End Type" +
+                "=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name" +
+                "=\"Company_TenderApps\"><End Type=\"NAV.TenderApps\" Role=\"TenderApps\" Multiplicity=" +
+                "\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><A" +
+                "ssociation Name=\"Company_Tenders\"><End Type=\"NAV.Tenders\" Role=\"Tenders\" Multipl" +
+                "icity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Associat" +
+                "ion><Association Name=\"Company_TopCustomerOverview\"><End Type=\"NAV.TopCustomerOv" +
+                "erview\" Role=\"TopCustomerOverview\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Ro" +
+                "le=\"Company\" Multiplicity=\"*\" /></Association><Association Name=\"Company_Transpo" +
+                "rtRequisition\"><End Type=\"NAV.TransportRequisition\" Role=\"TransportRequisition\" " +
+                "Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></A" +
+                "ssociation><Association Name=\"Company_TravelRequisitionStaff\"><End Type=\"NAV.Tra" +
+                "velRequisitionStaff\" Role=\"TravelRequisitionStaff\" Multiplicity=\"*\" /><End Type=" +
+                "\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></Association><Association Name=" +
+                "\"Company_VacantPositions\"><End Type=\"NAV.VacantPositions\" Role=\"VacantPositions\"" +
+                " Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*\" /></" +
+                "Association><Association Name=\"Company_Vendors\"><End Type=\"NAV.Vendors\" Role=\"Ve" +
+                "ndors\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Multiplicity=\"*" +
+                "\" /></Association><Association Name=\"Company_WorkTypes\"><End Type=\"NAV.WorkTypes" +
+                "\" Role=\"WorkTypes\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Role=\"Company\" Mul" +
+                "tiplicity=\"*\" /></Association><Association Name=\"Company_Pending_Po\"><End Type=\"" +
+                "NAV.Pending_Po\" Role=\"Pending_Po\" Multiplicity=\"*\" /><End Type=\"NAV.Company\" Rol" +
+                "e=\"Company\" Multiplicity=\"*\" /></Association><EntityContainer Name=\"NAV\" m:IsDef" +
+                "aultEntityContainer=\"true\"><EntitySet Name=\"ApprovalEntriesPage\" EntityType=\"NAV" +
+                ".ApprovalEntriesPage\" /><EntitySet Name=\"powerbifinance\" EntityType=\"NAV.powerbi" +
+                "finance\" /><EntitySet Name=\"AgendaSurportingDocuments\" EntityType=\"NAV.AgendaSur" +
+                "portingDocuments\" /><EntitySet Name=\"AgendaVoteItems\" EntityType=\"NAV.AgendaVote" +
+                "Items\" /><EntitySet Name=\"allBoards\" EntityType=\"NAV.allBoards\" /><EntitySet Nam" +
+                "e=\"ApprovalEntries\" EntityType=\"NAV.ApprovalEntries\" /><EntitySet Name=\"blogRepl" +
+                "ies\" EntityType=\"NAV.blogReplies\" /><EntitySet Name=\"boardBlog\" EntityType=\"NAV." +
+                "boardBlog\" /><EntitySet Name=\"BoardComments\" EntityType=\"NAV.BoardComments\" /><E" +
+                "ntitySet Name=\"boardMeetingAttendance\" EntityType=\"NAV.boardMeetingAttendance\" /" +
+                "><EntitySet Name=\"boardMeetings\" EntityType=\"NAV.boardMeetings\" /><EntitySet Nam" +
+                "e=\"Casuals\" EntityType=\"NAV.Casuals\" /><EntitySet Name=\"CommitteeBoardMembers\" E" +
+                "ntityType=\"NAV.CommitteeBoardMembers\" /><EntitySet Name=\"committeeMeetings\" Enti" +
+                "tyType=\"NAV.committeeMeetings\" /><EntitySet Name=\"Committees\" EntityType=\"NAV.Co" +
+                "mmittees\" /><EntitySet Name=\"contacts\" EntityType=\"NAV.contacts\" /><EntitySet Na" +
+                "me=\"Copyright_Files\" EntityType=\"NAV.Copyright_Files\" /><EntitySet Name=\"Copyrig" +
+                "htCategories\" EntityType=\"NAV.CopyrightCategories\" /><EntitySet Name=\"copyrights" +
+                "etups\" EntityType=\"NAV.copyrightsetups\" /><EntitySet Name=\"copyrightsubcategorie" +
+                "s\" EntityType=\"NAV.copyrightsubcategories\" /><EntitySet Name=\"CopyrightWorkCateg" +
+                "ories\" EntityType=\"NAV.CopyrightWorkCategories\" /><EntitySet Name=\"CopyrightWork" +
+                "s\" EntityType=\"NAV.CopyrightWorks\" /><EntitySet Name=\"Countries\" EntityType=\"NAV" +
+                ".Countries\" /><EntitySet Name=\"Customers\" EntityType=\"NAV.Customers\" /><EntitySe" +
+                "t Name=\"emailvalidations\" EntityType=\"NAV.emailvalidations\" /><EntitySet Name=\"E" +
+                "mployees\" EntityType=\"NAV.Employees\" /><EntitySet Name=\"FiscalYears\" EntityType=" +
+                "\"NAV.FiscalYears\" /><EntitySet Name=\"FundCode\" EntityType=\"NAV.FundCode\" /><Enti" +
+                "tySet Name=\"HrJobApplicants\" EntityType=\"NAV.HrJobApplicants\" /><EntitySet Name=" +
+                "\"HRJobApplicants\" EntityType=\"NAV.HRJobApplicants\" /><EntitySet Name=\"HRPortalUs" +
+                "ers\" EntityType=\"NAV.HRPortalUsers\" /><EntitySet Name=\"ImprestLines\" EntityType=" +
+                "\"NAV.ImprestLines\" /><EntitySet Name=\"ImprestMemo\" EntityType=\"NAV.ImprestMemo\" " +
+                "/><EntitySet Name=\"inAttendances\" EntityType=\"NAV.inAttendances\" /><EntitySet Na" +
+                "me=\"InventoryPostingGroups\" EntityType=\"NAV.InventoryPostingGroups\" /><EntitySet" +
+                " Name=\"ItemCategories\" EntityType=\"NAV.ItemCategories\" /><EntitySet Name=\"Items\"" +
+                " EntityType=\"NAV.Items\" /><EntitySet Name=\"ItemSalesAndProfit\" EntityType=\"NAV.I" +
+                "temSalesAndProfit\" /><EntitySet Name=\"ItemSalesByCustomer\" EntityType=\"NAV.ItemS" +
+                "alesByCustomer\" /><EntitySet Name=\"JobApplicantHobies\" EntityType=\"NAV.JobApplic" +
+                "antHobies\" /><EntitySet Name=\"JobApplicantQualifications\" EntityType=\"NAV.JobApp" +
+                "licantQualifications\" /><EntitySet Name=\"JobApplicantReferees\" EntityType=\"NAV.J" +
+                "obApplicantReferees\" /><EntitySet Name=\"JobRequirements\" EntityType=\"NAV.JobRequ" +
+                "irements\" /><EntitySet Name=\"JobResponsibilities\" EntityType=\"NAV.JobResponsibil" +
+                "ities\" /><EntitySet Name=\"jobs\" EntityType=\"NAV.jobs\" /><EntitySet Name=\"JobTask" +
+                "\" EntityType=\"NAV.JobTask\" /><EntitySet Name=\"JobWorkingRelationships\" EntityTyp" +
+                "e=\"NAV.JobWorkingRelationships\" /><EntitySet Name=\"languages\" EntityType=\"NAV.la" +
+                "nguages\" /><EntitySet Name=\"LeaveApplications\" EntityType=\"NAV.LeaveApplications" +
+                "\" /><EntitySet Name=\"LeaveTypes\" EntityType=\"NAV.LeaveTypes\" /><EntitySet Name=\"" +
+                "Locations\" EntityType=\"NAV.Locations\" /><EntitySet Name=\"MeetingAgenda\" EntityTy" +
+                "pe=\"NAV.MeetingAgenda\" /><EntitySet Name=\"My_Meetings\" EntityType=\"NAV.My_Meetin" +
+                "gs\" /><EntitySet Name=\"myCommitee\" EntityType=\"NAV.myCommitee\" /><EntitySet Name" +
+                "=\"MyJobApplications\" EntityType=\"NAV.MyJobApplications\" /><EntitySet Name=\"Other" +
+                "Costs\" EntityType=\"NAV.OtherCosts\" /><EntitySet Name=\"Payments\" EntityType=\"NAV." +
+                "Payments\" /><EntitySet Name=\"payperiods\" EntityType=\"NAV.payperiods\" /><EntitySe" +
+                "t Name=\"PortalUsers\" EntityType=\"NAV.PortalUsers\" /><EntitySet Name=\"PositionsSu" +
+                "pervised\" EntityType=\"NAV.PositionsSupervised\" /><EntitySet Name=\"postcodes\" Ent" +
+                "ityType=\"NAV.postcodes\" /><EntitySet Name=\"PrequalifiedSuppliers\" EntityType=\"NA" +
+                "V.PrequalifiedSuppliers\" /><EntitySet Name=\"ProcurementHeader\" EntityType=\"NAV.P" +
+                "rocurementHeader\" /><EntitySet Name=\"ProcurementPlan\" EntityType=\"NAV.Procuremen" +
+                "tPlan\" /><EntitySet Name=\"ProcurementRequest\" EntityType=\"NAV.ProcurementRequest" +
+                "\" /><EntitySet Name=\"ProcurementRequestLines\" EntityType=\"N";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart21 = "ame=\"Company_ItemCategories_ItemCategories\" Association=\"NAV.Company_ItemCategori" +
-                "es\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ItemCategories\" EntityS" +
-                "et=\"ItemCategories\" /></AssociationSet><AssociationSet Name=\"Company_Items_Items" +
-                "\" Association=\"NAV.Company_Items\"><End Role=\"Company\" EntitySet=\"Company\" /><End" +
-                " Role=\"Items\" EntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"Company" +
-                "_ItemSalesAndProfit_ItemSalesAndProfit\" Association=\"NAV.Company_ItemSalesAndPro" +
-                "fit\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ItemSalesAndProfit\" En" +
-                "titySet=\"ItemSalesAndProfit\" /></AssociationSet><AssociationSet Name=\"Company_It" +
-                "emSalesByCustomer_ItemSalesByCustomer\" Association=\"NAV.Company_ItemSalesByCusto" +
-                "mer\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ItemSalesByCustomer\" E" +
-                "ntitySet=\"ItemSalesByCustomer\" /></AssociationSet><AssociationSet Name=\"Company_" +
-                "JobApplicantHobies_JobApplicantHobies\" Association=\"NAV.Company_JobApplicantHobi" +
-                "es\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"JobApplicantHobies\" Ent" +
-                "itySet=\"JobApplicantHobies\" /></AssociationSet><AssociationSet Name=\"Company_Job" +
-                "ApplicantQualifications_JobApplicantQualifications\" Association=\"NAV.Company_Job" +
-                "ApplicantQualifications\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Jo" +
-                "bApplicantQualifications\" EntitySet=\"JobApplicantQualifications\" /></Association" +
-                "Set><AssociationSet Name=\"Company_JobApplicantReferees_JobApplicantReferees\" Ass" +
-                "ociation=\"NAV.Company_JobApplicantReferees\"><End Role=\"Company\" EntitySet=\"Compa" +
-                "ny\" /><End Role=\"JobApplicantReferees\" EntitySet=\"JobApplicantReferees\" /></Asso" +
-                "ciationSet><AssociationSet Name=\"Company_JobRequirements_JobRequirements\" Associ" +
-                "ation=\"NAV.Company_JobRequirements\"><End Role=\"Company\" EntitySet=\"Company\" /><E" +
-                "nd Role=\"JobRequirements\" EntitySet=\"JobRequirements\" /></AssociationSet><Associ" +
-                "ationSet Name=\"Company_JobResponsibilities_JobResponsibilities\" Association=\"NAV" +
-                ".Company_JobResponsibilities\"><End Role=\"Company\" EntitySet=\"Company\" /><End Rol" +
-                "e=\"JobResponsibilities\" EntitySet=\"JobResponsibilities\" /></AssociationSet><Asso" +
-                "ciationSet Name=\"Company_jobs_jobs\" Association=\"NAV.Company_jobs\"><End Role=\"Co" +
-                "mpany\" EntitySet=\"Company\" /><End Role=\"jobs\" EntitySet=\"jobs\" /></AssociationSe" +
-                "t><AssociationSet Name=\"Company_JobTask_JobTask\" Association=\"NAV.Company_JobTas" +
-                "k\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"JobTask\" EntitySet=\"JobT" +
-                "ask\" /></AssociationSet><AssociationSet Name=\"Company_JobWorkingRelationships_Jo" +
-                "bWorkingRelationships\" Association=\"NAV.Company_JobWorkingRelationships\"><End Ro" +
-                "le=\"Company\" EntitySet=\"Company\" /><End Role=\"JobWorkingRelationships\" EntitySet" +
-                "=\"JobWorkingRelationships\" /></AssociationSet><AssociationSet Name=\"Company_lang" +
-                "uages_languages\" Association=\"NAV.Company_languages\"><End Role=\"Company\" EntityS" +
-                "et=\"Company\" /><End Role=\"languages\" EntitySet=\"languages\" /></AssociationSet><A" +
-                "ssociationSet Name=\"Company_LeaveApplications_LeaveApplications\" Association=\"NA" +
-                "V.Company_LeaveApplications\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role" +
-                "=\"LeaveApplications\" EntitySet=\"LeaveApplications\" /></AssociationSet><Associati" +
-                "onSet Name=\"Company_LeaveTypes_LeaveTypes\" Association=\"NAV.Company_LeaveTypes\">" +
-                "<End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"LeaveTypes\" EntitySet=\"Leav" +
-                "eTypes\" /></AssociationSet><AssociationSet Name=\"Company_Locations_Locations\" As" +
-                "sociation=\"NAV.Company_Locations\"><End Role=\"Company\" EntitySet=\"Company\" /><End" +
-                " Role=\"Locations\" EntitySet=\"Locations\" /></AssociationSet><AssociationSet Name=" +
-                "\"Company_MeetingAgenda_MeetingAgenda\" Association=\"NAV.Company_MeetingAgenda\"><E" +
-                "nd Role=\"Company\" EntitySet=\"Company\" /><End Role=\"MeetingAgenda\" EntitySet=\"Mee" +
-                "tingAgenda\" /></AssociationSet><AssociationSet Name=\"Company_My_Meetings_My_Meet" +
-                "ings\" Association=\"NAV.Company_My_Meetings\"><End Role=\"Company\" EntitySet=\"Compa" +
-                "ny\" /><End Role=\"My_Meetings\" EntitySet=\"My_Meetings\" /></AssociationSet><Associ" +
-                "ationSet Name=\"Company_myCommitee_myCommitee\" Association=\"NAV.Company_myCommite" +
-                "e\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"myCommitee\" EntitySet=\"m" +
-                "yCommitee\" /></AssociationSet><AssociationSet Name=\"Company_MyJobApplications_My" +
-                "JobApplications\" Association=\"NAV.Company_MyJobApplications\"><End Role=\"Company\"" +
-                " EntitySet=\"Company\" /><End Role=\"MyJobApplications\" EntitySet=\"MyJobApplication" +
-                "s\" /></AssociationSet><AssociationSet Name=\"Company_OtherCosts_OtherCosts\" Assoc" +
-                "iation=\"NAV.Company_OtherCosts\"><End Role=\"Company\" EntitySet=\"Company\" /><End R" +
-                "ole=\"OtherCosts\" EntitySet=\"OtherCosts\" /></AssociationSet><AssociationSet Name=" +
-                "\"Company_Payments_Payments\" Association=\"NAV.Company_Payments\"><End Role=\"Compan" +
-                "y\" EntitySet=\"Company\" /><End Role=\"Payments\" EntitySet=\"Payments\" /></Associati" +
-                "onSet><AssociationSet Name=\"Company_payperiods_payperiods\" Association=\"NAV.Comp" +
-                "any_payperiods\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"payperiods\"" +
-                " EntitySet=\"payperiods\" /></AssociationSet><AssociationSet Name=\"Company_PortalU" +
-                "sers_PortalUsers\" Association=\"NAV.Company_PortalUsers\"><End Role=\"Company\" Enti" +
-                "tySet=\"Company\" /><End Role=\"PortalUsers\" EntitySet=\"PortalUsers\" /></Associatio" +
-                "nSet><AssociationSet Name=\"Company_PositionsSupervised_PositionsSupervised\" Asso" +
-                "ciation=\"NAV.Company_PositionsSupervised\"><End Role=\"Company\" EntitySet=\"Company" +
-                "\" /><End Role=\"PositionsSupervised\" EntitySet=\"PositionsSupervised\" /></Associat" +
-                "ionSet><AssociationSet Name=\"Company_postcodes_postcodes\" Association=\"NAV.Compa" +
-                "ny_postcodes\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"postcodes\" En" +
-                "titySet=\"postcodes\" /></AssociationSet><AssociationSet Name=\"Company_Prequalifie" +
-                "dSuppliers_PrequalifiedSuppliers\" Association=\"NAV.Company_PrequalifiedSuppliers" +
-                "\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"PrequalifiedSuppliers\" En" +
-                "titySet=\"PrequalifiedSuppliers\" /></AssociationSet><AssociationSet Name=\"Company" +
-                "_ProcurementHeader_ProcurementHeader\" Association=\"NAV.Company_ProcurementHeader" +
-                "\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ProcurementHeader\" Entity" +
-                "Set=\"ProcurementHeader\" /></AssociationSet><AssociationSet Name=\"Company_Procure" +
-                "mentPlan_ProcurementPlan\" Association=\"NAV.Company_ProcurementPlan\"><End Role=\"C" +
-                "ompany\" EntitySet=\"Company\" /><End Role=\"ProcurementPlan\" EntitySet=\"Procurement" +
-                "Plan\" /></AssociationSet><AssociationSet Name=\"Company_ProcurementRequest_Procur" +
-                "ementRequest\" Association=\"NAV.Company_ProcurementRequest\"><End Role=\"Company\" E" +
-                "ntitySet=\"Company\" /><End Role=\"ProcurementRequest\" EntitySet=\"ProcurementReques" +
-                "t\" /></AssociationSet><AssociationSet Name=\"Company_ProcurementRequestLines_Proc" +
-                "urementRequestLines\" Association=\"NAV.Company_ProcurementRequestLines\"><End Role" +
-                "=\"Company\" EntitySet=\"Company\" /><End Role=\"ProcurementRequestLines\" EntitySet=\"" +
-                "ProcurementRequestLines\" /></AssociationSet><AssociationSet Name=\"Company_Projec" +
-                "tMembers_ProjectMembers\" Association=\"NAV.Company_ProjectMembers\"><End Role=\"Com" +
-                "pany\" EntitySet=\"Company\" /><End Role=\"ProjectMembers\" EntitySet=\"ProjectMembers" +
-                "\" /></AssociationSet><AssociationSet Name=\"Company_PurchaseHeader_PurchaseHeader" +
-                "\" Association=\"NAV.Company_PurchaseHeader\"><End Role=\"Company\" EntitySet=\"Compan" +
-                "y\" /><End Role=\"PurchaseHeader\" EntitySet=\"PurchaseHeader\" /></AssociationSet><A" +
-                "ssociationSet Name=\"Company_PurchaseLines_PurchaseLines\" Association=\"NAV.Compan" +
-                "y_PurchaseLines\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"PurchaseLi" +
-                "nes\" EntitySet=\"PurchaseLines\" /></AssociationSet><AssociationSet Name=\"Company_" +
-                "ReceiptAndPaymentTypes_ReceiptAndPaymentTypes\" Association=";
+            private const string ModelPart20 = "AV.ProcurementRequestLines\" /><EntitySet Name=\"ProjectMembers\" EntityType=\"NAV.Pr" +
+                "ojectMembers\" /><EntitySet Name=\"PurchaseHeader\" EntityType=\"NAV.PurchaseHeader\"" +
+                " /><EntitySet Name=\"PurchaseLines\" EntityType=\"NAV.PurchaseLines\" /><EntitySet N" +
+                "ame=\"ReceiptAndPaymentTypes\" EntityType=\"NAV.ReceiptAndPaymentTypes\" /><EntitySe" +
+                "t Name=\"receipts\" EntityType=\"NAV.receipts\" /><EntitySet Name=\"Resources\" Entity" +
+                "Type=\"NAV.Resources\" /><EntitySet Name=\"SalesDashboard\" EntityType=\"NAV.SalesDas" +
+                "hboard\" /><EntitySet Name=\"SalesOpportunities\" EntityType=\"NAV.SalesOpportunitie" +
+                "s\" /><EntitySet Name=\"SalesOrdersBySalesPerson\" EntityType=\"NAV.SalesOrdersBySal" +
+                "esPerson\" /><EntitySet Name=\"serviceitems\" EntityType=\"NAV.serviceitems\" /><Enti" +
+                "tySet Name=\"SupplierBlogReplies\" EntityType=\"NAV.SupplierBlogReplies\" /><EntityS" +
+                "et Name=\"SupplierBlogs\" EntityType=\"NAV.SupplierBlogs\" /><EntitySet Name=\"Suppli" +
+                "erCategories\" EntityType=\"NAV.SupplierCategories\" /><EntitySet Name=\"SupplyCateg" +
+                "oryHeader\" EntityType=\"NAV.SupplyCategoryHeader\" /><EntitySet Name=\"TenderApps\" " +
+                "EntityType=\"NAV.TenderApps\" /><EntitySet Name=\"Tenders\" EntityType=\"NAV.Tenders\"" +
+                " /><EntitySet Name=\"TopCustomerOverview\" EntityType=\"NAV.TopCustomerOverview\" />" +
+                "<EntitySet Name=\"TransportRequisition\" EntityType=\"NAV.TransportRequisition\" /><" +
+                "EntitySet Name=\"TravelRequisitionStaff\" EntityType=\"NAV.TravelRequisitionStaff\" " +
+                "/><EntitySet Name=\"VacantPositions\" EntityType=\"NAV.VacantPositions\" /><EntitySe" +
+                "t Name=\"Vendors\" EntityType=\"NAV.Vendors\" /><EntitySet Name=\"WorkTypes\" EntityTy" +
+                "pe=\"NAV.WorkTypes\" /><EntitySet Name=\"Pending_Po\" EntityType=\"NAV.Pending_Po\" />" +
+                "<EntitySet Name=\"Company\" EntityType=\"NAV.Company\" /><AssociationSet Name=\"Compa" +
+                "ny_ApprovalEntriesPage_ApprovalEntriesPage\" Association=\"NAV.Company_ApprovalEnt" +
+                "riesPage\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ApprovalEntriesPa" +
+                "ge\" EntitySet=\"ApprovalEntriesPage\" /></AssociationSet><AssociationSet Name=\"Com" +
+                "pany_powerbifinance_powerbifinance\" Association=\"NAV.Company_powerbifinance\"><En" +
+                "d Role=\"Company\" EntitySet=\"Company\" /><End Role=\"powerbifinance\" EntitySet=\"pow" +
+                "erbifinance\" /></AssociationSet><AssociationSet Name=\"Company_AgendaSurportingDo" +
+                "cuments_AgendaSurportingDocuments\" Association=\"NAV.Company_AgendaSurportingDocu" +
+                "ments\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"AgendaSurportingDocu" +
+                "ments\" EntitySet=\"AgendaSurportingDocuments\" /></AssociationSet><AssociationSet " +
+                "Name=\"Company_AgendaVoteItems_AgendaVoteItems\" Association=\"NAV.Company_AgendaVo" +
+                "teItems\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"AgendaVoteItems\" E" +
+                "ntitySet=\"AgendaVoteItems\" /></AssociationSet><AssociationSet Name=\"Company_allB" +
+                "oards_allBoards\" Association=\"NAV.Company_allBoards\"><End Role=\"Company\" EntityS" +
+                "et=\"Company\" /><End Role=\"allBoards\" EntitySet=\"allBoards\" /></AssociationSet><A" +
+                "ssociationSet Name=\"Company_ApprovalEntries_ApprovalEntries\" Association=\"NAV.Co" +
+                "mpany_ApprovalEntries\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Appr" +
+                "ovalEntries\" EntitySet=\"ApprovalEntries\" /></AssociationSet><AssociationSet Name" +
+                "=\"Company_blogReplies_blogReplies\" Association=\"NAV.Company_blogReplies\"><End Ro" +
+                "le=\"Company\" EntitySet=\"Company\" /><End Role=\"blogReplies\" EntitySet=\"blogReplie" +
+                "s\" /></AssociationSet><AssociationSet Name=\"Company_boardBlog_boardBlog\" Associa" +
+                "tion=\"NAV.Company_boardBlog\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role" +
+                "=\"boardBlog\" EntitySet=\"boardBlog\" /></AssociationSet><AssociationSet Name=\"Comp" +
+                "any_BoardComments_BoardComments\" Association=\"NAV.Company_BoardComments\"><End Ro" +
+                "le=\"Company\" EntitySet=\"Company\" /><End Role=\"BoardComments\" EntitySet=\"BoardCom" +
+                "ments\" /></AssociationSet><AssociationSet Name=\"Company_boardMeetingAttendance_b" +
+                "oardMeetingAttendance\" Association=\"NAV.Company_boardMeetingAttendance\"><End Rol" +
+                "e=\"Company\" EntitySet=\"Company\" /><End Role=\"boardMeetingAttendance\" EntitySet=\"" +
+                "boardMeetingAttendance\" /></AssociationSet><AssociationSet Name=\"Company_boardMe" +
+                "etings_boardMeetings\" Association=\"NAV.Company_boardMeetings\"><End Role=\"Company" +
+                "\" EntitySet=\"Company\" /><End Role=\"boardMeetings\" EntitySet=\"boardMeetings\" /></" +
+                "AssociationSet><AssociationSet Name=\"Company_Casuals_Casuals\" Association=\"NAV.C" +
+                "ompany_Casuals\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Casuals\" En" +
+                "titySet=\"Casuals\" /></AssociationSet><AssociationSet Name=\"Company_CommitteeBoar" +
+                "dMembers_CommitteeBoardMembers\" Association=\"NAV.Company_CommitteeBoardMembers\">" +
+                "<End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"CommitteeBoardMembers\" Enti" +
+                "tySet=\"CommitteeBoardMembers\" /></AssociationSet><AssociationSet Name=\"Company_c" +
+                "ommitteeMeetings_committeeMeetings\" Association=\"NAV.Company_committeeMeetings\">" +
+                "<End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"committeeMeetings\" EntitySe" +
+                "t=\"committeeMeetings\" /></AssociationSet><AssociationSet Name=\"Company_Committee" +
+                "s_Committees\" Association=\"NAV.Company_Committees\"><End Role=\"Company\" EntitySet" +
+                "=\"Company\" /><End Role=\"Committees\" EntitySet=\"Committees\" /></AssociationSet><A" +
+                "ssociationSet Name=\"Company_contacts_contacts\" Association=\"NAV.Company_contacts" +
+                "\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"contacts\" EntitySet=\"cont" +
+                "acts\" /></AssociationSet><AssociationSet Name=\"Company_Copyright_Files_Copyright" +
+                "_Files\" Association=\"NAV.Company_Copyright_Files\"><End Role=\"Company\" EntitySet=" +
+                "\"Company\" /><End Role=\"Copyright_Files\" EntitySet=\"Copyright_Files\" /></Associat" +
+                "ionSet><AssociationSet Name=\"Company_CopyrightCategories_CopyrightCategories\" As" +
+                "sociation=\"NAV.Company_CopyrightCategories\"><End Role=\"Company\" EntitySet=\"Compa" +
+                "ny\" /><End Role=\"CopyrightCategories\" EntitySet=\"CopyrightCategories\" /></Associ" +
+                "ationSet><AssociationSet Name=\"Company_copyrightsetups_copyrightsetups\" Associat" +
+                "ion=\"NAV.Company_copyrightsetups\"><End Role=\"Company\" EntitySet=\"Company\" /><End" +
+                " Role=\"copyrightsetups\" EntitySet=\"copyrightsetups\" /></AssociationSet><Associat" +
+                "ionSet Name=\"Company_copyrightsubcategories_copyrightsubcategories\" Association=" +
+                "\"NAV.Company_copyrightsubcategories\"><End Role=\"Company\" EntitySet=\"Company\" /><" +
+                "End Role=\"copyrightsubcategories\" EntitySet=\"copyrightsubcategories\" /></Associa" +
+                "tionSet><AssociationSet Name=\"Company_CopyrightWorkCategories_CopyrightWorkCateg" +
+                "ories\" Association=\"NAV.Company_CopyrightWorkCategories\"><End Role=\"Company\" Ent" +
+                "itySet=\"Company\" /><End Role=\"CopyrightWorkCategories\" EntitySet=\"CopyrightWorkC" +
+                "ategories\" /></AssociationSet><AssociationSet Name=\"Company_CopyrightWorks_Copyr" +
+                "ightWorks\" Association=\"NAV.Company_CopyrightWorks\"><End Role=\"Company\" EntitySe" +
+                "t=\"Company\" /><End Role=\"CopyrightWorks\" EntitySet=\"CopyrightWorks\" /></Associat" +
+                "ionSet><AssociationSet Name=\"Company_Countries_Countries\" Association=\"NAV.Compa" +
+                "ny_Countries\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Countries\" En" +
+                "titySet=\"Countries\" /></AssociationSet><AssociationSet Name=\"Company_Customers_C" +
+                "ustomers\" Association=\"NAV.Company_Customers\"><End Role=\"Company\" EntitySet=\"Com" +
+                "pany\" /><End Role=\"Customers\" EntitySet=\"Customers\" /></AssociationSet><Associat" +
+                "ionSet Name=\"Company_emailvalidations_emailvalidations\" Association=\"NAV.Company" +
+                "_emailvalidations\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"emailval" +
+                "idations\" EntitySet=\"emailvalidations\" /></AssociationSet><AssociationSet Name=\"" +
+                "Company_Employees_Employees\" Association=\"NAV.Company_Employees\"><End Role=\"Comp" +
+                "any\" EntitySet=\"Company\" /><End Role=\"Employees\" EntitySet=\"Employees\" /></Assoc" +
+                "iationSet><AssociationSet Name=\"Company_FiscalYears_FiscalYears\" Association=\"NA" +
+                "V.Company_FiscalYears\"><End Role=\"Company\" EntitySet=\"Compa";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart22 = "\"NAV.Company_ReceiptAndPaymentTypes\"><End Role=\"Company\" EntitySet=\"Company\" /><E" +
-                "nd Role=\"ReceiptAndPaymentTypes\" EntitySet=\"ReceiptAndPaymentTypes\" /></Associat" +
-                "ionSet><AssociationSet Name=\"Company_receipts_receipts\" Association=\"NAV.Company" +
-                "_receipts\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"receipts\" Entity" +
-                "Set=\"receipts\" /></AssociationSet><AssociationSet Name=\"Company_Resources_Resour" +
-                "ces\" Association=\"NAV.Company_Resources\"><End Role=\"Company\" EntitySet=\"Company\"" +
-                " /><End Role=\"Resources\" EntitySet=\"Resources\" /></AssociationSet><AssociationSe" +
-                "t Name=\"Company_SalesDashboard_SalesDashboard\" Association=\"NAV.Company_SalesDas" +
-                "hboard\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"SalesDashboard\" Ent" +
-                "itySet=\"SalesDashboard\" /></AssociationSet><AssociationSet Name=\"Company_SalesOp" +
-                "portunities_SalesOpportunities\" Association=\"NAV.Company_SalesOpportunities\"><En" +
-                "d Role=\"Company\" EntitySet=\"Company\" /><End Role=\"SalesOpportunities\" EntitySet=" +
-                "\"SalesOpportunities\" /></AssociationSet><AssociationSet Name=\"Company_SalesOrder" +
-                "sBySalesPerson_SalesOrdersBySalesPerson\" Association=\"NAV.Company_SalesOrdersByS" +
-                "alesPerson\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"SalesOrdersBySa" +
-                "lesPerson\" EntitySet=\"SalesOrdersBySalesPerson\" /></AssociationSet><AssociationS" +
-                "et Name=\"Company_serviceitems_serviceitems\" Association=\"NAV.Company_serviceitem" +
-                "s\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"serviceitems\" EntitySet=" +
-                "\"serviceitems\" /></AssociationSet><AssociationSet Name=\"Company_SupplierCategori" +
-                "es_SupplierCategories\" Association=\"NAV.Company_SupplierCategories\"><End Role=\"C" +
-                "ompany\" EntitySet=\"Company\" /><End Role=\"SupplierCategories\" EntitySet=\"Supplier" +
-                "Categories\" /></AssociationSet><AssociationSet Name=\"Company_SupplyCategoryHeade" +
-                "r_SupplyCategoryHeader\" Association=\"NAV.Company_SupplyCategoryHeader\"><End Role" +
-                "=\"Company\" EntitySet=\"Company\" /><End Role=\"SupplyCategoryHeader\" EntitySet=\"Sup" +
-                "plyCategoryHeader\" /></AssociationSet><AssociationSet Name=\"Company_TenderApps_T" +
-                "enderApps\" Association=\"NAV.Company_TenderApps\"><End Role=\"Company\" EntitySet=\"C" +
-                "ompany\" /><End Role=\"TenderApps\" EntitySet=\"TenderApps\" /></AssociationSet><Asso" +
-                "ciationSet Name=\"Company_Tenders_Tenders\" Association=\"NAV.Company_Tenders\"><End" +
-                " Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Tenders\" EntitySet=\"Tenders\" />" +
-                "</AssociationSet><AssociationSet Name=\"Company_TopCustomerOverview_TopCustomerOv" +
-                "erview\" Association=\"NAV.Company_TopCustomerOverview\"><End Role=\"Company\" Entity" +
-                "Set=\"Company\" /><End Role=\"TopCustomerOverview\" EntitySet=\"TopCustomerOverview\" " +
-                "/></AssociationSet><AssociationSet Name=\"Company_TransportRequisition_TransportR" +
-                "equisition\" Association=\"NAV.Company_TransportRequisition\"><End Role=\"Company\" E" +
-                "ntitySet=\"Company\" /><End Role=\"TransportRequisition\" EntitySet=\"TransportRequis" +
-                "ition\" /></AssociationSet><AssociationSet Name=\"Company_TravelRequisitionStaff_T" +
-                "ravelRequisitionStaff\" Association=\"NAV.Company_TravelRequisitionStaff\"><End Rol" +
-                "e=\"Company\" EntitySet=\"Company\" /><End Role=\"TravelRequisitionStaff\" EntitySet=\"" +
-                "TravelRequisitionStaff\" /></AssociationSet><AssociationSet Name=\"Company_VacantP" +
-                "ositions_VacantPositions\" Association=\"NAV.Company_VacantPositions\"><End Role=\"C" +
-                "ompany\" EntitySet=\"Company\" /><End Role=\"VacantPositions\" EntitySet=\"VacantPosit" +
-                "ions\" /></AssociationSet><AssociationSet Name=\"Company_Vendors_Vendors\" Associat" +
-                "ion=\"NAV.Company_Vendors\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"V" +
-                "endors\" EntitySet=\"Vendors\" /></AssociationSet><AssociationSet Name=\"Company_Wor" +
-                "kTypes_WorkTypes\" Association=\"NAV.Company_WorkTypes\"><End Role=\"Company\" Entity" +
-                "Set=\"Company\" /><End Role=\"WorkTypes\" EntitySet=\"WorkTypes\" /></AssociationSet><" +
-                "AssociationSet Name=\"Company_Pending_Po_Pending_Po\" Association=\"NAV.Company_Pen" +
-                "ding_Po\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Pending_Po\" Entity" +
-                "Set=\"Pending_Po\" /></AssociationSet></EntityContainer></Schema></edmx:DataServic" +
-                "es></edmx:Edmx>";
+            private const string ModelPart21 = "ny\" /><End Role=\"FiscalYears\" EntitySet=\"FiscalYears\" /></AssociationSet><Associa" +
+                "tionSet Name=\"Company_FundCode_FundCode\" Association=\"NAV.Company_FundCode\"><End" +
+                " Role=\"Company\" EntitySet=\"Company\" /><End Role=\"FundCode\" EntitySet=\"FundCode\" " +
+                "/></AssociationSet><AssociationSet Name=\"Company_HrJobApplicants_HrJobApplicants" +
+                "\" Association=\"NAV.Company_HrJobApplicants\"><End Role=\"Company\" EntitySet=\"Compa" +
+                "ny\" /><End Role=\"HrJobApplicants\" EntitySet=\"HrJobApplicants\" /></AssociationSet" +
+                "><AssociationSet Name=\"Company_HRJobApplicants_HRJobApplicants\" Association=\"NAV" +
+                ".Company_HRJobApplicants\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"H" +
+                "RJobApplicants\" EntitySet=\"HRJobApplicants\" /></AssociationSet><AssociationSet N" +
+                "ame=\"Company_HRPortalUsers_HRPortalUsers\" Association=\"NAV.Company_HRPortalUsers" +
+                "\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"HRPortalUsers\" EntitySet=" +
+                "\"HRPortalUsers\" /></AssociationSet><AssociationSet Name=\"Company_ImprestLines_Im" +
+                "prestLines\" Association=\"NAV.Company_ImprestLines\"><End Role=\"Company\" EntitySet" +
+                "=\"Company\" /><End Role=\"ImprestLines\" EntitySet=\"ImprestLines\" /></AssociationSe" +
+                "t><AssociationSet Name=\"Company_ImprestMemo_ImprestMemo\" Association=\"NAV.Compan" +
+                "y_ImprestMemo\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ImprestMemo\"" +
+                " EntitySet=\"ImprestMemo\" /></AssociationSet><AssociationSet Name=\"Company_inAtte" +
+                "ndances_inAttendances\" Association=\"NAV.Company_inAttendances\"><End Role=\"Compan" +
+                "y\" EntitySet=\"Company\" /><End Role=\"inAttendances\" EntitySet=\"inAttendances\" /><" +
+                "/AssociationSet><AssociationSet Name=\"Company_InventoryPostingGroups_InventoryPo" +
+                "stingGroups\" Association=\"NAV.Company_InventoryPostingGroups\"><End Role=\"Company" +
+                "\" EntitySet=\"Company\" /><End Role=\"InventoryPostingGroups\" EntitySet=\"InventoryP" +
+                "ostingGroups\" /></AssociationSet><AssociationSet Name=\"Company_ItemCategories_It" +
+                "emCategories\" Association=\"NAV.Company_ItemCategories\"><End Role=\"Company\" Entit" +
+                "ySet=\"Company\" /><End Role=\"ItemCategories\" EntitySet=\"ItemCategories\" /></Assoc" +
+                "iationSet><AssociationSet Name=\"Company_Items_Items\" Association=\"NAV.Company_It" +
+                "ems\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Items\" EntitySet=\"Item" +
+                "s\" /></AssociationSet><AssociationSet Name=\"Company_ItemSalesAndProfit_ItemSales" +
+                "AndProfit\" Association=\"NAV.Company_ItemSalesAndProfit\"><End Role=\"Company\" Enti" +
+                "tySet=\"Company\" /><End Role=\"ItemSalesAndProfit\" EntitySet=\"ItemSalesAndProfit\" " +
+                "/></AssociationSet><AssociationSet Name=\"Company_ItemSalesByCustomer_ItemSalesBy" +
+                "Customer\" Association=\"NAV.Company_ItemSalesByCustomer\"><End Role=\"Company\" Enti" +
+                "tySet=\"Company\" /><End Role=\"ItemSalesByCustomer\" EntitySet=\"ItemSalesByCustomer" +
+                "\" /></AssociationSet><AssociationSet Name=\"Company_JobApplicantHobies_JobApplica" +
+                "ntHobies\" Association=\"NAV.Company_JobApplicantHobies\"><End Role=\"Company\" Entit" +
+                "ySet=\"Company\" /><End Role=\"JobApplicantHobies\" EntitySet=\"JobApplicantHobies\" /" +
+                "></AssociationSet><AssociationSet Name=\"Company_JobApplicantQualifications_JobAp" +
+                "plicantQualifications\" Association=\"NAV.Company_JobApplicantQualifications\"><End" +
+                " Role=\"Company\" EntitySet=\"Company\" /><End Role=\"JobApplicantQualifications\" Ent" +
+                "itySet=\"JobApplicantQualifications\" /></AssociationSet><AssociationSet Name=\"Com" +
+                "pany_JobApplicantReferees_JobApplicantReferees\" Association=\"NAV.Company_JobAppl" +
+                "icantReferees\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"JobApplicant" +
+                "Referees\" EntitySet=\"JobApplicantReferees\" /></AssociationSet><AssociationSet Na" +
+                "me=\"Company_JobRequirements_JobRequirements\" Association=\"NAV.Company_JobRequire" +
+                "ments\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"JobRequirements\" Ent" +
+                "itySet=\"JobRequirements\" /></AssociationSet><AssociationSet Name=\"Company_JobRes" +
+                "ponsibilities_JobResponsibilities\" Association=\"NAV.Company_JobResponsibilities\"" +
+                "><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"JobResponsibilities\" Entit" +
+                "ySet=\"JobResponsibilities\" /></AssociationSet><AssociationSet Name=\"Company_jobs" +
+                "_jobs\" Association=\"NAV.Company_jobs\"><End Role=\"Company\" EntitySet=\"Company\" />" +
+                "<End Role=\"jobs\" EntitySet=\"jobs\" /></AssociationSet><AssociationSet Name=\"Compa" +
+                "ny_JobTask_JobTask\" Association=\"NAV.Company_JobTask\"><End Role=\"Company\" Entity" +
+                "Set=\"Company\" /><End Role=\"JobTask\" EntitySet=\"JobTask\" /></AssociationSet><Asso" +
+                "ciationSet Name=\"Company_JobWorkingRelationships_JobWorkingRelationships\" Associ" +
+                "ation=\"NAV.Company_JobWorkingRelationships\"><End Role=\"Company\" EntitySet=\"Compa" +
+                "ny\" /><End Role=\"JobWorkingRelationships\" EntitySet=\"JobWorkingRelationships\" />" +
+                "</AssociationSet><AssociationSet Name=\"Company_languages_languages\" Association=" +
+                "\"NAV.Company_languages\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"lan" +
+                "guages\" EntitySet=\"languages\" /></AssociationSet><AssociationSet Name=\"Company_L" +
+                "eaveApplications_LeaveApplications\" Association=\"NAV.Company_LeaveApplications\">" +
+                "<End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"LeaveApplications\" EntitySe" +
+                "t=\"LeaveApplications\" /></AssociationSet><AssociationSet Name=\"Company_LeaveType" +
+                "s_LeaveTypes\" Association=\"NAV.Company_LeaveTypes\"><End Role=\"Company\" EntitySet" +
+                "=\"Company\" /><End Role=\"LeaveTypes\" EntitySet=\"LeaveTypes\" /></AssociationSet><A" +
+                "ssociationSet Name=\"Company_Locations_Locations\" Association=\"NAV.Company_Locati" +
+                "ons\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Locations\" EntitySet=\"" +
+                "Locations\" /></AssociationSet><AssociationSet Name=\"Company_MeetingAgenda_Meetin" +
+                "gAgenda\" Association=\"NAV.Company_MeetingAgenda\"><End Role=\"Company\" EntitySet=\"" +
+                "Company\" /><End Role=\"MeetingAgenda\" EntitySet=\"MeetingAgenda\" /></AssociationSe" +
+                "t><AssociationSet Name=\"Company_My_Meetings_My_Meetings\" Association=\"NAV.Compan" +
+                "y_My_Meetings\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"My_Meetings\"" +
+                " EntitySet=\"My_Meetings\" /></AssociationSet><AssociationSet Name=\"Company_myComm" +
+                "itee_myCommitee\" Association=\"NAV.Company_myCommitee\"><End Role=\"Company\" Entity" +
+                "Set=\"Company\" /><End Role=\"myCommitee\" EntitySet=\"myCommitee\" /></AssociationSet" +
+                "><AssociationSet Name=\"Company_MyJobApplications_MyJobApplications\" Association=" +
+                "\"NAV.Company_MyJobApplications\"><End Role=\"Company\" EntitySet=\"Company\" /><End R" +
+                "ole=\"MyJobApplications\" EntitySet=\"MyJobApplications\" /></AssociationSet><Associ" +
+                "ationSet Name=\"Company_OtherCosts_OtherCosts\" Association=\"NAV.Company_OtherCost" +
+                "s\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"OtherCosts\" EntitySet=\"O" +
+                "therCosts\" /></AssociationSet><AssociationSet Name=\"Company_Payments_Payments\" A" +
+                "ssociation=\"NAV.Company_Payments\"><End Role=\"Company\" EntitySet=\"Company\" /><End" +
+                " Role=\"Payments\" EntitySet=\"Payments\" /></AssociationSet><AssociationSet Name=\"C" +
+                "ompany_payperiods_payperiods\" Association=\"NAV.Company_payperiods\"><End Role=\"Co" +
+                "mpany\" EntitySet=\"Company\" /><End Role=\"payperiods\" EntitySet=\"payperiods\" /></A" +
+                "ssociationSet><AssociationSet Name=\"Company_PortalUsers_PortalUsers\" Association" +
+                "=\"NAV.Company_PortalUsers\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"" +
+                "PortalUsers\" EntitySet=\"PortalUsers\" /></AssociationSet><AssociationSet Name=\"Co" +
+                "mpany_PositionsSupervised_PositionsSupervised\" Association=\"NAV.Company_Position" +
+                "sSupervised\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"PositionsSuper" +
+                "vised\" EntitySet=\"PositionsSupervised\" /></AssociationSet><AssociationSet Name=\"" +
+                "Company_postcodes_postcodes\" Association=\"NAV.Company_postcodes\"><End Role=\"Comp" +
+                "any\" EntitySet=\"Company\" /><End Role=\"postcodes\" EntitySet=\"postcodes\" /></Assoc" +
+                "iationSet><AssociationSet Name=\"Company_PrequalifiedSuppliers_PrequalifiedSuppli" +
+                "ers\" Association=\"NAV.Company_PrequalifiedSuppliers\"><End R";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart22 = "ole=\"Company\" EntitySet=\"Company\" /><End Role=\"PrequalifiedSuppliers\" EntitySet=\"" +
+                "PrequalifiedSuppliers\" /></AssociationSet><AssociationSet Name=\"Company_Procurem" +
+                "entHeader_ProcurementHeader\" Association=\"NAV.Company_ProcurementHeader\"><End Ro" +
+                "le=\"Company\" EntitySet=\"Company\" /><End Role=\"ProcurementHeader\" EntitySet=\"Proc" +
+                "urementHeader\" /></AssociationSet><AssociationSet Name=\"Company_ProcurementPlan_" +
+                "ProcurementPlan\" Association=\"NAV.Company_ProcurementPlan\"><End Role=\"Company\" E" +
+                "ntitySet=\"Company\" /><End Role=\"ProcurementPlan\" EntitySet=\"ProcurementPlan\" /><" +
+                "/AssociationSet><AssociationSet Name=\"Company_ProcurementRequest_ProcurementRequ" +
+                "est\" Association=\"NAV.Company_ProcurementRequest\"><End Role=\"Company\" EntitySet=" +
+                "\"Company\" /><End Role=\"ProcurementRequest\" EntitySet=\"ProcurementRequest\" /></As" +
+                "sociationSet><AssociationSet Name=\"Company_ProcurementRequestLines_ProcurementRe" +
+                "questLines\" Association=\"NAV.Company_ProcurementRequestLines\"><End Role=\"Company" +
+                "\" EntitySet=\"Company\" /><End Role=\"ProcurementRequestLines\" EntitySet=\"Procureme" +
+                "ntRequestLines\" /></AssociationSet><AssociationSet Name=\"Company_ProjectMembers_" +
+                "ProjectMembers\" Association=\"NAV.Company_ProjectMembers\"><End Role=\"Company\" Ent" +
+                "itySet=\"Company\" /><End Role=\"ProjectMembers\" EntitySet=\"ProjectMembers\" /></Ass" +
+                "ociationSet><AssociationSet Name=\"Company_PurchaseHeader_PurchaseHeader\" Associa" +
+                "tion=\"NAV.Company_PurchaseHeader\"><End Role=\"Company\" EntitySet=\"Company\" /><End" +
+                " Role=\"PurchaseHeader\" EntitySet=\"PurchaseHeader\" /></AssociationSet><Associatio" +
+                "nSet Name=\"Company_PurchaseLines_PurchaseLines\" Association=\"NAV.Company_Purchas" +
+                "eLines\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"PurchaseLines\" Enti" +
+                "tySet=\"PurchaseLines\" /></AssociationSet><AssociationSet Name=\"Company_ReceiptAn" +
+                "dPaymentTypes_ReceiptAndPaymentTypes\" Association=\"NAV.Company_ReceiptAndPayment" +
+                "Types\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"ReceiptAndPaymentTyp" +
+                "es\" EntitySet=\"ReceiptAndPaymentTypes\" /></AssociationSet><AssociationSet Name=\"" +
+                "Company_receipts_receipts\" Association=\"NAV.Company_receipts\"><End Role=\"Company" +
+                "\" EntitySet=\"Company\" /><End Role=\"receipts\" EntitySet=\"receipts\" /></Associatio" +
+                "nSet><AssociationSet Name=\"Company_Resources_Resources\" Association=\"NAV.Company" +
+                "_Resources\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Resources\" Enti" +
+                "tySet=\"Resources\" /></AssociationSet><AssociationSet Name=\"Company_SalesDashboar" +
+                "d_SalesDashboard\" Association=\"NAV.Company_SalesDashboard\"><End Role=\"Company\" E" +
+                "ntitySet=\"Company\" /><End Role=\"SalesDashboard\" EntitySet=\"SalesDashboard\" /></A" +
+                "ssociationSet><AssociationSet Name=\"Company_SalesOpportunities_SalesOpportunitie" +
+                "s\" Association=\"NAV.Company_SalesOpportunities\"><End Role=\"Company\" EntitySet=\"C" +
+                "ompany\" /><End Role=\"SalesOpportunities\" EntitySet=\"SalesOpportunities\" /></Asso" +
+                "ciationSet><AssociationSet Name=\"Company_SalesOrdersBySalesPerson_SalesOrdersByS" +
+                "alesPerson\" Association=\"NAV.Company_SalesOrdersBySalesPerson\"><End Role=\"Compan" +
+                "y\" EntitySet=\"Company\" /><End Role=\"SalesOrdersBySalesPerson\" EntitySet=\"SalesOr" +
+                "dersBySalesPerson\" /></AssociationSet><AssociationSet Name=\"Company_serviceitems" +
+                "_serviceitems\" Association=\"NAV.Company_serviceitems\"><End Role=\"Company\" Entity" +
+                "Set=\"Company\" /><End Role=\"serviceitems\" EntitySet=\"serviceitems\" /></Associatio" +
+                "nSet><AssociationSet Name=\"Company_SupplierBlogReplies_SupplierBlogReplies\" Asso" +
+                "ciation=\"NAV.Company_SupplierBlogReplies\"><End Role=\"Company\" EntitySet=\"Company" +
+                "\" /><End Role=\"SupplierBlogReplies\" EntitySet=\"SupplierBlogReplies\" /></Associat" +
+                "ionSet><AssociationSet Name=\"Company_SupplierBlogs_SupplierBlogs\" Association=\"N" +
+                "AV.Company_SupplierBlogs\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"S" +
+                "upplierBlogs\" EntitySet=\"SupplierBlogs\" /></AssociationSet><AssociationSet Name=" +
+                "\"Company_SupplierCategories_SupplierCategories\" Association=\"NAV.Company_Supplie" +
+                "rCategories\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"SupplierCatego" +
+                "ries\" EntitySet=\"SupplierCategories\" /></AssociationSet><AssociationSet Name=\"Co" +
+                "mpany_SupplyCategoryHeader_SupplyCategoryHeader\" Association=\"NAV.Company_Supply" +
+                "CategoryHeader\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"SupplyCateg" +
+                "oryHeader\" EntitySet=\"SupplyCategoryHeader\" /></AssociationSet><AssociationSet N" +
+                "ame=\"Company_TenderApps_TenderApps\" Association=\"NAV.Company_TenderApps\"><End Ro" +
+                "le=\"Company\" EntitySet=\"Company\" /><End Role=\"TenderApps\" EntitySet=\"TenderApps\"" +
+                " /></AssociationSet><AssociationSet Name=\"Company_Tenders_Tenders\" Association=\"" +
+                "NAV.Company_Tenders\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"Tender" +
+                "s\" EntitySet=\"Tenders\" /></AssociationSet><AssociationSet Name=\"Company_TopCusto" +
+                "merOverview_TopCustomerOverview\" Association=\"NAV.Company_TopCustomerOverview\"><" +
+                "End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"TopCustomerOverview\" EntityS" +
+                "et=\"TopCustomerOverview\" /></AssociationSet><AssociationSet Name=\"Company_Transp" +
+                "ortRequisition_TransportRequisition\" Association=\"NAV.Company_TransportRequisiti" +
+                "on\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"TransportRequisition\" E" +
+                "ntitySet=\"TransportRequisition\" /></AssociationSet><AssociationSet Name=\"Company" +
+                "_TravelRequisitionStaff_TravelRequisitionStaff\" Association=\"NAV.Company_TravelR" +
+                "equisitionStaff\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"TravelRequ" +
+                "isitionStaff\" EntitySet=\"TravelRequisitionStaff\" /></AssociationSet><Association" +
+                "Set Name=\"Company_VacantPositions_VacantPositions\" Association=\"NAV.Company_Vaca" +
+                "ntPositions\"><End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"VacantPosition" +
+                "s\" EntitySet=\"VacantPositions\" /></AssociationSet><AssociationSet Name=\"Company_" +
+                "Vendors_Vendors\" Association=\"NAV.Company_Vendors\"><End Role=\"Company\" EntitySet" +
+                "=\"Company\" /><End Role=\"Vendors\" EntitySet=\"Vendors\" /></AssociationSet><Associa" +
+                "tionSet Name=\"Company_WorkTypes_WorkTypes\" Association=\"NAV.Company_WorkTypes\"><" +
+                "End Role=\"Company\" EntitySet=\"Company\" /><End Role=\"WorkTypes\" EntitySet=\"WorkTy" +
+                "pes\" /></AssociationSet><AssociationSet Name=\"Company_Pending_Po_Pending_Po\" Ass" +
+                "ociation=\"NAV.Company_Pending_Po\"><End Role=\"Company\" EntitySet=\"Company\" /><End" +
+                " Role=\"Pending_Po\" EntitySet=\"Pending_Po\" /></AssociationSet></EntityContainer><" +
+                "/Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -43384,6 +43462,342 @@ namespace DataFetchAPI.ODataRef
         partial void OnTotal_Qty_ConsumedChanged();
     }
     /// <summary>
+    /// There are no comments for NAV.SupplierBlogReplies in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Entry_Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Entry_Id")]
+    public partial class SupplierBlogReplies
+    {
+        /// <summary>
+        /// Create a new SupplierBlogReplies object.
+        /// </summary>
+        /// <param name="entry_Id">Initial value of Entry_Id.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static SupplierBlogReplies CreateSupplierBlogReplies(int entry_Id)
+        {
+            SupplierBlogReplies supplierBlogReplies = new SupplierBlogReplies();
+            supplierBlogReplies.Entry_Id = entry_Id;
+            return supplierBlogReplies;
+        }
+        /// <summary>
+        /// There are no comments for Property Entry_Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Entry_Id
+        {
+            get
+            {
+                return this._Entry_Id;
+            }
+            set
+            {
+                this.OnEntry_IdChanging(value);
+                this._Entry_Id = value;
+                this.OnEntry_IdChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Entry_Id;
+        partial void OnEntry_IdChanging(int value);
+        partial void OnEntry_IdChanged();
+        /// <summary>
+        /// There are no comments for Property BlogIdCode in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> BlogIdCode
+        {
+            get
+            {
+                return this._BlogIdCode;
+            }
+            set
+            {
+                this.OnBlogIdCodeChanging(value);
+                this._BlogIdCode = value;
+                this.OnBlogIdCodeChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _BlogIdCode;
+        partial void OnBlogIdCodeChanging(global::System.Nullable<int> value);
+        partial void OnBlogIdCodeChanged();
+        /// <summary>
+        /// There are no comments for Property Blog_Reply in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Blog_Reply
+        {
+            get
+            {
+                return this._Blog_Reply;
+            }
+            set
+            {
+                this.OnBlog_ReplyChanging(value);
+                this._Blog_Reply = value;
+                this.OnBlog_ReplyChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Blog_Reply;
+        partial void OnBlog_ReplyChanging(string value);
+        partial void OnBlog_ReplyChanged();
+        /// <summary>
+        /// There are no comments for Property Replier_Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Replier_Name
+        {
+            get
+            {
+                return this._Replier_Name;
+            }
+            set
+            {
+                this.OnReplier_NameChanging(value);
+                this._Replier_Name = value;
+                this.OnReplier_NameChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Replier_Name;
+        partial void OnReplier_NameChanging(string value);
+        partial void OnReplier_NameChanged();
+        /// <summary>
+        /// There are no comments for Property Replier_VendorNo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Replier_VendorNo
+        {
+            get
+            {
+                return this._Replier_VendorNo;
+            }
+            set
+            {
+                this.OnReplier_VendorNoChanging(value);
+                this._Replier_VendorNo = value;
+                this.OnReplier_VendorNoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Replier_VendorNo;
+        partial void OnReplier_VendorNoChanging(string value);
+        partial void OnReplier_VendorNoChanged();
+        /// <summary>
+        /// There are no comments for Property Date_Replied in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> Date_Replied
+        {
+            get
+            {
+                return this._Date_Replied;
+            }
+            set
+            {
+                this.OnDate_RepliedChanging(value);
+                this._Date_Replied = value;
+                this.OnDate_RepliedChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _Date_Replied;
+        partial void OnDate_RepliedChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnDate_RepliedChanged();
+        /// <summary>
+        /// There are no comments for Property Time_Replied in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Time_Replied
+        {
+            get
+            {
+                return this._Time_Replied;
+            }
+            set
+            {
+                this.OnTime_RepliedChanging(value);
+                this._Time_Replied = value;
+                this.OnTime_RepliedChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Time_Replied;
+        partial void OnTime_RepliedChanging(string value);
+        partial void OnTime_RepliedChanged();
+    }
+    /// <summary>
+    /// There are no comments for NAV.SupplierBlogs in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Blog_Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Blog_Id")]
+    public partial class SupplierBlogs
+    {
+        /// <summary>
+        /// Create a new SupplierBlogs object.
+        /// </summary>
+        /// <param name="blog_Id">Initial value of Blog_Id.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static SupplierBlogs CreateSupplierBlogs(int blog_Id)
+        {
+            SupplierBlogs supplierBlogs = new SupplierBlogs();
+            supplierBlogs.Blog_Id = blog_Id;
+            return supplierBlogs;
+        }
+        /// <summary>
+        /// There are no comments for Property Blog_Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Blog_Id
+        {
+            get
+            {
+                return this._Blog_Id;
+            }
+            set
+            {
+                this.OnBlog_IdChanging(value);
+                this._Blog_Id = value;
+                this.OnBlog_IdChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Blog_Id;
+        partial void OnBlog_IdChanging(int value);
+        partial void OnBlog_IdChanged();
+        /// <summary>
+        /// There are no comments for Property Blog_Title in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Blog_Title
+        {
+            get
+            {
+                return this._Blog_Title;
+            }
+            set
+            {
+                this.OnBlog_TitleChanging(value);
+                this._Blog_Title = value;
+                this.OnBlog_TitleChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Blog_Title;
+        partial void OnBlog_TitleChanging(string value);
+        partial void OnBlog_TitleChanged();
+        /// <summary>
+        /// There are no comments for Property Blog_Body in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Blog_Body
+        {
+            get
+            {
+                return this._Blog_Body;
+            }
+            set
+            {
+                this.OnBlog_BodyChanging(value);
+                this._Blog_Body = value;
+                this.OnBlog_BodyChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Blog_Body;
+        partial void OnBlog_BodyChanging(string value);
+        partial void OnBlog_BodyChanged();
+        /// <summary>
+        /// There are no comments for Property Created_ByVendorNo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Created_ByVendorNo
+        {
+            get
+            {
+                return this._Created_ByVendorNo;
+            }
+            set
+            {
+                this.OnCreated_ByVendorNoChanging(value);
+                this._Created_ByVendorNo = value;
+                this.OnCreated_ByVendorNoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Created_ByVendorNo;
+        partial void OnCreated_ByVendorNoChanging(string value);
+        partial void OnCreated_ByVendorNoChanged();
+        /// <summary>
+        /// There are no comments for Property Date_Created in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> Date_Created
+        {
+            get
+            {
+                return this._Date_Created;
+            }
+            set
+            {
+                this.OnDate_CreatedChanging(value);
+                this._Date_Created = value;
+                this.OnDate_CreatedChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _Date_Created;
+        partial void OnDate_CreatedChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnDate_CreatedChanged();
+        /// <summary>
+        /// There are no comments for Property Created_ByVendorName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Created_ByVendorName
+        {
+            get
+            {
+                return this._Created_ByVendorName;
+            }
+            set
+            {
+                this.OnCreated_ByVendorNameChanging(value);
+                this._Created_ByVendorName = value;
+                this.OnCreated_ByVendorNameChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Created_ByVendorName;
+        partial void OnCreated_ByVendorNameChanging(string value);
+        partial void OnCreated_ByVendorNameChanged();
+        /// <summary>
+        /// There are no comments for Property Time_Created in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Time_Created
+        {
+            get
+            {
+                return this._Time_Created;
+            }
+            set
+            {
+                this.OnTime_CreatedChanging(value);
+                this._Time_Created = value;
+                this.OnTime_CreatedChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Time_Created;
+        partial void OnTime_CreatedChanging(string value);
+        partial void OnTime_CreatedChanged();
+    }
+    /// <summary>
     /// There are no comments for NAV.SupplierCategories in the schema.
     /// </summary>
     /// <KeyProperties>
@@ -47898,6 +48312,48 @@ namespace DataFetchAPI.ODataRef
         partial void OnE_MailChanging(string value);
         partial void OnE_MailChanged();
         /// <summary>
+        /// There are no comments for Property PIN_Number in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PIN_Number
+        {
+            get
+            {
+                return this._PIN_Number;
+            }
+            set
+            {
+                this.OnPIN_NumberChanging(value);
+                this._PIN_Number = value;
+                this.OnPIN_NumberChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PIN_Number;
+        partial void OnPIN_NumberChanging(string value);
+        partial void OnPIN_NumberChanged();
+        /// <summary>
+        /// There are no comments for Property Vendor_Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Vendor_Type
+        {
+            get
+            {
+                return this._Vendor_Type;
+            }
+            set
+            {
+                this.OnVendor_TypeChanging(value);
+                this._Vendor_Type = value;
+                this.OnVendor_TypeChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Vendor_Type;
+        partial void OnVendor_TypeChanging(string value);
+        partial void OnVendor_TypeChanged();
+        /// <summary>
         /// There are no comments for Property Comment in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -49927,6 +50383,46 @@ namespace DataFetchAPI.ODataRef
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Collections.ObjectModel.Collection<serviceitems> _serviceitems = new global::System.Collections.ObjectModel.Collection<serviceitems>();
+        /// <summary>
+        /// There are no comments for SupplierBlogReplies in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.Collection<SupplierBlogReplies> SupplierBlogReplies
+        {
+            get
+            {
+                return this._SupplierBlogReplies;
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    this._SupplierBlogReplies = value;
+                }
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.Collection<SupplierBlogReplies> _SupplierBlogReplies = new global::System.Collections.ObjectModel.Collection<SupplierBlogReplies>();
+        /// <summary>
+        /// There are no comments for SupplierBlogs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.Collection<SupplierBlogs> SupplierBlogs
+        {
+            get
+            {
+                return this._SupplierBlogs;
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    this._SupplierBlogs = value;
+                }
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.Collection<SupplierBlogs> _SupplierBlogs = new global::System.Collections.ObjectModel.Collection<SupplierBlogs>();
         /// <summary>
         /// There are no comments for SupplierCategories in the schema.
         /// </summary>

@@ -26,6 +26,15 @@ namespace DataFetchAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/GetAllVendors")]
+        public IHttpActionResult GetAllVendors()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var users = odataCon.Vendors.ToList();
+            return Json(users);
+        }
+
+        [HttpGet]
         [Route("api/GetPortalContacts")]
         public IHttpActionResult GetPortalContacts()
         {
@@ -96,6 +105,25 @@ namespace DataFetchAPI.Controllers
             var tenders = odataCon.TenderApps.ToList();
             return Json(tenders);
         }
+
+        [HttpGet]
+        [Route("api/GetAllBlogForums")]
+        public IHttpActionResult GetAllBlogForums()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var blogs = odataCon.SupplierBlogs.ToList();
+            return Json(blogs);
+        }
+
+        [HttpGet]
+        [Route("api/GetAllBlogForumsReplies")]
+        public IHttpActionResult GetAllBlogForumsReplies()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var blogs = odataCon.SupplierBlogReplies.ToList();
+            return Json(blogs);
+        }
+
         // GET api/values/5
         public string Get(int id)
         {

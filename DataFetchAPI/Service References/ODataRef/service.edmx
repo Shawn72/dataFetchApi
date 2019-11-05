@@ -2217,6 +2217,30 @@
         <Property Name="Service_Contracts" Type="Edm.Boolean" />
         <Property Name="Total_Qty_Consumed" Type="Edm.Decimal" />
       </EntityType>
+      <EntityType Name="SupplierBlogReplies">
+        <Key>
+          <PropertyRef Name="Entry_Id" />
+        </Key>
+        <Property Name="Entry_Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BlogIdCode" Type="Edm.Int32" />
+        <Property Name="Blog_Reply" Type="Edm.String" />
+        <Property Name="Replier_Name" Type="Edm.String" />
+        <Property Name="Replier_VendorNo" Type="Edm.String" />
+        <Property Name="Date_Replied" Type="Edm.DateTime" />
+        <Property Name="Time_Replied" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SupplierBlogs">
+        <Key>
+          <PropertyRef Name="Blog_Id" />
+        </Key>
+        <Property Name="Blog_Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Blog_Title" Type="Edm.String" />
+        <Property Name="Blog_Body" Type="Edm.String" />
+        <Property Name="Created_ByVendorNo" Type="Edm.String" />
+        <Property Name="Date_Created" Type="Edm.DateTime" />
+        <Property Name="Created_ByVendorName" Type="Edm.String" />
+        <Property Name="Time_Created" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="SupplierCategories">
         <Key>
           <PropertyRef Name="Category_Code" />
@@ -2473,6 +2497,8 @@
         <Property Name="Pay_to_Vendor_No" Type="Edm.String" />
         <Property Name="Primary_Contact_No" Type="Edm.String" />
         <Property Name="E_Mail" Type="Edm.String" />
+        <Property Name="PIN_Number" Type="Edm.String" />
+        <Property Name="Vendor_Type" Type="Edm.String" />
         <Property Name="Comment" Type="Edm.Boolean" />
       </EntityType>
       <EntityType Name="WorkTypes">
@@ -2587,6 +2613,8 @@
         <NavigationProperty Name="SalesOpportunities" Relationship="NAV.Company_SalesOpportunities" ToRole="SalesOpportunities" FromRole="Company" />
         <NavigationProperty Name="SalesOrdersBySalesPerson" Relationship="NAV.Company_SalesOrdersBySalesPerson" ToRole="SalesOrdersBySalesPerson" FromRole="Company" />
         <NavigationProperty Name="serviceitems" Relationship="NAV.Company_serviceitems" ToRole="serviceitems" FromRole="Company" />
+        <NavigationProperty Name="SupplierBlogReplies" Relationship="NAV.Company_SupplierBlogReplies" ToRole="SupplierBlogReplies" FromRole="Company" />
+        <NavigationProperty Name="SupplierBlogs" Relationship="NAV.Company_SupplierBlogs" ToRole="SupplierBlogs" FromRole="Company" />
         <NavigationProperty Name="SupplierCategories" Relationship="NAV.Company_SupplierCategories" ToRole="SupplierCategories" FromRole="Company" />
         <NavigationProperty Name="SupplyCategoryHeader" Relationship="NAV.Company_SupplyCategoryHeader" ToRole="SupplyCategoryHeader" FromRole="Company" />
         <NavigationProperty Name="TenderApps" Relationship="NAV.Company_TenderApps" ToRole="TenderApps" FromRole="Company" />
@@ -2903,6 +2931,14 @@
         <End Type="NAV.serviceitems" Role="serviceitems" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_SupplierBlogReplies">
+        <End Type="NAV.SupplierBlogReplies" Role="SupplierBlogReplies" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_SupplierBlogs">
+        <End Type="NAV.SupplierBlogs" Role="SupplierBlogs" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_SupplierCategories">
         <End Type="NAV.SupplierCategories" Role="SupplierCategories" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3024,6 +3060,8 @@
         <EntitySet Name="SalesOpportunities" EntityType="NAV.SalesOpportunities" />
         <EntitySet Name="SalesOrdersBySalesPerson" EntityType="NAV.SalesOrdersBySalesPerson" />
         <EntitySet Name="serviceitems" EntityType="NAV.serviceitems" />
+        <EntitySet Name="SupplierBlogReplies" EntityType="NAV.SupplierBlogReplies" />
+        <EntitySet Name="SupplierBlogs" EntityType="NAV.SupplierBlogs" />
         <EntitySet Name="SupplierCategories" EntityType="NAV.SupplierCategories" />
         <EntitySet Name="SupplyCategoryHeader" EntityType="NAV.SupplyCategoryHeader" />
         <EntitySet Name="TenderApps" EntityType="NAV.TenderApps" />
@@ -3339,6 +3377,14 @@
         <AssociationSet Name="Company_serviceitems_serviceitems" Association="NAV.Company_serviceitems">
           <End Role="Company" EntitySet="Company" />
           <End Role="serviceitems" EntitySet="serviceitems" />
+        </AssociationSet>
+        <AssociationSet Name="Company_SupplierBlogReplies_SupplierBlogReplies" Association="NAV.Company_SupplierBlogReplies">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="SupplierBlogReplies" EntitySet="SupplierBlogReplies" />
+        </AssociationSet>
+        <AssociationSet Name="Company_SupplierBlogs_SupplierBlogs" Association="NAV.Company_SupplierBlogs">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="SupplierBlogs" EntitySet="SupplierBlogs" />
         </AssociationSet>
         <AssociationSet Name="Company_SupplierCategories_SupplierCategories" Association="NAV.Company_SupplierCategories">
           <End Role="Company" EntitySet="Company" />
