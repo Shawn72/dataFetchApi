@@ -323,6 +323,13 @@
         <Property Name="Phone_No" Type="Edm.String" />
         <Property Name="City" Type="Edm.String" />
         <Property Name="Company_No" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="Post_Code" Type="Edm.String" />
+        <Property Name="County" Type="Edm.String" />
+        <Property Name="Company_Name" Type="Edm.String" />
+        <Property Name="Director_1_Name" Type="Edm.String" />
+        <Property Name="Director_2_Name" Type="Edm.String" />
+        <Property Name="Director_3_Name" Type="Edm.String" />
       </EntityType>
       <EntityType Name="Copyright_Files">
         <Key>
@@ -1709,9 +1716,8 @@
         <Key>
           <PropertyRef Name="AuxiliaryIndex1" />
           <PropertyRef Name="AuxiliaryIndex2" />
-          <PropertyRef Name="AuxiliaryIndex3" />
-          <PropertyRef Name="AuxiliaryIndex4" />
           <PropertyRef Name="Category" />
+          <PropertyRef Name="Contact_No" />
           <PropertyRef Name="No" />
           <PropertyRef Name="Vendor_No" />
         </Key>
@@ -1720,79 +1726,32 @@
         <Property Name="Requisition_No" Type="Edm.String" />
         <Property Name="Procurement_Plan_No" Type="Edm.String" />
         <Property Name="Creation_Date" Type="Edm.DateTime" />
-        <Property Name="User_ID" Type="Edm.String" />
-        <Property Name="Procurement_Method" Type="Edm.String" />
-        <Property Name="No_Series" Type="Edm.String" />
         <Property Name="Process_Type" Type="Edm.String" />
-        <Property Name="Procurement_Plan_Item" Type="Edm.String" />
-        <Property Name="Global_Dimension_1_Code" Type="Edm.String" />
-        <Property Name="Global_Dimension_2_Code" Type="Edm.String" />
         <Property Name="Tender_Opening_Date" Type="Edm.DateTime" />
         <Property Name="Tender_Status" Type="Edm.String" />
         <Property Name="Tender_Closing_Date" Type="Edm.DateTime" />
-        <Property Name="Addedum" Type="Edm.String" />
         <Property Name="Status" Type="Edm.String" />
         <Property Name="Return_Date" Type="Edm.DateTime" />
         <Property Name="Return_Time" Type="Edm.String" />
         <Property Name="Tender_Type" Type="Edm.String" />
-        <Property Name="Document_No" Type="Edm.String" />
-        <Property Name="Extended_Date" Type="Edm.DateTime" />
         <Property Name="Tender_Amount" Type="Edm.Decimal" />
         <Property Name="Validity_Period" Type="Edm.String" />
         <Property Name="Issued_Date" Type="Edm.DateTime" />
         <Property Name="Closed" Type="Edm.Boolean" />
         <Property Name="RFQ_Sent" Type="Edm.Boolean" />
-        <Property Name="Tender_Committee" Type="Edm.String" />
-        <Property Name="Minutes_Path" Type="Edm.String" />
-        <Property Name="Evaluation_Started" Type="Edm.Boolean" />
-        <Property Name="Technical_started" Type="Edm.Boolean" />
-        <Property Name="Financial_Started" Type="Edm.Boolean" />
-        <Property Name="Technical_Score" Type="Edm.Int32" />
-        <Property Name="Financial_Score" Type="Edm.Int32" />
-        <Property Name="Award_Started" Type="Edm.Boolean" />
-        <Property Name="minutesbeforeproceedtoaward" Type="Edm.String" />
-        <Property Name="minutesafterproceedtoaward" Type="Edm.String" />
         <Property Name="Awarded" Type="Edm.Boolean" />
         <Property Name="Select_Bidder_Vendor_No" Type="Edm.String" />
-        <Property Name="Evaluation_Admin" Type="Edm.String" />
-        <Property Name="Mandatory_in_progress" Type="Edm.Boolean" />
-        <Property Name="Technical_in_Progress" Type="Edm.Boolean" />
-        <Property Name="Financial_in_Progress" Type="Edm.Boolean" />
-        <Property Name="Awarding_in_Progress" Type="Edm.Boolean" />
-        <Property Name="LPO_Generated" Type="Edm.Boolean" />
-        <Property Name="Current_Budget" Type="Edm.String" />
-        <Property Name="TOR_Attached" Type="Edm.Boolean" />
-        <Property Name="TOR_File_Name" Type="Edm.String" />
-        <Property Name="Quotation_Pending_Opening" Type="Edm.Boolean" />
-        <Property Name="Opening_Person_1" Type="Edm.String" />
-        <Property Name="Opening_Person_2" Type="Edm.String" />
-        <Property Name="Opening_Person_3" Type="Edm.String" />
-        <Property Name="Asigned_User" Type="Edm.String" />
-        <Property Name="Quotation_Evaluation" Type="Edm.Boolean" />
-        <Property Name="In_Financial" Type="Edm.Boolean" />
-        <Property Name="In_Technical" Type="Edm.Boolean" />
-        <Property Name="In_Award" Type="Edm.Boolean" />
-        <Property Name="Pending_LPO" Type="Edm.Boolean" />
-        <Property Name="Minutes_File" Type="Edm.String" />
         <Property Name="Quotation_Finished" Type="Edm.Boolean" />
-        <Property Name="Technical_Minutes" Type="Edm.String" />
-        <Property Name="Does_Not_Require_TOR" Type="Edm.Boolean" />
-        <Property Name="Justification_Memo" Type="Edm.String" />
-        <Property Name="Direct" Type="Edm.Boolean" />
-        <Property Name="No_of_Tender_Documents" Type="Edm.Int32" />
         <Property Name="Procurement_Amount" Type="Edm.Decimal" />
         <Property Name="Approval_Status" Type="Edm.Int32" />
         <Property Name="Successful_Bidder" Type="Edm.String" />
         <Property Name="Selected_Bidder_Name" Type="Edm.String" />
-        <Property Name="Approval_Path" Type="Edm.Int32" />
-        <Property Name="SupplierCategory" Type="Edm.String" />
-        <Property Name="Category" Type="Edm.String" Nullable="false" />
         <Property Name="E_mail" Type="Edm.String" />
         <Property Name="Vendor_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Contact_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Category" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
-        <Property Name="AuxiliaryIndex3" Type="Edm.String" Nullable="false" />
-        <Property Name="AuxiliaryIndex4" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="ProcurementRequestLines">
         <Key>
@@ -2009,6 +1968,34 @@
         <Property Name="Type" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="RFQApps">
+        <Key>
+          <PropertyRef Name="Bidder_Email" />
+          <PropertyRef Name="Bidder_Name" />
+          <PropertyRef Name="Line_No" />
+          <PropertyRef Name="No" />
+          <PropertyRef Name="Requisition_No" />
+        </Key>
+        <Property Name="Requisition_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Bidder_Name" Type="Edm.String" Nullable="false" />
+        <Property Name="Bidder_Email" Type="Edm.String" Nullable="false" />
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Quantity" Type="Edm.Decimal" />
+        <Property Name="Unit_of_Measure" Type="Edm.String" />
+        <Property Name="Unit_Price" Type="Edm.Decimal" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Amount_LCY" Type="Edm.Decimal" />
+        <Property Name="Discount" Type="Edm.Decimal" />
+        <Property Name="Remarks" Type="Edm.String" />
+        <Property Name="contactNo" Type="Edm.String" />
+        <Property Name="Selected" Type="Edm.Boolean" />
+        <Property Name="Vendor_No" Type="Edm.String" />
+        <Property Name="EntryNo" Type="Edm.Int32" />
+        <Property Name="Awarded" Type="Edm.Boolean" />
+      </EntityType>
       <EntityType Name="SalesDashboard">
         <Key>
           <PropertyRef Name="AuxiliaryIndex1" />
@@ -2219,6 +2206,7 @@
       </EntityType>
       <EntityType Name="SupplierBlogReplies">
         <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
           <PropertyRef Name="Entry_Id" />
         </Key>
         <Property Name="Entry_Id" Type="Edm.Int32" Nullable="false" />
@@ -2228,6 +2216,9 @@
         <Property Name="Replier_VendorNo" Type="Edm.String" />
         <Property Name="Date_Replied" Type="Edm.DateTime" />
         <Property Name="Time_Replied" Type="Edm.String" />
+        <Property Name="Blog_Title" Type="Edm.String" />
+        <Property Name="Blog_Body" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="SupplierBlogs">
         <Key>
@@ -2300,9 +2291,6 @@
         <Property Name="Requisition_No" Type="Edm.String" />
         <Property Name="Procurement_Plan_No" Type="Edm.String" />
         <Property Name="Creation_Date" Type="Edm.DateTime" />
-        <Property Name="User_ID" Type="Edm.String" />
-        <Property Name="Procurement_Method" Type="Edm.String" />
-        <Property Name="No_Series" Type="Edm.String" />
         <Property Name="Process_Type" Type="Edm.String" />
         <Property Name="Procurement_Plan_Item" Type="Edm.String" />
         <Property Name="Global_Dimension_1_Code" Type="Edm.String" />
@@ -2310,61 +2298,22 @@
         <Property Name="Tender_Opening_Date" Type="Edm.DateTime" />
         <Property Name="Tender_Status" Type="Edm.String" />
         <Property Name="Tender_Closing_Date" Type="Edm.DateTime" />
-        <Property Name="Addedum" Type="Edm.String" />
         <Property Name="Status" Type="Edm.String" />
         <Property Name="Return_Date" Type="Edm.DateTime" />
         <Property Name="Return_Time" Type="Edm.String" />
         <Property Name="Tender_Type" Type="Edm.String" />
-        <Property Name="Document_No" Type="Edm.String" />
-        <Property Name="Extended_Date" Type="Edm.DateTime" />
         <Property Name="Tender_Amount" Type="Edm.Decimal" />
         <Property Name="Validity_Period" Type="Edm.String" />
         <Property Name="Issued_Date" Type="Edm.DateTime" />
         <Property Name="Closed" Type="Edm.Boolean" />
         <Property Name="RFQ_Sent" Type="Edm.Boolean" />
-        <Property Name="Tender_Committee" Type="Edm.String" />
-        <Property Name="Minutes_Path" Type="Edm.String" />
-        <Property Name="Evaluation_Started" Type="Edm.Boolean" />
-        <Property Name="Technical_started" Type="Edm.Boolean" />
-        <Property Name="Financial_Started" Type="Edm.Boolean" />
-        <Property Name="Technical_Score" Type="Edm.Int32" />
-        <Property Name="Financial_Score" Type="Edm.Int32" />
-        <Property Name="Award_Started" Type="Edm.Boolean" />
-        <Property Name="minutesbeforeproceedtoaward" Type="Edm.String" />
-        <Property Name="minutesafterproceedtoaward" Type="Edm.String" />
         <Property Name="Awarded" Type="Edm.Boolean" />
         <Property Name="Select_Bidder_Vendor_No" Type="Edm.String" />
-        <Property Name="Evaluation_Admin" Type="Edm.String" />
-        <Property Name="Mandatory_in_progress" Type="Edm.Boolean" />
-        <Property Name="Technical_in_Progress" Type="Edm.Boolean" />
-        <Property Name="Financial_in_Progress" Type="Edm.Boolean" />
-        <Property Name="Awarding_in_Progress" Type="Edm.Boolean" />
-        <Property Name="LPO_Generated" Type="Edm.Boolean" />
-        <Property Name="Current_Budget" Type="Edm.String" />
-        <Property Name="TOR_Attached" Type="Edm.Boolean" />
-        <Property Name="TOR_File_Name" Type="Edm.String" />
-        <Property Name="Quotation_Pending_Opening" Type="Edm.Boolean" />
-        <Property Name="Opening_Person_1" Type="Edm.String" />
-        <Property Name="Opening_Person_2" Type="Edm.String" />
-        <Property Name="Opening_Person_3" Type="Edm.String" />
-        <Property Name="Asigned_User" Type="Edm.String" />
-        <Property Name="Quotation_Evaluation" Type="Edm.Boolean" />
-        <Property Name="In_Financial" Type="Edm.Boolean" />
-        <Property Name="In_Technical" Type="Edm.Boolean" />
-        <Property Name="In_Award" Type="Edm.Boolean" />
-        <Property Name="Pending_LPO" Type="Edm.Boolean" />
-        <Property Name="Minutes_File" Type="Edm.String" />
         <Property Name="Quotation_Finished" Type="Edm.Boolean" />
-        <Property Name="Technical_Minutes" Type="Edm.String" />
-        <Property Name="Does_Not_Require_TOR" Type="Edm.Boolean" />
-        <Property Name="Justification_Memo" Type="Edm.String" />
-        <Property Name="Direct" Type="Edm.Boolean" />
-        <Property Name="No_of_Tender_Documents" Type="Edm.Int32" />
         <Property Name="Procurement_Amount" Type="Edm.Decimal" />
         <Property Name="Approval_Status" Type="Edm.Int32" />
         <Property Name="Successful_Bidder" Type="Edm.String" />
         <Property Name="Selected_Bidder_Name" Type="Edm.String" />
-        <Property Name="Approval_Path" Type="Edm.Int32" />
       </EntityType>
       <EntityType Name="TopCustomerOverview">
         <Key>
@@ -2609,6 +2558,7 @@
         <NavigationProperty Name="ReceiptAndPaymentTypes" Relationship="NAV.Company_ReceiptAndPaymentTypes" ToRole="ReceiptAndPaymentTypes" FromRole="Company" />
         <NavigationProperty Name="receipts" Relationship="NAV.Company_receipts" ToRole="receipts" FromRole="Company" />
         <NavigationProperty Name="Resources" Relationship="NAV.Company_Resources" ToRole="Resources" FromRole="Company" />
+        <NavigationProperty Name="RFQApps" Relationship="NAV.Company_RFQApps" ToRole="RFQApps" FromRole="Company" />
         <NavigationProperty Name="SalesDashboard" Relationship="NAV.Company_SalesDashboard" ToRole="SalesDashboard" FromRole="Company" />
         <NavigationProperty Name="SalesOpportunities" Relationship="NAV.Company_SalesOpportunities" ToRole="SalesOpportunities" FromRole="Company" />
         <NavigationProperty Name="SalesOrdersBySalesPerson" Relationship="NAV.Company_SalesOrdersBySalesPerson" ToRole="SalesOrdersBySalesPerson" FromRole="Company" />
@@ -2915,6 +2865,10 @@
         <End Type="NAV.Resources" Role="Resources" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_RFQApps">
+        <End Type="NAV.RFQApps" Role="RFQApps" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_SalesDashboard">
         <End Type="NAV.SalesDashboard" Role="SalesDashboard" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3056,6 +3010,7 @@
         <EntitySet Name="ReceiptAndPaymentTypes" EntityType="NAV.ReceiptAndPaymentTypes" />
         <EntitySet Name="receipts" EntityType="NAV.receipts" />
         <EntitySet Name="Resources" EntityType="NAV.Resources" />
+        <EntitySet Name="RFQApps" EntityType="NAV.RFQApps" />
         <EntitySet Name="SalesDashboard" EntityType="NAV.SalesDashboard" />
         <EntitySet Name="SalesOpportunities" EntityType="NAV.SalesOpportunities" />
         <EntitySet Name="SalesOrdersBySalesPerson" EntityType="NAV.SalesOrdersBySalesPerson" />
@@ -3361,6 +3316,10 @@
         <AssociationSet Name="Company_Resources_Resources" Association="NAV.Company_Resources">
           <End Role="Company" EntitySet="Company" />
           <End Role="Resources" EntitySet="Resources" />
+        </AssociationSet>
+        <AssociationSet Name="Company_RFQApps_RFQApps" Association="NAV.Company_RFQApps">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="RFQApps" EntitySet="RFQApps" />
         </AssociationSet>
         <AssociationSet Name="Company_SalesDashboard_SalesDashboard" Association="NAV.Company_SalesDashboard">
           <End Role="Company" EntitySet="Company" />

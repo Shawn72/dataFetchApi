@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 using DataFetchAPI.Utils;
-using System.Net.Http;
-using System.Net.Http.Headers;
 
 namespace DataFetchAPI.Controllers
 {
@@ -62,11 +59,11 @@ namespace DataFetchAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/GetOpenRfQs/{processtype}/{quotfinished}/{vendorNo}")]
-        public IHttpActionResult GetOpenRfQs(string processtype, bool quotfinished, string vendorNo)
+        [Route("api/GetOpenRfQs")]
+        public IHttpActionResult GetOpenRfQs()
         {
             var odataCon = DBConfig.ODataObj();
-            var openrfqs = odataCon.ProcurementRequest.Where(r => r.Process_Type == processtype && r.Quotation_Finished == quotfinished &&r.Vendor_No == vendorNo).ToList();
+            var openrfqs = odataCon.ProcurementRequest.Where(r => r.Process_Type == "RFQ" && r.Status == "Open").ToList();
             return Json(openrfqs);
         }
 
@@ -104,6 +101,15 @@ namespace DataFetchAPI.Controllers
             var odataCon = DBConfig.ODataObj();
             var tenders = odataCon.TenderApps.ToList();
             return Json(tenders);
+        }
+
+        [HttpGet]
+        [Route("api/GetRfqApplications")]
+        public IHttpActionResult GetRfqApplications()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var rfqs = odataCon.RFQApps.ToList();
+            return Json(rfqs);
         }
 
         [HttpGet]

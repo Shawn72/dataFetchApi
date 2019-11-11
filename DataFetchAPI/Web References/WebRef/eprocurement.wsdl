@@ -69,18 +69,19 @@
           </sequence>
         </complexType>
       </element>
-      <element name="ApplyRFQ">
+      <element name="FnApplyRFQ">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
             <element minOccurs="1" maxOccurs="1" name="quantity" type="decimal" />
             <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
             <element minOccurs="1" maxOccurs="1" name="rfqNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="vendorNo" type="string" />
           </sequence>
         </complexType>
       </element>
-      <element name="ApplyRFQ_Result">
+      <element name="FnApplyRFQ_Result">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
@@ -134,23 +135,6 @@
         </complexType>
       </element>
       <element name="AddDirectors_Result">
-        <complexType>
-          <sequence>
-            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
-          </sequence>
-        </complexType>
-      </element>
-      <element name="ChangePassword">
-        <complexType>
-          <sequence>
-            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="currentPassword" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="newPassword" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="confirmPassword" type="string" />
-          </sequence>
-        </complexType>
-      </element>
-      <element name="ChangePassword_Result">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
@@ -265,6 +249,23 @@
           </sequence>
         </complexType>
       </element>
+      <element name="FnChangePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="customerNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="currentPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="newPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmNewPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
     </schema>
   </types>
   <message name="FnRegisterVendor">
@@ -291,11 +292,11 @@
   <message name="GetCurrentYear_Result">
     <part name="parameters" element="tns:GetCurrentYear_Result" />
   </message>
-  <message name="ApplyRFQ">
-    <part name="parameters" element="tns:ApplyRFQ" />
+  <message name="FnApplyRFQ">
+    <part name="parameters" element="tns:FnApplyRFQ" />
   </message>
-  <message name="ApplyRFQ_Result">
-    <part name="parameters" element="tns:ApplyRFQ_Result" />
+  <message name="FnApplyRFQ_Result">
+    <part name="parameters" element="tns:FnApplyRFQ_Result" />
   </message>
   <message name="ApplyRFQOLD">
     <part name="parameters" element="tns:ApplyRFQOLD" />
@@ -314,12 +315,6 @@
   </message>
   <message name="AddDirectors_Result">
     <part name="parameters" element="tns:AddDirectors_Result" />
-  </message>
-  <message name="ChangePassword">
-    <part name="parameters" element="tns:ChangePassword" />
-  </message>
-  <message name="ChangePassword_Result">
-    <part name="parameters" element="tns:ChangePassword_Result" />
   </message>
   <message name="FnApplyforTender">
     <part name="parameters" element="tns:FnApplyforTender" />
@@ -363,6 +358,12 @@
   <message name="FnInsertBlogReply_Result">
     <part name="parameters" element="tns:FnInsertBlogReply_Result" />
   </message>
+  <message name="FnChangePassword">
+    <part name="parameters" element="tns:FnChangePassword" />
+  </message>
+  <message name="FnChangePassword_Result">
+    <part name="parameters" element="tns:FnChangePassword_Result" />
+  </message>
   <portType name="eprocurement_Port">
     <operation name="FnRegisterVendor">
       <input name="FnRegisterVendor" message="tns:FnRegisterVendor" />
@@ -380,9 +381,9 @@
       <input name="GetCurrentYear" message="tns:GetCurrentYear" />
       <output name="GetCurrentYear_Result" message="tns:GetCurrentYear_Result" />
     </operation>
-    <operation name="ApplyRFQ">
-      <input name="ApplyRFQ" message="tns:ApplyRFQ" />
-      <output name="ApplyRFQ_Result" message="tns:ApplyRFQ_Result" />
+    <operation name="FnApplyRFQ">
+      <input name="FnApplyRFQ" message="tns:FnApplyRFQ" />
+      <output name="FnApplyRFQ_Result" message="tns:FnApplyRFQ_Result" />
     </operation>
     <operation name="ApplyRFQOLD">
       <input name="ApplyRFQOLD" message="tns:ApplyRFQOLD" />
@@ -395,10 +396,6 @@
     <operation name="AddDirectors">
       <input name="AddDirectors" message="tns:AddDirectors" />
       <output name="AddDirectors_Result" message="tns:AddDirectors_Result" />
-    </operation>
-    <operation name="ChangePassword">
-      <input name="ChangePassword" message="tns:ChangePassword" />
-      <output name="ChangePassword_Result" message="tns:ChangePassword_Result" />
     </operation>
     <operation name="FnApplyforTender">
       <input name="FnApplyforTender" message="tns:FnApplyforTender" />
@@ -427,6 +424,10 @@
     <operation name="FnInsertBlogReply">
       <input name="FnInsertBlogReply" message="tns:FnInsertBlogReply" />
       <output name="FnInsertBlogReply_Result" message="tns:FnInsertBlogReply_Result" />
+    </operation>
+    <operation name="FnChangePassword">
+      <input name="FnChangePassword" message="tns:FnChangePassword" />
+      <output name="FnChangePassword_Result" message="tns:FnChangePassword_Result" />
     </operation>
   </portType>
   <binding name="eprocurement_Binding" type="tns:eprocurement_Port">
@@ -467,12 +468,12 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
-    <operation name="ApplyRFQ">
-      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ApplyRFQ" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      <input name="ApplyRFQ">
+    <operation name="FnApplyRFQ">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyRFQ" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApplyRFQ">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
-      <output name="ApplyRFQ_Result">
+      <output name="FnApplyRFQ_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -500,15 +501,6 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="AddDirectors_Result">
-        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      </output>
-    </operation>
-    <operation name="ChangePassword">
-      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ChangePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      <input name="ChangePassword">
-        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      </input>
-      <output name="ChangePassword_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -572,6 +564,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="FnInsertBlogReply_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnChangePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnChangePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangePassword_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>

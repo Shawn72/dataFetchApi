@@ -37,15 +37,13 @@ namespace DataFetchAPI.WebRef {
         
         private System.Threading.SendOrPostCallback GetCurrentYearOperationCompleted;
         
-        private System.Threading.SendOrPostCallback ApplyRFQOperationCompleted;
+        private System.Threading.SendOrPostCallback FnApplyRFQOperationCompleted;
         
         private System.Threading.SendOrPostCallback ApplyRFQOLDOperationCompleted;
         
         private System.Threading.SendOrPostCallback ActivateAccountOperationCompleted;
         
         private System.Threading.SendOrPostCallback AddDirectorsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ChangePasswordOperationCompleted;
         
         private System.Threading.SendOrPostCallback FnApplyforTenderOperationCompleted;
         
@@ -60,6 +58,8 @@ namespace DataFetchAPI.WebRef {
         private System.Threading.SendOrPostCallback FnInsertBlogOperationCompleted;
         
         private System.Threading.SendOrPostCallback FnInsertBlogReplyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnChangePasswordOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -112,7 +112,7 @@ namespace DataFetchAPI.WebRef {
         public event GetCurrentYearCompletedEventHandler GetCurrentYearCompleted;
         
         /// <remarks/>
-        public event ApplyRFQCompletedEventHandler ApplyRFQCompleted;
+        public event FnApplyRFQCompletedEventHandler FnApplyRFQCompleted;
         
         /// <remarks/>
         public event ApplyRFQOLDCompletedEventHandler ApplyRFQOLDCompleted;
@@ -122,9 +122,6 @@ namespace DataFetchAPI.WebRef {
         
         /// <remarks/>
         public event AddDirectorsCompletedEventHandler AddDirectorsCompleted;
-        
-        /// <remarks/>
-        public event ChangePasswordCompletedEventHandler ChangePasswordCompleted;
         
         /// <remarks/>
         public event FnApplyforTenderCompletedEventHandler FnApplyforTenderCompleted;
@@ -146,6 +143,9 @@ namespace DataFetchAPI.WebRef {
         
         /// <remarks/>
         public event FnInsertBlogReplyCompletedEventHandler FnInsertBlogReplyCompleted;
+        
+        /// <remarks/>
+        public event FnChangePasswordCompletedEventHandler FnChangePasswordCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendor", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnRegisterVendor_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -292,40 +292,42 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:ApplyRFQ", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="ApplyRFQ_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyRFQ", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnApplyRFQ_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string ApplyRFQ(string contactNo, string password, decimal quantity, decimal amount, string rfqNo) {
-            object[] results = this.Invoke("ApplyRFQ", new object[] {
+        public string FnApplyRFQ(string contactNo, decimal quantity, decimal amount, string rfqNo, string email, string vendorNo) {
+            object[] results = this.Invoke("FnApplyRFQ", new object[] {
                         contactNo,
-                        password,
                         quantity,
                         amount,
-                        rfqNo});
+                        rfqNo,
+                        email,
+                        vendorNo});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void ApplyRFQAsync(string contactNo, string password, decimal quantity, decimal amount, string rfqNo) {
-            this.ApplyRFQAsync(contactNo, password, quantity, amount, rfqNo, null);
+        public void FnApplyRFQAsync(string contactNo, decimal quantity, decimal amount, string rfqNo, string email, string vendorNo) {
+            this.FnApplyRFQAsync(contactNo, quantity, amount, rfqNo, email, vendorNo, null);
         }
         
         /// <remarks/>
-        public void ApplyRFQAsync(string contactNo, string password, decimal quantity, decimal amount, string rfqNo, object userState) {
-            if ((this.ApplyRFQOperationCompleted == null)) {
-                this.ApplyRFQOperationCompleted = new System.Threading.SendOrPostCallback(this.OnApplyRFQOperationCompleted);
+        public void FnApplyRFQAsync(string contactNo, decimal quantity, decimal amount, string rfqNo, string email, string vendorNo, object userState) {
+            if ((this.FnApplyRFQOperationCompleted == null)) {
+                this.FnApplyRFQOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnApplyRFQOperationCompleted);
             }
-            this.InvokeAsync("ApplyRFQ", new object[] {
+            this.InvokeAsync("FnApplyRFQ", new object[] {
                         contactNo,
-                        password,
                         quantity,
                         amount,
-                        rfqNo}, this.ApplyRFQOperationCompleted, userState);
+                        rfqNo,
+                        email,
+                        vendorNo}, this.FnApplyRFQOperationCompleted, userState);
         }
         
-        private void OnApplyRFQOperationCompleted(object arg) {
-            if ((this.ApplyRFQCompleted != null)) {
+        private void OnFnApplyRFQOperationCompleted(object arg) {
+            if ((this.FnApplyRFQCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ApplyRFQCompleted(this, new ApplyRFQCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.FnApplyRFQCompleted(this, new FnApplyRFQCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -438,42 +440,6 @@ namespace DataFetchAPI.WebRef {
             if ((this.AddDirectorsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AddDirectorsCompleted(this, new AddDirectorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:ChangePassword", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="ChangePassword_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string ChangePassword(string contactNo, string currentPassword, string newPassword, string confirmPassword) {
-            object[] results = this.Invoke("ChangePassword", new object[] {
-                        contactNo,
-                        currentPassword,
-                        newPassword,
-                        confirmPassword});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ChangePasswordAsync(string contactNo, string currentPassword, string newPassword, string confirmPassword) {
-            this.ChangePasswordAsync(contactNo, currentPassword, newPassword, confirmPassword, null);
-        }
-        
-        /// <remarks/>
-        public void ChangePasswordAsync(string contactNo, string currentPassword, string newPassword, string confirmPassword, object userState) {
-            if ((this.ChangePasswordOperationCompleted == null)) {
-                this.ChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnChangePasswordOperationCompleted);
-            }
-            this.InvokeAsync("ChangePassword", new object[] {
-                        contactNo,
-                        currentPassword,
-                        newPassword,
-                        confirmPassword}, this.ChangePasswordOperationCompleted, userState);
-        }
-        
-        private void OnChangePasswordOperationCompleted(object arg) {
-            if ((this.ChangePasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ChangePasswordCompleted(this, new ChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -710,6 +676,42 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnChangePassword", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnChangePassword_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnChangePassword(string customerNo, string currentPassword, string newPassword, string confirmNewPassword) {
+            object[] results = this.Invoke("FnChangePassword", new object[] {
+                        customerNo,
+                        currentPassword,
+                        newPassword,
+                        confirmNewPassword});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnChangePasswordAsync(string customerNo, string currentPassword, string newPassword, string confirmNewPassword) {
+            this.FnChangePasswordAsync(customerNo, currentPassword, newPassword, confirmNewPassword, null);
+        }
+        
+        /// <remarks/>
+        public void FnChangePasswordAsync(string customerNo, string currentPassword, string newPassword, string confirmNewPassword, object userState) {
+            if ((this.FnChangePasswordOperationCompleted == null)) {
+                this.FnChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnChangePasswordOperationCompleted);
+            }
+            this.InvokeAsync("FnChangePassword", new object[] {
+                        customerNo,
+                        currentPassword,
+                        newPassword,
+                        confirmNewPassword}, this.FnChangePasswordOperationCompleted, userState);
+        }
+        
+        private void OnFnChangePasswordOperationCompleted(object arg) {
+            if ((this.FnChangePasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnChangePasswordCompleted(this, new FnChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -834,17 +836,17 @@ namespace DataFetchAPI.WebRef {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void ApplyRFQCompletedEventHandler(object sender, ApplyRFQCompletedEventArgs e);
+    public delegate void FnApplyRFQCompletedEventHandler(object sender, FnApplyRFQCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ApplyRFQCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class FnApplyRFQCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal ApplyRFQCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal FnApplyRFQCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -923,32 +925,6 @@ namespace DataFetchAPI.WebRef {
         private object[] results;
         
         internal AddDirectorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void ChangePasswordCompletedEventHandler(object sender, ChangePasswordCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1131,6 +1107,32 @@ namespace DataFetchAPI.WebRef {
         private object[] results;
         
         internal FnInsertBlogReplyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnChangePasswordCompletedEventHandler(object sender, FnChangePasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
