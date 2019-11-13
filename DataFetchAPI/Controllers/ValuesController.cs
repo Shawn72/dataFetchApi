@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Http;
 using DataFetchAPI.Utils;
 
@@ -8,10 +7,6 @@ namespace DataFetchAPI.Controllers
     public class ValuesController : ApiController
     {
         [Route("api/Values")]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
         [HttpGet]
         [Route("api/GetPortalUsers")]
@@ -111,7 +106,14 @@ namespace DataFetchAPI.Controllers
             var rfqs = odataCon.RFQApps.ToList();
             return Json(rfqs);
         }
-
+        [HttpGet]
+        [Route("api/GetAllPreQualifications")]
+        public IHttpActionResult GetAllPreQualifications()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var rfqs = odataCon.PrequalifiedSuppliers.ToList();
+            return Json(rfqs);
+        }
         [HttpGet]
         [Route("api/GetAllBlogForums")]
         public IHttpActionResult GetAllBlogForums()
@@ -128,22 +130,6 @@ namespace DataFetchAPI.Controllers
             var odataCon = DBConfig.ODataObj();
             var blogs = odataCon.SupplierBlogReplies.ToList();
             return Json(blogs);
-        }
-
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-       
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
         }
     }
 }

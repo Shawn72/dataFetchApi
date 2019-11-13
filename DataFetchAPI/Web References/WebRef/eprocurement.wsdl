@@ -123,18 +123,15 @@
           </sequence>
         </complexType>
       </element>
-      <element name="AddDirectors">
+      <element name="FnAddDirectors">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="director1" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="director2" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="director3" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="directorFullname" type="string" />
           </sequence>
         </complexType>
       </element>
-      <element name="AddDirectors_Result">
+      <element name="FnAddDirectors_Result">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
@@ -266,6 +263,24 @@
           </sequence>
         </complexType>
       </element>
+      <element name="FnEditProfile">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fullname" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="kraPin" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="taxtPin" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="phoneNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnEditProfile_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
     </schema>
   </types>
   <message name="FnRegisterVendor">
@@ -310,11 +325,11 @@
   <message name="ActivateAccount_Result">
     <part name="parameters" element="tns:ActivateAccount_Result" />
   </message>
-  <message name="AddDirectors">
-    <part name="parameters" element="tns:AddDirectors" />
+  <message name="FnAddDirectors">
+    <part name="parameters" element="tns:FnAddDirectors" />
   </message>
-  <message name="AddDirectors_Result">
-    <part name="parameters" element="tns:AddDirectors_Result" />
+  <message name="FnAddDirectors_Result">
+    <part name="parameters" element="tns:FnAddDirectors_Result" />
   </message>
   <message name="FnApplyforTender">
     <part name="parameters" element="tns:FnApplyforTender" />
@@ -364,6 +379,12 @@
   <message name="FnChangePassword_Result">
     <part name="parameters" element="tns:FnChangePassword_Result" />
   </message>
+  <message name="FnEditProfile">
+    <part name="parameters" element="tns:FnEditProfile" />
+  </message>
+  <message name="FnEditProfile_Result">
+    <part name="parameters" element="tns:FnEditProfile_Result" />
+  </message>
   <portType name="eprocurement_Port">
     <operation name="FnRegisterVendor">
       <input name="FnRegisterVendor" message="tns:FnRegisterVendor" />
@@ -393,9 +414,9 @@
       <input name="ActivateAccount" message="tns:ActivateAccount" />
       <output name="ActivateAccount_Result" message="tns:ActivateAccount_Result" />
     </operation>
-    <operation name="AddDirectors">
-      <input name="AddDirectors" message="tns:AddDirectors" />
-      <output name="AddDirectors_Result" message="tns:AddDirectors_Result" />
+    <operation name="FnAddDirectors">
+      <input name="FnAddDirectors" message="tns:FnAddDirectors" />
+      <output name="FnAddDirectors_Result" message="tns:FnAddDirectors_Result" />
     </operation>
     <operation name="FnApplyforTender">
       <input name="FnApplyforTender" message="tns:FnApplyforTender" />
@@ -428,6 +449,10 @@
     <operation name="FnChangePassword">
       <input name="FnChangePassword" message="tns:FnChangePassword" />
       <output name="FnChangePassword_Result" message="tns:FnChangePassword_Result" />
+    </operation>
+    <operation name="FnEditProfile">
+      <input name="FnEditProfile" message="tns:FnEditProfile" />
+      <output name="FnEditProfile_Result" message="tns:FnEditProfile_Result" />
     </operation>
   </portType>
   <binding name="eprocurement_Binding" type="tns:eprocurement_Port">
@@ -495,12 +520,12 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
-    <operation name="AddDirectors">
-      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:AddDirectors" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      <input name="AddDirectors">
+    <operation name="FnAddDirectors">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnAddDirectors" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnAddDirectors">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
-      <output name="AddDirectors_Result">
+      <output name="FnAddDirectors_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -573,6 +598,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="FnChangePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnEditProfile">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnEditProfile" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnEditProfile">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnEditProfile_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>

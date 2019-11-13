@@ -43,7 +43,7 @@ namespace DataFetchAPI.WebRef {
         
         private System.Threading.SendOrPostCallback ActivateAccountOperationCompleted;
         
-        private System.Threading.SendOrPostCallback AddDirectorsOperationCompleted;
+        private System.Threading.SendOrPostCallback FnAddDirectorsOperationCompleted;
         
         private System.Threading.SendOrPostCallback FnApplyforTenderOperationCompleted;
         
@@ -60,6 +60,8 @@ namespace DataFetchAPI.WebRef {
         private System.Threading.SendOrPostCallback FnInsertBlogReplyOperationCompleted;
         
         private System.Threading.SendOrPostCallback FnChangePasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnEditProfileOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -121,7 +123,7 @@ namespace DataFetchAPI.WebRef {
         public event ActivateAccountCompletedEventHandler ActivateAccountCompleted;
         
         /// <remarks/>
-        public event AddDirectorsCompletedEventHandler AddDirectorsCompleted;
+        public event FnAddDirectorsCompletedEventHandler FnAddDirectorsCompleted;
         
         /// <remarks/>
         public event FnApplyforTenderCompletedEventHandler FnApplyforTenderCompleted;
@@ -146,6 +148,9 @@ namespace DataFetchAPI.WebRef {
         
         /// <remarks/>
         public event FnChangePasswordCompletedEventHandler FnChangePasswordCompleted;
+        
+        /// <remarks/>
+        public event FnEditProfileCompletedEventHandler FnEditProfileCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendor", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnRegisterVendor_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -406,40 +411,34 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:AddDirectors", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="AddDirectors_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnAddDirectors", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnAddDirectors_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string AddDirectors(string contactNo, string password, string director1, string director2, string director3) {
-            object[] results = this.Invoke("AddDirectors", new object[] {
+        public string FnAddDirectors(string contactNo, string directorFullname) {
+            object[] results = this.Invoke("FnAddDirectors", new object[] {
                         contactNo,
-                        password,
-                        director1,
-                        director2,
-                        director3});
+                        directorFullname});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void AddDirectorsAsync(string contactNo, string password, string director1, string director2, string director3) {
-            this.AddDirectorsAsync(contactNo, password, director1, director2, director3, null);
+        public void FnAddDirectorsAsync(string contactNo, string directorFullname) {
+            this.FnAddDirectorsAsync(contactNo, directorFullname, null);
         }
         
         /// <remarks/>
-        public void AddDirectorsAsync(string contactNo, string password, string director1, string director2, string director3, object userState) {
-            if ((this.AddDirectorsOperationCompleted == null)) {
-                this.AddDirectorsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddDirectorsOperationCompleted);
+        public void FnAddDirectorsAsync(string contactNo, string directorFullname, object userState) {
+            if ((this.FnAddDirectorsOperationCompleted == null)) {
+                this.FnAddDirectorsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnAddDirectorsOperationCompleted);
             }
-            this.InvokeAsync("AddDirectors", new object[] {
+            this.InvokeAsync("FnAddDirectors", new object[] {
                         contactNo,
-                        password,
-                        director1,
-                        director2,
-                        director3}, this.AddDirectorsOperationCompleted, userState);
+                        directorFullname}, this.FnAddDirectorsOperationCompleted, userState);
         }
         
-        private void OnAddDirectorsOperationCompleted(object arg) {
-            if ((this.AddDirectorsCompleted != null)) {
+        private void OnFnAddDirectorsOperationCompleted(object arg) {
+            if ((this.FnAddDirectorsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.AddDirectorsCompleted(this, new AddDirectorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.FnAddDirectorsCompleted(this, new FnAddDirectorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -712,6 +711,44 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnEditProfile", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnEditProfile_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnEditProfile(string email, string fullname, string kraPin, string taxtPin, string phoneNo) {
+            object[] results = this.Invoke("FnEditProfile", new object[] {
+                        email,
+                        fullname,
+                        kraPin,
+                        taxtPin,
+                        phoneNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnEditProfileAsync(string email, string fullname, string kraPin, string taxtPin, string phoneNo) {
+            this.FnEditProfileAsync(email, fullname, kraPin, taxtPin, phoneNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnEditProfileAsync(string email, string fullname, string kraPin, string taxtPin, string phoneNo, object userState) {
+            if ((this.FnEditProfileOperationCompleted == null)) {
+                this.FnEditProfileOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnEditProfileOperationCompleted);
+            }
+            this.InvokeAsync("FnEditProfile", new object[] {
+                        email,
+                        fullname,
+                        kraPin,
+                        taxtPin,
+                        phoneNo}, this.FnEditProfileOperationCompleted, userState);
+        }
+        
+        private void OnFnEditProfileOperationCompleted(object arg) {
+            if ((this.FnEditProfileCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnEditProfileCompleted(this, new FnEditProfileCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -914,17 +951,17 @@ namespace DataFetchAPI.WebRef {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void AddDirectorsCompletedEventHandler(object sender, AddDirectorsCompletedEventArgs e);
+    public delegate void FnAddDirectorsCompletedEventHandler(object sender, FnAddDirectorsCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AddDirectorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class FnAddDirectorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal AddDirectorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal FnAddDirectorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1133,6 +1170,32 @@ namespace DataFetchAPI.WebRef {
         private object[] results;
         
         internal FnChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnEditProfileCompletedEventHandler(object sender, FnEditProfileCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnEditProfileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnEditProfileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
