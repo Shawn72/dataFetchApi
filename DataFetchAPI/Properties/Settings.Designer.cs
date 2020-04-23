@@ -26,7 +26,7 @@ namespace DataFetchAPI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://41.89.63.253:9047/TEST/WS/TEST%20COMPANY/Codeunit/eprocurement")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.87:2023/Dev/WS/KeRRA/Codeunit/eprocurement")]
         public string DataFetchAPI_WebRef_ECommerce {
             get {
                 return ((string)(this["DataFetchAPI_WebRef_ECommerce"]));

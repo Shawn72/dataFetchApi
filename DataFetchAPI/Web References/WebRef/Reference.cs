@@ -41,6 +41,8 @@ namespace DataFetchAPI.WebRef {
         
         private System.Threading.SendOrPostCallback ApplyRFQOLDOperationCompleted;
         
+        private System.Threading.SendOrPostCallback SendEmailOperationCompleted;
+        
         private System.Threading.SendOrPostCallback ActivateAccountOperationCompleted;
         
         private System.Threading.SendOrPostCallback FnAddDirectorsOperationCompleted;
@@ -62,6 +64,28 @@ namespace DataFetchAPI.WebRef {
         private System.Threading.SendOrPostCallback FnChangePasswordOperationCompleted;
         
         private System.Threading.SendOrPostCallback FnEditProfileOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnResetPasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnGenerateVendorstatementOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnGenerateRfQDocumentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnAddPurchaseReqLineOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnRegisterVendorIndOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnBLOBRfQDocumentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnDownloadRfQPTDocOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnSupplierRegistrationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnInsertBankOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnDeleteBankOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnInsertDirectorOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -120,6 +144,9 @@ namespace DataFetchAPI.WebRef {
         public event ApplyRFQOLDCompletedEventHandler ApplyRFQOLDCompleted;
         
         /// <remarks/>
+        public event SendEmailCompletedEventHandler SendEmailCompleted;
+        
+        /// <remarks/>
         public event ActivateAccountCompletedEventHandler ActivateAccountCompleted;
         
         /// <remarks/>
@@ -151,6 +178,39 @@ namespace DataFetchAPI.WebRef {
         
         /// <remarks/>
         public event FnEditProfileCompletedEventHandler FnEditProfileCompleted;
+        
+        /// <remarks/>
+        public event FnResetPasswordCompletedEventHandler FnResetPasswordCompleted;
+        
+        /// <remarks/>
+        public event FnGenerateVendorstatementCompletedEventHandler FnGenerateVendorstatementCompleted;
+        
+        /// <remarks/>
+        public event FnGenerateRfQDocumentCompletedEventHandler FnGenerateRfQDocumentCompleted;
+        
+        /// <remarks/>
+        public event FnAddPurchaseReqLineCompletedEventHandler FnAddPurchaseReqLineCompleted;
+        
+        /// <remarks/>
+        public event FnRegisterVendorIndCompletedEventHandler FnRegisterVendorIndCompleted;
+        
+        /// <remarks/>
+        public event FnBLOBRfQDocumentCompletedEventHandler FnBLOBRfQDocumentCompleted;
+        
+        /// <remarks/>
+        public event FnDownloadRfQPTDocCompletedEventHandler FnDownloadRfQPTDocCompleted;
+        
+        /// <remarks/>
+        public event FnSupplierRegistrationCompletedEventHandler FnSupplierRegistrationCompleted;
+        
+        /// <remarks/>
+        public event FnInsertBankCompletedEventHandler FnInsertBankCompleted;
+        
+        /// <remarks/>
+        public event FnDeleteBankCompletedEventHandler FnDeleteBankCompleted;
+        
+        /// <remarks/>
+        public event FnInsertDirectorCompletedEventHandler FnInsertDirectorCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendor", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnRegisterVendor_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -235,30 +295,26 @@ namespace DataFetchAPI.WebRef {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyPreQualification", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnApplyPreQualification_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string FnApplyPreQualification(string contactNo, string supplierCategory, string password, string fiscalYear) {
+        public string FnApplyPreQualification(string contactNo, string supplierCategory) {
             object[] results = this.Invoke("FnApplyPreQualification", new object[] {
                         contactNo,
-                        supplierCategory,
-                        password,
-                        fiscalYear});
+                        supplierCategory});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void FnApplyPreQualificationAsync(string contactNo, string supplierCategory, string password, string fiscalYear) {
-            this.FnApplyPreQualificationAsync(contactNo, supplierCategory, password, fiscalYear, null);
+        public void FnApplyPreQualificationAsync(string contactNo, string supplierCategory) {
+            this.FnApplyPreQualificationAsync(contactNo, supplierCategory, null);
         }
         
         /// <remarks/>
-        public void FnApplyPreQualificationAsync(string contactNo, string supplierCategory, string password, string fiscalYear, object userState) {
+        public void FnApplyPreQualificationAsync(string contactNo, string supplierCategory, object userState) {
             if ((this.FnApplyPreQualificationOperationCompleted == null)) {
                 this.FnApplyPreQualificationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnApplyPreQualificationOperationCompleted);
             }
             this.InvokeAsync("FnApplyPreQualification", new object[] {
                         contactNo,
-                        supplierCategory,
-                        password,
-                        fiscalYear}, this.FnApplyPreQualificationOperationCompleted, userState);
+                        supplierCategory}, this.FnApplyPreQualificationOperationCompleted, userState);
         }
         
         private void OnFnApplyPreQualificationOperationCompleted(object arg) {
@@ -375,6 +431,40 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:SendEmail", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="SendEmail_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public bool SendEmail(string recipient, string title, string message) {
+            object[] results = this.Invoke("SendEmail", new object[] {
+                        recipient,
+                        title,
+                        message});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SendEmailAsync(string recipient, string title, string message) {
+            this.SendEmailAsync(recipient, title, message, null);
+        }
+        
+        /// <remarks/>
+        public void SendEmailAsync(string recipient, string title, string message, object userState) {
+            if ((this.SendEmailOperationCompleted == null)) {
+                this.SendEmailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendEmailOperationCompleted);
+            }
+            this.InvokeAsync("SendEmail", new object[] {
+                        recipient,
+                        title,
+                        message}, this.SendEmailOperationCompleted, userState);
+        }
+        
+        private void OnSendEmailOperationCompleted(object arg) {
+            if ((this.SendEmailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SendEmailCompleted(this, new SendEmailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:ActivateAccount", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="ActivateAccount_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
         public string ActivateAccount(string userCode, string key, string password, string confirmpassword) {
@@ -445,28 +535,26 @@ namespace DataFetchAPI.WebRef {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyforTender", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnApplyforTender_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string FnApplyforTender(string tenderNo, decimal amount, string vendorNo, string email) {
+        public string FnApplyforTender(string tenderNo, string vendorNo, string email) {
             object[] results = this.Invoke("FnApplyforTender", new object[] {
                         tenderNo,
-                        amount,
                         vendorNo,
                         email});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void FnApplyforTenderAsync(string tenderNo, decimal amount, string vendorNo, string email) {
-            this.FnApplyforTenderAsync(tenderNo, amount, vendorNo, email, null);
+        public void FnApplyforTenderAsync(string tenderNo, string vendorNo, string email) {
+            this.FnApplyforTenderAsync(tenderNo, vendorNo, email, null);
         }
         
         /// <remarks/>
-        public void FnApplyforTenderAsync(string tenderNo, decimal amount, string vendorNo, string email, object userState) {
+        public void FnApplyforTenderAsync(string tenderNo, string vendorNo, string email, object userState) {
             if ((this.FnApplyforTenderOperationCompleted == null)) {
                 this.FnApplyforTenderOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnApplyforTenderOperationCompleted);
             }
             this.InvokeAsync("FnApplyforTender", new object[] {
                         tenderNo,
-                        amount,
                         vendorNo,
                         email}, this.FnApplyforTenderOperationCompleted, userState);
         }
@@ -749,6 +837,537 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnResetPassword", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnResetPassword_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnResetPassword(string email, string newPassword) {
+            object[] results = this.Invoke("FnResetPassword", new object[] {
+                        email,
+                        newPassword});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnResetPasswordAsync(string email, string newPassword) {
+            this.FnResetPasswordAsync(email, newPassword, null);
+        }
+        
+        /// <remarks/>
+        public void FnResetPasswordAsync(string email, string newPassword, object userState) {
+            if ((this.FnResetPasswordOperationCompleted == null)) {
+                this.FnResetPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnResetPasswordOperationCompleted);
+            }
+            this.InvokeAsync("FnResetPassword", new object[] {
+                        email,
+                        newPassword}, this.FnResetPasswordOperationCompleted, userState);
+        }
+        
+        private void OnFnResetPasswordOperationCompleted(object arg) {
+            if ((this.FnResetPasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnResetPasswordCompleted(this, new FnResetPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnGenerateVendorstatement", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnGenerateVendorstatement_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnGenerateVendorstatement(string vendorNo, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime startDate, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime endDate) {
+            object[] results = this.Invoke("FnGenerateVendorstatement", new object[] {
+                        vendorNo,
+                        startDate,
+                        endDate});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnGenerateVendorstatementAsync(string vendorNo, System.DateTime startDate, System.DateTime endDate) {
+            this.FnGenerateVendorstatementAsync(vendorNo, startDate, endDate, null);
+        }
+        
+        /// <remarks/>
+        public void FnGenerateVendorstatementAsync(string vendorNo, System.DateTime startDate, System.DateTime endDate, object userState) {
+            if ((this.FnGenerateVendorstatementOperationCompleted == null)) {
+                this.FnGenerateVendorstatementOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnGenerateVendorstatementOperationCompleted);
+            }
+            this.InvokeAsync("FnGenerateVendorstatement", new object[] {
+                        vendorNo,
+                        startDate,
+                        endDate}, this.FnGenerateVendorstatementOperationCompleted, userState);
+        }
+        
+        private void OnFnGenerateVendorstatementOperationCompleted(object arg) {
+            if ((this.FnGenerateVendorstatementCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnGenerateVendorstatementCompleted(this, new FnGenerateVendorstatementCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnGenerateRfQDocument", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnGenerateRfQDocument_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnGenerateRfQDocument(string vendorNo, string rfQNo) {
+            object[] results = this.Invoke("FnGenerateRfQDocument", new object[] {
+                        vendorNo,
+                        rfQNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnGenerateRfQDocumentAsync(string vendorNo, string rfQNo) {
+            this.FnGenerateRfQDocumentAsync(vendorNo, rfQNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnGenerateRfQDocumentAsync(string vendorNo, string rfQNo, object userState) {
+            if ((this.FnGenerateRfQDocumentOperationCompleted == null)) {
+                this.FnGenerateRfQDocumentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnGenerateRfQDocumentOperationCompleted);
+            }
+            this.InvokeAsync("FnGenerateRfQDocument", new object[] {
+                        vendorNo,
+                        rfQNo}, this.FnGenerateRfQDocumentOperationCompleted, userState);
+        }
+        
+        private void OnFnGenerateRfQDocumentOperationCompleted(object arg) {
+            if ((this.FnGenerateRfQDocumentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnGenerateRfQDocumentCompleted(this, new FnGenerateRfQDocumentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnAddPurchaseReqLine", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnAddPurchaseReqLine_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnAddPurchaseReqLine(string reqNo, string itemNo, decimal quantity, decimal unitPrice, string vendorNo, int lineNo, int type) {
+            object[] results = this.Invoke("FnAddPurchaseReqLine", new object[] {
+                        reqNo,
+                        itemNo,
+                        quantity,
+                        unitPrice,
+                        vendorNo,
+                        lineNo,
+                        type});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnAddPurchaseReqLineAsync(string reqNo, string itemNo, decimal quantity, decimal unitPrice, string vendorNo, int lineNo, int type) {
+            this.FnAddPurchaseReqLineAsync(reqNo, itemNo, quantity, unitPrice, vendorNo, lineNo, type, null);
+        }
+        
+        /// <remarks/>
+        public void FnAddPurchaseReqLineAsync(string reqNo, string itemNo, decimal quantity, decimal unitPrice, string vendorNo, int lineNo, int type, object userState) {
+            if ((this.FnAddPurchaseReqLineOperationCompleted == null)) {
+                this.FnAddPurchaseReqLineOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnAddPurchaseReqLineOperationCompleted);
+            }
+            this.InvokeAsync("FnAddPurchaseReqLine", new object[] {
+                        reqNo,
+                        itemNo,
+                        quantity,
+                        unitPrice,
+                        vendorNo,
+                        lineNo,
+                        type}, this.FnAddPurchaseReqLineOperationCompleted, userState);
+        }
+        
+        private void OnFnAddPurchaseReqLineOperationCompleted(object arg) {
+            if ((this.FnAddPurchaseReqLineCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnAddPurchaseReqLineCompleted(this, new FnAddPurchaseReqLineCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendorInd", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnRegisterVendorInd_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnRegisterVendorInd(string registeredName, string phoneNumber, string emailAddress, string kraPin, string contactName) {
+            object[] results = this.Invoke("FnRegisterVendorInd", new object[] {
+                        registeredName,
+                        phoneNumber,
+                        emailAddress,
+                        kraPin,
+                        contactName});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnRegisterVendorIndAsync(string registeredName, string phoneNumber, string emailAddress, string kraPin, string contactName) {
+            this.FnRegisterVendorIndAsync(registeredName, phoneNumber, emailAddress, kraPin, contactName, null);
+        }
+        
+        /// <remarks/>
+        public void FnRegisterVendorIndAsync(string registeredName, string phoneNumber, string emailAddress, string kraPin, string contactName, object userState) {
+            if ((this.FnRegisterVendorIndOperationCompleted == null)) {
+                this.FnRegisterVendorIndOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnRegisterVendorIndOperationCompleted);
+            }
+            this.InvokeAsync("FnRegisterVendorInd", new object[] {
+                        registeredName,
+                        phoneNumber,
+                        emailAddress,
+                        kraPin,
+                        contactName}, this.FnRegisterVendorIndOperationCompleted, userState);
+        }
+        
+        private void OnFnRegisterVendorIndOperationCompleted(object arg) {
+            if ((this.FnRegisterVendorIndCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnRegisterVendorIndCompleted(this, new FnRegisterVendorIndCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnBLOBRfQDocument", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnBLOBRfQDocument_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void FnBLOBRfQDocument(string vendorname, string rFQNo, ref string bigText) {
+            object[] results = this.Invoke("FnBLOBRfQDocument", new object[] {
+                        vendorname,
+                        rFQNo,
+                        bigText});
+            bigText = ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnBLOBRfQDocumentAsync(string vendorname, string rFQNo, string bigText) {
+            this.FnBLOBRfQDocumentAsync(vendorname, rFQNo, bigText, null);
+        }
+        
+        /// <remarks/>
+        public void FnBLOBRfQDocumentAsync(string vendorname, string rFQNo, string bigText, object userState) {
+            if ((this.FnBLOBRfQDocumentOperationCompleted == null)) {
+                this.FnBLOBRfQDocumentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnBLOBRfQDocumentOperationCompleted);
+            }
+            this.InvokeAsync("FnBLOBRfQDocument", new object[] {
+                        vendorname,
+                        rFQNo,
+                        bigText}, this.FnBLOBRfQDocumentOperationCompleted, userState);
+        }
+        
+        private void OnFnBLOBRfQDocumentOperationCompleted(object arg) {
+            if ((this.FnBLOBRfQDocumentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnBLOBRfQDocumentCompleted(this, new FnBLOBRfQDocumentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnDownloadRfQPTDoc", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnDownloadRfQPTDoc_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void FnDownloadRfQPTDoc() {
+            this.Invoke("FnDownloadRfQPTDoc", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void FnDownloadRfQPTDocAsync() {
+            this.FnDownloadRfQPTDocAsync(null);
+        }
+        
+        /// <remarks/>
+        public void FnDownloadRfQPTDocAsync(object userState) {
+            if ((this.FnDownloadRfQPTDocOperationCompleted == null)) {
+                this.FnDownloadRfQPTDocOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnDownloadRfQPTDocOperationCompleted);
+            }
+            this.InvokeAsync("FnDownloadRfQPTDoc", new object[0], this.FnDownloadRfQPTDocOperationCompleted, userState);
+        }
+        
+        private void OnFnDownloadRfQPTDocOperationCompleted(object arg) {
+            if ((this.FnDownloadRfQPTDocCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnDownloadRfQPTDocCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnSupplierRegistration", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnSupplierRegistration_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnSupplierRegistration(
+                    int businessType, 
+                    int vendorType, 
+                    int ownershipType, 
+                    string industryGroup, 
+                    string postacode, 
+                    string countryofOrigin, 
+                    string companysize, 
+                    decimal nominalCap, 
+                    int dealerType, 
+                    [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime dateofIncorporation, 
+                    [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime dateofOps, 
+                    string languageCode, 
+                    string vision, 
+                    string mision, 
+                    string poAddress, 
+                    string locationAddress, 
+                    string postaCity, 
+                    string webUrl, 
+                    string telephoneNo, 
+                    string buildingNo, 
+                    string floorNo, 
+                    string plotNo, 
+                    string streetorRoad, 
+                    string faxNo, 
+                    decimal maxbizvalue, 
+                    string mobileNo, 
+                    string natureofBiz, 
+                    string vendorNo, 
+                    string certofIncopNo) {
+            object[] results = this.Invoke("FnSupplierRegistration", new object[] {
+                        businessType,
+                        vendorType,
+                        ownershipType,
+                        industryGroup,
+                        postacode,
+                        countryofOrigin,
+                        companysize,
+                        nominalCap,
+                        dealerType,
+                        dateofIncorporation,
+                        dateofOps,
+                        languageCode,
+                        vision,
+                        mision,
+                        poAddress,
+                        locationAddress,
+                        postaCity,
+                        webUrl,
+                        telephoneNo,
+                        buildingNo,
+                        floorNo,
+                        plotNo,
+                        streetorRoad,
+                        faxNo,
+                        maxbizvalue,
+                        mobileNo,
+                        natureofBiz,
+                        vendorNo,
+                        certofIncopNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnSupplierRegistrationAsync(
+                    int businessType, 
+                    int vendorType, 
+                    int ownershipType, 
+                    string industryGroup, 
+                    string postacode, 
+                    string countryofOrigin, 
+                    string companysize, 
+                    decimal nominalCap, 
+                    int dealerType, 
+                    System.DateTime dateofIncorporation, 
+                    System.DateTime dateofOps, 
+                    string languageCode, 
+                    string vision, 
+                    string mision, 
+                    string poAddress, 
+                    string locationAddress, 
+                    string postaCity, 
+                    string webUrl, 
+                    string telephoneNo, 
+                    string buildingNo, 
+                    string floorNo, 
+                    string plotNo, 
+                    string streetorRoad, 
+                    string faxNo, 
+                    decimal maxbizvalue, 
+                    string mobileNo, 
+                    string natureofBiz, 
+                    string vendorNo, 
+                    string certofIncopNo) {
+            this.FnSupplierRegistrationAsync(businessType, vendorType, ownershipType, industryGroup, postacode, countryofOrigin, companysize, nominalCap, dealerType, dateofIncorporation, dateofOps, languageCode, vision, mision, poAddress, locationAddress, postaCity, webUrl, telephoneNo, buildingNo, floorNo, plotNo, streetorRoad, faxNo, maxbizvalue, mobileNo, natureofBiz, vendorNo, certofIncopNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnSupplierRegistrationAsync(
+                    int businessType, 
+                    int vendorType, 
+                    int ownershipType, 
+                    string industryGroup, 
+                    string postacode, 
+                    string countryofOrigin, 
+                    string companysize, 
+                    decimal nominalCap, 
+                    int dealerType, 
+                    System.DateTime dateofIncorporation, 
+                    System.DateTime dateofOps, 
+                    string languageCode, 
+                    string vision, 
+                    string mision, 
+                    string poAddress, 
+                    string locationAddress, 
+                    string postaCity, 
+                    string webUrl, 
+                    string telephoneNo, 
+                    string buildingNo, 
+                    string floorNo, 
+                    string plotNo, 
+                    string streetorRoad, 
+                    string faxNo, 
+                    decimal maxbizvalue, 
+                    string mobileNo, 
+                    string natureofBiz, 
+                    string vendorNo, 
+                    string certofIncopNo, 
+                    object userState) {
+            if ((this.FnSupplierRegistrationOperationCompleted == null)) {
+                this.FnSupplierRegistrationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnSupplierRegistrationOperationCompleted);
+            }
+            this.InvokeAsync("FnSupplierRegistration", new object[] {
+                        businessType,
+                        vendorType,
+                        ownershipType,
+                        industryGroup,
+                        postacode,
+                        countryofOrigin,
+                        companysize,
+                        nominalCap,
+                        dealerType,
+                        dateofIncorporation,
+                        dateofOps,
+                        languageCode,
+                        vision,
+                        mision,
+                        poAddress,
+                        locationAddress,
+                        postaCity,
+                        webUrl,
+                        telephoneNo,
+                        buildingNo,
+                        floorNo,
+                        plotNo,
+                        streetorRoad,
+                        faxNo,
+                        maxbizvalue,
+                        mobileNo,
+                        natureofBiz,
+                        vendorNo,
+                        certofIncopNo}, this.FnSupplierRegistrationOperationCompleted, userState);
+        }
+        
+        private void OnFnSupplierRegistrationOperationCompleted(object arg) {
+            if ((this.FnSupplierRegistrationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnSupplierRegistrationCompleted(this, new FnSupplierRegistrationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertBank", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnInsertBank_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnInsertBank(string vendorNo, string bankCode, string bankName, string currencyCode, string bankAccountNo) {
+            object[] results = this.Invoke("FnInsertBank", new object[] {
+                        vendorNo,
+                        bankCode,
+                        bankName,
+                        currencyCode,
+                        bankAccountNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnInsertBankAsync(string vendorNo, string bankCode, string bankName, string currencyCode, string bankAccountNo) {
+            this.FnInsertBankAsync(vendorNo, bankCode, bankName, currencyCode, bankAccountNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnInsertBankAsync(string vendorNo, string bankCode, string bankName, string currencyCode, string bankAccountNo, object userState) {
+            if ((this.FnInsertBankOperationCompleted == null)) {
+                this.FnInsertBankOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnInsertBankOperationCompleted);
+            }
+            this.InvokeAsync("FnInsertBank", new object[] {
+                        vendorNo,
+                        bankCode,
+                        bankName,
+                        currencyCode,
+                        bankAccountNo}, this.FnInsertBankOperationCompleted, userState);
+        }
+        
+        private void OnFnInsertBankOperationCompleted(object arg) {
+            if ((this.FnInsertBankCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnInsertBankCompleted(this, new FnInsertBankCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnDeleteBank", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnDeleteBank_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnDeleteBank(string vendorNo, string bankCode, string bankName, string currencyCode, string bankAccountNo) {
+            object[] results = this.Invoke("FnDeleteBank", new object[] {
+                        vendorNo,
+                        bankCode,
+                        bankName,
+                        currencyCode,
+                        bankAccountNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnDeleteBankAsync(string vendorNo, string bankCode, string bankName, string currencyCode, string bankAccountNo) {
+            this.FnDeleteBankAsync(vendorNo, bankCode, bankName, currencyCode, bankAccountNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnDeleteBankAsync(string vendorNo, string bankCode, string bankName, string currencyCode, string bankAccountNo, object userState) {
+            if ((this.FnDeleteBankOperationCompleted == null)) {
+                this.FnDeleteBankOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnDeleteBankOperationCompleted);
+            }
+            this.InvokeAsync("FnDeleteBank", new object[] {
+                        vendorNo,
+                        bankCode,
+                        bankName,
+                        currencyCode,
+                        bankAccountNo}, this.FnDeleteBankOperationCompleted, userState);
+        }
+        
+        private void OnFnDeleteBankOperationCompleted(object arg) {
+            if ((this.FnDeleteBankCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnDeleteBankCompleted(this, new FnDeleteBankCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertDirector", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnInsertDirector_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnInsertDirector(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber) {
+            object[] results = this.Invoke("FnInsertDirector", new object[] {
+                        vendorNo,
+                        phoneNo,
+                        ownershippercentage,
+                        country,
+                        email,
+                        address,
+                        directorFullname,
+                        idNumber});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnInsertDirectorAsync(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber) {
+            this.FnInsertDirectorAsync(vendorNo, phoneNo, ownershippercentage, country, email, address, directorFullname, idNumber, null);
+        }
+        
+        /// <remarks/>
+        public void FnInsertDirectorAsync(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber, object userState) {
+            if ((this.FnInsertDirectorOperationCompleted == null)) {
+                this.FnInsertDirectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnInsertDirectorOperationCompleted);
+            }
+            this.InvokeAsync("FnInsertDirector", new object[] {
+                        vendorNo,
+                        phoneNo,
+                        ownershippercentage,
+                        country,
+                        email,
+                        address,
+                        directorFullname,
+                        idNumber}, this.FnInsertDirectorOperationCompleted, userState);
+        }
+        
+        private void OnFnInsertDirectorOperationCompleted(object arg) {
+            if ((this.FnInsertDirectorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnInsertDirectorCompleted(this, new FnInsertDirectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -919,6 +1538,32 @@ namespace DataFetchAPI.WebRef {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void SendEmailCompletedEventHandler(object sender, SendEmailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SendEmailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SendEmailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -1196,6 +1841,270 @@ namespace DataFetchAPI.WebRef {
         private object[] results;
         
         internal FnEditProfileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnResetPasswordCompletedEventHandler(object sender, FnResetPasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnResetPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnResetPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnGenerateVendorstatementCompletedEventHandler(object sender, FnGenerateVendorstatementCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnGenerateVendorstatementCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnGenerateVendorstatementCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnGenerateRfQDocumentCompletedEventHandler(object sender, FnGenerateRfQDocumentCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnGenerateRfQDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnGenerateRfQDocumentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnAddPurchaseReqLineCompletedEventHandler(object sender, FnAddPurchaseReqLineCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnAddPurchaseReqLineCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnAddPurchaseReqLineCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnRegisterVendorIndCompletedEventHandler(object sender, FnRegisterVendorIndCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnRegisterVendorIndCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnRegisterVendorIndCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnBLOBRfQDocumentCompletedEventHandler(object sender, FnBLOBRfQDocumentCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnBLOBRfQDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnBLOBRfQDocumentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string bigText {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnDownloadRfQPTDocCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnSupplierRegistrationCompletedEventHandler(object sender, FnSupplierRegistrationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnSupplierRegistrationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnSupplierRegistrationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnInsertBankCompletedEventHandler(object sender, FnInsertBankCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnInsertBankCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnInsertBankCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnDeleteBankCompletedEventHandler(object sender, FnDeleteBankCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnDeleteBankCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnDeleteBankCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnInsertDirectorCompletedEventHandler(object sender, FnInsertDirectorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnInsertDirectorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnInsertDirectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

@@ -1,13 +1,17 @@
-﻿using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using DataFetchAPI.Utils;
 
 namespace DataFetchAPI.Controllers
 {
+    //KERRA Datafetch API
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-My-Header")]
+    [BasicAuthentication]
     public class ValuesController : ApiController
     {
         [Route("api/Values")]
-
         [HttpGet]
         [Route("api/GetPortalUsers")]
         public IHttpActionResult GetPortalUsers()
@@ -22,7 +26,7 @@ namespace DataFetchAPI.Controllers
         public IHttpActionResult GetAllVendors()
         {
             var odataCon = DBConfig.ODataObj();
-            var users = odataCon.Vendors.ToList();
+            var users = odataCon.eProcVendorQ.ToList();
             return Json(users);
         }
 
@@ -58,7 +62,7 @@ namespace DataFetchAPI.Controllers
         public IHttpActionResult GetOpenRfQs()
         {
             var odataCon = DBConfig.ODataObj();
-            var openrfqs = odataCon.ProcurementRequest.Where(r => r.Process_Type == "RFQ" && r.Status == "Open").ToList();
+            var openrfqs = odataCon.ProcurementRequest.Where(r => r.Process_Type == "RFQ").ToList();
             return Json(openrfqs);
         }
 
@@ -67,7 +71,7 @@ namespace DataFetchAPI.Controllers
         public IHttpActionResult GetOpenTenders()
         {
             var odataCon = DBConfig.ODataObj();
-            var openrfqs = odataCon.Tenders.Where(r=> r.Quotation_Finished==false).ToList();
+            var openrfqs = odataCon.Tenders.Where(r => r.Process_Type == "Tender").ToList();
             return Json(openrfqs);
         }
 
@@ -131,5 +135,105 @@ namespace DataFetchAPI.Controllers
             var blogs = odataCon.SupplierBlogReplies.ToList();
             return Json(blogs);
         }
+
+        [HttpGet]
+        [Route("api/GetPurchaseReqLines")]
+        public IHttpActionResult GetPurchaseReqLines()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var prLs = odataCon.PurchaseReqLines.ToList();
+            return Json(prLs);
+        }
+
+        [HttpGet]
+        [Route("api/GetPrequalifiedSuppliers")]
+        public IHttpActionResult GetPrequalifiedSuppliers()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var prLs = odataCon.PrequalifiedSuppliers.Where(p=>p.Pre_Qualified==true&&p.Selected==true).ToList();
+            return Json(prLs);
+        }
+       
+        [HttpGet]
+        [Route("api/GetSupplierCategorization")]
+        public IHttpActionResult GetSupplierCategorization()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var mySupplyCats = odataCon.SupplierCategories.ToList();
+            return Json(mySupplyCats);
+        }
+
+        [HttpGet]
+        [Route("api/GetPostalCodes")]
+        public IHttpActionResult GetPostalCodes()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myPostcode = odataCon.postcodes.ToList();
+            return Json(myPostcode);
+        }
+
+        [HttpGet]
+        [Route("api/GetCountry")]
+        public IHttpActionResult GetCountry()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myCountry = odataCon.myCountryList.ToList();
+            return Json(myCountry);
+        }
+
+        [HttpGet]
+        [Route("api/GetSupplierCat")]
+        public IHttpActionResult GetSupplierCat()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var mySupplyCats = odataCon.SupplierCategories.ToList();
+            return Json(mySupplyCats);
+        }
+       
+        [HttpGet]
+        [Route("api/GetPostaCodes")]
+        public IHttpActionResult GetPostaCodes()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myPostcode = odataCon.postcodes.ToList();
+            return Json(myPostcode);
+        }
+
+        [HttpGet]
+        [Route("api/GetSupplierCatgry")]
+        public IHttpActionResult GetSupplierCatgry()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var supplierlines = odataCon.SupplyCategoryHeader.ToList();
+            return Json(supplierlines);
+        }
+
+        [HttpGet]
+        [Route("api/GetFiscalYear")]
+        public IHttpActionResult GetFiscalYear()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myYears = odataCon.FiscalYears.ToList();
+            return Json(myYears);
+        }
+
+        [HttpGet]
+        [Route("api/GetAdds")]
+        public IHttpActionResult GetAdds()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var users = odataCon.AdsNotices.ToList();
+            return Json(users);
+        }
+
+        [HttpGet]
+        [Route("api/GetIfPs")]
+        public IHttpActionResult GetIfPs()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.IFPRequests.ToList();
+            return Json(myIfps);
+        }
     }
+  
 }
