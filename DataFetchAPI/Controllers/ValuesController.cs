@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using DataFetchAPI.Utils;
@@ -26,7 +25,7 @@ namespace DataFetchAPI.Controllers
         public IHttpActionResult GetAllVendors()
         {
             var odataCon = DBConfig.ODataObj();
-            var users = odataCon.eProcVendorQ.ToList();
+            var users = odataCon.eProVendorQT.ToList();
             return Json(users);
         }
 
@@ -234,6 +233,94 @@ namespace DataFetchAPI.Controllers
             var myIfps = odataCon.IFPRequests.ToList();
             return Json(myIfps);
         }
+        [HttpGet]
+        [Route("api/GetDocumentsTemplates")]
+        public IHttpActionResult GetDocumentsTemplates()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.eProcDocuments.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetBusinessTypes")]
+        public IHttpActionResult GetBusinessTypes()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.businessTypes.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetIndustryGroups")]
+        public IHttpActionResult GetIndustryGroups()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.IndustryGroup.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetCompanySize")]
+        public IHttpActionResult GetCompanySize()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.companySizes.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetLanguageCode")]
+        public IHttpActionResult GetLanguageCode()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.LanguageCode.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetSpecialGroupes")]
+        public IHttpActionResult GetSpecialGroupes()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.SpecialCatGroups.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetBalanceSheet")]
+        public IHttpActionResult GetBalanceSheet()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.vendorBalancesheet.ToList();
+            return Json(myIfps);
+        }
+        [HttpGet]
+        [Route("api/GetIncomeStatememt")]
+        public IHttpActionResult GetIncomeStatememt()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var myIfps = odataCon.vendorIncomestatement.ToList();
+            return Json(myIfps);
+        }
+
+        [HttpGet]
+        [Route("api/GetRfiPrequalification")]
+        public IHttpActionResult GetRfiPrequalification()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.RFIPreqList.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetRfiDocs")]
+        public IHttpActionResult GetRfiDocs()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifpReqDocuments.ToList();
+            return Json(jresp);
+        }
+
     }
   
 }

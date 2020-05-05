@@ -262,6 +262,16 @@
         <Property Name="Number_of_Rejected_Requests" Type="Edm.Int32" />
         <Property Name="Related_to_Change" Type="Edm.Boolean" />
       </EntityType>
+      <EntityType Name="businessTypes">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.Boolean" />
+        <Property Name="Ownership_Type" Type="Edm.String" />
+        <Property Name="No_of_Active_Vendors" Type="Edm.Int32" />
+      </EntityType>
       <EntityType Name="Casuals">
         <Key>
           <PropertyRef Name="Imprest_Memo_No" />
@@ -341,6 +351,16 @@
         <Property Name="Status" Type="Edm.String" />
         <Property Name="Mandate" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="companySizes">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Min_No_Of_Employees" Type="Edm.Decimal" />
+        <Property Name="Max_No_Of_Employees" Type="Edm.Decimal" />
+        <Property Name="No_of_Vendors" Type="Edm.Int32" />
+      </EntityType>
       <EntityType Name="contacts">
         <Key>
           <PropertyRef Name="No" />
@@ -354,6 +374,9 @@
         <Property Name="Director_1_Name" Type="Edm.String" />
         <Property Name="Director_2_Name" Type="Edm.String" />
         <Property Name="Director_3_Name" Type="Edm.String" />
+        <Property Name="Portal_Request" Type="Edm.Boolean" />
+        <Property Name="VAT_Registration_No" Type="Edm.String" />
+        <Property Name="ID_Number" Type="Edm.String" />
       </EntityType>
       <EntityType Name="Copyright_Files">
         <Key>
@@ -577,32 +600,64 @@
         <Property Name="Sick_Leave_Acc" Type="Edm.Decimal" />
         <Property Name="Leave_Outstanding_Bal" Type="Edm.Decimal" />
       </EntityType>
-      <EntityType Name="eProcVendorQ">
+      <EntityType Name="eProcDocuments">
+        <Key>
+          <PropertyRef Name="Procurement_Document_Type" />
+          <PropertyRef Name="Procurement_Process" />
+          <PropertyRef Name="Template_ID" />
+        </Key>
+        <Property Name="Template_ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Procurement_Process" Type="Edm.String" Nullable="false" />
+        <Property Name="Procurement_Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Requirement_Type" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="eProVendorQT">
         <Key>
           <PropertyRef Name="No" />
         </Key>
+        <Property Name="Vendor_Group" Type="Edm.String" />
+        <Property Name="Supplier_Type" Type="Edm.String" />
+        <Property Name="Dealer_Type" Type="Edm.String" />
+        <Property Name="Max_Value_of_Business" Type="Edm.Decimal" />
+        <Property Name="Nature_of_Business" Type="Edm.String" />
+        <Property Name="Building_House_No" Type="Edm.String" />
+        <Property Name="Floor" Type="Edm.String" />
+        <Property Name="Plot_No" Type="Edm.String" />
+        <Property Name="Street" Type="Edm.String" />
+        <Property Name="Authorized_Signatory_Name" Type="Edm.String" />
+        <Property Name="Signatory_Designation" Type="Edm.String" />
+        <Property Name="Vision_Statement" Type="Edm.String" />
+        <Property Name="Mission_Statement" Type="Edm.String" />
+        <Property Name="Registrn_Submitted_onPortal" Type="Edm.Boolean" />
         <Property Name="No" Type="Edm.String" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
-        <Property Name="Search_Name" Type="Edm.String" />
-        <Property Name="Name_2" Type="Edm.String" />
         <Property Name="Address" Type="Edm.String" />
-        <Property Name="Address_2" Type="Edm.String" />
         <Property Name="City" Type="Edm.String" />
-        <Property Name="Contact" Type="Edm.String" />
         <Property Name="Phone_No" Type="Edm.String" />
         <Property Name="Telex_No" Type="Edm.String" />
-        <Property Name="Our_Account_No" Type="Edm.String" />
-        <Property Name="Territory_Code" Type="Edm.String" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Language_Code" Type="Edm.String" />
         <Property Name="Country_Region_Code" Type="Edm.String" />
-        <Property Name="Blocked" Type="Edm.String" />
-        <Property Name="Pay_to_Vendor_No" Type="Edm.String" />
-        <Property Name="Primary_Contact_No" Type="Edm.String" />
+        <Property Name="VAT_Registration_No" Type="Edm.String" />
+        <Property Name="Post_Code" Type="Edm.String" />
         <Property Name="E_Mail" Type="Edm.String" />
-        <Property Name="PIN_Number" Type="Edm.String" />
-        <Property Name="Vendor_Type" Type="Edm.String" />
-        <Property Name="Tax_Compliance" Type="Edm.String" />
-        <Property Name="Supplier_Category" Type="Edm.String" />
-        <Property Name="Comment" Type="Edm.Boolean" />
+        <Property Name="Company_Size" Type="Edm.String" />
+        <Property Name="Website_Url" Type="Edm.String" />
+        <Property Name="Industry_Group" Type="Edm.String" />
+        <Property Name="County" Type="Edm.String" />
+        <Property Name="Primary_Contact_No" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Vendor_Type1" Type="Edm.String" />
+        <Property Name="Ownership_Type" Type="Edm.String" />
+        <Property Name="Registration_Incorporation_No" Type="Edm.String" />
+        <Property Name="Reg_Incorporation_Date" Type="Edm.DateTime" />
+        <Property Name="Operations_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="Tel" Type="Edm.String" />
+        <Property Name="Fax_No" Type="Edm.String" />
+        <Property Name="Nominal_Capital_LCY" Type="Edm.Decimal" />
+        <Property Name="Business_Type" Type="Edm.String" />
       </EntityType>
       <EntityType Name="FiscalYears">
         <Key>
@@ -800,9 +855,25 @@
         <Property Name="Code" Type="Edm.Int32" Nullable="false" />
         <Property Name="Attained" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="ifpReqDocuments">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Procurement_Document_Type_ID" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Procurement_Document_Type_ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Requirement_Type" Type="Edm.String" />
+        <Property Name="Special_Group_Requirement" Type="Edm.Boolean" />
+        <Property Name="Specialized_Provider_Req" Type="Edm.Boolean" />
+        <Property Name="Track_Certificate_Expiry" Type="Edm.Boolean" />
+      </EntityType>
       <EntityType Name="IFPRequests">
         <Key>
           <PropertyRef Name="Code" />
+          <PropertyRef Name="Document_Type" />
         </Key>
         <Property Name="Code" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
@@ -832,9 +903,9 @@
         <Property Name="Submission_End_Time" Type="Edm.String" />
         <Property Name="No_of_Submission" Type="Edm.Int32" />
         <Property Name="Enforce_Mandatory_E_Receipt" Type="Edm.Boolean" />
-        <Property Name="Bid_Document_Template" Type="Edm.String" />
+        <Property Name="Procurement_Document_Template" Type="Edm.String" />
         <Property Name="Display_Scoring_Criteria_Vendo" Type="Edm.Boolean" />
-        <Property Name="Bid_Scoring_Template" Type="Edm.String" />
+        <Property Name="RFI_Scoring_Template" Type="Edm.String" />
         <Property Name="Created_Date_Time" Type="Edm.DateTime" />
         <Property Name="Summarized_Terms_Conditions" Type="Edm.String" />
         <Property Name="No_Series" Type="Edm.String" />
@@ -842,7 +913,7 @@
         <Property Name="Global_Dimension_2_Code" Type="Edm.String" />
         <Property Name="Global_Dimension_3_Code" Type="Edm.String" />
         <Property Name="County" Type="Edm.String" />
-        <Property Name="Document_Type" Type="Edm.String" />
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
         <Property Name="Assigned_Procurement_Officer" Type="Edm.String" />
         <Property Name="Procurement_Type" Type="Edm.String" />
         <Property Name="Solicitation_Type" Type="Edm.String" />
@@ -912,6 +983,15 @@
         <Property Name="Total_Other_Costs" Type="Edm.Decimal" />
         <Property Name="Total_Fuel_Costs" Type="Edm.Decimal" />
         <Property Name="Total_Maintenance_Costs" Type="Edm.Decimal" />
+      </EntityType>
+      <EntityType Name="IndustryGroup">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="No_of_Contacts" Type="Edm.Int32" />
+        <Property Name="No_of_Vendors" Type="Edm.Int32" />
       </EntityType>
       <EntityType Name="InventoryPostingGroups">
         <Key>
@@ -1199,6 +1279,13 @@
         <Property Name="Type" Type="Edm.String" Nullable="false" />
         <Property Name="Relationship" Type="Edm.String" Nullable="false" />
         <Property Name="Remarks" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="LanguageCode">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
       </EntityType>
       <EntityType Name="languages">
         <Key>
@@ -1664,19 +1751,19 @@
       </EntityType>
       <EntityType Name="PortalUsers">
         <Key>
-          <PropertyRef Name="customer_No" />
+          <PropertyRef Name="Entry_No" />
         </Key>
-        <Property Name="customer_No" Type="Edm.String" Nullable="false" />
-        <Property Name="Password" Type="Edm.String" />
-        <Property Name="Last_Login" Type="Edm.DateTime" />
-        <Property Name="status" Type="Edm.Int32" />
-        <Property Name="changedPassword" Type="Edm.Int32" />
-        <Property Name="validated" Type="Edm.Boolean" />
-        <Property Name="usertype" Type="Edm.Int32" />
-        <Property Name="isAdmin" Type="Edm.Boolean" />
-        <Property Name="Email" Type="Edm.String" />
-        <Property Name="ActivatedAsVendor" Type="Edm.Boolean" />
-        <Property Name="IDNoorRegNo" Type="Edm.String" />
+        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="User_Name" Type="Edm.String" />
+        <Property Name="Full_Name" Type="Edm.String" />
+        <Property Name="Authentication_Email" Type="Edm.String" />
+        <Property Name="Mobile_Phone_No" Type="Edm.String" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="Change_Password" Type="Edm.Boolean" />
+        <Property Name="Record_Type" Type="Edm.String" />
+        <Property Name="Record_ID" Type="Edm.String" />
+        <Property Name="Password_Value" Type="Edm.String" />
+        <Property Name="Last_Modified_Date" Type="Edm.DateTime" />
       </EntityType>
       <EntityType Name="PositionsSupervised">
         <Key>
@@ -2196,6 +2283,31 @@
         <Property Name="Type" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="RFIPreqList">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Prequalification_Category_ID" />
+        </Key>
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Prequalification_Category_ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Period_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Period_End_Date" Type="Edm.DateTime" />
+        <Property Name="Submission_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Submission_Start_Time" Type="Edm.String" />
+        <Property Name="Submission_End_Date" Type="Edm.DateTime" />
+        <Property Name="Submission_End_Time" Type="Edm.String" />
+        <Property Name="Applicable_Location" Type="Edm.String" />
+        <Property Name="Restricted_RC" Type="Edm.Boolean" />
+        <Property Name="Restricted_RC_Type" Type="Edm.String" />
+        <Property Name="Restricted_RC_Code" Type="Edm.String" />
+        <Property Name="No_of_Submissions" Type="Edm.Int32" />
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Special_Group_Reservation" Type="Edm.Boolean" />
+        <Property Name="Procurement_Type" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="RFQApps">
         <Key>
           <PropertyRef Name="Bidder_Name" />
@@ -2430,6 +2542,16 @@
         <Property Name="Service_Contracts" Type="Edm.Boolean" />
         <Property Name="Total_Qty_Consumed" Type="Edm.Decimal" />
       </EntityType>
+      <EntityType Name="SpecialCatGroups">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Vendor_Group" Type="Edm.String" />
+        <Property Name="Vendor_Type" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.Boolean" />
+      </EntityType>
       <EntityType Name="SupplierBlogReplies">
         <Key>
           <PropertyRef Name="AuxiliaryIndex1" />
@@ -2605,6 +2727,47 @@
         <Property Name="Position" Type="Edm.String" />
         <Property Name="Daily_Work_Ticket" Type="Edm.String" />
         <Property Name="EntryNo" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="vendorBalancesheet">
+        <Key>
+          <PropertyRef Name="Audit_Year_Code_Reference" />
+          <PropertyRef Name="Vendor_No" />
+        </Key>
+        <Property Name="Vendor_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Audit_Year_Code_Reference" Type="Edm.String" Nullable="false" />
+        <Property Name="Current_Assets_LCY" Type="Edm.Decimal" />
+        <Property Name="Fixed_Assets_LCY" Type="Edm.Decimal" />
+        <Property Name="Total_Assets_LCY" Type="Edm.Decimal" />
+        <Property Name="Current_Liabilities_LCY" Type="Edm.Decimal" />
+        <Property Name="Long_term_Liabilities_LCY" Type="Edm.Decimal" />
+        <Property Name="Total_Liabilities_LCY" Type="Edm.Decimal" />
+        <Property Name="Owners_Equity_LCY" Type="Edm.Decimal" />
+        <Property Name="Total_Liabilities_Equity_LCY" Type="Edm.Decimal" />
+        <Property Name="Debt_Ratio" Type="Edm.Decimal" />
+        <Property Name="Current_Ratio" Type="Edm.Decimal" />
+        <Property Name="Working_Capital_LCY" Type="Edm.Decimal" />
+        <Property Name="Assets_To_Equity_Ratio" Type="Edm.Decimal" />
+        <Property Name="Debt_To_Equity_Ratio" Type="Edm.Decimal" />
+      </EntityType>
+      <EntityType Name="vendorIncomestatement">
+        <Key>
+          <PropertyRef Name="Audit_Year_Code_Reference" />
+          <PropertyRef Name="Vendor_No" />
+        </Key>
+        <Property Name="Vendor_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Audit_Year_Code_Reference" Type="Edm.String" Nullable="false" />
+        <Property Name="Total_Revenue_LCY" Type="Edm.Decimal" />
+        <Property Name="Total_COGS_LCY" Type="Edm.Decimal" />
+        <Property Name="Gross_Margin_LCY" Type="Edm.Decimal" />
+        <Property Name="Total_Operating_Expenses_LCY" Type="Edm.Decimal" />
+        <Property Name="Operating_Income_EBIT_LCY" Type="Edm.Decimal" />
+        <Property Name="Other_Non_operating_Re_Exp_LCY" Type="Edm.Decimal" />
+        <Property Name="Interest_Expense_LCY" Type="Edm.Decimal" />
+        <Property Name="Income_Before_Taxes_LCY" Type="Edm.Decimal" />
+        <Property Name="Income_Tax_Expense_LCY" Type="Edm.Decimal" />
+        <Property Name="Net_Income_from_Ops_LCY" Type="Edm.Decimal" />
+        <Property Name="Below_the_line_Items_LCY" Type="Edm.Decimal" />
+        <Property Name="Net_Income" Type="Edm.Decimal" />
       </EntityType>
       <EntityType Name="Vendors">
         <Key>
@@ -2802,10 +2965,12 @@
         <NavigationProperty Name="ApplicantsQualification" Relationship="NAV.Company_ApplicantsQualification" ToRole="ApplicantsQualification" FromRole="Company" />
         <NavigationProperty Name="ApprovalCommentLine" Relationship="NAV.Company_ApprovalCommentLine" ToRole="ApprovalCommentLine" FromRole="Company" />
         <NavigationProperty Name="ApprovalEntries" Relationship="NAV.Company_ApprovalEntries" ToRole="ApprovalEntries" FromRole="Company" />
+        <NavigationProperty Name="businessTypes" Relationship="NAV.Company_businessTypes" ToRole="businessTypes" FromRole="Company" />
         <NavigationProperty Name="Casuals" Relationship="NAV.Company_Casuals" ToRole="Casuals" FromRole="Company" />
         <NavigationProperty Name="CommitteeBoardMembers" Relationship="NAV.Company_CommitteeBoardMembers" ToRole="CommitteeBoardMembers" FromRole="Company" />
         <NavigationProperty Name="CommitteeMeetings" Relationship="NAV.Company_CommitteeMeetings" ToRole="CommitteeMeetings" FromRole="Company" />
         <NavigationProperty Name="Committees" Relationship="NAV.Company_Committees" ToRole="Committees" FromRole="Company" />
+        <NavigationProperty Name="companySizes" Relationship="NAV.Company_companySizes" ToRole="companySizes" FromRole="Company" />
         <NavigationProperty Name="contacts" Relationship="NAV.Company_contacts" ToRole="contacts" FromRole="Company" />
         <NavigationProperty Name="Copyright_Files" Relationship="NAV.Company_Copyright_Files" ToRole="Copyright_Files" FromRole="Company" />
         <NavigationProperty Name="CopyrightCategories" Relationship="NAV.Company_CopyrightCategories" ToRole="CopyrightCategories" FromRole="Company" />
@@ -2817,7 +2982,8 @@
         <NavigationProperty Name="Customers" Relationship="NAV.Company_Customers" ToRole="Customers" FromRole="Company" />
         <NavigationProperty Name="emailvalidations" Relationship="NAV.Company_emailvalidations" ToRole="emailvalidations" FromRole="Company" />
         <NavigationProperty Name="Employees" Relationship="NAV.Company_Employees" ToRole="Employees" FromRole="Company" />
-        <NavigationProperty Name="eProcVendorQ" Relationship="NAV.Company_eProcVendorQ" ToRole="eProcVendorQ" FromRole="Company" />
+        <NavigationProperty Name="eProcDocuments" Relationship="NAV.Company_eProcDocuments" ToRole="eProcDocuments" FromRole="Company" />
+        <NavigationProperty Name="eProVendorQT" Relationship="NAV.Company_eProVendorQT" ToRole="eProVendorQT" FromRole="Company" />
         <NavigationProperty Name="FiscalYears" Relationship="NAV.Company_FiscalYears" ToRole="FiscalYears" FromRole="Company" />
         <NavigationProperty Name="FundCode" Relationship="NAV.Company_FundCode" ToRole="FundCode" FromRole="Company" />
         <NavigationProperty Name="HrApplicantAccomplishment" Relationship="NAV.Company_HrApplicantAccomplishment" ToRole="HrApplicantAccomplishment" FromRole="Company" />
@@ -2827,9 +2993,11 @@
         <NavigationProperty Name="HRPortalUsers" Relationship="NAV.Company_HRPortalUsers" ToRole="HRPortalUsers" FromRole="Company" />
         <NavigationProperty Name="HrProffessionalBody" Relationship="NAV.Company_HrProffessionalBody" ToRole="HrProffessionalBody" FromRole="Company" />
         <NavigationProperty Name="HrTrainingAttended" Relationship="NAV.Company_HrTrainingAttended" ToRole="HrTrainingAttended" FromRole="Company" />
+        <NavigationProperty Name="ifpReqDocuments" Relationship="NAV.Company_ifpReqDocuments" ToRole="ifpReqDocuments" FromRole="Company" />
         <NavigationProperty Name="IFPRequests" Relationship="NAV.Company_IFPRequests" ToRole="IFPRequests" FromRole="Company" />
         <NavigationProperty Name="ImprestLines" Relationship="NAV.Company_ImprestLines" ToRole="ImprestLines" FromRole="Company" />
         <NavigationProperty Name="ImprestMemo" Relationship="NAV.Company_ImprestMemo" ToRole="ImprestMemo" FromRole="Company" />
+        <NavigationProperty Name="IndustryGroup" Relationship="NAV.Company_IndustryGroup" ToRole="IndustryGroup" FromRole="Company" />
         <NavigationProperty Name="InventoryPostingGroups" Relationship="NAV.Company_InventoryPostingGroups" ToRole="InventoryPostingGroups" FromRole="Company" />
         <NavigationProperty Name="ItemCategories" Relationship="NAV.Company_ItemCategories" ToRole="ItemCategories" FromRole="Company" />
         <NavigationProperty Name="Items" Relationship="NAV.Company_Items" ToRole="Items" FromRole="Company" />
@@ -2843,6 +3011,7 @@
         <NavigationProperty Name="jobs" Relationship="NAV.Company_jobs" ToRole="jobs" FromRole="Company" />
         <NavigationProperty Name="JobTask" Relationship="NAV.Company_JobTask" ToRole="JobTask" FromRole="Company" />
         <NavigationProperty Name="JobWorkingRelationships" Relationship="NAV.Company_JobWorkingRelationships" ToRole="JobWorkingRelationships" FromRole="Company" />
+        <NavigationProperty Name="LanguageCode" Relationship="NAV.Company_LanguageCode" ToRole="LanguageCode" FromRole="Company" />
         <NavigationProperty Name="languages" Relationship="NAV.Company_languages" ToRole="languages" FromRole="Company" />
         <NavigationProperty Name="LeaveApplications" Relationship="NAV.Company_LeaveApplications" ToRole="LeaveApplications" FromRole="Company" />
         <NavigationProperty Name="LeaveTypes" Relationship="NAV.Company_LeaveTypes" ToRole="LeaveTypes" FromRole="Company" />
@@ -2871,11 +3040,13 @@
         <NavigationProperty Name="ReceiptAndPaymentTypes" Relationship="NAV.Company_ReceiptAndPaymentTypes" ToRole="ReceiptAndPaymentTypes" FromRole="Company" />
         <NavigationProperty Name="receipts" Relationship="NAV.Company_receipts" ToRole="receipts" FromRole="Company" />
         <NavigationProperty Name="Resources" Relationship="NAV.Company_Resources" ToRole="Resources" FromRole="Company" />
+        <NavigationProperty Name="RFIPreqList" Relationship="NAV.Company_RFIPreqList" ToRole="RFIPreqList" FromRole="Company" />
         <NavigationProperty Name="RFQApps" Relationship="NAV.Company_RFQApps" ToRole="RFQApps" FromRole="Company" />
         <NavigationProperty Name="SalesDashboard" Relationship="NAV.Company_SalesDashboard" ToRole="SalesDashboard" FromRole="Company" />
         <NavigationProperty Name="SalesOpportunities" Relationship="NAV.Company_SalesOpportunities" ToRole="SalesOpportunities" FromRole="Company" />
         <NavigationProperty Name="SalesOrdersBySalesPerson" Relationship="NAV.Company_SalesOrdersBySalesPerson" ToRole="SalesOrdersBySalesPerson" FromRole="Company" />
         <NavigationProperty Name="serviceitems" Relationship="NAV.Company_serviceitems" ToRole="serviceitems" FromRole="Company" />
+        <NavigationProperty Name="SpecialCatGroups" Relationship="NAV.Company_SpecialCatGroups" ToRole="SpecialCatGroups" FromRole="Company" />
         <NavigationProperty Name="SupplierBlogReplies" Relationship="NAV.Company_SupplierBlogReplies" ToRole="SupplierBlogReplies" FromRole="Company" />
         <NavigationProperty Name="SupplierBlogs" Relationship="NAV.Company_SupplierBlogs" ToRole="SupplierBlogs" FromRole="Company" />
         <NavigationProperty Name="SupplierCategories" Relationship="NAV.Company_SupplierCategories" ToRole="SupplierCategories" FromRole="Company" />
@@ -2885,6 +3056,8 @@
         <NavigationProperty Name="TopCustomerOverview" Relationship="NAV.Company_TopCustomerOverview" ToRole="TopCustomerOverview" FromRole="Company" />
         <NavigationProperty Name="TransportRequisition" Relationship="NAV.Company_TransportRequisition" ToRole="TransportRequisition" FromRole="Company" />
         <NavigationProperty Name="TravelRequisitionStaff" Relationship="NAV.Company_TravelRequisitionStaff" ToRole="TravelRequisitionStaff" FromRole="Company" />
+        <NavigationProperty Name="vendorBalancesheet" Relationship="NAV.Company_vendorBalancesheet" ToRole="vendorBalancesheet" FromRole="Company" />
+        <NavigationProperty Name="vendorIncomestatement" Relationship="NAV.Company_vendorIncomestatement" ToRole="vendorIncomestatement" FromRole="Company" />
         <NavigationProperty Name="Vendors" Relationship="NAV.Company_Vendors" ToRole="Vendors" FromRole="Company" />
         <NavigationProperty Name="WorkTypes" Relationship="NAV.Company_WorkTypes" ToRole="WorkTypes" FromRole="Company" />
         <NavigationProperty Name="Pending_Po" Relationship="NAV.Company_Pending_Po" ToRole="Pending_Po" FromRole="Company" />
@@ -2949,6 +3122,10 @@
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.ApprovalEntries" Role="ApprovalEntries" Multiplicity="*" />
       </Association>
+      <Association Name="Company_businessTypes">
+        <End Type="NAV.businessTypes" Role="businessTypes" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_Casuals">
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.Casuals" Role="Casuals" Multiplicity="*" />
@@ -2964,6 +3141,10 @@
       <Association Name="Company_Committees">
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.Committees" Role="Committees" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_companySizes">
+        <End Type="NAV.companySizes" Role="companySizes" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_contacts">
         <End Type="NAV.contacts" Role="contacts" Multiplicity="*" />
@@ -3009,8 +3190,12 @@
         <End Type="NAV.Employees" Role="Employees" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_eProcVendorQ">
-        <End Type="NAV.eProcVendorQ" Role="eProcVendorQ" Multiplicity="*" />
+      <Association Name="Company_eProcDocuments">
+        <End Type="NAV.eProcDocuments" Role="eProcDocuments" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_eProVendorQT">
+        <End Type="NAV.eProVendorQT" Role="eProVendorQT" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_FiscalYears">
@@ -3049,6 +3234,10 @@
         <End Type="NAV.HrTrainingAttended" Role="HrTrainingAttended" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_ifpReqDocuments">
+        <End Type="NAV.ifpReqDocuments" Role="ifpReqDocuments" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_IFPRequests">
         <End Type="NAV.IFPRequests" Role="IFPRequests" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3059,6 +3248,10 @@
       </Association>
       <Association Name="Company_ImprestMemo">
         <End Type="NAV.ImprestMemo" Role="ImprestMemo" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_IndustryGroup">
+        <End Type="NAV.IndustryGroup" Role="IndustryGroup" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_InventoryPostingGroups">
@@ -3111,6 +3304,10 @@
       </Association>
       <Association Name="Company_JobWorkingRelationships">
         <End Type="NAV.JobWorkingRelationships" Role="JobWorkingRelationships" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_LanguageCode">
+        <End Type="NAV.LanguageCode" Role="LanguageCode" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_languages">
@@ -3225,6 +3422,10 @@
         <End Type="NAV.Resources" Role="Resources" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_RFIPreqList">
+        <End Type="NAV.RFIPreqList" Role="RFIPreqList" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_RFQApps">
         <End Type="NAV.RFQApps" Role="RFQApps" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3243,6 +3444,10 @@
       </Association>
       <Association Name="Company_serviceitems">
         <End Type="NAV.serviceitems" Role="serviceitems" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_SpecialCatGroups">
+        <End Type="NAV.SpecialCatGroups" Role="SpecialCatGroups" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_SupplierBlogReplies">
@@ -3281,6 +3486,14 @@
         <End Type="NAV.TravelRequisitionStaff" Role="TravelRequisitionStaff" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_vendorBalancesheet">
+        <End Type="NAV.vendorBalancesheet" Role="vendorBalancesheet" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_vendorIncomestatement">
+        <End Type="NAV.vendorIncomestatement" Role="vendorIncomestatement" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_Vendors">
         <End Type="NAV.Vendors" Role="Vendors" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3306,10 +3519,12 @@
         <EntitySet Name="ApplicantsQualification" EntityType="NAV.ApplicantsQualification" />
         <EntitySet Name="ApprovalCommentLine" EntityType="NAV.ApprovalCommentLine" />
         <EntitySet Name="ApprovalEntries" EntityType="NAV.ApprovalEntries" />
+        <EntitySet Name="businessTypes" EntityType="NAV.businessTypes" />
         <EntitySet Name="Casuals" EntityType="NAV.Casuals" />
         <EntitySet Name="CommitteeBoardMembers" EntityType="NAV.CommitteeBoardMembers" />
         <EntitySet Name="CommitteeMeetings" EntityType="NAV.CommitteeMeetings" />
         <EntitySet Name="Committees" EntityType="NAV.Committees" />
+        <EntitySet Name="companySizes" EntityType="NAV.companySizes" />
         <EntitySet Name="contacts" EntityType="NAV.contacts" />
         <EntitySet Name="Copyright_Files" EntityType="NAV.Copyright_Files" />
         <EntitySet Name="CopyrightCategories" EntityType="NAV.CopyrightCategories" />
@@ -3321,7 +3536,8 @@
         <EntitySet Name="Customers" EntityType="NAV.Customers" />
         <EntitySet Name="emailvalidations" EntityType="NAV.emailvalidations" />
         <EntitySet Name="Employees" EntityType="NAV.Employees" />
-        <EntitySet Name="eProcVendorQ" EntityType="NAV.eProcVendorQ" />
+        <EntitySet Name="eProcDocuments" EntityType="NAV.eProcDocuments" />
+        <EntitySet Name="eProVendorQT" EntityType="NAV.eProVendorQT" />
         <EntitySet Name="FiscalYears" EntityType="NAV.FiscalYears" />
         <EntitySet Name="FundCode" EntityType="NAV.FundCode" />
         <EntitySet Name="HrApplicantAccomplishment" EntityType="NAV.HrApplicantAccomplishment" />
@@ -3331,9 +3547,11 @@
         <EntitySet Name="HRPortalUsers" EntityType="NAV.HRPortalUsers" />
         <EntitySet Name="HrProffessionalBody" EntityType="NAV.HrProffessionalBody" />
         <EntitySet Name="HrTrainingAttended" EntityType="NAV.HrTrainingAttended" />
+        <EntitySet Name="ifpReqDocuments" EntityType="NAV.ifpReqDocuments" />
         <EntitySet Name="IFPRequests" EntityType="NAV.IFPRequests" />
         <EntitySet Name="ImprestLines" EntityType="NAV.ImprestLines" />
         <EntitySet Name="ImprestMemo" EntityType="NAV.ImprestMemo" />
+        <EntitySet Name="IndustryGroup" EntityType="NAV.IndustryGroup" />
         <EntitySet Name="InventoryPostingGroups" EntityType="NAV.InventoryPostingGroups" />
         <EntitySet Name="ItemCategories" EntityType="NAV.ItemCategories" />
         <EntitySet Name="Items" EntityType="NAV.Items" />
@@ -3347,6 +3565,7 @@
         <EntitySet Name="jobs" EntityType="NAV.jobs" />
         <EntitySet Name="JobTask" EntityType="NAV.JobTask" />
         <EntitySet Name="JobWorkingRelationships" EntityType="NAV.JobWorkingRelationships" />
+        <EntitySet Name="LanguageCode" EntityType="NAV.LanguageCode" />
         <EntitySet Name="languages" EntityType="NAV.languages" />
         <EntitySet Name="LeaveApplications" EntityType="NAV.LeaveApplications" />
         <EntitySet Name="LeaveTypes" EntityType="NAV.LeaveTypes" />
@@ -3375,11 +3594,13 @@
         <EntitySet Name="ReceiptAndPaymentTypes" EntityType="NAV.ReceiptAndPaymentTypes" />
         <EntitySet Name="receipts" EntityType="NAV.receipts" />
         <EntitySet Name="Resources" EntityType="NAV.Resources" />
+        <EntitySet Name="RFIPreqList" EntityType="NAV.RFIPreqList" />
         <EntitySet Name="RFQApps" EntityType="NAV.RFQApps" />
         <EntitySet Name="SalesDashboard" EntityType="NAV.SalesDashboard" />
         <EntitySet Name="SalesOpportunities" EntityType="NAV.SalesOpportunities" />
         <EntitySet Name="SalesOrdersBySalesPerson" EntityType="NAV.SalesOrdersBySalesPerson" />
         <EntitySet Name="serviceitems" EntityType="NAV.serviceitems" />
+        <EntitySet Name="SpecialCatGroups" EntityType="NAV.SpecialCatGroups" />
         <EntitySet Name="SupplierBlogReplies" EntityType="NAV.SupplierBlogReplies" />
         <EntitySet Name="SupplierBlogs" EntityType="NAV.SupplierBlogs" />
         <EntitySet Name="SupplierCategories" EntityType="NAV.SupplierCategories" />
@@ -3389,6 +3610,8 @@
         <EntitySet Name="TopCustomerOverview" EntityType="NAV.TopCustomerOverview" />
         <EntitySet Name="TransportRequisition" EntityType="NAV.TransportRequisition" />
         <EntitySet Name="TravelRequisitionStaff" EntityType="NAV.TravelRequisitionStaff" />
+        <EntitySet Name="vendorBalancesheet" EntityType="NAV.vendorBalancesheet" />
+        <EntitySet Name="vendorIncomestatement" EntityType="NAV.vendorIncomestatement" />
         <EntitySet Name="Vendors" EntityType="NAV.Vendors" />
         <EntitySet Name="WorkTypes" EntityType="NAV.WorkTypes" />
         <EntitySet Name="Pending_Po" EntityType="NAV.Pending_Po" />
@@ -3453,6 +3676,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="ApprovalEntries" EntitySet="ApprovalEntries" />
         </AssociationSet>
+        <AssociationSet Name="Company_businessTypes_businessTypes" Association="NAV.Company_businessTypes">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="businessTypes" EntitySet="businessTypes" />
+        </AssociationSet>
         <AssociationSet Name="Company_Casuals_Casuals" Association="NAV.Company_Casuals">
           <End Role="Company" EntitySet="Company" />
           <End Role="Casuals" EntitySet="Casuals" />
@@ -3468,6 +3695,10 @@
         <AssociationSet Name="Company_Committees_Committees" Association="NAV.Company_Committees">
           <End Role="Company" EntitySet="Company" />
           <End Role="Committees" EntitySet="Committees" />
+        </AssociationSet>
+        <AssociationSet Name="Company_companySizes_companySizes" Association="NAV.Company_companySizes">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="companySizes" EntitySet="companySizes" />
         </AssociationSet>
         <AssociationSet Name="Company_contacts_contacts" Association="NAV.Company_contacts">
           <End Role="Company" EntitySet="Company" />
@@ -3513,9 +3744,13 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="Employees" EntitySet="Employees" />
         </AssociationSet>
-        <AssociationSet Name="Company_eProcVendorQ_eProcVendorQ" Association="NAV.Company_eProcVendorQ">
+        <AssociationSet Name="Company_eProcDocuments_eProcDocuments" Association="NAV.Company_eProcDocuments">
           <End Role="Company" EntitySet="Company" />
-          <End Role="eProcVendorQ" EntitySet="eProcVendorQ" />
+          <End Role="eProcDocuments" EntitySet="eProcDocuments" />
+        </AssociationSet>
+        <AssociationSet Name="Company_eProVendorQT_eProVendorQT" Association="NAV.Company_eProVendorQT">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="eProVendorQT" EntitySet="eProVendorQT" />
         </AssociationSet>
         <AssociationSet Name="Company_FiscalYears_FiscalYears" Association="NAV.Company_FiscalYears">
           <End Role="Company" EntitySet="Company" />
@@ -3553,6 +3788,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="HrTrainingAttended" EntitySet="HrTrainingAttended" />
         </AssociationSet>
+        <AssociationSet Name="Company_ifpReqDocuments_ifpReqDocuments" Association="NAV.Company_ifpReqDocuments">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ifpReqDocuments" EntitySet="ifpReqDocuments" />
+        </AssociationSet>
         <AssociationSet Name="Company_IFPRequests_IFPRequests" Association="NAV.Company_IFPRequests">
           <End Role="Company" EntitySet="Company" />
           <End Role="IFPRequests" EntitySet="IFPRequests" />
@@ -3564,6 +3803,10 @@
         <AssociationSet Name="Company_ImprestMemo_ImprestMemo" Association="NAV.Company_ImprestMemo">
           <End Role="Company" EntitySet="Company" />
           <End Role="ImprestMemo" EntitySet="ImprestMemo" />
+        </AssociationSet>
+        <AssociationSet Name="Company_IndustryGroup_IndustryGroup" Association="NAV.Company_IndustryGroup">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="IndustryGroup" EntitySet="IndustryGroup" />
         </AssociationSet>
         <AssociationSet Name="Company_InventoryPostingGroups_InventoryPostingGroups" Association="NAV.Company_InventoryPostingGroups">
           <End Role="Company" EntitySet="Company" />
@@ -3616,6 +3859,10 @@
         <AssociationSet Name="Company_JobWorkingRelationships_JobWorkingRelationships" Association="NAV.Company_JobWorkingRelationships">
           <End Role="Company" EntitySet="Company" />
           <End Role="JobWorkingRelationships" EntitySet="JobWorkingRelationships" />
+        </AssociationSet>
+        <AssociationSet Name="Company_LanguageCode_LanguageCode" Association="NAV.Company_LanguageCode">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="LanguageCode" EntitySet="LanguageCode" />
         </AssociationSet>
         <AssociationSet Name="Company_languages_languages" Association="NAV.Company_languages">
           <End Role="Company" EntitySet="Company" />
@@ -3729,6 +3976,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="Resources" EntitySet="Resources" />
         </AssociationSet>
+        <AssociationSet Name="Company_RFIPreqList_RFIPreqList" Association="NAV.Company_RFIPreqList">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="RFIPreqList" EntitySet="RFIPreqList" />
+        </AssociationSet>
         <AssociationSet Name="Company_RFQApps_RFQApps" Association="NAV.Company_RFQApps">
           <End Role="Company" EntitySet="Company" />
           <End Role="RFQApps" EntitySet="RFQApps" />
@@ -3748,6 +3999,10 @@
         <AssociationSet Name="Company_serviceitems_serviceitems" Association="NAV.Company_serviceitems">
           <End Role="Company" EntitySet="Company" />
           <End Role="serviceitems" EntitySet="serviceitems" />
+        </AssociationSet>
+        <AssociationSet Name="Company_SpecialCatGroups_SpecialCatGroups" Association="NAV.Company_SpecialCatGroups">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="SpecialCatGroups" EntitySet="SpecialCatGroups" />
         </AssociationSet>
         <AssociationSet Name="Company_SupplierBlogReplies_SupplierBlogReplies" Association="NAV.Company_SupplierBlogReplies">
           <End Role="Company" EntitySet="Company" />
@@ -3784,6 +4039,14 @@
         <AssociationSet Name="Company_TravelRequisitionStaff_TravelRequisitionStaff" Association="NAV.Company_TravelRequisitionStaff">
           <End Role="Company" EntitySet="Company" />
           <End Role="TravelRequisitionStaff" EntitySet="TravelRequisitionStaff" />
+        </AssociationSet>
+        <AssociationSet Name="Company_vendorBalancesheet_vendorBalancesheet" Association="NAV.Company_vendorBalancesheet">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="vendorBalancesheet" EntitySet="vendorBalancesheet" />
+        </AssociationSet>
+        <AssociationSet Name="Company_vendorIncomestatement_vendorIncomestatement" Association="NAV.Company_vendorIncomestatement">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="vendorIncomestatement" EntitySet="vendorIncomestatement" />
         </AssociationSet>
         <AssociationSet Name="Company_Vendors_Vendors" Association="NAV.Company_Vendors">
           <End Role="Company" EntitySet="Company" />
