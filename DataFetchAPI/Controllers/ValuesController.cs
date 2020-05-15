@@ -233,6 +233,7 @@ namespace DataFetchAPI.Controllers
             var myIfps = odataCon.IFPRequests.ToList();
             return Json(myIfps);
         }
+
         [HttpGet]
         [Route("api/GetDocumentsTemplates")]
         public IHttpActionResult GetDocumentsTemplates()
@@ -312,9 +313,28 @@ namespace DataFetchAPI.Controllers
             var jresp = odataCon.RFIPreqList.ToList();
             return Json(jresp);
         }
+
         [HttpGet]
         [Route("api/GetRfiDocs")]
         public IHttpActionResult GetRfiDocs()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifpReqDocuments.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetRfiResponses")]
+        public IHttpActionResult GetRfiResponses()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.rfiResponseT.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetDocumentsTemplates_Rfi")]
+        public IHttpActionResult GetDocumentsTemplates_Rfi()
         {
             var odataCon = DBConfig.ODataObj();
             var jresp = odataCon.ifpReqDocuments.ToList();

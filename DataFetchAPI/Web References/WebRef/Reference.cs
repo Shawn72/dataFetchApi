@@ -107,6 +107,12 @@ namespace DataFetchAPI.WebRef {
         
         private System.Threading.SendOrPostCallback FnCompleteSupplierRegOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FnGetOwnerPercentageOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnInsertRFIresponseHeaderOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnGetLastDocumentNoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -261,6 +267,15 @@ namespace DataFetchAPI.WebRef {
         
         /// <remarks/>
         public event FnCompleteSupplierRegCompletedEventHandler FnCompleteSupplierRegCompleted;
+        
+        /// <remarks/>
+        public event FnGetOwnerPercentageCompletedEventHandler FnGetOwnerPercentageCompleted;
+        
+        /// <remarks/>
+        public event FnInsertRFIresponseHeaderCompletedEventHandler FnInsertRFIresponseHeaderCompleted;
+        
+        /// <remarks/>
+        public event FnGetLastDocumentNoCompletedEventHandler FnGetLastDocumentNoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendor", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnRegisterVendor_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1376,7 +1391,7 @@ namespace DataFetchAPI.WebRef {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertDirector", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnInsertDirector_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string FnInsertDirector(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber) {
+        public string FnInsertDirector(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber, int citizenType) {
             object[] results = this.Invoke("FnInsertDirector", new object[] {
                         vendorNo,
                         phoneNo,
@@ -1385,17 +1400,18 @@ namespace DataFetchAPI.WebRef {
                         email,
                         address,
                         directorFullname,
-                        idNumber});
+                        idNumber,
+                        citizenType});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void FnInsertDirectorAsync(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber) {
-            this.FnInsertDirectorAsync(vendorNo, phoneNo, ownershippercentage, country, email, address, directorFullname, idNumber, null);
+        public void FnInsertDirectorAsync(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber, int citizenType) {
+            this.FnInsertDirectorAsync(vendorNo, phoneNo, ownershippercentage, country, email, address, directorFullname, idNumber, citizenType, null);
         }
         
         /// <remarks/>
-        public void FnInsertDirectorAsync(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber, object userState) {
+        public void FnInsertDirectorAsync(string vendorNo, string phoneNo, decimal ownershippercentage, string country, string email, string address, string directorFullname, string idNumber, int citizenType, object userState) {
             if ((this.FnInsertDirectorOperationCompleted == null)) {
                 this.FnInsertDirectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnInsertDirectorOperationCompleted);
             }
@@ -1407,7 +1423,8 @@ namespace DataFetchAPI.WebRef {
                         email,
                         address,
                         directorFullname,
-                        idNumber}, this.FnInsertDirectorOperationCompleted, userState);
+                        idNumber,
+                        citizenType}, this.FnInsertDirectorOperationCompleted, userState);
         }
         
         private void OnFnInsertDirectorOperationCompleted(object arg) {
@@ -1834,6 +1851,100 @@ namespace DataFetchAPI.WebRef {
             if ((this.FnCompleteSupplierRegCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.FnCompleteSupplierRegCompleted(this, new FnCompleteSupplierRegCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnGetOwnerPercentage", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnGetOwnerPercentage_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnGetOwnerPercentage(string vendorNo) {
+            object[] results = this.Invoke("FnGetOwnerPercentage", new object[] {
+                        vendorNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnGetOwnerPercentageAsync(string vendorNo) {
+            this.FnGetOwnerPercentageAsync(vendorNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnGetOwnerPercentageAsync(string vendorNo, object userState) {
+            if ((this.FnGetOwnerPercentageOperationCompleted == null)) {
+                this.FnGetOwnerPercentageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnGetOwnerPercentageOperationCompleted);
+            }
+            this.InvokeAsync("FnGetOwnerPercentage", new object[] {
+                        vendorNo}, this.FnGetOwnerPercentageOperationCompleted, userState);
+        }
+        
+        private void OnFnGetOwnerPercentageOperationCompleted(object arg) {
+            if ((this.FnGetOwnerPercentageCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnGetOwnerPercentageCompleted(this, new FnGetOwnerPercentageCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertRFIresponseHeader", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnInsertRFIresponseHeader_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnInsertRFIresponseHeader(string vendorNo, string rfiDocumentNo) {
+            object[] results = this.Invoke("FnInsertRFIresponseHeader", new object[] {
+                        vendorNo,
+                        rfiDocumentNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnInsertRFIresponseHeaderAsync(string vendorNo, string rfiDocumentNo) {
+            this.FnInsertRFIresponseHeaderAsync(vendorNo, rfiDocumentNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnInsertRFIresponseHeaderAsync(string vendorNo, string rfiDocumentNo, object userState) {
+            if ((this.FnInsertRFIresponseHeaderOperationCompleted == null)) {
+                this.FnInsertRFIresponseHeaderOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnInsertRFIresponseHeaderOperationCompleted);
+            }
+            this.InvokeAsync("FnInsertRFIresponseHeader", new object[] {
+                        vendorNo,
+                        rfiDocumentNo}, this.FnInsertRFIresponseHeaderOperationCompleted, userState);
+        }
+        
+        private void OnFnInsertRFIresponseHeaderOperationCompleted(object arg) {
+            if ((this.FnInsertRFIresponseHeaderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnInsertRFIresponseHeaderCompleted(this, new FnInsertRFIresponseHeaderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnGetLastDocumentNo", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnGetLastDocumentNo_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnGetLastDocumentNo(string vendorNo, string rfiDocumentNo) {
+            object[] results = this.Invoke("FnGetLastDocumentNo", new object[] {
+                        vendorNo,
+                        rfiDocumentNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnGetLastDocumentNoAsync(string vendorNo, string rfiDocumentNo) {
+            this.FnGetLastDocumentNoAsync(vendorNo, rfiDocumentNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnGetLastDocumentNoAsync(string vendorNo, string rfiDocumentNo, object userState) {
+            if ((this.FnGetLastDocumentNoOperationCompleted == null)) {
+                this.FnGetLastDocumentNoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnGetLastDocumentNoOperationCompleted);
+            }
+            this.InvokeAsync("FnGetLastDocumentNo", new object[] {
+                        vendorNo,
+                        rfiDocumentNo}, this.FnGetLastDocumentNoOperationCompleted, userState);
+        }
+        
+        private void OnFnGetLastDocumentNoOperationCompleted(object arg) {
+            if ((this.FnGetLastDocumentNoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnGetLastDocumentNoCompleted(this, new FnGetLastDocumentNoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2835,6 +2946,84 @@ namespace DataFetchAPI.WebRef {
         private object[] results;
         
         internal FnCompleteSupplierRegCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnGetOwnerPercentageCompletedEventHandler(object sender, FnGetOwnerPercentageCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnGetOwnerPercentageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnGetOwnerPercentageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnInsertRFIresponseHeaderCompletedEventHandler(object sender, FnInsertRFIresponseHeaderCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnInsertRFIresponseHeaderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnInsertRFIresponseHeaderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnGetLastDocumentNoCompletedEventHandler(object sender, FnGetLastDocumentNoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnGetLastDocumentNoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnGetLastDocumentNoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
