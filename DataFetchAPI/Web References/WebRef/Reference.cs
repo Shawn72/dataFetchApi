@@ -113,6 +113,14 @@ namespace DataFetchAPI.WebRef {
         
         private System.Threading.SendOrPostCallback FnGetLastDocumentNoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FnInsertRFIResponseLinesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnSubmitResponseFinalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnInsertFiledetails_RfiOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FnSubmisionResponseStatusOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -276,6 +284,18 @@ namespace DataFetchAPI.WebRef {
         
         /// <remarks/>
         public event FnGetLastDocumentNoCompletedEventHandler FnGetLastDocumentNoCompleted;
+        
+        /// <remarks/>
+        public event FnInsertRFIResponseLinesCompletedEventHandler FnInsertRFIResponseLinesCompleted;
+        
+        /// <remarks/>
+        public event FnSubmitResponseFinalCompletedEventHandler FnSubmitResponseFinalCompleted;
+        
+        /// <remarks/>
+        public event FnInsertFiledetails_RfiCompletedEventHandler FnInsertFiledetails_RfiCompleted;
+        
+        /// <remarks/>
+        public event FnSubmisionResponseStatusCompletedEventHandler FnSubmisionResponseStatusCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendor", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnRegisterVendor_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1949,6 +1969,154 @@ namespace DataFetchAPI.WebRef {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertRFIResponseLines", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnInsertRFIResponseLines_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnInsertRFIResponseLines(string documentNo, string procurementCategory, string rfiDocumentNo, string vendorNo) {
+            object[] results = this.Invoke("FnInsertRFIResponseLines", new object[] {
+                        documentNo,
+                        procurementCategory,
+                        rfiDocumentNo,
+                        vendorNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnInsertRFIResponseLinesAsync(string documentNo, string procurementCategory, string rfiDocumentNo, string vendorNo) {
+            this.FnInsertRFIResponseLinesAsync(documentNo, procurementCategory, rfiDocumentNo, vendorNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnInsertRFIResponseLinesAsync(string documentNo, string procurementCategory, string rfiDocumentNo, string vendorNo, object userState) {
+            if ((this.FnInsertRFIResponseLinesOperationCompleted == null)) {
+                this.FnInsertRFIResponseLinesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnInsertRFIResponseLinesOperationCompleted);
+            }
+            this.InvokeAsync("FnInsertRFIResponseLines", new object[] {
+                        documentNo,
+                        procurementCategory,
+                        rfiDocumentNo,
+                        vendorNo}, this.FnInsertRFIResponseLinesOperationCompleted, userState);
+        }
+        
+        private void OnFnInsertRFIResponseLinesOperationCompleted(object arg) {
+            if ((this.FnInsertRFIResponseLinesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnInsertRFIResponseLinesCompleted(this, new FnInsertRFIResponseLinesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnSubmitResponseFinal", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnSubmitResponseFinal_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnSubmitResponseFinal(string vendorNo, string rfiDocumentNo, string repFullname, string repDesignation, string rfiApplNo) {
+            object[] results = this.Invoke("FnSubmitResponseFinal", new object[] {
+                        vendorNo,
+                        rfiDocumentNo,
+                        repFullname,
+                        repDesignation,
+                        rfiApplNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnSubmitResponseFinalAsync(string vendorNo, string rfiDocumentNo, string repFullname, string repDesignation, string rfiApplNo) {
+            this.FnSubmitResponseFinalAsync(vendorNo, rfiDocumentNo, repFullname, repDesignation, rfiApplNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnSubmitResponseFinalAsync(string vendorNo, string rfiDocumentNo, string repFullname, string repDesignation, string rfiApplNo, object userState) {
+            if ((this.FnSubmitResponseFinalOperationCompleted == null)) {
+                this.FnSubmitResponseFinalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnSubmitResponseFinalOperationCompleted);
+            }
+            this.InvokeAsync("FnSubmitResponseFinal", new object[] {
+                        vendorNo,
+                        rfiDocumentNo,
+                        repFullname,
+                        repDesignation,
+                        rfiApplNo}, this.FnSubmitResponseFinalOperationCompleted, userState);
+        }
+        
+        private void OnFnSubmitResponseFinalOperationCompleted(object arg) {
+            if ((this.FnSubmitResponseFinalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnSubmitResponseFinalCompleted(this, new FnSubmitResponseFinalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnInsertFiledetails_Rfi", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnInsertFiledetails_Rfi_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnInsertFiledetails_Rfi(string vendorNo, string procDoctype, string docdescription, string certNo, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime issuedDate, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime expiryDate, string fileName, string documentNo) {
+            object[] results = this.Invoke("FnInsertFiledetails_Rfi", new object[] {
+                        vendorNo,
+                        procDoctype,
+                        docdescription,
+                        certNo,
+                        issuedDate,
+                        expiryDate,
+                        fileName,
+                        documentNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnInsertFiledetails_RfiAsync(string vendorNo, string procDoctype, string docdescription, string certNo, System.DateTime issuedDate, System.DateTime expiryDate, string fileName, string documentNo) {
+            this.FnInsertFiledetails_RfiAsync(vendorNo, procDoctype, docdescription, certNo, issuedDate, expiryDate, fileName, documentNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnInsertFiledetails_RfiAsync(string vendorNo, string procDoctype, string docdescription, string certNo, System.DateTime issuedDate, System.DateTime expiryDate, string fileName, string documentNo, object userState) {
+            if ((this.FnInsertFiledetails_RfiOperationCompleted == null)) {
+                this.FnInsertFiledetails_RfiOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnInsertFiledetails_RfiOperationCompleted);
+            }
+            this.InvokeAsync("FnInsertFiledetails_Rfi", new object[] {
+                        vendorNo,
+                        procDoctype,
+                        docdescription,
+                        certNo,
+                        issuedDate,
+                        expiryDate,
+                        fileName,
+                        documentNo}, this.FnInsertFiledetails_RfiOperationCompleted, userState);
+        }
+        
+        private void OnFnInsertFiledetails_RfiOperationCompleted(object arg) {
+            if ((this.FnInsertFiledetails_RfiCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnInsertFiledetails_RfiCompleted(this, new FnInsertFiledetails_RfiCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnSubmisionResponseStatus", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", ResponseElementName="FnSubmisionResponseStatus_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string FnSubmisionResponseStatus(string rfiDocumentNo) {
+            object[] results = this.Invoke("FnSubmisionResponseStatus", new object[] {
+                        rfiDocumentNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FnSubmisionResponseStatusAsync(string rfiDocumentNo) {
+            this.FnSubmisionResponseStatusAsync(rfiDocumentNo, null);
+        }
+        
+        /// <remarks/>
+        public void FnSubmisionResponseStatusAsync(string rfiDocumentNo, object userState) {
+            if ((this.FnSubmisionResponseStatusOperationCompleted == null)) {
+                this.FnSubmisionResponseStatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnSubmisionResponseStatusOperationCompleted);
+            }
+            this.InvokeAsync("FnSubmisionResponseStatus", new object[] {
+                        rfiDocumentNo}, this.FnSubmisionResponseStatusOperationCompleted, userState);
+        }
+        
+        private void OnFnSubmisionResponseStatusOperationCompleted(object arg) {
+            if ((this.FnSubmisionResponseStatusCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FnSubmisionResponseStatusCompleted(this, new FnSubmisionResponseStatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -3024,6 +3192,110 @@ namespace DataFetchAPI.WebRef {
         private object[] results;
         
         internal FnGetLastDocumentNoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnInsertRFIResponseLinesCompletedEventHandler(object sender, FnInsertRFIResponseLinesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnInsertRFIResponseLinesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnInsertRFIResponseLinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnSubmitResponseFinalCompletedEventHandler(object sender, FnSubmitResponseFinalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnSubmitResponseFinalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnSubmitResponseFinalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnInsertFiledetails_RfiCompletedEventHandler(object sender, FnInsertFiledetails_RfiCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnInsertFiledetails_RfiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnInsertFiledetails_RfiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void FnSubmisionResponseStatusCompletedEventHandler(object sender, FnSubmisionResponseStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FnSubmisionResponseStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FnSubmisionResponseStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

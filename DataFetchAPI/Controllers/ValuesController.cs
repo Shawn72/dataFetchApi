@@ -341,6 +341,41 @@ namespace DataFetchAPI.Controllers
             return Json(jresp);
         }
 
+        [HttpGet]
+        [Route("api/GetInvitetoTenders")]
+        public IHttpActionResult GetInvitetoTenders()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.invitetoTenders.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetResponsibiltyCenter")]
+        public IHttpActionResult GetResponsibiltyCenter()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.responsibiltyCenter.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetProcurementTypes")]
+        public IHttpActionResult GetProcurementTypes()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.procurementTypes.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetWorksCategory")]
+        public IHttpActionResult GetWorksCategory()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.worksCategory.ToList();
+            return Json(jresp);
+        }
     }
   
 }

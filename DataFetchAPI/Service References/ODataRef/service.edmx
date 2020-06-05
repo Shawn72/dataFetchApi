@@ -18,26 +18,68 @@
         <Property Name="Id_Number" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
-      <EntityType Name="ApplicantEmployeeHistory">
+      <EntityType Name="ApplicantBackground">
         <Key>
           <PropertyRef Name="Application_No" />
-          <PropertyRef Name="Company_Name" />
+          <PropertyRef Name="No" />
         </Key>
         <Property Name="Application_No" Type="Edm.String" Nullable="false" />
-        <Property Name="Company_Name" Type="Edm.String" Nullable="false" />
+        <Property Name="No" Type="Edm.Int32" Nullable="false" />
         <Property Name="From_Date" Type="Edm.DateTime" />
         <Property Name="To_Date" Type="Edm.DateTime" />
-        <Property Name="Postal_Address" Type="Edm.String" />
-        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="Institution" Type="Edm.String" />
+        <Property Name="Attainment" Type="Edm.String" />
+        <Property Name="Specialization" Type="Edm.String" />
+        <Property Name="Grade" Type="Edm.String" />
+        <Property Name="Date_of_renewal" Type="Edm.DateTime" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Level" Type="Edm.String" />
+        <Property Name="Gross_Salary" Type="Edm.Decimal" />
+        <Property Name="Terms_of_Employment" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="Course_Name" Type="Edm.String" />
+        <Property Name="Membership_Type" Type="Edm.String" />
+        <Property Name="Membership_No" Type="Edm.String" />
         <Property Name="Job_Title" Type="Edm.String" />
-        <Property Name="Salary_On_Leaving" Type="Edm.Decimal" />
-        <Property Name="Reason_For_Leaving" Type="Edm.String" />
-        <Property Name="Comment" Type="Edm.String" />
-        <Property Name="Code" Type="Edm.Int32" />
-        <Property Name="Job_Grade" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
+      <EntityType Name="ApplicantEmployeeHistory">
+        <Key>
+          <PropertyRef Name="Entry_No" />
+        </Key>
+        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
         <Property Name="Employee_No" Type="Edm.String" />
-        <Property Name="Job_Id" Type="Edm.String" />
-        <Property Name="Id_Number" Type="Edm.String" />
+        <Property Name="Posting_Date" Type="Edm.DateTime" />
+        <Property Name="Document_Type" Type="Edm.String" />
+        <Property Name="Document_No" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="User_ID" Type="Edm.String" />
+        <Property Name="Job_ID" Type="Edm.String" />
+        <Property Name="Job_Description" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
+      <EntityType Name="ApplicantReferees">
+        <Key>
+          <PropertyRef Name="Code" />
+          <PropertyRef Name="Job_Application_No" />
+          <PropertyRef Name="Names" />
+        </Key>
+        <Property Name="Job_Application_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Names" Type="Edm.String" Nullable="false" />
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Occupation" Type="Edm.String" />
+        <Property Name="Institution" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="Telephone_No" Type="Edm.String" />
+        <Property Name="E_Mail" Type="Edm.String" />
+        <Property Name="Employee_No" Type="Edm.String" />
+        <Property Name="Post_Code" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Period_Known" Type="Edm.String" />
+        <Property Name="Job_ID" Type="Edm.String" />
+        <Property Name="RefereeEmail" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
       <EntityType Name="ApprovalEntriesPage">
@@ -68,6 +110,14 @@
         <Property Name="Due_Date" Type="Edm.DateTime" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
+      <EntityType Name="EscalateTo">
+        <Key>
+          <PropertyRef Name="Reports_To_Officer_Name" />
+        </Key>
+        <Property Name="Reports_To_Officer_Name" Type="Edm.String" Nullable="false" />
+        <Property Name="Officer_Name" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
       <EntityType Name="MyHeldeskRequests">
         <Key>
           <PropertyRef Name="Job_No" />
@@ -85,6 +135,9 @@
         <Property Name="Requesting_Officer_Name" Type="Edm.String" />
         <Property Name="Phone" Type="Edm.String" />
         <Property Name="Email" Type="Edm.String" />
+        <Property Name="Ascalation_Details" Type="Edm.String" />
+        <Property Name="Assigned_To_EmpNo" Type="Edm.String" />
+        <Property Name="Escalated_To_EmpNo" Type="Edm.String" />
         <Property Name="Request_Date" Type="Edm.DateTime" />
         <Property Name="Request_Time" Type="Edm.String" />
         <Property Name="Computer_not_Starting_up" Type="Edm.Boolean" />
@@ -129,6 +182,66 @@
         <Property Name="Description_of_the_issue" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
         <NavigationProperty Name="Department_Link" Relationship="NAV.MyHeldeskRequests_Department_Link" ToRole="Department_Link" FromRole="MyHeldeskRequests" />
+        <NavigationProperty Name="Escalated_To_Link" Relationship="NAV.MyHeldeskRequests_Escalated_To_Link" ToRole="Escalated_To_Link" FromRole="MyHeldeskRequests" />
+      </EntityType>
+      <EntityType Name="PostedStoreRequisition">
+        <Key>
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Requester_ID" Type="Edm.String" />
+        <Property Name="Request_By_No" Type="Edm.String" />
+        <Property Name="Request_By_Name" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Order_Date" Type="Edm.DateTime" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Requisition_Type" Type="Edm.String" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Shortcut_Dimension_1_Code" Type="Edm.String" />
+        <Property Name="Department_Name" Type="Edm.String" />
+        <Property Name="Shortcut_Dimension_2_Code" Type="Edm.String" />
+        <Property Name="Project_Name" Type="Edm.String" />
+        <Property Name="Shortcut_Dimension_3_Code" Type="Edm.String" />
+        <Property Name="Unit_Name" Type="Edm.String" />
+        <Property Name="Requisition_Amount" Type="Edm.Decimal" />
+        <Property Name="No_of_Archived_Versions" Type="Edm.Int32" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="PostedStoreRequisitionPurchLines" Relationship="NAV.PostedStoreRequisition_PostedStoreRequisitionPurchLines" ToRole="PostedStoreRequisitionPurchLines" FromRole="PostedStoreRequisition" />
+      </EntityType>
+      <EntityType Name="PostedStoreRequisitionPurchLines">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Line_No" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="Item_Category_Code" Type="Edm.String" />
+        <Property Name="Service_Item_Code" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Variant_Code" Type="Edm.String" />
+        <Property Name="Employee_No" Type="Edm.String" />
+        <Property Name="Employee_Name" Type="Edm.String" />
+        <Property Name="Unit_of_Measure_Code" Type="Edm.String" />
+        <Property Name="Qty_Requested" Type="Edm.Decimal" />
+        <Property Name="Quantity_issued" Type="Edm.Decimal" />
+        <Property Name="Quantity_To_Issue" Type="Edm.Decimal" />
+        <Property Name="Quantity_In_Store" Type="Edm.Decimal" />
+        <Property Name="Qty_on_Purch_Order" Type="Edm.Decimal" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Direct_Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Unit_Cost_LCY" Type="Edm.Decimal" />
+        <Property Name="Line_Amount" Type="Edm.Decimal" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Amount_Including_VAT" Type="Edm.Decimal" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
       <EntityType Name="powerbifinance">
         <Key>
@@ -150,6 +263,62 @@
         <Property Name="Balance_at_Date_Budget_Last_Year" Type="Edm.Decimal" />
         <Property Name="Net_Change_Forecast" Type="Edm.Decimal" />
         <Property Name="Balance_at_Date_Forecast" Type="Edm.Decimal" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
+      <EntityType Name="ProductsPerRegion">
+        <Key>
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Vote_Item" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="Inventory" Type="Edm.Decimal" />
+        <Property Name="Created_From_Nonstock_Item" Type="Edm.Boolean" />
+        <Property Name="Substitutes_Exist" Type="Edm.Boolean" />
+        <Property Name="Stockkeeping_Unit_Exists" Type="Edm.Boolean" />
+        <Property Name="Assembly_BOM" Type="Edm.Boolean" />
+        <Property Name="Production_BOM_No" Type="Edm.String" />
+        <Property Name="Routing_No" Type="Edm.String" />
+        <Property Name="Base_Unit_of_Measure" Type="Edm.String" />
+        <Property Name="Shelf_No" Type="Edm.String" />
+        <Property Name="Costing_Method" Type="Edm.String" />
+        <Property Name="Cost_is_Adjusted" Type="Edm.Boolean" />
+        <Property Name="Standard_Cost" Type="Edm.Decimal" />
+        <Property Name="Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Last_Direct_Cost" Type="Edm.Decimal" />
+        <Property Name="Price_Profit_Calculation" Type="Edm.String" />
+        <Property Name="Profit_Percent" Type="Edm.Decimal" />
+        <Property Name="Unit_Price" Type="Edm.Decimal" />
+        <Property Name="Inventory_Posting_Group" Type="Edm.String" />
+        <Property Name="Gen_Prod_Posting_Group" Type="Edm.String" />
+        <Property Name="VAT_Prod_Posting_Group" Type="Edm.String" />
+        <Property Name="Item_Disc_Group" Type="Edm.String" />
+        <Property Name="Vendor_No" Type="Edm.String" />
+        <Property Name="Vendor_Item_No" Type="Edm.String" />
+        <Property Name="Tariff_No" Type="Edm.String" />
+        <Property Name="Search_Description" Type="Edm.String" />
+        <Property Name="Overhead_Rate" Type="Edm.Decimal" />
+        <Property Name="Indirect_Cost_Percent" Type="Edm.Decimal" />
+        <Property Name="Last_Date_Modified" Type="Edm.DateTime" />
+        <Property Name="Item_Category_Code" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.Boolean" />
+        <Property Name="Sales_Unit_of_Measure" Type="Edm.String" />
+        <Property Name="Replenishment_System" Type="Edm.String" />
+        <Property Name="Purch_Unit_of_Measure" Type="Edm.String" />
+        <Property Name="Lead_Time_Calculation" Type="Edm.String" />
+        <Property Name="Manufacturing_Policy" Type="Edm.String" />
+        <Property Name="Flushing_Method" Type="Edm.String" />
+        <Property Name="Assembly_Policy" Type="Edm.String" />
+        <Property Name="Item_Tracking_Code" Type="Edm.String" />
+        <Property Name="Default_Deferral_Template_Code" Type="Edm.String" />
+        <Property Name="Global_Dimension_1_Filter" Type="Edm.String" />
+        <Property Name="Global_Dimension_2_Filter" Type="Edm.String" />
+        <Property Name="Location_Filter" Type="Edm.String" />
+        <Property Name="Drop_Shipment_Filter" Type="Edm.String" />
+        <Property Name="Variant_Filter" Type="Edm.String" />
+        <Property Name="Lot_No_Filter" Type="Edm.String" />
+        <Property Name="Serial_No_Filter" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
       <EntityType Name="ResponsibilityCenters">
@@ -721,6 +890,16 @@
         <Property Name="Nominal_Capital_LCY" Type="Edm.Decimal" />
         <Property Name="Business_Type" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="FavouriteJob">
+        <Key>
+          <PropertyRef Name="Job_Description" />
+          <PropertyRef Name="Job_Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" />
+        <Property Name="Job_Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Job_Description" Type="Edm.String" Nullable="false" />
+        <Property Name="Email" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="FiscalYears">
         <Key>
           <PropertyRef Name="Code" />
@@ -748,6 +927,21 @@
         <Property Name="Dimension_Value_ID" Type="Edm.Int32" />
         <Property Name="Id" Type="Edm.Guid" />
         <Property Name="Last_Modified_Date_Time" Type="Edm.DateTime" />
+      </EntityType>
+      <EntityType Name="HelpDeskAssignee">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="UserName" />
+        </Key>
+        <Property Name="Employee_No" Type="Edm.String" />
+        <Property Name="UserName" Type="Edm.String" Nullable="false" />
+        <Property Name="Help_Desk_Category" Type="Edm.String" />
+        <Property Name="Region_Code" Type="Edm.String" />
+        <Property Name="Region_Name" Type="Edm.String" />
+        <Property Name="User_Feedbback_Duration" Type="Edm.String" />
+        <Property Name="Assined_Issue_Duration" Type="Edm.String" />
+        <Property Name="Assigned" Type="Edm.Boolean" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="HrApplicantAccomplishment">
         <Key>
@@ -864,6 +1058,48 @@
         <Property Name="Email" Type="Edm.String" />
         <Property Name="Salt" Type="Edm.String" />
         <Property Name="Password" Type="Edm.String" />
+        <Property Name="Middle_Name" Type="Edm.String" />
+        <Property Name="Initials" Type="Edm.String" />
+        <Property Name="Postal_Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Post_Code" Type="Edm.String" />
+        <Property Name="County" Type="Edm.String" />
+        <Property Name="Cell_Phone_Number" Type="Edm.String" />
+        <Property Name="Gender" Type="Edm.String" />
+        <Property Name="Country_Code" Type="Edm.String" />
+        <Property Name="Marital_Status" Type="Edm.String" />
+        <Property Name="Ethnic_Origin" Type="Edm.String" />
+        <Property Name="Disabled" Type="Edm.String" />
+        <Property Name="Date_Of_Birth" Type="Edm.DateTime" />
+        <Property Name="Citizenship" Type="Edm.String" />
+        <Property Name="Disability_Details" Type="Edm.String" />
+        <Property Name="Disability_Grade" Type="Edm.String" />
+        <Property Name="Region" Type="Edm.String" />
+        <Property Name="PIN_Number" Type="Edm.String" />
+        <Property Name="Job_Applied_For" Type="Edm.String" />
+        <Property Name="Date_Applied" Type="Edm.DateTime" />
+        <Property Name="Citizenship_Details" Type="Edm.String" />
+        <Property Name="Current_Duties" Type="Edm.String" />
+        <Property Name="Abilites_Skills" Type="Edm.String" />
+        <Property Name="NHIF" Type="Edm.String" />
+        <Property Name="NSSF" Type="Edm.String" />
+        <Property Name="Alternative_Email" Type="Edm.String" />
+        <Property Name="Current_Employer" Type="Edm.String" />
+        <Property Name="Effective_Date" Type="Edm.DateTime" />
+        <Property Name="Position_held" Type="Edm.String" />
+        <Property Name="Gross_Salary" Type="Edm.Int32" />
+        <Property Name="Convicted" Type="Edm.Boolean" />
+        <Property Name="Conviction_Description" Type="Edm.String" />
+        <Property Name="Dismissal" Type="Edm.Boolean" />
+        <Property Name="Dismissal_Description" Type="Edm.String" />
+        <Property Name="Disability_Date" Type="Edm.DateTime" />
+        <Property Name="Religion" Type="Edm.String" />
+        <Property Name="Altenative_Phone_Number" Type="Edm.String" />
+        <Property Name="Highest_Education_Level" Type="Edm.String" />
+        <Property Name="Expected_Salary" Type="Edm.Decimal" />
+        <Property Name="Details_of_Disability_regist" Type="Edm.String" />
+        <Property Name="Work_In_All_Centers" Type="Edm.Boolean" />
+        <Property Name="ID_Number" Type="Edm.String" />
       </EntityType>
       <EntityType Name="HRPortalUsers">
         <Key>
@@ -880,6 +1116,8 @@
         <Property Name="Middle_Name" Type="Edm.String" />
         <Property Name="Last_Name" Type="Edm.String" />
         <Property Name="ID_Number" Type="Edm.String" />
+        <Property Name="ICT_Help_Desk_Admin" Type="Edm.Boolean" />
+        <Property Name="Region" Type="Edm.String" />
         <Property Name="fName" Type="Edm.String" />
         <Property Name="mName" Type="Edm.String" />
         <Property Name="lName" Type="Edm.String" />
@@ -1069,6 +1307,156 @@
         <Property Name="Code" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="invitetoTenders">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Procurement_Method" Type="Edm.String" />
+        <Property Name="Solicitation_Type" Type="Edm.String" />
+        <Property Name="External_Document_No" Type="Edm.String" />
+        <Property Name="Procurement_Type" Type="Edm.String" />
+        <Property Name="Procurement_Category_ID" Type="Edm.String" />
+        <Property Name="Project_ID" Type="Edm.String" />
+        <Property Name="Assigned_Procurement_Officer" Type="Edm.String" />
+        <Property Name="Road_Code" Type="Edm.String" />
+        <Property Name="Road_Link_Name" Type="Edm.String" />
+        <Property Name="Constituency_ID" Type="Edm.String" />
+        <Property Name="Requesting_Region" Type="Edm.String" />
+        <Property Name="Requesting_Directorate" Type="Edm.String" />
+        <Property Name="Requesting_Department" Type="Edm.String" />
+        <Property Name="Engineer_Estimate_LCY" Type="Edm.Decimal" />
+        <Property Name="Tender_Name" Type="Edm.String" />
+        <Property Name="Tender_Summary" Type="Edm.String" />
+        <Property Name="Document_Date" Type="Edm.DateTime" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Name_2" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="Post_Code" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Country_Region_Code" Type="Edm.String" />
+        <Property Name="Phone_No" Type="Edm.String" />
+        <Property Name="E_Mail" Type="Edm.String" />
+        <Property Name="Tender_Box_Location_Code" Type="Edm.String" />
+        <Property Name="Bid_Charge_Code" Type="Edm.String" />
+        <Property Name="Bid_Charge_LCY" Type="Edm.Decimal" />
+        <Property Name="Bid_Charge_Bank_Code" Type="Edm.String" />
+        <Property Name="Bank_Name" Type="Edm.String" />
+        <Property Name="Bank_Account_Name" Type="Edm.String" />
+        <Property Name="Bid_Charge_Bank_Branch" Type="Edm.String" />
+        <Property Name="Bid_Charge_Bank_A_C_No" Type="Edm.String" />
+        <Property Name="Published" Type="Edm.Boolean" />
+        <Property Name="Created_by" Type="Edm.String" />
+        <Property Name="Submission_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Submission_Start_Time" Type="Edm.String" />
+        <Property Name="Submission_End_Date" Type="Edm.DateTime" />
+        <Property Name="Submission_End_Time" Type="Edm.String" />
+        <Property Name="No_of_Submission" Type="Edm.Int32" />
+        <Property Name="Enforce_Mandatory_E_Receipt" Type="Edm.Boolean" />
+        <Property Name="Bid_Document_Template" Type="Edm.String" />
+        <Property Name="Display_Scoring_Criteria_Vendo" Type="Edm.Boolean" />
+        <Property Name="Bid_Scoring_Template" Type="Edm.String" />
+        <Property Name="Created_Date_Time" Type="Edm.DateTime" />
+        <Property Name="County" Type="Edm.String" />
+        <Property Name="Invitation_Notice_Type" Type="Edm.String" />
+        <Property Name="Bid_Envelop_Type" Type="Edm.String" />
+        <Property Name="Sealed_Bids" Type="Edm.Boolean" />
+        <Property Name="PRN_No" Type="Edm.String" />
+        <Property Name="Bid_Submission_Method" Type="Edm.String" />
+        <Property Name="Lot_No" Type="Edm.String" />
+        <Property Name="LCY_Currency_Code" Type="Edm.String" />
+        <Property Name="Works_Category" Type="Edm.String" />
+        <Property Name="Annual_Procurement_Plan_ID" Type="Edm.String" />
+        <Property Name="Procurement_Plan_Line_No" Type="Edm.String" />
+        <Property Name="Procurement_Plan_Entry_No1" Type="Edm.String" />
+        <Property Name="Financial_Year_Code" Type="Edm.String" />
+        <Property Name="Budget_Narration" Type="Edm.String" />
+        <Property Name="Available_Procurement_Budget" Type="Edm.Decimal" />
+        <Property Name="Publish_Engineers_Estimate" Type="Edm.Boolean" />
+        <Property Name="Procuring_Entity_Name_Contact" Type="Edm.String" />
+        <Property Name="Bid_Opening_Date" Type="Edm.DateTime" />
+        <Property Name="Bid_Opening_Time" Type="Edm.String" />
+        <Property Name="Bid_Opening_Venue" Type="Edm.String" />
+        <Property Name="Tender_Validity_Duration" Type="Edm.String" />
+        <Property Name="Tender_Validity_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="Enforce_Mandatory_Pre_bid_Visi" Type="Edm.Boolean" />
+        <Property Name="Mandatory_Pre_bid_Visit_Date" Type="Edm.DateTime" />
+        <Property Name="Domestic_Bidder_Preference" Type="Edm.Boolean" />
+        <Property Name="Mandatory_Special_Group_Reserv" Type="Edm.Boolean" />
+        <Property Name="Bid_Tender_Security_Required" Type="Edm.Boolean" />
+        <Property Name="Bid_Security" Type="Edm.Decimal" />
+        <Property Name="Bid_Security_Amount_LCY" Type="Edm.Decimal" />
+        <Property Name="Special_Group_Bid_Security" Type="Edm.Boolean" />
+        <Property Name="Bid_Security_Validity_Duration" Type="Edm.String" />
+        <Property Name="Bid_Security_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="Insurance_Cover_Required" Type="Edm.Boolean" />
+        <Property Name="Performance_Security_Required" Type="Edm.Boolean" />
+        <Property Name="Performance_Security" Type="Edm.Decimal" />
+        <Property Name="Special_Group_Performance_Secu" Type="Edm.Boolean" />
+        <Property Name="Advance_Payment_Security_Req" Type="Edm.Boolean" />
+        <Property Name="Advance_Payment_Security" Type="Edm.Decimal" />
+        <Property Name="Advance_Amount_Limit" Type="Edm.Decimal" />
+        <Property Name="Max_Works_Kickoff_Duration" Type="Edm.String" />
+        <Property Name="Max_Works_Charter_Duration" Type="Edm.String" />
+        <Property Name="Max_Works_Completion_Duration" Type="Edm.String" />
+        <Property Name="Payment_Terms_Code" Type="Edm.String" />
+        <Property Name="Defects_Liability_Period" Type="Edm.String" />
+        <Property Name="Daily_Liquidated_Dam_Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Liquidated_Damages_Limit" Type="Edm.Decimal" />
+        <Property Name="Payment_Retention" Type="Edm.Decimal" />
+        <Property Name="Retention_Amount_Limit" Type="Edm.Decimal" />
+        <Property Name="Min_Interim_Certificate_Amount" Type="Edm.Decimal" />
+        <Property Name="Appointer_of_Bid_Arbitrator" Type="Edm.String" />
+        <Property Name="Display_Scoring_Criteria_Vend" Type="Edm.Boolean" />
+        <Property Name="Document_Status" Type="Edm.String" />
+        <Property Name="Cancel_Reason_Code" Type="Edm.String" />
+        <Property Name="Parent_Invitation_No" Type="Edm.String" />
+        <Property Name="Target_Bidder_Group" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Responsibility_Center" Type="Edm.String" />
+        <Property Name="Requisition_Product_Group" Type="Edm.String" />
+        <Property Name="Language_Code" Type="Edm.String" />
+        <Property Name="Purchaser_Code" Type="Edm.String" />
+        <Property Name="No_Series" Type="Edm.String" />
+        <Property Name="Global_Dimension_1_Code" Type="Edm.String" />
+        <Property Name="Global_Dimension_2_Code" Type="Edm.String" />
+        <Property Name="Global_Dimension_3_Code" Type="Edm.String" />
+        <Property Name="Primary_Tender_Submission" Type="Edm.String" />
+        <Property Name="Primary_Engineer_Contact" Type="Edm.String" />
+        <Property Name="Cancellation_Date" Type="Edm.DateTime" />
+        <Property Name="Cancellation_Secret_Code" Type="Edm.String" />
+        <Property Name="Bid_Opening_Committe" Type="Edm.String" />
+        <Property Name="Bid_Evaluation_Committe" Type="Edm.String" />
+        <Property Name="Dimension_Set_ID" Type="Edm.Int32" />
+        <Property Name="Department_Code" Type="Edm.String" />
+        <Property Name="Directorate_Code" Type="Edm.String" />
+        <Property Name="Division" Type="Edm.String" />
+        <Property Name="Job" Type="Edm.String" />
+        <Property Name="Requisition_Template_ID" Type="Edm.String" />
+        <Property Name="Procurement_Plan_ID" Type="Edm.String" />
+        <Property Name="Procurement_Plan_Entry_No" Type="Edm.Int32" />
+        <Property Name="PP_Planning_Category" Type="Edm.String" />
+        <Property Name="PP_Funding_Source_ID" Type="Edm.String" />
+        <Property Name="PP_Total_Budget" Type="Edm.Decimal" />
+        <Property Name="PP_Total_Actual_Costs" Type="Edm.Decimal" />
+        <Property Name="PP_Total_Commitments" Type="Edm.Decimal" />
+        <Property Name="PP_Total_Available_Budget" Type="Edm.Decimal" />
+        <Property Name="Stage_1_EOI_Invitation" Type="Edm.String" />
+        <Property Name="Prebid_Meeting_Address" Type="Edm.String" />
+        <Property Name="Prebid_Meeting_Register_ID" Type="Edm.String" />
+        <Property Name="Date_Time_Published" Type="Edm.DateTime" />
+        <Property Name="Cancelled_By" Type="Edm.String" />
+        <Property Name="PP_Solicitation_Type" Type="Edm.String" />
+        <Property Name="PP_Procurement_Method" Type="Edm.String" />
+        <Property Name="PP_Preference_Reservation_Code" Type="Edm.String" />
+        <Property Name="Bid_Selection_Method" Type="Edm.String" />
+        <Property Name="Job_Task_No" Type="Edm.String" />
+        <Property Name="Sent_Cancellation_Secret_Code" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="ItemCategories">
         <Key>
           <PropertyRef Name="Code" />
@@ -1081,6 +1469,18 @@
         <Property Name="Has_Children" Type="Edm.Boolean" />
         <Property Name="Last_Modified_Date_Time" Type="Edm.DateTime" />
         <Property Name="Id" Type="Edm.Guid" />
+      </EntityType>
+      <EntityType Name="ItemLedgerEntries">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="Item_Category_Code" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Decimal" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="Items">
         <Key>
@@ -1280,47 +1680,89 @@
       </EntityType>
       <EntityType Name="JobApplicantReferees">
         <Key>
-          <PropertyRef Name="Id_Number" />
-          <PropertyRef Name="Names" />
+          <PropertyRef Name="Code" />
+          <PropertyRef Name="Job_Application_No" />
         </Key>
-        <Property Name="Id_Number" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Names" Type="Edm.String" Nullable="false" />
-        <Property Name="Designation" Type="Edm.String" />
-        <Property Name="Institution" Type="Edm.String" />
-        <Property Name="Address" Type="Edm.Int32" />
-        <Property Name="Telephone_No" Type="Edm.String" />
-        <Property Name="E_Mail" Type="Edm.String" />
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Job_Application_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Job_Indicator_Code" Type="Edm.String" />
+        <Property Name="Indicator_Description" Type="Edm.String" />
+        <Property Name="Number" Type="Edm.Int32" />
+        <Property Name="Additional_Comments" Type="Edm.String" />
+        <Property Name="Job_ID" Type="Edm.String" />
         <Property Name="Employee_No" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="JobApplicationsQuery">
+        <Key>
+          <PropertyRef Name="Application_No" />
+        </Key>
+        <Property Name="Application_No" Type="Edm.String" Nullable="false" />
+        <Property Name="First_Name" Type="Edm.String" />
+        <Property Name="Middle_Name" Type="Edm.String" />
+        <Property Name="Surname" Type="Edm.String" />
+        <Property Name="Salutation" Type="Edm.String" />
+        <Property Name="ID_Passport" Type="Edm.String" />
+        <Property Name="Date_of_Birth" Type="Edm.DateTime" />
+        <Property Name="Age" Type="Edm.String" />
+        <Property Name="Gender" Type="Edm.String" />
+        <Property Name="Marital_Status" Type="Edm.String" />
+        <Property Name="Ethnic_Origin" Type="Edm.String" />
+        <Property Name="Ethnic_Origin_Description" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="Home_Phone_No" Type="Edm.String" />
+        <Property Name="Work_Phone_No" Type="Edm.String" />
+        <Property Name="Postal_Code" Type="Edm.String" />
+        <Property Name="Postal_Address" Type="Edm.String" />
+        <Property Name="Residential_Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="County" Type="Edm.String" />
+        <Property Name="Country_Code" Type="Edm.String" />
+        <Property Name="Citizenship" Type="Edm.String" />
+        <Property Name="Disabled" Type="Edm.Boolean" />
+        <Property Name="Disability_Description" Type="Edm.String" />
+        <Property Name="Disability_Grade" Type="Edm.String" />
+        <Property Name="Driving_Licence" Type="Edm.Boolean" />
+        <Property Name="Highest_academic_qualification" Type="Edm.String" />
+        <Property Name="Current_Job_Position" Type="Edm.String" />
+        <Property Name="Current_Duties_and_Responsibil" Type="Edm.String" />
+        <Property Name="Hobbies" Type="Edm.String" />
+        <Property Name="Vacancy_Requisition_No" Type="Edm.String" />
+        <Property Name="Shortlisted" Type="Edm.Boolean" />
+        <Property Name="Shortlisted_On" Type="Edm.DateTime" />
+        <Property Name="Shortlisted_By" Type="Edm.String" />
+        <Property Name="Shortlisting_Type" Type="Edm.String" />
+        <Property Name="Qualified" Type="Edm.Boolean" />
+        <Property Name="Qualified_By" Type="Edm.String" />
+        <Property Name="Quaified_On" Type="Edm.DateTime" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="No_Series" Type="Edm.String" />
+        <Property Name="Application_Date" Type="Edm.DateTime" />
+        <Property Name="Convicted" Type="Edm.Boolean" />
+        <Property Name="Job_Applied_For" Type="Edm.String" />
+        <Property Name="Job_Id" Type="Edm.String" />
+        <Property Name="Application_Status" Type="Edm.String" />
+        <Property Name="Country_Name" Type="Edm.String" />
       </EntityType>
       <EntityType Name="JobRequirements">
         <Key>
           <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="Job_Id" />
         </Key>
-        <Property Name="Job_Id" Type="Edm.String" />
+        <Property Name="Job_Id" Type="Edm.String" Nullable="false" />
         <Property Name="Qualification_Type" Type="Edm.String" />
-        <Property Name="Qualification_Code" Type="Edm.String" />
         <Property Name="Qualification" Type="Edm.String" />
         <Property Name="Job_Requirements" Type="Edm.String" />
-        <Property Name="Priority" Type="Edm.String" />
-        <Property Name="Job_Specification" Type="Edm.String" />
-        <Property Name="Score_ID" Type="Edm.Decimal" />
-        <Property Name="Need_code" Type="Edm.String" />
-        <Property Name="Stage_Code" Type="Edm.String" />
-        <Property Name="Mandatory" Type="Edm.Boolean" />
-        <Property Name="Desired_Score" Type="Edm.Decimal" />
-        <Property Name="Total_Stage_Desired_Score" Type="Edm.Decimal" />
         <Property Name="Qualification_Description" Type="Edm.String" />
         <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="JobResponsibilities">
         <Key>
-          <PropertyRef Name="Entry_No" />
+          <PropertyRef Name="AuxiliaryIndex1" />
           <PropertyRef Name="Job_ID" />
         </Key>
         <Property Name="Job_ID" Type="Edm.String" Nullable="false" />
         <Property Name="Responsibility" Type="Edm.String" />
-        <Property Name="Remarks" Type="Edm.String" />
-        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="jobs">
         <Key>
@@ -1484,6 +1926,24 @@
         <Property Name="Description" Type="Edm.String" />
         <Property Name="Person_responsiblee" Type="Edm.String" />
         <Property Name="Scheduled_time" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="More_Authors">
+        <Key>
+          <PropertyRef Name="Copyright_Reg_No" />
+        </Key>
+        <Property Name="Line_No" Type="Edm.Int32" />
+        <Property Name="Copyright_Reg_No" Type="Edm.String" Nullable="false" />
+        <Property Name="First_Name" Type="Edm.String" />
+        <Property Name="Surname" Type="Edm.String" />
+        <Property Name="Middle_Name" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="Contact" Type="Edm.String" />
+        <Property Name="Phone_No" Type="Edm.String" />
+        <Property Name="ID_No" Type="Edm.String" />
+        <Property Name="P_I_N" Type="Edm.String" />
+        <Property Name="Pseudo_Name" Type="Edm.String" />
+        <Property Name="Email_Address" Type="Edm.String" />
       </EntityType>
       <EntityType Name="My_Meetings">
         <Key>
@@ -1836,13 +2296,14 @@
       </EntityType>
       <EntityType Name="PositionsSupervised">
         <Key>
-          <PropertyRef Name="Job_ID" />
-          <PropertyRef Name="Position_Supervised" />
+          <PropertyRef Name="Job_Id" />
+          <PropertyRef Name="Line_No" />
+          <PropertyRef Name="Requisition_No" />
         </Key>
-        <Property Name="Job_ID" Type="Edm.String" Nullable="false" />
-        <Property Name="Position_Supervised" Type="Edm.String" Nullable="false" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Remarks" Type="Edm.String" />
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Requisition_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Job_Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Job_Description" Type="Edm.String" />
       </EntityType>
       <EntityType Name="postcodes">
         <Key>
@@ -2044,6 +2505,14 @@
         <Property Name="Current_Budget" Type="Edm.String" />
         <Property Name="Activity" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="procurementTypes">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.Boolean" />
+      </EntityType>
       <EntityType Name="ProfessionalQualification">
         <Key>
           <PropertyRef Name="Application_No" />
@@ -2119,7 +2588,7 @@
         <Property Name="Committed" Type="Edm.Boolean" />
         <Property Name="CommittedBy" Type="Edm.String" />
         <Property Name="Procurement_Plan" Type="Edm.String" />
-        <Property Name="Procurement_Plan_Year" Type="Edm.String" />
+        <Property Name="Procurement_Plan_Item" Type="Edm.String" />
         <Property Name="Request_Ref_No" Type="Edm.String" />
         <Property Name="Supplier_Type" Type="Edm.String" />
         <Property Name="Process_Type" Type="Edm.String" />
@@ -2292,6 +2761,15 @@
         <Property Name="Vote_Amount" Type="Edm.Decimal" />
         <Property Name="Vote_Item_Desc" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="QualificationQuery">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="Qualified_Employees" Type="Edm.Boolean" />
+      </EntityType>
       <EntityType Name="ReceiptAndPaymentTypes">
         <Key>
           <PropertyRef Name="Code" />
@@ -2350,6 +2828,13 @@
         </Key>
         <Property Name="No" Type="Edm.String" Nullable="false" />
         <Property Name="Type" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="responsibiltyCenter">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
       </EntityType>
       <EntityType Name="RFIPreqList">
@@ -2828,6 +3313,36 @@
         <Property Name="Daily_Work_Ticket" Type="Edm.String" />
         <Property Name="EntryNo" Type="Edm.Int32" />
       </EntityType>
+      <EntityType Name="VacantPosition">
+        <Key>
+          <PropertyRef Name="Job_Id" />
+          <PropertyRef Name="Line_No" />
+          <PropertyRef Name="Requisition_No" />
+        </Key>
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Requisition_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Job_Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Planned_Qty" Type="Edm.Int32" />
+        <Property Name="Requested_Qty" Type="Edm.Int32" />
+        <Property Name="Planned_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Planned_End_Date" Type="Edm.DateTime" />
+        <Property Name="Actual_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Actual_End_Date" Type="Edm.DateTime" />
+        <Property Name="Applications_End_Time" Type="Edm.String" />
+        <Property Name="Applications_End_Date" Type="Edm.DateTime" />
+        <Property Name="Applications_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Advertise" Type="Edm.Boolean" />
+        <Property Name="Advertised_By" Type="Edm.String" />
+        <Property Name="Advertised_Date" Type="Edm.DateTime" />
+        <Property Name="Requisition_Type" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Closed_Date" Type="Edm.DateTime" />
+        <Property Name="Closed_By" Type="Edm.String" />
+        <Property Name="Manpower_Plan_ID" Type="Edm.String" />
+        <Property Name="Type_of_Contract" Type="Edm.String" />
+        <Property Name="Job_Description" Type="Edm.String" />
+        <Property Name="Responsibility_Center" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="vendorBalancesheet">
         <Key>
           <PropertyRef Name="Audit_Year_Code_Reference" />
@@ -3017,6 +3532,20 @@
         <Property Name="key" Type="Edm.String" />
         <Property Name="generatedAt" Type="Edm.DateTime" />
       </EntityType>
+      <EntityType Name="worksCategory">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Parent_Category" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Indentation" Type="Edm.Int32" />
+        <Property Name="Presentation_Order" Type="Edm.Int32" />
+        <Property Name="Has_Children" Type="Edm.Boolean" />
+        <Property Name="Last_Modified_Date_Time" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Default_Road_Project_Group" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="WorkTypes">
         <Key>
           <PropertyRef Name="Code" />
@@ -3054,10 +3583,16 @@
         </Key>
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <NavigationProperty Name="ApplicantAccomplishment" Relationship="NAV.Company_ApplicantAccomplishment" ToRole="ApplicantAccomplishment" FromRole="Company" />
+        <NavigationProperty Name="ApplicantBackground" Relationship="NAV.Company_ApplicantBackground" ToRole="ApplicantBackground" FromRole="Company" />
         <NavigationProperty Name="ApplicantEmployeeHistory" Relationship="NAV.Company_ApplicantEmployeeHistory" ToRole="ApplicantEmployeeHistory" FromRole="Company" />
+        <NavigationProperty Name="ApplicantReferees" Relationship="NAV.Company_ApplicantReferees" ToRole="ApplicantReferees" FromRole="Company" />
         <NavigationProperty Name="ApprovalEntriesPage" Relationship="NAV.Company_ApprovalEntriesPage" ToRole="ApprovalEntriesPage" FromRole="Company" />
+        <NavigationProperty Name="EscalateTo" Relationship="NAV.Company_EscalateTo" ToRole="EscalateTo" FromRole="Company" />
         <NavigationProperty Name="MyHeldeskRequests" Relationship="NAV.Company_MyHeldeskRequests" ToRole="MyHeldeskRequests" FromRole="Company" />
+        <NavigationProperty Name="PostedStoreRequisition" Relationship="NAV.Company_PostedStoreRequisition" ToRole="PostedStoreRequisition" FromRole="Company" />
+        <NavigationProperty Name="PostedStoreRequisitionPurchLines" Relationship="NAV.Company_PostedStoreRequisitionPurchLines" ToRole="PostedStoreRequisitionPurchLines" FromRole="Company" />
         <NavigationProperty Name="powerbifinance" Relationship="NAV.Company_powerbifinance" ToRole="powerbifinance" FromRole="Company" />
+        <NavigationProperty Name="ProductsPerRegion" Relationship="NAV.Company_ProductsPerRegion" ToRole="ProductsPerRegion" FromRole="Company" />
         <NavigationProperty Name="ResponsibilityCenters" Relationship="NAV.Company_ResponsibilityCenters" ToRole="ResponsibilityCenters" FromRole="Company" />
         <NavigationProperty Name="VacantPositions" Relationship="NAV.Company_VacantPositions" ToRole="VacantPositions" FromRole="Company" />
         <NavigationProperty Name="AdsNotices" Relationship="NAV.Company_AdsNotices" ToRole="AdsNotices" FromRole="Company" />
@@ -3085,8 +3620,10 @@
         <NavigationProperty Name="Employees" Relationship="NAV.Company_Employees" ToRole="Employees" FromRole="Company" />
         <NavigationProperty Name="eProcDocuments" Relationship="NAV.Company_eProcDocuments" ToRole="eProcDocuments" FromRole="Company" />
         <NavigationProperty Name="eProVendorQT" Relationship="NAV.Company_eProVendorQT" ToRole="eProVendorQT" FromRole="Company" />
+        <NavigationProperty Name="FavouriteJob" Relationship="NAV.Company_FavouriteJob" ToRole="FavouriteJob" FromRole="Company" />
         <NavigationProperty Name="FiscalYears" Relationship="NAV.Company_FiscalYears" ToRole="FiscalYears" FromRole="Company" />
         <NavigationProperty Name="FundCode" Relationship="NAV.Company_FundCode" ToRole="FundCode" FromRole="Company" />
+        <NavigationProperty Name="HelpDeskAssignee" Relationship="NAV.Company_HelpDeskAssignee" ToRole="HelpDeskAssignee" FromRole="Company" />
         <NavigationProperty Name="HrApplicantAccomplishment" Relationship="NAV.Company_HrApplicantAccomplishment" ToRole="HrApplicantAccomplishment" FromRole="Company" />
         <NavigationProperty Name="HRApplicantReferees" Relationship="NAV.Company_HRApplicantReferees" ToRole="HRApplicantReferees" FromRole="Company" />
         <NavigationProperty Name="HRJobApplicants" Relationship="NAV.Company_HRJobApplicants" ToRole="HRJobApplicants" FromRole="Company" />
@@ -3101,13 +3638,16 @@
         <NavigationProperty Name="ImprestMemo" Relationship="NAV.Company_ImprestMemo" ToRole="ImprestMemo" FromRole="Company" />
         <NavigationProperty Name="IndustryGroup" Relationship="NAV.Company_IndustryGroup" ToRole="IndustryGroup" FromRole="Company" />
         <NavigationProperty Name="InventoryPostingGroups" Relationship="NAV.Company_InventoryPostingGroups" ToRole="InventoryPostingGroups" FromRole="Company" />
+        <NavigationProperty Name="invitetoTenders" Relationship="NAV.Company_invitetoTenders" ToRole="invitetoTenders" FromRole="Company" />
         <NavigationProperty Name="ItemCategories" Relationship="NAV.Company_ItemCategories" ToRole="ItemCategories" FromRole="Company" />
+        <NavigationProperty Name="ItemLedgerEntries" Relationship="NAV.Company_ItemLedgerEntries" ToRole="ItemLedgerEntries" FromRole="Company" />
         <NavigationProperty Name="Items" Relationship="NAV.Company_Items" ToRole="Items" FromRole="Company" />
         <NavigationProperty Name="ItemSalesAndProfit" Relationship="NAV.Company_ItemSalesAndProfit" ToRole="ItemSalesAndProfit" FromRole="Company" />
         <NavigationProperty Name="ItemSalesByCustomer" Relationship="NAV.Company_ItemSalesByCustomer" ToRole="ItemSalesByCustomer" FromRole="Company" />
         <NavigationProperty Name="JobApplicantHobies" Relationship="NAV.Company_JobApplicantHobies" ToRole="JobApplicantHobies" FromRole="Company" />
         <NavigationProperty Name="JobApplicantQualifications" Relationship="NAV.Company_JobApplicantQualifications" ToRole="JobApplicantQualifications" FromRole="Company" />
         <NavigationProperty Name="JobApplicantReferees" Relationship="NAV.Company_JobApplicantReferees" ToRole="JobApplicantReferees" FromRole="Company" />
+        <NavigationProperty Name="JobApplicationsQuery" Relationship="NAV.Company_JobApplicationsQuery" ToRole="JobApplicationsQuery" FromRole="Company" />
         <NavigationProperty Name="JobRequirements" Relationship="NAV.Company_JobRequirements" ToRole="JobRequirements" FromRole="Company" />
         <NavigationProperty Name="JobResponsibilities" Relationship="NAV.Company_JobResponsibilities" ToRole="JobResponsibilities" FromRole="Company" />
         <NavigationProperty Name="jobs" Relationship="NAV.Company_jobs" ToRole="jobs" FromRole="Company" />
@@ -3119,6 +3659,7 @@
         <NavigationProperty Name="LeaveTypes" Relationship="NAV.Company_LeaveTypes" ToRole="LeaveTypes" FromRole="Company" />
         <NavigationProperty Name="Locations" Relationship="NAV.Company_Locations" ToRole="Locations" FromRole="Company" />
         <NavigationProperty Name="MeetingAgenda" Relationship="NAV.Company_MeetingAgenda" ToRole="MeetingAgenda" FromRole="Company" />
+        <NavigationProperty Name="More_Authors" Relationship="NAV.Company_More_Authors" ToRole="More_Authors" FromRole="Company" />
         <NavigationProperty Name="My_Meetings" Relationship="NAV.Company_My_Meetings" ToRole="My_Meetings" FromRole="Company" />
         <NavigationProperty Name="myCountryList" Relationship="NAV.Company_myCountryList" ToRole="myCountryList" FromRole="Company" />
         <NavigationProperty Name="MyJobApplications" Relationship="NAV.Company_MyJobApplications" ToRole="MyJobApplications" FromRole="Company" />
@@ -3133,15 +3674,18 @@
         <NavigationProperty Name="ProcurementPlan" Relationship="NAV.Company_ProcurementPlan" ToRole="ProcurementPlan" FromRole="Company" />
         <NavigationProperty Name="ProcurementRequest" Relationship="NAV.Company_ProcurementRequest" ToRole="ProcurementRequest" FromRole="Company" />
         <NavigationProperty Name="ProcurementRequestLines" Relationship="NAV.Company_ProcurementRequestLines" ToRole="ProcurementRequestLines" FromRole="Company" />
+        <NavigationProperty Name="procurementTypes" Relationship="NAV.Company_procurementTypes" ToRole="procurementTypes" FromRole="Company" />
         <NavigationProperty Name="ProfessionalQualification" Relationship="NAV.Company_ProfessionalQualification" ToRole="ProfessionalQualification" FromRole="Company" />
         <NavigationProperty Name="ProjectMembers" Relationship="NAV.Company_ProjectMembers" ToRole="ProjectMembers" FromRole="Company" />
         <NavigationProperty Name="PurchaseHeader" Relationship="NAV.Company_PurchaseHeader" ToRole="PurchaseHeader" FromRole="Company" />
         <NavigationProperty Name="PurchaseLines" Relationship="NAV.Company_PurchaseLines" ToRole="PurchaseLines" FromRole="Company" />
         <NavigationProperty Name="PurchaseReqLines" Relationship="NAV.Company_PurchaseReqLines" ToRole="PurchaseReqLines" FromRole="Company" />
         <NavigationProperty Name="PVLines" Relationship="NAV.Company_PVLines" ToRole="PVLines" FromRole="Company" />
+        <NavigationProperty Name="QualificationQuery" Relationship="NAV.Company_QualificationQuery" ToRole="QualificationQuery" FromRole="Company" />
         <NavigationProperty Name="ReceiptAndPaymentTypes" Relationship="NAV.Company_ReceiptAndPaymentTypes" ToRole="ReceiptAndPaymentTypes" FromRole="Company" />
         <NavigationProperty Name="receipts" Relationship="NAV.Company_receipts" ToRole="receipts" FromRole="Company" />
         <NavigationProperty Name="Resources" Relationship="NAV.Company_Resources" ToRole="Resources" FromRole="Company" />
+        <NavigationProperty Name="responsibiltyCenter" Relationship="NAV.Company_responsibiltyCenter" ToRole="responsibiltyCenter" FromRole="Company" />
         <NavigationProperty Name="RFIPreqList" Relationship="NAV.Company_RFIPreqList" ToRole="RFIPreqList" FromRole="Company" />
         <NavigationProperty Name="rfiResponseT" Relationship="NAV.Company_rfiResponseT" ToRole="rfiResponseT" FromRole="Company" />
         <NavigationProperty Name="RFQApps" Relationship="NAV.Company_RFQApps" ToRole="RFQApps" FromRole="Company" />
@@ -3159,15 +3703,25 @@
         <NavigationProperty Name="TopCustomerOverview" Relationship="NAV.Company_TopCustomerOverview" ToRole="TopCustomerOverview" FromRole="Company" />
         <NavigationProperty Name="TransportRequisition" Relationship="NAV.Company_TransportRequisition" ToRole="TransportRequisition" FromRole="Company" />
         <NavigationProperty Name="TravelRequisitionStaff" Relationship="NAV.Company_TravelRequisitionStaff" ToRole="TravelRequisitionStaff" FromRole="Company" />
+        <NavigationProperty Name="VacantPosition" Relationship="NAV.Company_VacantPosition" ToRole="VacantPosition" FromRole="Company" />
         <NavigationProperty Name="vendorBalancesheet" Relationship="NAV.Company_vendorBalancesheet" ToRole="vendorBalancesheet" FromRole="Company" />
         <NavigationProperty Name="vendorIncomestatement" Relationship="NAV.Company_vendorIncomestatement" ToRole="vendorIncomestatement" FromRole="Company" />
         <NavigationProperty Name="Vendors" Relationship="NAV.Company_Vendors" ToRole="Vendors" FromRole="Company" />
+        <NavigationProperty Name="worksCategory" Relationship="NAV.Company_worksCategory" ToRole="worksCategory" FromRole="Company" />
         <NavigationProperty Name="WorkTypes" Relationship="NAV.Company_WorkTypes" ToRole="WorkTypes" FromRole="Company" />
         <NavigationProperty Name="Pending_Po" Relationship="NAV.Company_Pending_Po" ToRole="Pending_Po" FromRole="Company" />
       </EntityType>
       <Association Name="MyHeldeskRequests_Department_Link">
         <End Type="NAV.ResponsibilityCenters" Role="Department_Link" Multiplicity="0..1" />
         <End Type="NAV.MyHeldeskRequests" Role="MyHeldeskRequests" Multiplicity="*" />
+      </Association>
+      <Association Name="MyHeldeskRequests_Escalated_To_Link">
+        <End Type="NAV.MyHeldeskRequests" Role="MyHeldeskRequests" Multiplicity="*" />
+        <End Type="NAV.EscalateTo" Role="Escalated_To_Link" Multiplicity="0..1" />
+      </Association>
+      <Association Name="PostedStoreRequisition_PostedStoreRequisitionPurchLines">
+        <End Type="NAV.PostedStoreRequisitionPurchLines" Role="PostedStoreRequisitionPurchLines" Multiplicity="*" />
+        <End Type="NAV.PostedStoreRequisition" Role="PostedStoreRequisition" Multiplicity="*" />
       </Association>
       <Association Name="ResponsibilityCenters_Direct_Reports_To_Link">
         <End Type="NAV.ResponsibilityCenters" Role="Direct_Reports_To_Link" Multiplicity="0..1" />
@@ -3185,20 +3739,44 @@
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.ApplicantAccomplishment" Role="ApplicantAccomplishment" Multiplicity="*" />
       </Association>
+      <Association Name="Company_ApplicantBackground">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.ApplicantBackground" Role="ApplicantBackground" Multiplicity="*" />
+      </Association>
       <Association Name="Company_ApplicantEmployeeHistory">
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.ApplicantEmployeeHistory" Role="ApplicantEmployeeHistory" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ApplicantReferees">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.ApplicantReferees" Role="ApplicantReferees" Multiplicity="*" />
       </Association>
       <Association Name="Company_ApprovalEntriesPage">
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.ApprovalEntriesPage" Role="ApprovalEntriesPage" Multiplicity="*" />
       </Association>
+      <Association Name="Company_EscalateTo">
+        <End Type="NAV.EscalateTo" Role="EscalateTo" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_MyHeldeskRequests">
         <End Type="NAV.MyHeldeskRequests" Role="MyHeldeskRequests" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_PostedStoreRequisition">
+        <End Type="NAV.PostedStoreRequisition" Role="PostedStoreRequisition" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_PostedStoreRequisitionPurchLines">
+        <End Type="NAV.PostedStoreRequisitionPurchLines" Role="PostedStoreRequisitionPurchLines" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_powerbifinance">
         <End Type="NAV.powerbifinance" Role="powerbifinance" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ProductsPerRegion">
+        <End Type="NAV.ProductsPerRegion" Role="ProductsPerRegion" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_ResponsibilityCenters">
@@ -3309,12 +3887,20 @@
         <End Type="NAV.eProVendorQT" Role="eProVendorQT" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_FavouriteJob">
+        <End Type="NAV.FavouriteJob" Role="FavouriteJob" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_FiscalYears">
         <End Type="NAV.FiscalYears" Role="FiscalYears" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_FundCode">
         <End Type="NAV.FundCode" Role="FundCode" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_HelpDeskAssignee">
+        <End Type="NAV.HelpDeskAssignee" Role="HelpDeskAssignee" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_HrApplicantAccomplishment">
@@ -3373,8 +3959,16 @@
         <End Type="NAV.InventoryPostingGroups" Role="InventoryPostingGroups" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_invitetoTenders">
+        <End Type="NAV.invitetoTenders" Role="invitetoTenders" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_ItemCategories">
         <End Type="NAV.ItemCategories" Role="ItemCategories" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ItemLedgerEntries">
+        <End Type="NAV.ItemLedgerEntries" Role="ItemLedgerEntries" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_Items">
@@ -3399,6 +3993,10 @@
       </Association>
       <Association Name="Company_JobApplicantReferees">
         <End Type="NAV.JobApplicantReferees" Role="JobApplicantReferees" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_JobApplicationsQuery">
+        <End Type="NAV.JobApplicationsQuery" Role="JobApplicationsQuery" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_JobRequirements">
@@ -3443,6 +4041,10 @@
       </Association>
       <Association Name="Company_MeetingAgenda">
         <End Type="NAV.MeetingAgenda" Role="MeetingAgenda" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_More_Authors">
+        <End Type="NAV.More_Authors" Role="More_Authors" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_My_Meetings">
@@ -3501,6 +4103,10 @@
         <End Type="NAV.ProcurementRequestLines" Role="ProcurementRequestLines" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_procurementTypes">
+        <End Type="NAV.procurementTypes" Role="procurementTypes" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_ProfessionalQualification">
         <End Type="NAV.ProfessionalQualification" Role="ProfessionalQualification" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3525,6 +4131,10 @@
         <End Type="NAV.PVLines" Role="PVLines" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_QualificationQuery">
+        <End Type="NAV.QualificationQuery" Role="QualificationQuery" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_ReceiptAndPaymentTypes">
         <End Type="NAV.ReceiptAndPaymentTypes" Role="ReceiptAndPaymentTypes" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3535,6 +4145,10 @@
       </Association>
       <Association Name="Company_Resources">
         <End Type="NAV.Resources" Role="Resources" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_responsibiltyCenter">
+        <End Type="NAV.responsibiltyCenter" Role="responsibiltyCenter" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_RFIPreqList">
@@ -3605,6 +4219,10 @@
         <End Type="NAV.TravelRequisitionStaff" Role="TravelRequisitionStaff" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_VacantPosition">
+        <End Type="NAV.VacantPosition" Role="VacantPosition" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_vendorBalancesheet">
         <End Type="NAV.vendorBalancesheet" Role="vendorBalancesheet" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3617,6 +4235,10 @@
         <End Type="NAV.Vendors" Role="Vendors" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_worksCategory">
+        <End Type="NAV.worksCategory" Role="worksCategory" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_WorkTypes">
         <End Type="NAV.WorkTypes" Role="WorkTypes" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -3627,10 +4249,16 @@
       </Association>
       <EntityContainer Name="NAV" m:IsDefaultEntityContainer="true">
         <EntitySet Name="ApplicantAccomplishment" EntityType="NAV.ApplicantAccomplishment" />
+        <EntitySet Name="ApplicantBackground" EntityType="NAV.ApplicantBackground" />
         <EntitySet Name="ApplicantEmployeeHistory" EntityType="NAV.ApplicantEmployeeHistory" />
+        <EntitySet Name="ApplicantReferees" EntityType="NAV.ApplicantReferees" />
         <EntitySet Name="ApprovalEntriesPage" EntityType="NAV.ApprovalEntriesPage" />
+        <EntitySet Name="EscalateTo" EntityType="NAV.EscalateTo" />
         <EntitySet Name="MyHeldeskRequests" EntityType="NAV.MyHeldeskRequests" />
+        <EntitySet Name="PostedStoreRequisition" EntityType="NAV.PostedStoreRequisition" />
+        <EntitySet Name="PostedStoreRequisitionPurchLines" EntityType="NAV.PostedStoreRequisitionPurchLines" />
         <EntitySet Name="powerbifinance" EntityType="NAV.powerbifinance" />
+        <EntitySet Name="ProductsPerRegion" EntityType="NAV.ProductsPerRegion" />
         <EntitySet Name="ResponsibilityCenters" EntityType="NAV.ResponsibilityCenters" />
         <EntitySet Name="VacantPositions" EntityType="NAV.VacantPositions" />
         <EntitySet Name="AdsNotices" EntityType="NAV.AdsNotices" />
@@ -3658,8 +4286,10 @@
         <EntitySet Name="Employees" EntityType="NAV.Employees" />
         <EntitySet Name="eProcDocuments" EntityType="NAV.eProcDocuments" />
         <EntitySet Name="eProVendorQT" EntityType="NAV.eProVendorQT" />
+        <EntitySet Name="FavouriteJob" EntityType="NAV.FavouriteJob" />
         <EntitySet Name="FiscalYears" EntityType="NAV.FiscalYears" />
         <EntitySet Name="FundCode" EntityType="NAV.FundCode" />
+        <EntitySet Name="HelpDeskAssignee" EntityType="NAV.HelpDeskAssignee" />
         <EntitySet Name="HrApplicantAccomplishment" EntityType="NAV.HrApplicantAccomplishment" />
         <EntitySet Name="HRApplicantReferees" EntityType="NAV.HRApplicantReferees" />
         <EntitySet Name="HRJobApplicants" EntityType="NAV.HRJobApplicants" />
@@ -3674,13 +4304,16 @@
         <EntitySet Name="ImprestMemo" EntityType="NAV.ImprestMemo" />
         <EntitySet Name="IndustryGroup" EntityType="NAV.IndustryGroup" />
         <EntitySet Name="InventoryPostingGroups" EntityType="NAV.InventoryPostingGroups" />
+        <EntitySet Name="invitetoTenders" EntityType="NAV.invitetoTenders" />
         <EntitySet Name="ItemCategories" EntityType="NAV.ItemCategories" />
+        <EntitySet Name="ItemLedgerEntries" EntityType="NAV.ItemLedgerEntries" />
         <EntitySet Name="Items" EntityType="NAV.Items" />
         <EntitySet Name="ItemSalesAndProfit" EntityType="NAV.ItemSalesAndProfit" />
         <EntitySet Name="ItemSalesByCustomer" EntityType="NAV.ItemSalesByCustomer" />
         <EntitySet Name="JobApplicantHobies" EntityType="NAV.JobApplicantHobies" />
         <EntitySet Name="JobApplicantQualifications" EntityType="NAV.JobApplicantQualifications" />
         <EntitySet Name="JobApplicantReferees" EntityType="NAV.JobApplicantReferees" />
+        <EntitySet Name="JobApplicationsQuery" EntityType="NAV.JobApplicationsQuery" />
         <EntitySet Name="JobRequirements" EntityType="NAV.JobRequirements" />
         <EntitySet Name="JobResponsibilities" EntityType="NAV.JobResponsibilities" />
         <EntitySet Name="jobs" EntityType="NAV.jobs" />
@@ -3692,6 +4325,7 @@
         <EntitySet Name="LeaveTypes" EntityType="NAV.LeaveTypes" />
         <EntitySet Name="Locations" EntityType="NAV.Locations" />
         <EntitySet Name="MeetingAgenda" EntityType="NAV.MeetingAgenda" />
+        <EntitySet Name="More_Authors" EntityType="NAV.More_Authors" />
         <EntitySet Name="My_Meetings" EntityType="NAV.My_Meetings" />
         <EntitySet Name="myCountryList" EntityType="NAV.myCountryList" />
         <EntitySet Name="MyJobApplications" EntityType="NAV.MyJobApplications" />
@@ -3706,15 +4340,18 @@
         <EntitySet Name="ProcurementPlan" EntityType="NAV.ProcurementPlan" />
         <EntitySet Name="ProcurementRequest" EntityType="NAV.ProcurementRequest" />
         <EntitySet Name="ProcurementRequestLines" EntityType="NAV.ProcurementRequestLines" />
+        <EntitySet Name="procurementTypes" EntityType="NAV.procurementTypes" />
         <EntitySet Name="ProfessionalQualification" EntityType="NAV.ProfessionalQualification" />
         <EntitySet Name="ProjectMembers" EntityType="NAV.ProjectMembers" />
         <EntitySet Name="PurchaseHeader" EntityType="NAV.PurchaseHeader" />
         <EntitySet Name="PurchaseLines" EntityType="NAV.PurchaseLines" />
         <EntitySet Name="PurchaseReqLines" EntityType="NAV.PurchaseReqLines" />
         <EntitySet Name="PVLines" EntityType="NAV.PVLines" />
+        <EntitySet Name="QualificationQuery" EntityType="NAV.QualificationQuery" />
         <EntitySet Name="ReceiptAndPaymentTypes" EntityType="NAV.ReceiptAndPaymentTypes" />
         <EntitySet Name="receipts" EntityType="NAV.receipts" />
         <EntitySet Name="Resources" EntityType="NAV.Resources" />
+        <EntitySet Name="responsibiltyCenter" EntityType="NAV.responsibiltyCenter" />
         <EntitySet Name="RFIPreqList" EntityType="NAV.RFIPreqList" />
         <EntitySet Name="rfiResponseT" EntityType="NAV.rfiResponseT" />
         <EntitySet Name="RFQApps" EntityType="NAV.RFQApps" />
@@ -3732,15 +4369,25 @@
         <EntitySet Name="TopCustomerOverview" EntityType="NAV.TopCustomerOverview" />
         <EntitySet Name="TransportRequisition" EntityType="NAV.TransportRequisition" />
         <EntitySet Name="TravelRequisitionStaff" EntityType="NAV.TravelRequisitionStaff" />
+        <EntitySet Name="VacantPosition" EntityType="NAV.VacantPosition" />
         <EntitySet Name="vendorBalancesheet" EntityType="NAV.vendorBalancesheet" />
         <EntitySet Name="vendorIncomestatement" EntityType="NAV.vendorIncomestatement" />
         <EntitySet Name="Vendors" EntityType="NAV.Vendors" />
+        <EntitySet Name="worksCategory" EntityType="NAV.worksCategory" />
         <EntitySet Name="WorkTypes" EntityType="NAV.WorkTypes" />
         <EntitySet Name="Pending_Po" EntityType="NAV.Pending_Po" />
         <EntitySet Name="Company" EntityType="NAV.Company" />
         <AssociationSet Name="MyHeldeskRequests_Department_Link_ResponsibilityCenters" Association="NAV.MyHeldeskRequests_Department_Link">
           <End Role="MyHeldeskRequests" EntitySet="MyHeldeskRequests" />
           <End Role="Department_Link" EntitySet="ResponsibilityCenters" />
+        </AssociationSet>
+        <AssociationSet Name="MyHeldeskRequests_Escalated_To_Link_EscalateTo" Association="NAV.MyHeldeskRequests_Escalated_To_Link">
+          <End Role="MyHeldeskRequests" EntitySet="MyHeldeskRequests" />
+          <End Role="Escalated_To_Link" EntitySet="EscalateTo" />
+        </AssociationSet>
+        <AssociationSet Name="PostedStoreRequisition_PostedStoreRequisitionPurchLines_PostedStoreRequisitionPurchLines" Association="NAV.PostedStoreRequisition_PostedStoreRequisitionPurchLines">
+          <End Role="PostedStoreRequisition" EntitySet="PostedStoreRequisition" />
+          <End Role="PostedStoreRequisitionPurchLines" EntitySet="PostedStoreRequisitionPurchLines" />
         </AssociationSet>
         <AssociationSet Name="ResponsibilityCenters_Direct_Reports_To_Link_ResponsibilityCenters" Association="NAV.ResponsibilityCenters_Direct_Reports_To_Link">
           <End Role="ResponsibilityCenters" EntitySet="ResponsibilityCenters" />
@@ -3758,21 +4405,45 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="ApplicantAccomplishment" EntitySet="ApplicantAccomplishment" />
         </AssociationSet>
+        <AssociationSet Name="Company_ApplicantBackground_ApplicantBackground" Association="NAV.Company_ApplicantBackground">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ApplicantBackground" EntitySet="ApplicantBackground" />
+        </AssociationSet>
         <AssociationSet Name="Company_ApplicantEmployeeHistory_ApplicantEmployeeHistory" Association="NAV.Company_ApplicantEmployeeHistory">
           <End Role="Company" EntitySet="Company" />
           <End Role="ApplicantEmployeeHistory" EntitySet="ApplicantEmployeeHistory" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ApplicantReferees_ApplicantReferees" Association="NAV.Company_ApplicantReferees">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ApplicantReferees" EntitySet="ApplicantReferees" />
         </AssociationSet>
         <AssociationSet Name="Company_ApprovalEntriesPage_ApprovalEntriesPage" Association="NAV.Company_ApprovalEntriesPage">
           <End Role="Company" EntitySet="Company" />
           <End Role="ApprovalEntriesPage" EntitySet="ApprovalEntriesPage" />
         </AssociationSet>
+        <AssociationSet Name="Company_EscalateTo_EscalateTo" Association="NAV.Company_EscalateTo">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="EscalateTo" EntitySet="EscalateTo" />
+        </AssociationSet>
         <AssociationSet Name="Company_MyHeldeskRequests_MyHeldeskRequests" Association="NAV.Company_MyHeldeskRequests">
           <End Role="Company" EntitySet="Company" />
           <End Role="MyHeldeskRequests" EntitySet="MyHeldeskRequests" />
         </AssociationSet>
+        <AssociationSet Name="Company_PostedStoreRequisition_PostedStoreRequisition" Association="NAV.Company_PostedStoreRequisition">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="PostedStoreRequisition" EntitySet="PostedStoreRequisition" />
+        </AssociationSet>
+        <AssociationSet Name="Company_PostedStoreRequisitionPurchLines_PostedStoreRequisitionPurchLines" Association="NAV.Company_PostedStoreRequisitionPurchLines">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="PostedStoreRequisitionPurchLines" EntitySet="PostedStoreRequisitionPurchLines" />
+        </AssociationSet>
         <AssociationSet Name="Company_powerbifinance_powerbifinance" Association="NAV.Company_powerbifinance">
           <End Role="Company" EntitySet="Company" />
           <End Role="powerbifinance" EntitySet="powerbifinance" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ProductsPerRegion_ProductsPerRegion" Association="NAV.Company_ProductsPerRegion">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ProductsPerRegion" EntitySet="ProductsPerRegion" />
         </AssociationSet>
         <AssociationSet Name="Company_ResponsibilityCenters_ResponsibilityCenters" Association="NAV.Company_ResponsibilityCenters">
           <End Role="Company" EntitySet="Company" />
@@ -3882,6 +4553,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="eProVendorQT" EntitySet="eProVendorQT" />
         </AssociationSet>
+        <AssociationSet Name="Company_FavouriteJob_FavouriteJob" Association="NAV.Company_FavouriteJob">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="FavouriteJob" EntitySet="FavouriteJob" />
+        </AssociationSet>
         <AssociationSet Name="Company_FiscalYears_FiscalYears" Association="NAV.Company_FiscalYears">
           <End Role="Company" EntitySet="Company" />
           <End Role="FiscalYears" EntitySet="FiscalYears" />
@@ -3889,6 +4564,10 @@
         <AssociationSet Name="Company_FundCode_FundCode" Association="NAV.Company_FundCode">
           <End Role="Company" EntitySet="Company" />
           <End Role="FundCode" EntitySet="FundCode" />
+        </AssociationSet>
+        <AssociationSet Name="Company_HelpDeskAssignee_HelpDeskAssignee" Association="NAV.Company_HelpDeskAssignee">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="HelpDeskAssignee" EntitySet="HelpDeskAssignee" />
         </AssociationSet>
         <AssociationSet Name="Company_HrApplicantAccomplishment_HrApplicantAccomplishment" Association="NAV.Company_HrApplicantAccomplishment">
           <End Role="Company" EntitySet="Company" />
@@ -3946,9 +4625,17 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="InventoryPostingGroups" EntitySet="InventoryPostingGroups" />
         </AssociationSet>
+        <AssociationSet Name="Company_invitetoTenders_invitetoTenders" Association="NAV.Company_invitetoTenders">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="invitetoTenders" EntitySet="invitetoTenders" />
+        </AssociationSet>
         <AssociationSet Name="Company_ItemCategories_ItemCategories" Association="NAV.Company_ItemCategories">
           <End Role="Company" EntitySet="Company" />
           <End Role="ItemCategories" EntitySet="ItemCategories" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ItemLedgerEntries_ItemLedgerEntries" Association="NAV.Company_ItemLedgerEntries">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ItemLedgerEntries" EntitySet="ItemLedgerEntries" />
         </AssociationSet>
         <AssociationSet Name="Company_Items_Items" Association="NAV.Company_Items">
           <End Role="Company" EntitySet="Company" />
@@ -3973,6 +4660,10 @@
         <AssociationSet Name="Company_JobApplicantReferees_JobApplicantReferees" Association="NAV.Company_JobApplicantReferees">
           <End Role="Company" EntitySet="Company" />
           <End Role="JobApplicantReferees" EntitySet="JobApplicantReferees" />
+        </AssociationSet>
+        <AssociationSet Name="Company_JobApplicationsQuery_JobApplicationsQuery" Association="NAV.Company_JobApplicationsQuery">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="JobApplicationsQuery" EntitySet="JobApplicationsQuery" />
         </AssociationSet>
         <AssociationSet Name="Company_JobRequirements_JobRequirements" Association="NAV.Company_JobRequirements">
           <End Role="Company" EntitySet="Company" />
@@ -4017,6 +4708,10 @@
         <AssociationSet Name="Company_MeetingAgenda_MeetingAgenda" Association="NAV.Company_MeetingAgenda">
           <End Role="Company" EntitySet="Company" />
           <End Role="MeetingAgenda" EntitySet="MeetingAgenda" />
+        </AssociationSet>
+        <AssociationSet Name="Company_More_Authors_More_Authors" Association="NAV.Company_More_Authors">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="More_Authors" EntitySet="More_Authors" />
         </AssociationSet>
         <AssociationSet Name="Company_My_Meetings_My_Meetings" Association="NAV.Company_My_Meetings">
           <End Role="Company" EntitySet="Company" />
@@ -4074,6 +4769,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="ProcurementRequestLines" EntitySet="ProcurementRequestLines" />
         </AssociationSet>
+        <AssociationSet Name="Company_procurementTypes_procurementTypes" Association="NAV.Company_procurementTypes">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="procurementTypes" EntitySet="procurementTypes" />
+        </AssociationSet>
         <AssociationSet Name="Company_ProfessionalQualification_ProfessionalQualification" Association="NAV.Company_ProfessionalQualification">
           <End Role="Company" EntitySet="Company" />
           <End Role="ProfessionalQualification" EntitySet="ProfessionalQualification" />
@@ -4098,6 +4797,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="PVLines" EntitySet="PVLines" />
         </AssociationSet>
+        <AssociationSet Name="Company_QualificationQuery_QualificationQuery" Association="NAV.Company_QualificationQuery">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="QualificationQuery" EntitySet="QualificationQuery" />
+        </AssociationSet>
         <AssociationSet Name="Company_ReceiptAndPaymentTypes_ReceiptAndPaymentTypes" Association="NAV.Company_ReceiptAndPaymentTypes">
           <End Role="Company" EntitySet="Company" />
           <End Role="ReceiptAndPaymentTypes" EntitySet="ReceiptAndPaymentTypes" />
@@ -4109,6 +4812,10 @@
         <AssociationSet Name="Company_Resources_Resources" Association="NAV.Company_Resources">
           <End Role="Company" EntitySet="Company" />
           <End Role="Resources" EntitySet="Resources" />
+        </AssociationSet>
+        <AssociationSet Name="Company_responsibiltyCenter_responsibiltyCenter" Association="NAV.Company_responsibiltyCenter">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="responsibiltyCenter" EntitySet="responsibiltyCenter" />
         </AssociationSet>
         <AssociationSet Name="Company_RFIPreqList_RFIPreqList" Association="NAV.Company_RFIPreqList">
           <End Role="Company" EntitySet="Company" />
@@ -4178,6 +4885,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="TravelRequisitionStaff" EntitySet="TravelRequisitionStaff" />
         </AssociationSet>
+        <AssociationSet Name="Company_VacantPosition_VacantPosition" Association="NAV.Company_VacantPosition">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="VacantPosition" EntitySet="VacantPosition" />
+        </AssociationSet>
         <AssociationSet Name="Company_vendorBalancesheet_vendorBalancesheet" Association="NAV.Company_vendorBalancesheet">
           <End Role="Company" EntitySet="Company" />
           <End Role="vendorBalancesheet" EntitySet="vendorBalancesheet" />
@@ -4189,6 +4900,10 @@
         <AssociationSet Name="Company_Vendors_Vendors" Association="NAV.Company_Vendors">
           <End Role="Company" EntitySet="Company" />
           <End Role="Vendors" EntitySet="Vendors" />
+        </AssociationSet>
+        <AssociationSet Name="Company_worksCategory_worksCategory" Association="NAV.Company_worksCategory">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="worksCategory" EntitySet="worksCategory" />
         </AssociationSet>
         <AssociationSet Name="Company_WorkTypes_WorkTypes" Association="NAV.Company_WorkTypes">
           <End Role="Company" EntitySet="Company" />
