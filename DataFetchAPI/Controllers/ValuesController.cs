@@ -376,6 +376,71 @@ namespace DataFetchAPI.Controllers
             var jresp = odataCon.worksCategory.ToList();
             return Json(jresp);
         }
+
+        [HttpGet]
+        [Route("api/GetPurchaseCodeHeaders")]
+        public IHttpActionResult GetPurchaseCodeHeaders()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.purchaseCodeHeaders.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetPurchaseCodeLines")]
+        public IHttpActionResult GetPurchaseCodeLines()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.purchaseCodeLines.ToList();
+            return Json(jresp);
+        }
+        
+        [HttpGet]
+        [Route("api/GetAddendums")]
+        public IHttpActionResult GetAddendums()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.tenderAddendums.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetBidScoringTemplate")]
+        public IHttpActionResult GetBidScoringTemplate()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.bidscoringTemplate.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetIfsRequirements")]
+        public IHttpActionResult GetIfsRequirements()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifsSecurities.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetIfsDocs")]
+        public IHttpActionResult GetIfsDocs()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifsReqDocuments.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetTenderReservCategory")]
+        public IHttpActionResult GetTenderReservCategory()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifcRestrictedTenderCat.ToList();
+            return Json(jresp);
+        }
+
+
     }
-  
+
 }
