@@ -232,11 +232,6 @@
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
     <Compile Include="Utils\DBConfig.cs" />
-    <Compile Include="Web References\WebRef\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -304,11 +299,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Service References\ODataRef\service.edmx" />
-    <None Include="Web References\WebRef\eprocurement.wsdl" />
-    <None Include="Web References\WebRef\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -323,19 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.1.87:2023/Dev/WS/KeRRA/Codeunit/eprocurement">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\WebRef\</RelPath>
-      <UpdateFromURL>http://192.168.1.87:2023/Dev/WS/KeRRA/Codeunit/eprocurement</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DataFetchAPI_WebRef_ECommerce</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <ServiceReferenceMetadataStorage Include="Service References\ODataRef\">

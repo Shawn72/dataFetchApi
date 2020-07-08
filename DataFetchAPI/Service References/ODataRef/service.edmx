@@ -110,6 +110,64 @@
         <Property Name="Due_Date" Type="Edm.DateTime" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
+      <EntityType Name="ApprovedSRLines">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Line_No" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Select" Type="Edm.Boolean" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="Item_Category_Code" Type="Edm.String" />
+        <Property Name="Service_Item_Code" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Variant_Code" Type="Edm.String" />
+        <Property Name="Employee_No" Type="Edm.String" />
+        <Property Name="Employee_Name" Type="Edm.String" />
+        <Property Name="Unit_of_Measure_Code" Type="Edm.String" />
+        <Property Name="Qty_Requested" Type="Edm.Decimal" />
+        <Property Name="Qty_Approved" Type="Edm.Decimal" />
+        <Property Name="Quantity_issued" Type="Edm.Decimal" />
+        <Property Name="Quantity_To_Issue" Type="Edm.Decimal" />
+        <Property Name="Qty_on_Purch_Order" Type="Edm.Decimal" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Direct_Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Unit_Cost_LCY" Type="Edm.Decimal" />
+        <Property Name="Line_Amount" Type="Edm.Decimal" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Amount_Including_VAT" Type="Edm.Decimal" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Item_Category" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
+      <EntityType Name="ApprovedStoreRequisition">
+        <Key>
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Requester_ID" Type="Edm.String" />
+        <Property Name="Request_By_No" Type="Edm.String" />
+        <Property Name="Request_By_Name" Type="Edm.String" />
+        <Property Name="Shortcut_Dimension_2_Code" Type="Edm.String" />
+        <Property Name="Department_Name" Type="Edm.String" />
+        <Property Name="Project_Name" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Order_Date" Type="Edm.DateTime" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Requisition_Type" Type="Edm.String" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Budget_Item" Type="Edm.String" />
+        <Property Name="Job_Task_No" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
       <EntityType Name="EscalateTo">
         <Key>
           <PropertyRef Name="Reports_To_Officer_Name" />
@@ -243,6 +301,35 @@
         <Property Name="Amount_Including_VAT" Type="Edm.Decimal" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
+      <EntityType Name="PostedStoreRequisitionLines">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Line_No" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Item_Category" Type="Edm.String" />
+        <Property Name="Service_Item_Code" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Variant_Code" Type="Edm.String" />
+        <Property Name="Unit_of_Measure_Code" Type="Edm.String" />
+        <Property Name="Qty_Requested" Type="Edm.Decimal" />
+        <Property Name="Qty_Approved" Type="Edm.Decimal" />
+        <Property Name="Quantity_To_Issue" Type="Edm.Decimal" />
+        <Property Name="Direct_Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Line_Amount" Type="Edm.Decimal" />
+        <Property Name="VAT_Prod_Posting_Group" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Quantity_issued" Type="Edm.Decimal" />
+        <Property Name="Employee_No" Type="Edm.String" />
+        <Property Name="Employee_Name" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
       <EntityType Name="powerbifinance">
         <Key>
           <PropertyRef Name="No" />
@@ -337,6 +424,27 @@
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
         <NavigationProperty Name="Direct_Reports_To_Link" Relationship="NAV.ResponsibilityCenters_Direct_Reports_To_Link" ToRole="Direct_Reports_To_Link" FromRole="ResponsibilityCenters" />
         <NavigationProperty Name="Indirect_Reports_To_Link" Relationship="NAV.ResponsibilityCenters_Indirect_Reports_To_Link" ToRole="Indirect_Reports_To_Link" FromRole="ResponsibilityCenters" />
+      </EntityType>
+      <EntityType Name="StoreRequisitionNote">
+        <Key>
+          <PropertyRef Name="Entry_No" />
+        </Key>
+        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Selected" Type="Edm.Boolean" />
+        <Property Name="Document_No" Type="Edm.String" />
+        <Property Name="Qty_Requested" Type="Edm.Decimal" />
+        <Property Name="Qty_Approved" Type="Edm.Decimal" />
+        <Property Name="Qty_Issued" Type="Edm.Decimal" />
+        <Property Name="Employee_No" Type="Edm.String" />
+        <Property Name="Employee_Name" Type="Edm.String" />
+        <Property Name="Item_No" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Unit_Measures" Type="Edm.String" />
+        <Property Name="Remaining_Qty" Type="Edm.Decimal" />
+        <Property Name="Requisition_Date" Type="Edm.DateTime" />
+        <Property Name="Requsted_By" Type="Edm.String" />
+        <Property Name="Dept" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
       <EntityType Name="VacantPositions">
         <Key>
@@ -1268,6 +1376,41 @@
         <Property Name="Procurement_Type" Type="Edm.String" />
         <Property Name="Solicitation_Type" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="ifsBidSCoreCritGrp">
+        <Key>
+          <PropertyRef Name="Criteria_Group_ID" />
+          <PropertyRef Name="Template_ID" />
+        </Key>
+        <Property Name="Template_ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Criteria_Group_ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Evaluation_Type" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Total_Weight" Type="Edm.Decimal" />
+      </EntityType>
+      <EntityType Name="ifsEquipspecs">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Equipment_Type_Code" />
+        </Key>
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Equipment_Type_Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="Minimum_Required_Qty" Type="Edm.Decimal" />
+        <Property Name="Blocked" Type="Edm.Boolean" />
+      </EntityType>
+      <EntityType Name="ifsKeyStaff">
+        <Key>
+          <PropertyRef Name="IFS_Code" />
+          <PropertyRef Name="Staff_Role_Code" />
+        </Key>
+        <Property Name="IFS_Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Staff_Role_Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Title_Designation_Description" Type="Edm.String" />
+        <Property Name="Staff_Category" Type="Edm.String" />
+        <Property Name="Min_No_of_Recomm_Staff" Type="Edm.Int32" />
+        <Property Name="Requirement_Type" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="ifsReqDocuments">
         <Key>
           <PropertyRef Name="Description" />
@@ -1295,6 +1438,29 @@
         <Property Name="Security_Amount_LCY" Type="Edm.Decimal" />
         <Property Name="Bid_Security_Validity_Expiry" Type="Edm.DateTime" />
         <Property Name="Nature_of_Security" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ifsVendorDebarment">
+        <Key>
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Entry_no" />
+          <PropertyRef Name="Source_Voucher_No" />
+        </Key>
+        <Property Name="Entry_no" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Source_Voucher_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Firm_Name" Type="Edm.String" />
+        <Property Name="Reason_Code" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Ineligibility_Start_Date" Type="Edm.DateTime" />
+        <Property Name="Ineligibility_End_Date" Type="Edm.DateTime" />
+        <Property Name="Reinstatement_Date" Type="Edm.DateTime" />
+        <Property Name="Vendor_No" Type="Edm.String" />
+        <Property Name="Tax_Registration_PIN_No" Type="Edm.String" />
+        <Property Name="Incorporation_Reg_No" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="Country_Region_Code" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.Boolean" />
       </EntityType>
       <EntityType Name="ImprestLines">
         <Key>
@@ -2617,6 +2783,7 @@
         <Property Name="Type" Type="Edm.String" />
         <Property Name="Direct_Unit_Cost" Type="Edm.Decimal" />
         <Property Name="Total_Entitlement" Type="Edm.Decimal" />
+        <Property Name="Constituency_Code" Type="Edm.String" />
         <Property Name="ImprestNo" Type="Edm.String" Nullable="false" />
         <Property Name="Requestor" Type="Edm.String" />
       </EntityType>
@@ -3862,13 +4029,17 @@
         <NavigationProperty Name="ApplicantEmployeeHistory" Relationship="NAV.Company_ApplicantEmployeeHistory" ToRole="ApplicantEmployeeHistory" FromRole="Company" />
         <NavigationProperty Name="ApplicantReferees" Relationship="NAV.Company_ApplicantReferees" ToRole="ApplicantReferees" FromRole="Company" />
         <NavigationProperty Name="ApprovalEntriesPage" Relationship="NAV.Company_ApprovalEntriesPage" ToRole="ApprovalEntriesPage" FromRole="Company" />
+        <NavigationProperty Name="ApprovedSRLines" Relationship="NAV.Company_ApprovedSRLines" ToRole="ApprovedSRLines" FromRole="Company" />
+        <NavigationProperty Name="ApprovedStoreRequisition" Relationship="NAV.Company_ApprovedStoreRequisition" ToRole="ApprovedStoreRequisition" FromRole="Company" />
         <NavigationProperty Name="EscalateTo" Relationship="NAV.Company_EscalateTo" ToRole="EscalateTo" FromRole="Company" />
         <NavigationProperty Name="MyHeldeskRequests" Relationship="NAV.Company_MyHeldeskRequests" ToRole="MyHeldeskRequests" FromRole="Company" />
         <NavigationProperty Name="PostedStoreRequisition" Relationship="NAV.Company_PostedStoreRequisition" ToRole="PostedStoreRequisition" FromRole="Company" />
         <NavigationProperty Name="PostedStoreRequisitionPurchLines" Relationship="NAV.Company_PostedStoreRequisitionPurchLines" ToRole="PostedStoreRequisitionPurchLines" FromRole="Company" />
+        <NavigationProperty Name="PostedStoreRequisitionLines" Relationship="NAV.Company_PostedStoreRequisitionLines" ToRole="PostedStoreRequisitionLines" FromRole="Company" />
         <NavigationProperty Name="powerbifinance" Relationship="NAV.Company_powerbifinance" ToRole="powerbifinance" FromRole="Company" />
         <NavigationProperty Name="ProductsPerRegion" Relationship="NAV.Company_ProductsPerRegion" ToRole="ProductsPerRegion" FromRole="Company" />
         <NavigationProperty Name="ResponsibilityCenters" Relationship="NAV.Company_ResponsibilityCenters" ToRole="ResponsibilityCenters" FromRole="Company" />
+        <NavigationProperty Name="StoreRequisitionNote" Relationship="NAV.Company_StoreRequisitionNote" ToRole="StoreRequisitionNote" FromRole="Company" />
         <NavigationProperty Name="VacantPositions" Relationship="NAV.Company_VacantPositions" ToRole="VacantPositions" FromRole="Company" />
         <NavigationProperty Name="AdsNotices" Relationship="NAV.Company_AdsNotices" ToRole="AdsNotices" FromRole="Company" />
         <NavigationProperty Name="AgendaSurportingDocuments" Relationship="NAV.Company_AgendaSurportingDocuments" ToRole="AgendaSurportingDocuments" FromRole="Company" />
@@ -3911,8 +4082,12 @@
         <NavigationProperty Name="ifcRestrictedTenderCat" Relationship="NAV.Company_ifcRestrictedTenderCat" ToRole="ifcRestrictedTenderCat" FromRole="Company" />
         <NavigationProperty Name="ifpReqDocuments" Relationship="NAV.Company_ifpReqDocuments" ToRole="ifpReqDocuments" FromRole="Company" />
         <NavigationProperty Name="IFPRequests" Relationship="NAV.Company_IFPRequests" ToRole="IFPRequests" FromRole="Company" />
+        <NavigationProperty Name="ifsBidSCoreCritGrp" Relationship="NAV.Company_ifsBidSCoreCritGrp" ToRole="ifsBidSCoreCritGrp" FromRole="Company" />
+        <NavigationProperty Name="ifsEquipspecs" Relationship="NAV.Company_ifsEquipspecs" ToRole="ifsEquipspecs" FromRole="Company" />
+        <NavigationProperty Name="ifsKeyStaff" Relationship="NAV.Company_ifsKeyStaff" ToRole="ifsKeyStaff" FromRole="Company" />
         <NavigationProperty Name="ifsReqDocuments" Relationship="NAV.Company_ifsReqDocuments" ToRole="ifsReqDocuments" FromRole="Company" />
         <NavigationProperty Name="ifsSecurities" Relationship="NAV.Company_ifsSecurities" ToRole="ifsSecurities" FromRole="Company" />
+        <NavigationProperty Name="ifsVendorDebarment" Relationship="NAV.Company_ifsVendorDebarment" ToRole="ifsVendorDebarment" FromRole="Company" />
         <NavigationProperty Name="ImprestLines" Relationship="NAV.Company_ImprestLines" ToRole="ImprestLines" FromRole="Company" />
         <NavigationProperty Name="ImprestMemo" Relationship="NAV.Company_ImprestMemo" ToRole="ImprestMemo" FromRole="Company" />
         <NavigationProperty Name="IndustryGroup" Relationship="NAV.Company_IndustryGroup" ToRole="IndustryGroup" FromRole="Company" />
@@ -4037,6 +4212,14 @@
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.ApprovalEntriesPage" Role="ApprovalEntriesPage" Multiplicity="*" />
       </Association>
+      <Association Name="Company_ApprovedSRLines">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.ApprovedSRLines" Role="ApprovedSRLines" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ApprovedStoreRequisition">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.ApprovedStoreRequisition" Role="ApprovedStoreRequisition" Multiplicity="*" />
+      </Association>
       <Association Name="Company_EscalateTo">
         <End Type="NAV.EscalateTo" Role="EscalateTo" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -4053,6 +4236,10 @@
         <End Type="NAV.PostedStoreRequisitionPurchLines" Role="PostedStoreRequisitionPurchLines" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_PostedStoreRequisitionLines">
+        <End Type="NAV.PostedStoreRequisitionLines" Role="PostedStoreRequisitionLines" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_powerbifinance">
         <End Type="NAV.powerbifinance" Role="powerbifinance" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -4063,6 +4250,10 @@
       </Association>
       <Association Name="Company_ResponsibilityCenters">
         <End Type="NAV.ResponsibilityCenters" Role="ResponsibilityCenters" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_StoreRequisitionNote">
+        <End Type="NAV.StoreRequisitionNote" Role="StoreRequisitionNote" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_VacantPositions">
@@ -4233,12 +4424,28 @@
         <End Type="NAV.IFPRequests" Role="IFPRequests" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_ifsBidSCoreCritGrp">
+        <End Type="NAV.ifsBidSCoreCritGrp" Role="ifsBidSCoreCritGrp" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ifsEquipspecs">
+        <End Type="NAV.ifsEquipspecs" Role="ifsEquipspecs" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ifsKeyStaff">
+        <End Type="NAV.ifsKeyStaff" Role="ifsKeyStaff" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_ifsReqDocuments">
         <End Type="NAV.ifsReqDocuments" Role="ifsReqDocuments" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_ifsSecurities">
         <End Type="NAV.ifsSecurities" Role="ifsSecurities" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_ifsVendorDebarment">
+        <End Type="NAV.ifsVendorDebarment" Role="ifsVendorDebarment" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_ImprestLines">
@@ -4563,13 +4770,17 @@
         <EntitySet Name="ApplicantEmployeeHistory" EntityType="NAV.ApplicantEmployeeHistory" />
         <EntitySet Name="ApplicantReferees" EntityType="NAV.ApplicantReferees" />
         <EntitySet Name="ApprovalEntriesPage" EntityType="NAV.ApprovalEntriesPage" />
+        <EntitySet Name="ApprovedSRLines" EntityType="NAV.ApprovedSRLines" />
+        <EntitySet Name="ApprovedStoreRequisition" EntityType="NAV.ApprovedStoreRequisition" />
         <EntitySet Name="EscalateTo" EntityType="NAV.EscalateTo" />
         <EntitySet Name="MyHeldeskRequests" EntityType="NAV.MyHeldeskRequests" />
         <EntitySet Name="PostedStoreRequisition" EntityType="NAV.PostedStoreRequisition" />
         <EntitySet Name="PostedStoreRequisitionPurchLines" EntityType="NAV.PostedStoreRequisitionPurchLines" />
+        <EntitySet Name="PostedStoreRequisitionLines" EntityType="NAV.PostedStoreRequisitionLines" />
         <EntitySet Name="powerbifinance" EntityType="NAV.powerbifinance" />
         <EntitySet Name="ProductsPerRegion" EntityType="NAV.ProductsPerRegion" />
         <EntitySet Name="ResponsibilityCenters" EntityType="NAV.ResponsibilityCenters" />
+        <EntitySet Name="StoreRequisitionNote" EntityType="NAV.StoreRequisitionNote" />
         <EntitySet Name="VacantPositions" EntityType="NAV.VacantPositions" />
         <EntitySet Name="AdsNotices" EntityType="NAV.AdsNotices" />
         <EntitySet Name="AgendaSurportingDocuments" EntityType="NAV.AgendaSurportingDocuments" />
@@ -4612,8 +4823,12 @@
         <EntitySet Name="ifcRestrictedTenderCat" EntityType="NAV.ifcRestrictedTenderCat" />
         <EntitySet Name="ifpReqDocuments" EntityType="NAV.ifpReqDocuments" />
         <EntitySet Name="IFPRequests" EntityType="NAV.IFPRequests" />
+        <EntitySet Name="ifsBidSCoreCritGrp" EntityType="NAV.ifsBidSCoreCritGrp" />
+        <EntitySet Name="ifsEquipspecs" EntityType="NAV.ifsEquipspecs" />
+        <EntitySet Name="ifsKeyStaff" EntityType="NAV.ifsKeyStaff" />
         <EntitySet Name="ifsReqDocuments" EntityType="NAV.ifsReqDocuments" />
         <EntitySet Name="ifsSecurities" EntityType="NAV.ifsSecurities" />
+        <EntitySet Name="ifsVendorDebarment" EntityType="NAV.ifsVendorDebarment" />
         <EntitySet Name="ImprestLines" EntityType="NAV.ImprestLines" />
         <EntitySet Name="ImprestMemo" EntityType="NAV.ImprestMemo" />
         <EntitySet Name="IndustryGroup" EntityType="NAV.IndustryGroup" />
@@ -4738,6 +4953,14 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="ApprovalEntriesPage" EntitySet="ApprovalEntriesPage" />
         </AssociationSet>
+        <AssociationSet Name="Company_ApprovedSRLines_ApprovedSRLines" Association="NAV.Company_ApprovedSRLines">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ApprovedSRLines" EntitySet="ApprovedSRLines" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ApprovedStoreRequisition_ApprovedStoreRequisition" Association="NAV.Company_ApprovedStoreRequisition">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ApprovedStoreRequisition" EntitySet="ApprovedStoreRequisition" />
+        </AssociationSet>
         <AssociationSet Name="Company_EscalateTo_EscalateTo" Association="NAV.Company_EscalateTo">
           <End Role="Company" EntitySet="Company" />
           <End Role="EscalateTo" EntitySet="EscalateTo" />
@@ -4754,6 +4977,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="PostedStoreRequisitionPurchLines" EntitySet="PostedStoreRequisitionPurchLines" />
         </AssociationSet>
+        <AssociationSet Name="Company_PostedStoreRequisitionLines_PostedStoreRequisitionLines" Association="NAV.Company_PostedStoreRequisitionLines">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="PostedStoreRequisitionLines" EntitySet="PostedStoreRequisitionLines" />
+        </AssociationSet>
         <AssociationSet Name="Company_powerbifinance_powerbifinance" Association="NAV.Company_powerbifinance">
           <End Role="Company" EntitySet="Company" />
           <End Role="powerbifinance" EntitySet="powerbifinance" />
@@ -4765,6 +4992,10 @@
         <AssociationSet Name="Company_ResponsibilityCenters_ResponsibilityCenters" Association="NAV.Company_ResponsibilityCenters">
           <End Role="Company" EntitySet="Company" />
           <End Role="ResponsibilityCenters" EntitySet="ResponsibilityCenters" />
+        </AssociationSet>
+        <AssociationSet Name="Company_StoreRequisitionNote_StoreRequisitionNote" Association="NAV.Company_StoreRequisitionNote">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="StoreRequisitionNote" EntitySet="StoreRequisitionNote" />
         </AssociationSet>
         <AssociationSet Name="Company_VacantPositions_VacantPositions" Association="NAV.Company_VacantPositions">
           <End Role="Company" EntitySet="Company" />
@@ -4934,6 +5165,18 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="IFPRequests" EntitySet="IFPRequests" />
         </AssociationSet>
+        <AssociationSet Name="Company_ifsBidSCoreCritGrp_ifsBidSCoreCritGrp" Association="NAV.Company_ifsBidSCoreCritGrp">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ifsBidSCoreCritGrp" EntitySet="ifsBidSCoreCritGrp" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ifsEquipspecs_ifsEquipspecs" Association="NAV.Company_ifsEquipspecs">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ifsEquipspecs" EntitySet="ifsEquipspecs" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ifsKeyStaff_ifsKeyStaff" Association="NAV.Company_ifsKeyStaff">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ifsKeyStaff" EntitySet="ifsKeyStaff" />
+        </AssociationSet>
         <AssociationSet Name="Company_ifsReqDocuments_ifsReqDocuments" Association="NAV.Company_ifsReqDocuments">
           <End Role="Company" EntitySet="Company" />
           <End Role="ifsReqDocuments" EntitySet="ifsReqDocuments" />
@@ -4941,6 +5184,10 @@
         <AssociationSet Name="Company_ifsSecurities_ifsSecurities" Association="NAV.Company_ifsSecurities">
           <End Role="Company" EntitySet="Company" />
           <End Role="ifsSecurities" EntitySet="ifsSecurities" />
+        </AssociationSet>
+        <AssociationSet Name="Company_ifsVendorDebarment_ifsVendorDebarment" Association="NAV.Company_ifsVendorDebarment">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="ifsVendorDebarment" EntitySet="ifsVendorDebarment" />
         </AssociationSet>
         <AssociationSet Name="Company_ImprestLines_ImprestLines" Association="NAV.Company_ImprestLines">
           <End Role="Company" EntitySet="Company" />

@@ -440,6 +440,43 @@ namespace DataFetchAPI.Controllers
             return Json(jresp);
         }
 
+        [HttpGet]
+        [Route("api/GetTenderKeystaff")]
+        public IHttpActionResult GetTenderKeystaff()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifsKeyStaff.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetTenderEquipSpecs")]
+        public IHttpActionResult GetTenderEquipSpecs()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifsEquipspecs.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetTenderifsBidscoreGrp")]
+        public IHttpActionResult GetTenderifsBidscoreGrp()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifsBidSCoreCritGrp.ToList();
+            return Json(jresp);
+        }
+
+
+        [HttpGet]
+        [Route("api/GetTenderVDebarment")]
+        public IHttpActionResult GetTenderVDebarment()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.ifsVendorDebarment.ToList();
+            return Json(jresp);
+        }
+
 
     }
 
