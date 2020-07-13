@@ -477,7 +477,6 @@ namespace DataFetchAPI.Controllers
             return Json(jresp);
         }
 
-
     }
 
 }
