@@ -846,6 +846,7 @@
         <Property Name="City" Type="Edm.String" />
         <Property Name="Phone_No" Type="Edm.String" />
         <Property Name="Post_Code" Type="Edm.String" />
+        <Property Name="Country_Region_Code" Type="Edm.String" />
       </EntityType>
       <EntityType Name="Copyright_Files">
         <Key>

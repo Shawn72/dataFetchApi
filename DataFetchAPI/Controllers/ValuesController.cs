@@ -260,7 +260,14 @@ namespace DataFetchAPI.Controllers
             var myIfps = odataCon.IndustryGroup.ToList();
             return Json(myIfps);
         }
-
+        [HttpGet]
+        [Route("api/GetVenderPreferences")]
+        public IHttpActionResult GetVenderPreferences()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var vendeopreference= odataCon.VenderPreferences.ToList();
+            return Json(vendeopreference);
+        }
         [HttpGet]
         [Route("api/GetCompanySize")]
         public IHttpActionResult GetCompanySize()
