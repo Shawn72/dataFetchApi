@@ -242,6 +242,29 @@
         <NavigationProperty Name="Department_Link" Relationship="NAV.MyHeldeskRequests_Department_Link" ToRole="Department_Link" FromRole="MyHeldeskRequests" />
         <NavigationProperty Name="Escalated_To_Link" Relationship="NAV.MyHeldeskRequests_Escalated_To_Link" ToRole="Escalated_To_Link" FromRole="MyHeldeskRequests" />
       </EntityType>
+      <EntityType Name="Pending_Po">
+        <Key>
+          <PropertyRef Name="Document_No" />
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="Line_No" />
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Expected_Receipt_Date" Type="Edm.DateTime" />
+        <Property Name="Buy_from_Vendor_No" Type="Edm.String" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Quantity" Type="Edm.Decimal" />
+        <Property Name="Outstanding_Quantity" Type="Edm.Decimal" />
+        <Property Name="Unit_of_Measure_Code" Type="Edm.String" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Direct_Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Line_Discount_Percent" Type="Edm.Decimal" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
       <EntityType Name="PostedStoreRequisition">
         <Key>
           <PropertyRef Name="Document_Type" />
@@ -689,6 +712,87 @@
         <Property Name="Number_of_Approved_Requests" Type="Edm.Int32" />
         <Property Name="Number_of_Rejected_Requests" Type="Edm.Int32" />
         <Property Name="Related_to_Change" Type="Edm.Boolean" />
+      </EntityType>
+      <EntityType Name="BidResponsesDetails">
+        <Key>
+          <PropertyRef Name="Document_Type" />
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="Tech_Evaluation_Ranking" Type="Edm.String" />
+        <Property Name="Aggregate_Weighted_Score" Type="Edm.Decimal" />
+        <Property Name="Aggregate_Ranking" Type="Edm.String" />
+        <Property Name="Final_Tender_Outcome" Type="Edm.String" />
+        <Property Name="Engineer_Estimate_LCY" Type="Edm.Decimal" />
+        <Property Name="Max_Works_Kickoff_Duration" Type="Edm.String" />
+        <Property Name="Max_Works_Charter_Duration" Type="Edm.String" />
+        <Property Name="Max_Works_Completion_Duration" Type="Edm.String" />
+        <Property Name="Defects_Liability_Period" Type="Edm.String" />
+        <Property Name="Daily_Liquidated_Dam_Unit_Cost" Type="Edm.Decimal" />
+        <Property Name="Liquidated_Damages_Limit" Type="Edm.Decimal" />
+        <Property Name="Payment_Retention" Type="Edm.Decimal" />
+        <Property Name="Retention_Amount_Limit" Type="Edm.Decimal" />
+        <Property Name="Min_Interim_Certificate_Amount" Type="Edm.Decimal" />
+        <Property Name="Vendor_No" Type="Edm.String" />
+        <Property Name="Sealed_Bids_Technical" Type="Edm.Boolean" />
+        <Property Name="Sealed_Bids_Financial" Type="Edm.Boolean" />
+        <Property Name="Procurement_Plan_Item_Descript" Type="Edm.String" />
+        <Property Name="Item_Category_Description" Type="Edm.String" />
+        <Property Name="WorkPlan_No" Type="Edm.String" />
+        <Property Name="Expected_Receipt_Date" Type="Edm.DateTime" />
+        <Property Name="Posting_Description" Type="Edm.String" />
+        <Property Name="Payment_Terms_Code" Type="Edm.String" />
+        <Property Name="Due_Date" Type="Edm.DateTime" />
+        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Buy_from_Vendor_No" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Pay_to_Vendor_No" Type="Edm.String" />
+        <Property Name="Pay_to_Name" Type="Edm.String" />
+        <Property Name="Pay_to_Name_2" Type="Edm.String" />
+        <Property Name="Pay_to_Address" Type="Edm.String" />
+        <Property Name="Pay_to_Address_2" Type="Edm.String" />
+        <Property Name="Pay_to_City" Type="Edm.String" />
+        <Property Name="Total_PRN_Amount" Type="Edm.Decimal" />
+        <Property Name="Total_PRN_Amount_LCY" Type="Edm.Decimal" />
+        <Property Name="PP_Invitation_Notice_Type" Type="Edm.String" />
+        <Property Name="PP_Bid_Selection_Method" Type="Edm.String" />
+        <Property Name="PRN_Order_Date_Time" Type="Edm.DateTime" />
+        <Property Name="Document_Status" Type="Edm.String" />
+        <Property Name="Bidder_Type" Type="Edm.String" />
+        <Property Name="Joint_Venture_Partner" Type="Edm.String" />
+        <Property Name="Invitation_For_Supply_No" Type="Edm.String" />
+        <Property Name="Invitation_Notice_Type" Type="Edm.String" />
+        <Property Name="Bid_Envelope_Type" Type="Edm.String" />
+        <Property Name="Bid_Seal_Type" Type="Edm.String" />
+        <Property Name="Tender_Description" Type="Edm.String" />
+        <Property Name="Bidder_Representative_Name" Type="Edm.String" />
+        <Property Name="Bidder_Representative_Desgn" Type="Edm.String" />
+        <Property Name="Bidder_Representative_Address" Type="Edm.String" />
+        <Property Name="Bidder_Witness_Name" Type="Edm.String" />
+        <Property Name="Bidder_Witness_Designation" Type="Edm.String" />
+        <Property Name="Bidder_Witness_Address" Type="Edm.String" />
+        <Property Name="Tender_Document_Source" Type="Edm.String" />
+        <Property Name="Bid_Charge_Code" Type="Edm.String" />
+        <Property Name="Bid_Charge_LCY" Type="Edm.Decimal" />
+        <Property Name="Payment_Reference_No" Type="Edm.String" />
+        <Property Name="Posted_Direct_Income_Voucher" Type="Edm.String" />
+        <Property Name="Primary_Region" Type="Edm.String" />
+        <Property Name="Primary_Directorate" Type="Edm.String" />
+        <Property Name="Primary_Department" Type="Edm.String" />
+        <Property Name="Primary_Branch_Centre" Type="Edm.String" />
+        <Property Name="Building_House_No" Type="Edm.String" />
+        <Property Name="Plot_No" Type="Edm.String" />
+        <Property Name="Street" Type="Edm.String" />
+        <Property Name="Nature_of_Business" Type="Edm.String" />
+        <Property Name="Current_Trade_Licence_No" Type="Edm.String" />
+        <Property Name="Trade_Licence_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="Max_Value_of_Business" Type="Edm.Decimal" />
+        <Property Name="Preferred_Bank_Account_Code" Type="Edm.String" />
+        <Property Name="Bankers_Name" Type="Edm.String" />
+        <Property Name="Bankers_Branch" Type="Edm.String" />
+        <Property Name="KNTC_Agent" Type="Edm.Boolean" />
+        <Property Name="Business_Type" Type="Edm.String" />
+        <Property Name="Nominal_Capital_LCY" Type="Edm.Decimal" />
+        <Property Name="Issued_Capital_LCY" Type="Edm.Decimal" />
       </EntityType>
       <EntityType Name="bidscoringTemplate">
         <Key>
@@ -1142,6 +1246,17 @@
         <Property Name="Fax_No" Type="Edm.String" />
         <Property Name="Nominal_Capital_LCY" Type="Edm.Decimal" />
         <Property Name="Business_Type" Type="Edm.String" />
+        <Property Name="Bank_Account_Number" Type="Edm.String" />
+        <Property Name="Bank_Branch" Type="Edm.String" />
+        <Property Name="Vendor_s_Bank" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Supplier_Registration_No" Type="Edm.String" />
+        <Property Name="Registration_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="KNTC_Agent" Type="Edm.Boolean" />
+        <Property Name="Current_Trade_Licence_No" Type="Edm.String" />
+        <Property Name="Trade_Licence_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="Bank_Name" Type="Edm.String" />
+        <Property Name="Bank_Branch_Name" Type="Edm.String" />
       </EntityType>
       <EntityType Name="FavouriteJob">
         <Key>
@@ -3834,6 +3949,7 @@
         </Key>
         <Property Name="No" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
+        <Property Name="Approved_Status" Type="Edm.String" />
       </EntityType>
       <EntityType Name="TransportRequisition">
         <Key>
@@ -4041,6 +4157,16 @@
         <Property Name="Status" Type="Edm.String" />
         <Property Name="Appointment_Date" Type="Edm.DateTime" />
         <Property Name="Termination_Date" Type="Edm.DateTime" />
+        <Property Name="Nominal_Capital_LCY" Type="Edm.Decimal" />
+        <Property Name="Issued_Capital_LCY" Type="Edm.Decimal" />
+        <Property Name="Building_House_No" Type="Edm.String" />
+        <Property Name="Floor" Type="Edm.String" />
+        <Property Name="Plot_No" Type="Edm.String" />
+        <Property Name="Street" Type="Edm.String" />
+        <Property Name="Website_Url" Type="Edm.String" />
+        <Property Name="KNTC_Agent" Type="Edm.Boolean" />
+        <Property Name="Current_Trade_Licence_No" Type="Edm.String" />
+        <Property Name="Trade_Licence_Expiry_Date" Type="Edm.DateTime" />
         <Property Name="Comment" Type="Edm.Boolean" />
         <Property Name="Balance" Type="Edm.Decimal" />
         <Property Name="Balance_LCY" Type="Edm.Decimal" />
@@ -4140,29 +4266,6 @@
         <Property Name="Description" Type="Edm.String" />
         <Property Name="Category" Type="Edm.String" />
       </EntityType>
-      <EntityType Name="Pending_Po">
-        <Key>
-          <PropertyRef Name="Document_No" />
-          <PropertyRef Name="Document_Type" />
-          <PropertyRef Name="Line_No" />
-        </Key>
-        <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
-        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
-        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Type" Type="Edm.String" />
-        <Property Name="No" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Expected_Receipt_Date" Type="Edm.DateTime" />
-        <Property Name="Buy_from_Vendor_No" Type="Edm.String" />
-        <Property Name="Currency_Code" Type="Edm.String" />
-        <Property Name="Quantity" Type="Edm.Decimal" />
-        <Property Name="Outstanding_Quantity" Type="Edm.Decimal" />
-        <Property Name="Unit_of_Measure_Code" Type="Edm.String" />
-        <Property Name="Amount" Type="Edm.Decimal" />
-        <Property Name="Direct_Unit_Cost" Type="Edm.Decimal" />
-        <Property Name="Line_Discount_Percent" Type="Edm.Decimal" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
       <EntityType Name="Company">
         <Key>
           <PropertyRef Name="Name" />
@@ -4177,6 +4280,7 @@
         <NavigationProperty Name="ApprovedStoreRequisition" Relationship="NAV.Company_ApprovedStoreRequisition" ToRole="ApprovedStoreRequisition" FromRole="Company" />
         <NavigationProperty Name="EscalateTo" Relationship="NAV.Company_EscalateTo" ToRole="EscalateTo" FromRole="Company" />
         <NavigationProperty Name="MyHeldeskRequests" Relationship="NAV.Company_MyHeldeskRequests" ToRole="MyHeldeskRequests" FromRole="Company" />
+        <NavigationProperty Name="Pending_Po" Relationship="NAV.Company_Pending_Po" ToRole="Pending_Po" FromRole="Company" />
         <NavigationProperty Name="PostedStoreRequisition" Relationship="NAV.Company_PostedStoreRequisition" ToRole="PostedStoreRequisition" FromRole="Company" />
         <NavigationProperty Name="PostedStoreRequisitionPurchLines" Relationship="NAV.Company_PostedStoreRequisitionPurchLines" ToRole="PostedStoreRequisitionPurchLines" FromRole="Company" />
         <NavigationProperty Name="PostedStoreRequisitionLines" Relationship="NAV.Company_PostedStoreRequisitionLines" ToRole="PostedStoreRequisitionLines" FromRole="Company" />
@@ -4194,6 +4298,7 @@
         <NavigationProperty Name="ApplicantsQualification" Relationship="NAV.Company_ApplicantsQualification" ToRole="ApplicantsQualification" FromRole="Company" />
         <NavigationProperty Name="ApprovalCommentLine" Relationship="NAV.Company_ApprovalCommentLine" ToRole="ApprovalCommentLine" FromRole="Company" />
         <NavigationProperty Name="ApprovalEntries" Relationship="NAV.Company_ApprovalEntries" ToRole="ApprovalEntries" FromRole="Company" />
+        <NavigationProperty Name="BidResponsesDetails" Relationship="NAV.Company_BidResponsesDetails" ToRole="BidResponsesDetails" FromRole="Company" />
         <NavigationProperty Name="bidscoringTemplate" Relationship="NAV.Company_bidscoringTemplate" ToRole="bidscoringTemplate" FromRole="Company" />
         <NavigationProperty Name="businessTypes" Relationship="NAV.Company_businessTypes" ToRole="businessTypes" FromRole="Company" />
         <NavigationProperty Name="Casuals" Relationship="NAV.Company_Casuals" ToRole="Casuals" FromRole="Company" />
@@ -4317,7 +4422,6 @@
         <NavigationProperty Name="Vendors" Relationship="NAV.Company_Vendors" ToRole="Vendors" FromRole="Company" />
         <NavigationProperty Name="worksCategory" Relationship="NAV.Company_worksCategory" ToRole="worksCategory" FromRole="Company" />
         <NavigationProperty Name="WorkTypes" Relationship="NAV.Company_WorkTypes" ToRole="WorkTypes" FromRole="Company" />
-        <NavigationProperty Name="Pending_Po" Relationship="NAV.Company_Pending_Po" ToRole="Pending_Po" FromRole="Company" />
       </EntityType>
       <Association Name="MyHeldeskRequests_Department_Link">
         <End Type="NAV.ResponsibilityCenters" Role="Department_Link" Multiplicity="0..1" />
@@ -4391,6 +4495,10 @@
         <End Type="NAV.MyHeldeskRequests" Role="MyHeldeskRequests" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_Pending_Po">
+        <End Type="NAV.Pending_Po" Role="Pending_Po" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_PostedStoreRequisition">
         <End Type="NAV.PostedStoreRequisition" Role="PostedStoreRequisition" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -4458,6 +4566,10 @@
       <Association Name="Company_ApprovalEntries">
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
         <End Type="NAV.ApprovalEntries" Role="ApprovalEntries" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_BidResponsesDetails">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.BidResponsesDetails" Role="BidResponsesDetails" Multiplicity="*" />
       </Association>
       <Association Name="Company_bidscoringTemplate">
         <End Type="NAV.bidscoringTemplate" Role="bidscoringTemplate" Multiplicity="*" />
@@ -4951,10 +5063,6 @@
         <End Type="NAV.WorkTypes" Role="WorkTypes" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_Pending_Po">
-        <End Type="NAV.Pending_Po" Role="Pending_Po" Multiplicity="*" />
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-      </Association>
       <EntityContainer Name="NAV" m:IsDefaultEntityContainer="true">
         <EntitySet Name="ApplicantAccomplishment" EntityType="NAV.ApplicantAccomplishment" />
         <EntitySet Name="ApplicantBackground" EntityType="NAV.ApplicantBackground" />
@@ -4965,6 +5073,7 @@
         <EntitySet Name="ApprovedStoreRequisition" EntityType="NAV.ApprovedStoreRequisition" />
         <EntitySet Name="EscalateTo" EntityType="NAV.EscalateTo" />
         <EntitySet Name="MyHeldeskRequests" EntityType="NAV.MyHeldeskRequests" />
+        <EntitySet Name="Pending_Po" EntityType="NAV.Pending_Po" />
         <EntitySet Name="PostedStoreRequisition" EntityType="NAV.PostedStoreRequisition" />
         <EntitySet Name="PostedStoreRequisitionPurchLines" EntityType="NAV.PostedStoreRequisitionPurchLines" />
         <EntitySet Name="PostedStoreRequisitionLines" EntityType="NAV.PostedStoreRequisitionLines" />
@@ -4982,6 +5091,7 @@
         <EntitySet Name="ApplicantsQualification" EntityType="NAV.ApplicantsQualification" />
         <EntitySet Name="ApprovalCommentLine" EntityType="NAV.ApprovalCommentLine" />
         <EntitySet Name="ApprovalEntries" EntityType="NAV.ApprovalEntries" />
+        <EntitySet Name="BidResponsesDetails" EntityType="NAV.BidResponsesDetails" />
         <EntitySet Name="bidscoringTemplate" EntityType="NAV.bidscoringTemplate" />
         <EntitySet Name="businessTypes" EntityType="NAV.businessTypes" />
         <EntitySet Name="Casuals" EntityType="NAV.Casuals" />
@@ -5105,7 +5215,6 @@
         <EntitySet Name="Vendors" EntityType="NAV.Vendors" />
         <EntitySet Name="worksCategory" EntityType="NAV.worksCategory" />
         <EntitySet Name="WorkTypes" EntityType="NAV.WorkTypes" />
-        <EntitySet Name="Pending_Po" EntityType="NAV.Pending_Po" />
         <EntitySet Name="Company" EntityType="NAV.Company" />
         <AssociationSet Name="MyHeldeskRequests_Department_Link_ResponsibilityCenters" Association="NAV.MyHeldeskRequests_Department_Link">
           <End Role="MyHeldeskRequests" EntitySet="MyHeldeskRequests" />
@@ -5179,6 +5288,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="MyHeldeskRequests" EntitySet="MyHeldeskRequests" />
         </AssociationSet>
+        <AssociationSet Name="Company_Pending_Po_Pending_Po" Association="NAV.Company_Pending_Po">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="Pending_Po" EntitySet="Pending_Po" />
+        </AssociationSet>
         <AssociationSet Name="Company_PostedStoreRequisition_PostedStoreRequisition" Association="NAV.Company_PostedStoreRequisition">
           <End Role="Company" EntitySet="Company" />
           <End Role="PostedStoreRequisition" EntitySet="PostedStoreRequisition" />
@@ -5246,6 +5359,10 @@
         <AssociationSet Name="Company_ApprovalEntries_ApprovalEntries" Association="NAV.Company_ApprovalEntries">
           <End Role="Company" EntitySet="Company" />
           <End Role="ApprovalEntries" EntitySet="ApprovalEntries" />
+        </AssociationSet>
+        <AssociationSet Name="Company_BidResponsesDetails_BidResponsesDetails" Association="NAV.Company_BidResponsesDetails">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="BidResponsesDetails" EntitySet="BidResponsesDetails" />
         </AssociationSet>
         <AssociationSet Name="Company_bidscoringTemplate_bidscoringTemplate" Association="NAV.Company_bidscoringTemplate">
           <End Role="Company" EntitySet="Company" />
@@ -5738,10 +5855,6 @@
         <AssociationSet Name="Company_WorkTypes_WorkTypes" Association="NAV.Company_WorkTypes">
           <End Role="Company" EntitySet="Company" />
           <End Role="WorkTypes" EntitySet="WorkTypes" />
-        </AssociationSet>
-        <AssociationSet Name="Company_Pending_Po_Pending_Po" Association="NAV.Company_Pending_Po">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="Pending_Po" EntitySet="Pending_Po" />
         </AssociationSet>
       </EntityContainer>
     </Schema>

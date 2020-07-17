@@ -484,6 +484,15 @@ namespace DataFetchAPI.Controllers
             return Json(jresp);
         }
 
+
+        [HttpGet]
+        [Route("api/GetBidResponseDetails")]
+        public IHttpActionResult GetBidResponseDetails()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidResponsesDetails.ToList();
+            return Json(jresp);
+        }
     }
 
 }
