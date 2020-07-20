@@ -265,7 +265,7 @@ namespace DataFetchAPI.Controllers
         public IHttpActionResult GetVenderPreferences()
         {
             var odataCon = DBConfig.ODataObj();
-            var vendeopreference= odataCon.VenderPreferences.ToList();
+            var vendeopreference= odataCon.BidReferencePreference.ToList();
             return Json(vendeopreference);
         }
         [HttpGet]
@@ -491,6 +491,70 @@ namespace DataFetchAPI.Controllers
         {
             var odataCon = DBConfig.ODataObj();
             var jresp = odataCon.BidResponsesDetails.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetBidResponseOwners")]
+        public IHttpActionResult GetBidResponseOwners()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidResponseOwner.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetBidItemsLinesDetails")]
+        public IHttpActionResult GetBidItemsLinesDetails()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidResponseItemLines.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetBidKeyStaffQualification")]
+        public IHttpActionResult GetBidKeyStaffQualification()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidKeyStaffQualification.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetBidKeyAuditedBalanaceSheet")]
+        public IHttpActionResult GetBidKeyAuditedBalanaceSheet()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidAuditedBalanaceSheet.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetBidKeyAuditedIncomeStatement")]
+        public IHttpActionResult GetBidKeyAuditedIncomeStatement()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidAuditedIncomeStatement.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetBidKeyBankAccounts")]
+        public IHttpActionResult GetBidKeyBankAccounts()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidVendorBankAccount.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetKeyBidPastExperience")]
+        public IHttpActionResult GetKeyBidPastExperience()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidPastExperiences.ToList();
+            return Json(jresp);
+        }
+        [HttpGet]
+        [Route("api/GetKeyBidLitigationHistory")]
+        public IHttpActionResult GetKeyBidLitigationHistory()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.BidLitigationHistory.ToList();
             return Json(jresp);
         }
     }
