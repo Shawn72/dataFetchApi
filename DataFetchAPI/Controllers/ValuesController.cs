@@ -11,6 +11,8 @@ namespace DataFetchAPI.Controllers
     public class ValuesController : ApiController
     {
         [Route("api/Values")]
+
+
         [HttpGet]
         [Route("api/GetPortalUsers")]
         public IHttpActionResult GetPortalUsers()
@@ -555,6 +557,15 @@ namespace DataFetchAPI.Controllers
         {
             var odataCon = DBConfig.ODataObj();
             var jresp = odataCon.BidLitigationHistory.ToList();
+            return Json(jresp);
+        }
+
+        [HttpGet]
+        [Route("api/GetKeyBidderEquipment")]
+        public IHttpActionResult GetKeyBidderEquipment()
+        {
+            var odataCon = DBConfig.ODataObj();
+            var jresp = odataCon.bidderEquipment.ToList();
             return Json(jresp);
         }
     }
